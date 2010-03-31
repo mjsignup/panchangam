@@ -159,13 +159,25 @@ while 1:
   tithi_remaining = 12-(((lmoon-lsun)%360)%12)
   t_end = tithi_remaining/(dmc-dmr)*24.0
   te=deci2sexa(t_rise+t_end)
-  tithi_end = '%02d:%02d' % (te[0],te[1])
+  if te[0]>=24:
+    suff = '(+1)'
+    te[0] = te[0]-24
+  else:
+    suff = '\\hspace{2ex}'
+
+  tithi_end = '%02d:%02d%s' % (te[0],te[1],suff)
 
   nakshatram = nakshatra_names[int(1+math.floor((lmoon%360) /(360.0/27)))]
   nakshatram_remaining = (360.0/27) - ((lmoon%360) % (360.0/27))
   n_end = nakshatram_remaining/dmc*24
   ne=deci2sexa(t_rise+n_end)
-  nakshatram_end = '%02d:%02d' % (ne[0],ne[1])
+  if ne[0]>=24:
+    ne[0] = ne[0]-24
+    suff = '(+1)'
+  else:
+    suff='\\hspace{2ex}'
+
+  nakshatram_end = '%02d:%02d%s' % (ne[0],ne[1],suff)
 
   [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
   [sh, sm, ss] = deci2sexa(t_set) #set_t hour, set minute
