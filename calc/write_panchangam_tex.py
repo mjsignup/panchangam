@@ -9,6 +9,20 @@ from datetime import *
 def sexa2deci(hour,minute=0.0,second=0.0):
   return hour*1.0+minute/60.0+second/3600.0
 
+def sexastr2deci(str):
+  if (str[0]=='-'):
+    sgn = -1.0
+    hms = str[1:].split(':')
+  else:
+    sgn = 1.0
+    hms = str.split(':')
+ 
+  decival = 0
+  for i in range(0,len(hms)):
+    decival = decival + float(hms[i])/(60.0**i)
+
+  return decival*sgn
+
 def deci2sexa(d):
   hour = math.floor(d)
   d = d-hour
@@ -91,7 +105,7 @@ nakshatra_names={1:'ashwini',
 #MAIN CODE
 
 #place = {'name':'Chennai','latitude':sexa2deci(13,4),'longitude':sexa2deci(80,17)}
-place = {'name':sys.argv[1], 'latitude':float(sys.argv[2]), 'longitude':float(sys.argv[3]), 'tz':float(sys.argv[4]), 'dst':float(sys.argv[5])}
+place = {'name':sys.argv[1], 'latitude':sexastr2deci(sys.argv[2]), 'longitude':sexastr2deci(sys.argv[3]), 'tz':float(sys.argv[4]), 'dst':float(sys.argv[5])}
 
 start_year = 2010
 year = 2010
@@ -192,7 +206,7 @@ while 1:
     for i in range(0,weekday):
       print "{}  &"
   
-  print '\caldata{%s}{%s}{%s}{%s}{%s}{%s}{\\%s -- %s}{\\%s -- %s} ' % (d,rise,madhya,rahu,yama,set,tithi,tithi_end,nakshatram,nakshatram_end)
+  print '\caldata{%s}{%s}{%s}{%s}{%s}{%s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s} ' % (d,rise,madhya,rahu,yama,set,tithi,tithi_end,nakshatram,nakshatram_end)
 
   if weekday==6:
     print "\\\\ \hline"
