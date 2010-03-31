@@ -1,0 +1,4 @@
+Chennai 13:05:24  80:16:12 5.5 0
+Mumbai  18:57:36  72:49:12 5.5 0 #Place Lat Lon TZ DST?
+Zurich  47:22:48   8:32:24 1   1
+London  51:30      0:07    0   1

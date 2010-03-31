@@ -1,4 +1,4 @@
-This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2009.10.29)  31 MAR 2010 12:11
+This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2009.10.29)  31 MAR 2010 12:19
 entering extended mode
  %&-line parsing enabled.
 **cal-2010-Chennai.tex
@@ -1007,7 +1007,7 @@ Overfull \hbox (14.21861pt too wide) in paragraph at lines 28--28
  []
 
 
-Overfull \hbox (14.36214pt too wide) in paragraph at lines 28--28
+Overfull \hbox (14.35452pt too wide) in paragraph at lines 28--28
 [] 
  []
 
@@ -1392,7 +1392,7 @@ Overfull \hbox (2.39514pt too wide) in paragraph at lines 48--48
  []
 
 
-Overfull \hbox (18.62732pt too wide) in paragraph at lines 48--48
+Overfull \hbox (18.6197pt too wide) in paragraph at lines 48--48
 [] 
  []
 
@@ -4473,7 +4473,7 @@ Overfull \hbox (2.40465pt too wide) in paragraph at lines 247--247
  []
 
 
-Overfull \hbox (2.38562pt too wide) in paragraph at lines 247--247
+Overfull \hbox (2.39514pt too wide) in paragraph at lines 247--247
 [] 
  []
 
@@ -4488,7 +4488,7 @@ Overfull \hbox (17.20651pt too wide) in paragraph at lines 247--247
  []
 
 
-Overfull \hbox (14.21861pt too wide) in paragraph at lines 247--247
+Overfull \hbox (14.211pt too wide) in paragraph at lines 247--247
 [] 
  []
 
@@ -5188,12 +5188,12 @@ Overfull \hbox (5.69046pt too wide) in paragraph at lines 281--281
  []
 
 
-Overfull \hbox (2.39514pt too wide) in paragraph at lines 283--283
+Overfull \hbox (2.40465pt too wide) in paragraph at lines 283--283
 [][] 
  []
 
 
-Overfull \hbox (2.38562pt too wide) in paragraph at lines 283--283
+Overfull \hbox (2.39514pt too wide) in paragraph at lines 283--283
 [] 
  []
 
@@ -5208,7 +5208,7 @@ Overfull \hbox (18.09903pt too wide) in paragraph at lines 283--283
  []
 
 
-Overfull \hbox (14.21861pt too wide) in paragraph at lines 283--283
+Overfull \hbox (14.22623pt too wide) in paragraph at lines 283--283
 [] 
  []
 
@@ -5268,7 +5268,7 @@ Overfull \hbox (5.69046pt too wide) in paragraph at lines 285--285
  []
 
 
-Overfull \hbox (2.40465pt too wide) in paragraph at lines 287--287
+Overfull \hbox (2.39514pt too wide) in paragraph at lines 287--287
 [][] 
  []
 
@@ -6128,7 +6128,7 @@ Overfull \hbox (9.74008pt too wide) in paragraph at lines 344--344
  []
 
 
-Overfull \hbox (14.21861pt too wide) in paragraph at lines 344--344
+Overfull \hbox (14.211pt too wide) in paragraph at lines 344--344
 [] 
  []
 
@@ -6797,7 +6797,7 @@ Overfull \hbox (2.40465pt too wide) in paragraph at lines 393--393
  []
 
 
-Overfull \hbox (2.38562pt too wide) in paragraph at lines 393--393
+Overfull \hbox (2.39514pt too wide) in paragraph at lines 393--393
 [] 
  []
 
@@ -7097,7 +7097,7 @@ Overfull \hbox (14.21861pt too wide) in paragraph at lines 407--407
  []
 
 
-Overfull \hbox (14.36975pt too wide) in paragraph at lines 407--407
+Overfull \hbox (14.36214pt too wide) in paragraph at lines 407--407
 [] 
  []
 
@@ -7572,7 +7572,7 @@ Overfull \hbox (11.84575pt too wide) in paragraph at lines 431--431
  []
 
 
-Overfull \hbox (14.21861pt too wide) in paragraph at lines 431--431
+Overfull \hbox (14.211pt too wide) in paragraph at lines 431--431
 [] 
  []
 
@@ -7812,7 +7812,7 @@ Overfull \hbox (5.71805pt too wide) in paragraph at lines 443--443
  []
 
 
-Overfull \hbox (14.22623pt too wide) in paragraph at lines 443--443
+Overfull \hbox (14.21861pt too wide) in paragraph at lines 443--443
 [] 
  []
 
@@ -8652,7 +8652,7 @@ Overfull \hbox (11.85336pt too wide) in paragraph at lines 500--500
  []
 
 
-Overfull \hbox (14.21861pt too wide) in paragraph at lines 500--500
+Overfull \hbox (14.22623pt too wide) in paragraph at lines 500--500
 [] 
  []
 
@@ -9892,7 +9892,7 @@ Overfull \hbox (3.45006pt too wide) in paragraph at lines 570--570
  []
 
 
-Overfull \hbox (14.211pt too wide) in paragraph at lines 570--570
+Overfull \hbox (14.21861pt too wide) in paragraph at lines 570--570
 [] 
  []
 
@@ -12352,7 +12352,7 @@ Overfull \hbox (5.69046pt too wide) in paragraph at lines 722--722
  []
 
 
-Overfull \hbox (2.40465pt too wide) in paragraph at lines 724--724
+Overfull \hbox (2.39514pt too wide) in paragraph at lines 724--724
 [][] 
  []
 
@@ -12372,12 +12372,12 @@ Overfull \hbox (22.54129pt too wide) in paragraph at lines 724--724
  []
 
 
-Overfull \hbox (14.22623pt too wide) in paragraph at lines 724--724
+Overfull \hbox (14.21861pt too wide) in paragraph at lines 724--724
 [] 
  []
 
 
-Overfull \hbox (14.38496pt too wide) in paragraph at lines 724--724
+Overfull \hbox (14.37735pt too wide) in paragraph at lines 724--724
 [] 
  []
 
@@ -12457,7 +12457,7 @@ Overfull \hbox (14.23383pt too wide) in paragraph at lines 728--728
  []
 
 
-Overfull \hbox (14.36975pt too wide) in paragraph at lines 728--728
+Overfull \hbox (14.36214pt too wide) in paragraph at lines 728--728
 [] 
  []
 
@@ -12552,7 +12552,7 @@ Overfull \hbox (5.69046pt too wide) in paragraph at lines 732--732
  []
 
 
-Overfull \hbox (2.39514pt too wide) in paragraph at lines 734--734
+Overfull \hbox (2.40465pt too wide) in paragraph at lines 734--734
 [][] 
  []
 
