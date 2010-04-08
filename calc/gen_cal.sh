@@ -17,7 +17,7 @@ y=2010
 
 cat cal_template.tex | sed "s/FILENAME/$y-$city_name.tex/;s/YEAR/$y/;s/CITY/$city_name/" > cal-$y-$city_name.tex
 
-xelatex cal-$y-$city_name.tex
+xelatex cal-$y-$city_name.tex > cal-$y-$city_name.texlog
 
 mkdir -p data
 

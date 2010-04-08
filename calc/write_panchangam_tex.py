@@ -140,6 +140,7 @@ while 1:
       tz_off=tz_off-1
 
   jd_rise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=place['longitude'],lat=place['latitude'],rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
+  jd_rise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,lon=place['longitude'],lat=place['latitude'],rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
   jd_set =swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=place['longitude'],lat=place['latitude'],rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
 
   [_y,_m,_d, t_rise]=swisseph.revjul(jd_rise+tz_off/24.0)
@@ -151,33 +152,41 @@ while 1:
   lsun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
   lsun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
 
-  dmc = lmoon_tmrw-lmoon
-  dmr = lsun_tmrw-lsun
-
+  dmc = (lmoon_tmrw-lmoon)%360
+  dmr = (lsun_tmrw-lsun)%360
 
   tithi = tithi_names[int(1+math.floor((lmoon-lsun)%360 / 12.0))]
   tithi_remaining = 12-(((lmoon-lsun)%360)%12)
   t_end = tithi_remaining/(dmc-dmr)*24.0
-  te=deci2sexa(t_rise+t_end)
-  if te[0]>=24:
-    suff = '(+1)'
-    te[0] = te[0]-24
-  else:
-    suff = '\\hspace{2ex}'
 
-  tithi_end = '%02d:%02d%s' % (te[0],te[1],suff)
+  if t_end/24.0+jd_rise>jd_rise_tmrw:
+    tithi_end = '\\ahoratram'
+  else:
+    te=deci2sexa(t_rise+t_end)
+    if te[0]>=24:
+      suff = '(+1)'
+      te[0] = te[0]-24
+    else:
+      suff = '\\hspace{2ex}'
+  
+    tithi_end = '%02d:%02d%s' % (te[0],te[1],suff)
+
 
   nakshatram = nakshatra_names[int(1+math.floor((lmoon%360) /(360.0/27)))]
   nakshatram_remaining = (360.0/27) - ((lmoon%360) % (360.0/27))
   n_end = nakshatram_remaining/dmc*24
-  ne=deci2sexa(t_rise+n_end)
-  if ne[0]>=24:
-    ne[0] = ne[0]-24
-    suff = '(+1)'
-  else:
-    suff='\\hspace{2ex}'
 
-  nakshatram_end = '%02d:%02d%s' % (ne[0],ne[1],suff)
+  if n_end/24.0+jd_rise>jd_rise_tmrw:
+    nakshatram_end = '\\ahoratram'
+  else:
+    ne=deci2sexa(t_rise+n_end)
+    if ne[0]>=24:
+      ne[0] = ne[0]-24
+      suff = '(+1)'
+    else:
+      suff='\\hspace{2ex}'
+  
+    nakshatram_end = '%02d:%02d%s' % (ne[0],ne[1],suff)
 
   [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
   [sh, sm, ss] = deci2sexa(t_set) #set_t hour, set minute
@@ -227,7 +236,11 @@ while 1:
 
   jd = jd + 1
   year = swisseph.revjul(jd)[0]
-
+ 
+  # For debugging specific dates
+  #if m==4 and d==10:
+  #  break
+  
 print "\\\\ \hline"
 print '\end{tabular}'
 print '\n\n%\clearpage'

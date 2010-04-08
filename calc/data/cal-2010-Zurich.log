@@ -1,4 +1,4 @@
-This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2009.10.29)  31 MAR 2010 12:48
+This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2009.10.29)  8 APR 2010 11:15
 entering extended mode
  %&-line parsing enabled.
 **cal-2010-Zurich.tex
@@ -412,22 +412,22 @@ e 24.
 No file cal-2010-Zurich.aux.
 \openout1 = `cal-2010-Zurich.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 108.
-LaTeX Font Info:    ... okay on input line 108.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
 LaTeX Font Info:    Font shape `EU1/ScalaSansLF(0)/m/n' will be
-(Font)              scaled to size 10.41817pt on input line 108.
+(Font)              scaled to size 10.41817pt on input line 109.
 -------------------- Geometry parameters
 paper: a4paper
 landscape: true
@@ -467,105 +467,105 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 108.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 109.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> OT1/ScalaSansLF(0)/m/n on input line 10
-8.
+9.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> OT1/ScalaSansLF(0)/m/n on input line 1
-08.
+09.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/ScalaSansLF(0)/m/n --> OT1/ScalaSansLF(0)/bx/n on i
-nput line 108.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 108.
+nput line 109.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/lmr/bx/n --> OT1/ScalaSansLF(0)/bx/n on input line 
-108.
+109.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  OT1/lmr/bx/n --> OT1/ScalaSansLF(0)/bx/n on input line 
-108.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 108.
+109.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/lmss/m/n --> OT1/Sanskrit2003:script=deva(0)/m/n on
- input line 108.
+ input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/lmss/bx/n --> OT1/Sanskrit2003:script=deva(0)/m/n o
-n input line 108.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 108.
+n input line 109.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/lmr/m/it --> OT1/ScalaSansLF(0)/m/it on input line 
-108.
+109.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/lmr/bx/it --> OT1/ScalaSansLF(0)/m/it on input line
- 108.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 108.
+ 109.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 108.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 108.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/Sanskrit2003:script=deva(0)/m/n --> OT1/Sanskrit200
-3:script=deva(0)/bx/n on input line 108.
+3:script=deva(0)/bx/n on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/ScalaSansLF(0)/m/it --> OT1/ScalaSansLF(0)/bx/it on
- input line 108.
+ input line 109.
 \symlegacymaths=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 108.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 108.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 108.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 108.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 108.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 108.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 108.
-LaTeX Font Info:    Redeclaring math accent \check on input line 108.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 108.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 108.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 108.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 108.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 108.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 109.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 109.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 109.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 109.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 109.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 109.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 109.
+LaTeX Font Info:    Redeclaring math accent \check on input line 109.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 109.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 109.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 109.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 109.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 109.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 108.
+(Font)              `operators' in the math version `normal' on input line 109.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/ScalaSansLF(0)/m/n --> EU1/ScalaSansLF(0)/m/n on in
-put line 108.
+put line 109.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 108.
+(Font)              `operators' in the math version `bold' on input line 109.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/ScalaSansLF(0)/bx/n --> EU1/ScalaSansLF(0)/m/n on i
-nput line 108.
+nput line 109.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  EU1/ScalaSansLF(0)/m/n --> EU1/ScalaSansLF(0)/m/n on in
-put line 108.
+put line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  EU1/ScalaSansLF(0)/m/n --> EU1/ScalaSansLF(0)/m/n on in
-put line 108.
+put line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/ScalaSansLF(0)/m/it --> EU1/ScalaSansLF(0)/m/it on 
-input line 108.
+input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/ScalaSansLF(0)/bx/n --> EU1/ScalaSansLF(0)/bx/n on 
-input line 108.
+input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/Sanskrit2003:script=deva(0)/m/n --> EU1/Sanskrit200
-3:script=deva(0)/m/n on input line 108.
+3:script=deva(0)/m/n on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> EU1/lmtt/m/n on input line 108.
+(Font)                  OT1/lmtt/m/n --> EU1/lmtt/m/n on input line 109.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  EU1/ScalaSansLF(0)/m/n --> EU1/ScalaSansLF(0)/bx/n on i
-nput line 108.
+nput line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
 (Font)                  EU1/ScalaSansLF(0)/m/n --> EU1/ScalaSansLF(0)/bx/n on i
-nput line 108.
+nput line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/ScalaSansLF(0)/bx/it --> EU1/ScalaSansLF(0)/bx/it o
-n input line 108.
+n input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/Sanskrit2003:script=deva(0)/bx/n --> EU1/Sanskrit20
-03:script=deva(0)/bx/n on input line 108.
+03:script=deva(0)/bx/n on input line 109.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> EU1/lmtt/bx/n on input line 108.
+(Font)                  OT1/lmtt/m/n --> EU1/lmtt/bx/n on input line 109.
 (./2010-Zurich.tex
 LaTeX Font Info:    Font shape `EU1/ScalaSansLF(0)/m/n' will be
 (Font)              scaled to size 7.61145pt on input line 1.
@@ -917,7 +917,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
  []
 
 
-Overfull \hbox (18.54886pt too wide) in paragraph at lines 36--36
+Overfull \hbox (11.77634pt too wide) in paragraph at lines 36--36
 [] 
  []
 
@@ -997,7 +997,7 @@ Overfull \hbox (16.83958pt too wide) in paragraph at lines 42--42
  []
 
 
-Overfull \hbox (10.18631pt too wide) in paragraph at lines 42--42
+Overfull \hbox (3.39857pt too wide) in paragraph at lines 42--42
 [] 
  []
 
@@ -1067,12 +1067,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--46
  []
 
 
-Overfull \hbox (14.14192pt too wide) in paragraph at lines 48--48
+Overfull \hbox (14.13431pt too wide) in paragraph at lines 48--48
 [] 
  []
 
 
-Overfull \hbox (6.00098pt too wide) in paragraph at lines 48--48
+Overfull \hbox (5.98575pt too wide) in paragraph at lines 48--48
 [] 
  []
 
@@ -1603,7 +1603,7 @@ Overfull \hbox (21.76622pt too wide) in paragraph at lines 107--107
  []
 
 
-Overfull \hbox (19.33546pt too wide) in paragraph at lines 107--107
+Overfull \hbox (12.54773pt too wide) in paragraph at lines 107--107
 [] 
  []
 
@@ -1698,7 +1698,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--113
  []
 
 
-Overfull \hbox (23.46155pt too wide) in paragraph at lines 115--115
+Overfull \hbox (16.67381pt too wide) in paragraph at lines 115--115
 [] 
  []
 
@@ -1728,7 +1728,7 @@ Overfull \hbox (16.8472pt too wide) in paragraph at lines 117--117
  []
 
 
-Overfull \hbox (6.00098pt too wide) in paragraph at lines 117--117
+Overfull \hbox (5.99336pt too wide) in paragraph at lines 117--117
 [] 
  []
 
@@ -2213,12 +2213,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--170
  []
 
 
-Overfull \hbox (21.88246pt too wide) in paragraph at lines 172--172
-[] 
- []
-
-
-Overfull \hbox (5.58662pt too wide) in paragraph at lines 172--172
+Overfull \hbox (15.10233pt too wide) in paragraph at lines 172--172
 [] 
  []
 
@@ -2413,7 +2408,7 @@ Overfull \hbox (13.82977pt too wide) in paragraph at lines 188--188
  []
 
 
-Overfull \hbox (18.0635pt too wide) in paragraph at lines 188--188
+Overfull \hbox (24.67786pt too wide) in paragraph at lines 188--188
 [] 
  []
 
@@ -2463,7 +2458,7 @@ Overfull \hbox (22.04391pt too wide) in paragraph at lines 192--192
  []
 
 
-Overfull \hbox (12.26688pt too wide) in paragraph at lines 192--192
+Overfull \hbox (5.48674pt too wide) in paragraph at lines 192--192
 [] 
  []
 
@@ -2508,7 +2503,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--194
  []
 
 
-Overfull \hbox (14.14192pt too wide) in paragraph at lines 196--196
+Overfull \hbox (20.75627pt too wide) in paragraph at lines 196--196
 [] 
  []
 
@@ -2983,7 +2978,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 249--249
  []
 
 
-Overfull \hbox (28.65683pt too wide) in paragraph at lines 251--251
+Overfull \hbox (21.8691pt too wide) in paragraph at lines 251--251
 [] 
  []
 
@@ -3013,7 +3008,7 @@ Overfull \hbox (22.04248pt too wide) in paragraph at lines 253--253
  []
 
 
-Overfull \hbox (18.02588pt too wide) in paragraph at lines 253--253
+Overfull \hbox (11.23814pt too wide) in paragraph at lines 253--253
 [] 
  []
 
@@ -3058,12 +3053,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 255--255
  []
 
 
-Overfull \hbox (21.76622pt too wide) in paragraph at lines 257--257
+Overfull \hbox (21.75099pt too wide) in paragraph at lines 257--257
 [] 
  []
 
 
-Overfull \hbox (6.00098pt too wide) in paragraph at lines 257--257
+Overfull \hbox (5.98575pt too wide) in paragraph at lines 257--257
 [] 
  []
 
@@ -3598,7 +3593,7 @@ Overfull \hbox (10.61458pt too wide) in paragraph at lines 316--316
  []
 
 
-Overfull \hbox (19.33546pt too wide) in paragraph at lines 316--316
+Overfull \hbox (12.54773pt too wide) in paragraph at lines 316--316
 [] 
  []
 
@@ -3718,12 +3713,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 324--324
  []
 
 
-Overfull \hbox (22.04248pt too wide) in paragraph at lines 326--326
+Overfull \hbox (28.64923pt too wide) in paragraph at lines 326--326
 [] 
  []
 
 
-Overfull \hbox (6.00098pt too wide) in paragraph at lines 326--326
+Overfull \hbox (5.97813pt too wide) in paragraph at lines 326--326
 [] 
  []
 
@@ -4262,7 +4257,7 @@ Overfull \vbox (17.52025pt too high) has occurred while \output is active []
 
 
 [6]
-Overfull \hbox (22.45293pt too wide) in paragraph at lines 387--387
+Overfull \hbox (15.67279pt too wide) in paragraph at lines 387--387
 [] 
  []
 
@@ -4392,7 +4387,7 @@ Overfull \hbox (15.2681pt too wide) in paragraph at lines 397--397
  []
 
 
-Overfull \hbox (18.0635pt too wide) in paragraph at lines 397--397
+Overfull \hbox (24.67786pt too wide) in paragraph at lines 397--397
 [] 
  []
 
@@ -4413,11 +4408,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 397--397
 
 
 Overfull \hbox (16.22247pt too wide) in paragraph at lines 399--399
-[] 
- []
-
-
-Overfull \hbox (7.01102pt too wide) in paragraph at lines 399--399
 [] 
  []
 
@@ -4982,7 +4972,7 @@ Overfull \hbox (15.83856pt too wide) in paragraph at lines 462--462
  []
 
 
-Overfull \hbox (18.01828pt too wide) in paragraph at lines 462--462
+Overfull \hbox (11.23814pt too wide) in paragraph at lines 462--462
 [] 
  []
 
@@ -5027,12 +5017,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 464--464
  []
 
 
-Overfull \hbox (15.98251pt too wide) in paragraph at lines 466--466
+Overfull \hbox (22.58926pt too wide) in paragraph at lines 466--466
 [] 
  []
 
 
-Overfull \hbox (6.00098pt too wide) in paragraph at lines 466--466
+Overfull \hbox (5.99336pt too wide) in paragraph at lines 466--466
 [] 
  []
 
@@ -5077,7 +5067,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 468--468
  []
 
 
-Overfull \hbox (21.88246pt too wide) in paragraph at lines 470--470
+Overfull \hbox (15.10233pt too wide) in paragraph at lines 470--470
 [] 
  []
 
@@ -5582,7 +5572,7 @@ Overfull \hbox (22.14838pt too wide) in paragraph at lines 512--512
  []
 
 
-Overfull \hbox (7.847pt too wide) in paragraph at lines 512--512
+Overfull \hbox (1.05927pt too wide) in paragraph at lines 512--512
 [] 
  []
 
@@ -5602,7 +5592,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 512--512
  []
 
 
-Overfull \hbox (25.1658pt too wide) in paragraph at lines 514--514
+Overfull \hbox (18.37807pt too wide) in paragraph at lines 514--514
 [] 
  []
 
@@ -5677,12 +5667,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 518--518
  []
 
 
-Overfull \hbox (16.7647pt too wide) in paragraph at lines 520--520
+Overfull \hbox (16.75708pt too wide) in paragraph at lines 520--520
 [] 
  []
 
 
-Overfull \hbox (6.00098pt too wide) in paragraph at lines 520--520
+Overfull \hbox (5.98575pt too wide) in paragraph at lines 520--520
 [] 
  []
 
@@ -6167,11 +6157,6 @@ Overfull \hbox (14.52583pt too wide) in paragraph at lines 568--568
  []
 
 
-Overfull \hbox (5.58662pt too wide) in paragraph at lines 568--568
-[] 
- []
-
-
 Overfull \hbox (2.83725pt too wide) in paragraph at lines 568--568
 [] 
  []
@@ -6412,7 +6397,7 @@ Overfull \hbox (22.46053pt too wide) in paragraph at lines 588--588
  []
 
 
-Overfull \hbox (12.27448pt too wide) in paragraph at lines 588--588
+Overfull \hbox (5.48674pt too wide) in paragraph at lines 588--588
 [] 
  []
 
@@ -6432,7 +6417,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 588--588
  []
 
 
-Overfull \hbox (17.23654pt too wide) in paragraph at lines 590--590
+Overfull \hbox (10.4488pt too wide) in paragraph at lines 590--590
 [] 
  []
 
@@ -6957,7 +6942,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 647--647
  []
 
 
-Overfull \hbox (25.45284pt too wide) in paragraph at lines 649--649
+Overfull \hbox (18.6651pt too wide) in paragraph at lines 649--649
 [] 
  []
 
@@ -7007,12 +6992,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 651--651
  []
 
 
-Overfull \hbox (4.12451pt too wide) in paragraph at lines 653--653
+Overfull \hbox (4.10167pt too wide) in paragraph at lines 653--653
 [] 
  []
 
 
-Overfull \hbox (18.0635pt too wide) in paragraph at lines 653--653
+Overfull \hbox (17.89012pt too wide) in paragraph at lines 653--653
 [] 
  []
 
@@ -7607,7 +7592,7 @@ Overfull \hbox (20.323pt too wide) in paragraph at lines 718--718
  []
 
 
-Overfull \hbox (18.01828pt too wide) in paragraph at lines 718--718
+Overfull \hbox (11.23814pt too wide) in paragraph at lines 718--718
 [] 
  []
 
@@ -7652,12 +7637,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 720--720
  []
 
 
-Overfull \hbox (20.05435pt too wide) in paragraph at lines 722--722
+Overfull \hbox (26.66872pt too wide) in paragraph at lines 722--722
 [] 
  []
 
 
-Overfull \hbox (6.00098pt too wide) in paragraph at lines 722--722
+Overfull \hbox (5.99336pt too wide) in paragraph at lines 722--722
 [] 
  []
 
@@ -8211,7 +8196,7 @@ Overfull \hbox (20.88501pt too wide) in paragraph at lines 783--783
  []
 
 
-Overfull \hbox (7.847pt too wide) in paragraph at lines 783--783
+Overfull \hbox (1.05927pt too wide) in paragraph at lines 783--783
 [] 
  []
 
@@ -8256,7 +8241,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 785--785
  []
 
 
-Overfull \hbox (20.1858pt too wide) in paragraph at lines 787--787
+Overfull \hbox (13.39807pt too wide) in paragraph at lines 787--787
 [] 
  []
 
@@ -8306,7 +8291,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 789--789
  []
 
 
-Overfull \hbox (14.52583pt too wide) in paragraph at lines 791--791
+Overfull \hbox (14.50299pt too wide) in paragraph at lines 791--791
 [] 
  []
 
@@ -8976,12 +8961,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 860--860
  []
 
 
-Overfull \hbox (13.57146pt too wide) in paragraph at lines 862--862
+Overfull \hbox (20.1858pt too wide) in paragraph at lines 862--862
 [] 
  []
 
 
-Overfull \hbox (18.0635pt too wide) in paragraph at lines 862--862
+Overfull \hbox (24.67786pt too wide) in paragraph at lines 862--862
 [] 
  []
 
@@ -9001,7 +8986,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 862--862
  []
 
 
-Overfull \hbox (21.14018pt too wide) in paragraph at lines 864--864
+Overfull \hbox (14.35245pt too wide) in paragraph at lines 864--864
 [] 
  []
 
@@ -9031,7 +9016,7 @@ Overfull \hbox (14.51822pt too wide) in paragraph at lines 866--866
  []
 
 
-Overfull \hbox (12.25926pt too wide) in paragraph at lines 866--866
+Overfull \hbox (5.48674pt too wide) in paragraph at lines 866--866
 [] 
  []
 
@@ -9422,10 +9407,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 896--896
 
 ) [12] [13] (./cal-2010-Zurich.aux) ) 
 Here is how much of TeX's memory you used:
- 6701 strings out of 94890
- 104493 string characters out of 1174269
+ 6702 strings out of 94890
+ 104502 string characters out of 1174269
  231233 words of memory out of 1500000
- 9764 multiletter control sequences out of 10000+50000
+ 9765 multiletter control sequences out of 10000+50000
  10471 words of font info for 61 fonts, out of 1200000 for 2000
  597 hyphenation exceptions out of 8191
  28i,12n,48p,325b,358s stack positions out of 5000i,500n,6000p,200000b,5000s
