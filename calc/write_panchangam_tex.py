@@ -101,6 +101,19 @@ nakshatra_names={1:'ashwini',
 26:'uttaraproshthapada',
 27:'revati'}
 
+masa_names={1:'mesha',
+2:'vrishabha',
+3:'mithuna',
+4:'karkataka',
+5:'simha',
+6:'kanya',
+7:'tula',
+8:'vrishchika',
+9:'dhanur',
+10:'makara',
+11:'kumbha',
+12:'mina'
+}
 
 #MAIN CODE
 
@@ -118,6 +131,8 @@ tz_off = place['tz'] # Need to consider daylight saving etc too
 dst_bit = place['dst']
 
 swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
+
+sun_month_day = 16
 
 while 1:
   if year>start_year:
@@ -150,10 +165,33 @@ while 1:
   longitude_moon_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise+1)
 
   longitude_sun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
+  sun_month = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))];
   longitude_sun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
+  sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))];
 
   daily_motion_moon = (longitude_moon_tmrw-longitude_moon)%360
   daily_motion_sun = (longitude_sun_tmrw-longitude_sun)%360
+
+  if sun_month_tmrw!=sun_month:
+    #mAsa pirappu!
+    sun_month = sun_month_tmrw #sun moves into next rAsi before sunrise -- check rules!
+    sun_month_day = 1
+    month_remaining = 30-(longitude_sun%30.0);
+    month_end = month_remaining/daily_motion_sun*24.0
+    me = deci2sexa(t_rise+month_end);
+    if me[0]>=24:
+      suff='(+1)'
+      me[0] = me[0] - 24
+    else:
+      suff='\\hspace{2ex}'
+    sun_month_start_time = '(%02d:%02d:%s)' % (me[0],me[1],suff)
+  else:
+    sun_month_day = sun_month_day + 1
+    sun_month_start_time = ''
+  
+  month_data = '\\sunmonth{\\%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_start_time)
+  print '%%%s\n' % (month_data)
+  #print '%%%d\n' % (int(1+math.floor((longitude_sun)/30.0)));
 
   tithi = tithi_names[int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))]
   tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
