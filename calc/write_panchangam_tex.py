@@ -146,18 +146,18 @@ while 1:
   [_y,_m,_d, t_rise]=swisseph.revjul(jd_rise+tz_off/24.0)
   [_y,_m,_d, t_set]=swisseph.revjul(jd_set+tz_off/24.0)
 
-  lmoon=swisseph.calc_ut(jd_rise,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise)
-  lmoon_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise+1)
+  longitude_moon=swisseph.calc_ut(jd_rise,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise)
+  longitude_moon_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise+1)
 
-  lsun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
-  lsun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
+  longitude_sun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
+  longitude_sun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
 
-  dmc = (lmoon_tmrw-lmoon)%360
-  dmr = (lsun_tmrw-lsun)%360
+  daily_motion_moon = (longitude_moon_tmrw-longitude_moon)%360
+  daily_motion_sun = (longitude_sun_tmrw-longitude_sun)%360
 
-  tithi = tithi_names[int(1+math.floor((lmoon-lsun)%360 / 12.0))]
-  tithi_remaining = 12-(((lmoon-lsun)%360)%12)
-  t_end = tithi_remaining/(dmc-dmr)*24.0
+  tithi = tithi_names[int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))]
+  tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
+  t_end = tithi_remaining/(daily_motion_moon-daily_motion_sun)*24.0
 
   if t_end/24.0+jd_rise>jd_rise_tmrw:
     tithi_end = '\\ahoratram'
@@ -172,9 +172,9 @@ while 1:
     tithi_end = '%02d:%02d%s' % (te[0],te[1],suff)
 
 
-  nakshatram = nakshatra_names[int(1+math.floor((lmoon%360) /(360.0/27)))]
-  nakshatram_remaining = (360.0/27) - ((lmoon%360) % (360.0/27))
-  n_end = nakshatram_remaining/dmc*24
+  nakshatram = nakshatra_names[int(1+math.floor((longitude_moon%360) /(360.0/27)))]
+  nakshatram_remaining = (360.0/27) - ((longitude_moon%360) % (360.0/27))
+  n_end = nakshatram_remaining/daily_motion_moon*24
 
   if n_end/24.0+jd_rise>jd_rise_tmrw:
     nakshatram_end = '\\ahoratram'
