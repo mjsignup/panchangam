@@ -134,6 +134,8 @@ swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
 
 sun_month_day = 16
 
+month_start_after_set = 0
+
 while 1:
   if year>start_year:
     break
@@ -165,17 +167,27 @@ while 1:
   longitude_moon_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise+1)
 
   longitude_sun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
-  sun_month = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))];
+  longitude_sun_set=swisseph.calc_ut(jd_set,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_set)
+  sun_month_rise = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))];
+  sun_month = masa_names[int(1+math.floor(((longitude_sun_set)%360)/30.0))];
   longitude_sun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
   sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))];
 
   daily_motion_moon = (longitude_moon_tmrw-longitude_moon)%360
   daily_motion_sun = (longitude_sun_tmrw-longitude_sun)%360
 
-  if sun_month_tmrw!=sun_month:
+  if month_start_after_set==1:
+    sun_month_day = 0
+    month_start_after_set = 0
+
+  if sun_month_rise!=sun_month_tmrw:
+    if sun_month!=sun_month_tmrw:
+      month_start_after_set=1
+      sun_month_day = sun_month_day + 1
     #mAsa pirappu!
-    sun_month = sun_month_tmrw #sun moves into next rAsi before sunrise -- check rules!
-    sun_month_day = 1
+    #sun_month = sun_month_tmrw #sun moves into next rAsi before sunset -- check rules!
+    else:
+      sun_month_day = 1
     month_remaining = 30-(longitude_sun%30.0);
     month_end = month_remaining/daily_motion_sun*24.0
     me = deci2sexa(t_rise+month_end);
@@ -190,7 +202,7 @@ while 1:
     sun_month_start_time = ''
   
   month_data = '\\sunmonth{\\%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_start_time)
-  print '%%%s\n' % (month_data)
+  #print '%%%s\n' % (month_data)
   #print '%%%d\n' % (int(1+math.floor((longitude_sun)/30.0)));
 
   tithi = tithi_names[int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))]
@@ -265,7 +277,7 @@ while 1:
     for i in range(0,weekday):
       print "{}  &"
   
-  print '\caldata{%s}{%s}{%s}{%s}{%s}{%s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s} ' % (d,rise,madhya,rahu,yama,set,tithi,tithi_end,nakshatram,nakshatram_end)
+  print '%s\caldata{%s}{%s}{%s}{%s}{%s}{%s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s} ' % (month_data,d,rise,madhya,rahu,yama,set,tithi,tithi_end,nakshatram,nakshatram_end)
 
   if weekday==6:
     print "\\\\ \hline"
