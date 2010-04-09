@@ -1,4 +1,4 @@
-This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2009.10.29)  9 APR 2010 12:17
+This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2009.10.29)  9 APR 2010 12:29
 entering extended mode
  %&-line parsing enabled.
 **cal-2010-Chennai.tex
@@ -415,22 +415,22 @@ e 24.
 No file cal-2010-Chennai.aux.
 \openout1 = `cal-2010-Chennai.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
 LaTeX Font Info:    Font shape `EU1/ScalaSansLF(0)/m/n' will be
-(Font)              scaled to size 10.41817pt on input line 166.
+(Font)              scaled to size 10.41817pt on input line 175.
 -------------------- Geometry parameters
 paper: a4paper
 landscape: true
@@ -470,105 +470,105 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 166.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 175.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/ScalaSansLF(0)/m/n on input line 16
-6.
+(Font)                  OT1/lmr/m/n --> OT1/ScalaSansLF(0)/m/n on input line 17
+5.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> OT1/ScalaSansLF(0)/m/n on input line 1
-66.
+75.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/ScalaSansLF(0)/m/n --> OT1/ScalaSansLF(0)/bx/n on i
-nput line 166.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 166.
+nput line 175.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/lmr/bx/n --> OT1/ScalaSansLF(0)/bx/n on input line 
-166.
+175.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  OT1/lmr/bx/n --> OT1/ScalaSansLF(0)/bx/n on input line 
-166.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 166.
+175.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/lmss/m/n --> OT1/Sanskrit2003:script=deva(0)/m/n on
- input line 166.
+ input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/lmss/bx/n --> OT1/Sanskrit2003:script=deva(0)/m/n o
-n input line 166.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 166.
+n input line 175.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/lmr/m/it --> OT1/ScalaSansLF(0)/m/it on input line 
-166.
+175.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/lmr/bx/it --> OT1/ScalaSansLF(0)/m/it on input line
- 166.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 166.
+ 175.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 166.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 166.
+(Font)                  OT1/lmtt/m/n --> OT1/lmtt/m/n on input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/Sanskrit2003:script=deva(0)/m/n --> OT1/Sanskrit200
-3:script=deva(0)/bx/n on input line 166.
+3:script=deva(0)/bx/n on input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/ScalaSansLF(0)/m/it --> OT1/ScalaSansLF(0)/bx/it on
- input line 166.
+ input line 175.
 \symlegacymaths=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 166.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 166.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 166.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 166.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 166.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 166.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 166.
-LaTeX Font Info:    Redeclaring math accent \check on input line 166.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 166.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 166.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 166.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 166.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 166.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 175.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 175.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 175.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 175.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 175.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 175.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 175.
+LaTeX Font Info:    Redeclaring math accent \check on input line 175.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 175.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 175.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 175.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 175.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 175.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 166.
+(Font)              `operators' in the math version `normal' on input line 175.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/ScalaSansLF(0)/m/n --> EU1/ScalaSansLF(0)/m/n on in
-put line 166.
+put line 175.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 166.
+(Font)              `operators' in the math version `bold' on input line 175.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/ScalaSansLF(0)/bx/n --> EU1/ScalaSansLF(0)/m/n on i
-nput line 166.
+nput line 175.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  EU1/ScalaSansLF(0)/m/n --> EU1/ScalaSansLF(0)/m/n on in
-put line 166.
+put line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  EU1/ScalaSansLF(0)/m/n --> EU1/ScalaSansLF(0)/m/n on in
-put line 166.
+put line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/ScalaSansLF(0)/m/it --> EU1/ScalaSansLF(0)/m/it on 
-input line 166.
+input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/ScalaSansLF(0)/bx/n --> EU1/ScalaSansLF(0)/bx/n on 
-input line 166.
+input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/Sanskrit2003:script=deva(0)/m/n --> EU1/Sanskrit200
-3:script=deva(0)/m/n on input line 166.
+3:script=deva(0)/m/n on input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> EU1/lmtt/m/n on input line 166.
+(Font)                  OT1/lmtt/m/n --> EU1/lmtt/m/n on input line 175.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  EU1/ScalaSansLF(0)/m/n --> EU1/ScalaSansLF(0)/bx/n on i
-nput line 166.
+nput line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
 (Font)                  EU1/ScalaSansLF(0)/m/n --> EU1/ScalaSansLF(0)/bx/n on i
-nput line 166.
+nput line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/ScalaSansLF(0)/bx/it --> EU1/ScalaSansLF(0)/bx/it o
-n input line 166.
+n input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/Sanskrit2003:script=deva(0)/bx/n --> EU1/Sanskrit20
-03:script=deva(0)/bx/n on input line 166.
+03:script=deva(0)/bx/n on input line 175.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> EU1/lmtt/bx/n on input line 166.
+(Font)                  OT1/lmtt/m/n --> EU1/lmtt/bx/n on input line 175.
 (./2010-Chennai.tex
 LaTeX Font Info:    Font shape `EU1/ScalaSansLF(0)/m/n' will be
 (Font)              scaled to size 7.61145pt on input line 1.
