@@ -55,13 +55,12 @@
 \mbox{\scriptsize #3}
 }
 \newcommand{\sundata}[3]{%
-\mbox{{\sun\tiny\UParrow} \scriptsize #1}~\mbox{{\sun\tiny\DOWNarrow} \scriptsize  #2}\\
-\scriptsize
-\mbox{(\textsf{स} #3)}
+\mbox{{\sun\tiny\UParrow} \scriptsize #1}\\
+\mbox{{\sun\tiny\DOWNarrow} \scriptsize  #2}~\scriptsize{\mbox{(\textsf{स} #3)}}
 }
 \newcommand{\caldata}[7]{%
-\begin{minipage}{3.1cm}
-\begin{minipage}[t]{2.1cm}
+\begin{minipage}{3.15cm}
+\begin{minipage}[t]{1.95cm}
 #2\\
 %\mbox{}\\
 %\SunshineOpenCircled
@@ -70,10 +69,9 @@
 \mbox{#5}\\
 \mbox{\textsf{राहु~} #6}\\
 \mbox{\textsf{यम~} #7}\\
-\end{minipage}\begin{minipage}[c]{1.cm}
+\end{minipage}\begin{minipage}[c]{1.2cm}
 \vspace{.4ex}
-\begin{flushright} \textcolor{blue}{\font\x="Plantin Std" at 24 pt\x #1}
-\end{flushright}
+\hfill \mbox{\textcolor{blue}{\font\x="Minion Pro" at 32 pt\x #1}\hspace{-2mm}}
 \end{minipage}
 \end{minipage}
 }
