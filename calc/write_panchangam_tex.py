@@ -277,7 +277,7 @@ while 1:
     for i in range(0,weekday):
       print "{}  &"
   
-  print '%s\caldata{%s}{%s}{%s}{%s}{%s}{%s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s} ' % (month_data,d,rise,madhya,rahu,yama,set,tithi,tithi_end,nakshatram,nakshatram_end)
+  print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi,tithi_end,nakshatram,nakshatram_end,rahu,yama)
 
   if weekday==6:
     print "\\\\ \hline"

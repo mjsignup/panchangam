@@ -25,20 +25,23 @@
 
 \newcommand{\sunmonth}[3]{%
 }
-\newcommand{\caldata}[8]{%
+\newcommand{\sundata}[3]{%
+\mbox{{\sun\tiny\UParrow} \small #1}\\
+\mbox{{\sun\tiny\DOWNarrow} \small  #2}\\
+\scriptsize
+\mbox{(\textsf{स} #3)}
+}
+\newcommand{\caldata}[7]{%
 \begin{minipage}{2.6cm}
 \begin{minipage}[t]{1.6cm}
 \vspace{.2ex}
 %\mbox{}\\
 %\SunshineOpenCircled
-\mbox{{\sun\tiny\UParrow} \small #2}\\
-\mbox{{\sun\tiny\DOWNarrow} \small  #6}\\
-\scriptsize
-\mbox{(\textsf{स} #3)}\\
-\mbox{#7}\\
-\mbox{#8}\\
-\mbox{\textsf{राहु~} #4}\\
-\mbox{\textsf{यम~} #5}\\
+#3\\
+\mbox{#4}\\
+\mbox{#5}\\
+\mbox{\textsf{राहु~} #6}\\
+\mbox{\textsf{यम~} #7}\\
 \end{minipage}\begin{minipage}[c]{1.cm}
 \vspace{.4ex}
 \begin{flushright} \textcolor{blue}{\font\x="Plantin Std" at 24 pt\x #1}
