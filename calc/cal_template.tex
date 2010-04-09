@@ -23,18 +23,46 @@
 \setmainfont{Scala Sans LF}
 \setsansfont{Sanskrit 2003:script=deva}
 
+%%%%%%% Numbers and counters %%%%%%%
+\newcount\num
+\newcount\tempone \newcount\temptwo
+\newcommand{\devanumber}[1]{%
+\num=#1\devanumberrecurse}
+
+\newcommand{\devanumberrecurse}{%
+{\tempone=\num
+%  \showthe\tempone\ %
+\ifnum\num > 0 
+	\divide \num by 10%
+	\temptwo=\num \multiply\temptwo by -10%
+	\devanumberrecurse%
+% 	\\stage 2\ %
+% 	\showthe\temptwo\ %
+% 	temp1=\number\tempone\ %
+% 	num=\number\num\ %
+	\advance\tempone by \temptwo%
+	\devadigit
+\fi
+}}
+
+\newcommand{\devadigit}{%
+\ifcase\tempone०\or१\or२\or३\or४\or५\or६\or७\or८\or९\fi%\number\tempone%
+}
+
+%%%%%%%% Calendar display stuff %%%%%%%%%%%
 \newcommand{\sunmonth}[3]{%
+\footnotesize\textsf{#1~\devanumber{#2}}\\
+\mbox{\scriptsize #3}
 }
 \newcommand{\sundata}[3]{%
-\mbox{{\sun\tiny\UParrow} \small #1}\\
-\mbox{{\sun\tiny\DOWNarrow} \small  #2}\\
+\mbox{{\sun\tiny\UParrow} \scriptsize #1}~\mbox{{\sun\tiny\DOWNarrow} \scriptsize  #2}\\
 \scriptsize
 \mbox{(\textsf{स} #3)}
 }
 \newcommand{\caldata}[7]{%
-\begin{minipage}{2.6cm}
-\begin{minipage}[t]{1.6cm}
-\vspace{.2ex}
+\begin{minipage}{3.1cm}
+\begin{minipage}[t]{2.1cm}
+#2\\
 %\mbox{}\\
 %\SunshineOpenCircled
 #3\\
@@ -81,36 +109,62 @@
 \newcommand{\uttaraproshthapada}{उत्तरप्रोष्ठपदा}
 \newcommand{\revati}{रेवती}
 
+\newcommand{\shukla}{शुक्ल}
 \newcommand{\spra}{शुक्ल प्रथमा}
-\newcommand{\sdvi}{शुक्ल द्वितीया}
-\newcommand{\stri}{शुक्ल तृतीया}
-\newcommand{\scha}{शुक्ल चतुर्थी}
-\newcommand{\spanc}{शुक्ल पञ्चमी}
-\newcommand{\ssha}{शुक्ल षष्ठी}
-\newcommand{\ssap}{शुक्ल सप्तमी}
-\newcommand{\sasht}{शुक्ल अष्टमी}
-\newcommand{\snav}{शुक्ल नवमी}
-\newcommand{\sdas}{शुक्ल दशमी}
-\newcommand{\seka}{शुक्ल एकादशी}
-\newcommand{\sdva}{शुक्ल द्वादशी}
-\newcommand{\stra}{शुक्ल त्रयोदशी}
-\newcommand{\schaturdashi}{शुक्ल चतुर्दशी}
+\newcommand{\sdvi}{\shukla~द्वितीया}
+\newcommand{\stri}{\shukla~तृतीया}
+\newcommand{\scha}{\shukla~चतुर्थी}
+\newcommand{\spanc}{\shukla~पञ्चमी}
+\newcommand{\ssha}{\shukla~षष्ठी}
+\newcommand{\ssap}{\shukla~सप्तमी}
+\newcommand{\sasht}{\shukla~अष्टमी}
+\newcommand{\snav}{\shukla~नवमी}
+\newcommand{\sdas}{\shukla~दशमी}
+\newcommand{\seka}{\shukla~एकादशी}
+\newcommand{\sdva}{\shukla~द्वादशी}
+\newcommand{\stra}{\shukla~त्रयोदशी}
+\newcommand{\schaturdashi}{\shukla~चतुर्दशी}
+
 \newcommand{\purnima}{\fullmoon~पूर्णिमा}
-\newcommand{\kpra}{कृष्ण प्रथमा}
-\newcommand{\kdvi}{कृष्ण द्वितीया}
-\newcommand{\ktri}{कृष्ण तृतीया}
-\newcommand{\kcha}{कृष्ण चतुर्थी}
-\newcommand{\kpanc}{कृष्ण पञ्चमी}
-\newcommand{\ksha}{कृष्ण षष्ठी}
-\newcommand{\ksap}{कृष्ण सप्तमी}
-\newcommand{\kasht}{कृष्ण अष्टमी}
-\newcommand{\knav}{कृष्ण नवमी}
-\newcommand{\kdas}{कृष्ण दशमी}
-\newcommand{\keka}{कृष्ण एकादशी}
-\newcommand{\kdva}{कृष्ण द्वादशी}
-\newcommand{\ktra}{कृष्ण त्रयोदशी}
-\newcommand{\kchaturdashi}{कृष्ण चतुर्दशी}
+
+\newcommand{\krishna}{कृष्ण}
+\newcommand{\kpra}{\krishna~प्रथमा}
+\newcommand{\kdvi}{\krishna~द्वितीया}
+\newcommand{\ktri}{\krishna~तृतीया}
+\newcommand{\kcha}{\krishna~चतुर्थी}
+\newcommand{\kpanc}{\krishna~पञ्चमी}
+\newcommand{\ksha}{\krishna~षष्ठी}
+\newcommand{\ksap}{\krishna~सप्तमी}
+\newcommand{\kasht}{\krishna~अष्टमी}
+\newcommand{\knav}{\krishna~नवमी}
+\newcommand{\kdas}{\krishna~दशमी}
+\newcommand{\keka}{\krishna~एकादशी}
+\newcommand{\kdva}{\krishna~द्वादशी}
+\newcommand{\ktra}{\krishna~त्रयोदशी}
+\newcommand{\kchaturdashi}{\krishna~चतुर्दशी}
 \newcommand{\ama}{\newmoon~अमावस्या}
+
+\newcommand{\mesha}{मेष}
+\newcommand{\vrishabha}{वृषभ}
+\newcommand{\mithuna}{मिथुन}
+\newcommand{\karkataka}{कर्कटक}
+\newcommand{\simha}{सिंह}
+\newcommand{\kanya}{कन्या}
+\newcommand{\tula}{तुला}
+\newcommand{\vrishchika}{वृश्चिक}
+\newcommand{\dhanur}{धनुः}
+\newcommand{\makara}{मकर}
+\newcommand{\kumbha}{कुम्भ}
+\newcommand{\mina}{मीन}
+
+\newcommand{\SUNDAY}{SUN}
+\newcommand{\MONDAY}{MON}
+\newcommand{\TUESDAY}{TUE}
+\newcommand{\WEDNESDAY}{WED}
+\newcommand{\THURSDAY}{THU}
+\newcommand{\FRIDAY}{FRI}
+\newcommand{\SATURDAY}{SAT}
+
 \begin{document}
 \pagestyle{empty}
 \begin{center}

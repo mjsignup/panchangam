@@ -196,14 +196,12 @@ while 1:
       me[0] = me[0] - 24
     else:
       suff='\\hspace{2ex}'
-    sun_month_end_time = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} (%02d:%02d%s)}' % (last_sun_month,me[0],me[1],suff)
+    sun_month_end_time = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %02d:%02d%s}' % (last_sun_month,me[0],me[1],suff)
   else:
     sun_month_day = sun_month_day + 1
     sun_month_end_time = ''
   
   month_data = '\\sunmonth{\\%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_end_time)
-  #print '%%%s\n' % (month_data)
-  #print '%%%d\n' % (int(1+math.floor((longitude_sun)/30.0)));
 
   tithi = tithi_names[int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))]
   tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
@@ -269,9 +267,9 @@ while 1:
 
     #Begin tabular
     print '\\begin{tabular}{|c|c|c|c|c|c|c|}'
-    print '\multicolumn{7}{c}{\Large \\bfseries %s %s}\\\\' % (month[m],y)
+    print '\multicolumn{7}{c}{\Large \\bfseries %s %s}\\\\[3mm]' % (month[m],y)
     print '\hline'
-    print '\\textbf{SUN} & \\textbf{MON} & \\textbf{TUE} & \\textbf{WED} & \\textbf{THU} & \\textbf{FRI} & \\textbf{SAT} \\\\ \hline'
+    print '\\textbf{\\SUNDAY} & \\textbf{\\MONDAY} & \\textbf{\\TUESDAY} & \\textbf{\\WEDNESDAY} & \\textbf{\\THURSDAY} & \\textbf{\\FRIDAY} & \\textbf{\\SATURDAY} \\\\ \hline'
 
     #Blanks for previous weekdays
     for i in range(0,weekday):
