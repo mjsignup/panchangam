@@ -132,7 +132,7 @@ dst_bit = place['dst']
 
 swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
 
-sun_month_day = 16
+sun_month_day = 16 #this has to be done in a generic fashion, by scanning for the transit into dhanur of the last year!
 
 month_start_after_set = 0
 
@@ -196,12 +196,12 @@ while 1:
       me[0] = me[0] - 24
     else:
       suff='\\hspace{2ex}'
-    sun_month_start_time = '(%02d:%02d:%s)' % (me[0],me[1],suff)
+    sun_month_end_time = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} (%02d:%02d%s)}' % (last_sun_month,me[0],me[1],suff)
   else:
     sun_month_day = sun_month_day + 1
-    sun_month_start_time = ''
+    sun_month_end_time = ''
   
-  month_data = '\\sunmonth{\\%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_start_time)
+  month_data = '\\sunmonth{\\%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_end_time)
   #print '%%%s\n' % (month_data)
   #print '%%%d\n' % (int(1+math.floor((longitude_sun)/30.0)));
 
@@ -286,6 +286,8 @@ while 1:
 
   jd = jd + 1
   year = swisseph.revjul(jd)[0]
+
+  last_sun_month = sun_month
  
   # For debugging specific dates
   #if m==4 and d==10:

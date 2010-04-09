@@ -1,4 +1,4 @@
-This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2009.10.29)  9 APR 2010 11:09
+This is XeTeXk, Version 3.141592-2.2-0.996-patch2 (Web2C 7.5.6) (format=xelatex 2009.10.29)  9 APR 2010 11:25
 entering extended mode
  %&-line parsing enabled.
 **cal-2010-London.tex
@@ -9408,6 +9408,6 @@ Here is how much of TeX's memory you used:
  9779 multiletter control sequences out of 10000+50000
  10471 words of font info for 61 fonts, out of 1200000 for 2000
  597 hyphenation exceptions out of 8191
- 28i,12n,48p,325b,358s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 28i,12n,48p,358b,358s stack positions out of 5000i,500n,6000p,200000b,5000s
 
 Output written on cal-2010-London.pdf (13 pages).
