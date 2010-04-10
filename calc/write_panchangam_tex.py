@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 import sys
 import math
 import swisseph
@@ -39,81 +40,81 @@ def print_time (d):
 yamakandam_octets  = [5,4,3,2,1,7,6]
 rahukalam_octets = [8,2,7,5,6,4,3]
 #wday = {'Mon':1, 'Tue':2,'Wed':3, 'Thu':4, 'Fri':5, 'Sat':6, 'Sun':0}
+
 month = {1:'JANUARY', 2:'FEBRUARY', 3:'MARCH', 4:'APRIL', 5:'MAY', 6:'JUNE', 7:'JULY', 8:'AUGUST', 9:'SEPTEMBER', 10:'OCTOBER', 11: 'NOVEMBER', 12:'DECEMBER'}
-tithi_names={
-1:'spra',
-2:'sdvi',
-3:'stri',
-4:'scha',
-5:'spanc',
-6:'ssha',
-7:'ssap',
-8:'sasht',
-9:'snav',
-10:'sdas',
-11:'seka',
-12:'sdva',
-13:'stra',
-14:'schaturdashi',
-15:'purnima',
-16:'kpra',
-17:'kdvi',
-18:'ktri',
-19:'kcha',
-20:'kpanc',
-21:'ksha',
-22:'ksap',
-23:'kasht',
-24:'knav',
-25:'kdas',
-26:'keka',
-27:'kdva',
-28:'ktra',
-29:'kchaturdashi',
-30:'ama'
+
+nakshatra_names={1:'अश्विनी',
+2:'अपभरणी',
+3:'कृत्तिका',
+4:'रोहिणी',
+5:'मृगशीर्ष',
+6:'आर्द्रा',
+7:'पुनर्वसू',
+8:'पुष्य',
+9:'आश्रेषा',
+10:'मघा',
+11:'पूर्वफल्गुनी',
+12:'उत्तरफल्गुनी',
+13:'हस्त',
+14:'चित्रा',
+15:'स्वाति',
+16:'विशाखा',
+17:'अनूराधा',
+18:'ज्येष्ठा',
+19:'मूला',
+20:'पूर्वाषाढा',
+21:'उत्तराषाढा',
+22:'श्रवण',
+23:'श्रविष्ठा',
+24:'शतभिषक्',
+25:'प्रोष्ठपदा',
+26:'उत्तरप्रोष्ठपदा',
+27:'रेवती'}
+
+masa_names={1:'मेष',
+2:'वृषभ',
+3:'मिथुन',
+4:'कर्कटक',
+5:'सिंह',
+6:'कन्या',
+7:'तुला',
+8:'वृश्चिक',
+9:'धनुः',
+10:'मकर',
+11:'कुम्भ',
+12:'मीन'
 }
 
-nakshatra_names={1:'ashwini',
-2:'apabharani',
-3:'krittika',
-4:'rohini',
-5:'mrigashirsha',
-6:'ardra',
-7:'punarvasu',
-8:'pushya',
-9:'ashresha',
-10:'magha',
-11:'purvaphalguni',
-12:'uttaraphalguni',
-13:'hasta',
-14:'chitra',
-15:'svati',
-16:'vishakha',
-17:'anuradha',
-18:'jyeshtha',
-19:'mula',
-20:'purvashadha',
-21:'uttarashadha',
-22:'shravana',
-23:'shravishtha',
-24:'shatabhishak',
-25:'proshthapada',
-26:'uttaraproshthapada',
-27:'revati'}
-
-masa_names={1:'mesha',
-2:'vrishabha',
-3:'mithuna',
-4:'karkataka',
-5:'simha',
-6:'kanya',
-7:'tula',
-8:'vrishchika',
-9:'dhanur',
-10:'makara',
-11:'kumbha',
-12:'mina'
-}
+tithi_names={1:'shukla~प्रथमा',
+2:'shukla~द्वितीया',
+3:'shukla~तृतीया',
+4:'shukla~चतुर्थी',
+5:'shukla~पञ्चमी',
+6:'shukla~षष्ठी',
+7:'shukla~सप्तमी',
+8:'shukla~अष्टमी',
+9:'shukla~नवमी',
+10:'shukla~दशमी',
+11:'shukla~एकादशी',
+12:'shukla~द्वादशी',
+13:'shukla~त्रयोदशी',
+14:'shukla~चतुर्दशी',
+15:'fullmoon~पूर्णिमा',
+16:'krishna~प्रथमा',
+17:'krishna~द्वितीया',
+18:'krishna~तृतीया',
+19:'krishna~चतुर्थी',
+20:'krishna~पञ्चमी',
+21:'krishna~षष्ठी',
+22:'krishna~सप्तमी',
+23:'krishna~अष्टमी',
+24:'krishna~नवमी',
+25:'krishna~दशमी',
+26:'krishna~एकादशी',
+27:'krishna~द्वादशी',
+28:'krishna~त्रयोदशी',
+29:'krishna~चतुर्दशी',
+30:'newmoon~अमावस्या'}
 
 #MAIN CODE
 
@@ -196,19 +197,19 @@ while 1:
       me[0] = me[0] - 24
     else:
       suff='\\hspace{2ex}'
-    sun_month_end_time = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %02d:%02d%s}' % (last_sun_month,me[0],me[1],suff)
+    sun_month_end_time = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %02d:%02d%s}' % (last_sun_month,me[0],me[1],suff)
   else:
     sun_month_day = sun_month_day + 1
     sun_month_end_time = ''
   
-  month_data = '\\sunmonth{\\%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_end_time)
+  month_data = '\\sunmonth{%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_end_time)
 
   tithi = tithi_names[int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))]
   tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
   t_end = tithi_remaining/(daily_motion_moon-daily_motion_sun)*24.0
 
   if t_end/24.0+jd_rise>jd_rise_tmrw:
-    tithi_end = '\\ahoratram'
+    tithi_end = '\\textsf{अहोरात्रम्}'
   else:
     te=deci2sexa(t_rise+t_end)
     if te[0]>=24:
@@ -225,7 +226,7 @@ while 1:
   n_end = nakshatram_remaining/daily_motion_moon*24
 
   if n_end/24.0+jd_rise>jd_rise_tmrw:
-    nakshatram_end = '\\ahoratram'
+    nakshatram_end = '\\textsf{अहोरात्रम्}'
   else:
     ne=deci2sexa(t_rise+n_end)
     if ne[0]>=24:
@@ -269,13 +270,14 @@ while 1:
     print '\\begin{tabular}{|c|c|c|c|c|c|c|}'
     print '\multicolumn{7}{c}{\Large \\bfseries %s %s}\\\\[3mm]' % (month[m],y)
     print '\hline'
-    print '\\textbf{\\SUNDAY} & \\textbf{\\MONDAY} & \\textbf{\\TUESDAY} & \\textbf{\\WEDNESDAY} & \\textbf{\\THURSDAY} & \\textbf{\\FRIDAY} & \\textbf{\\SATURDAY} \\\\ \hline'
+    print '\\textbf{SUN} & \\textbf{MON} & \\textbf{TUE} & \\textbf{WED} & \\textbf{THU} & \\textbf{FRI} & \\textbf{SAT} \\\\ \hline'
+    #print '\\textbf{भानु} & \\textbf{इन्दु} & \\textbf{भौम} & \\textbf{बुध} & \\textbf{गुरु} & \\textbf{भृगु} & \\textbf{स्थिर} \\\\ \hline'
 
     #Blanks for previous weekdays
     for i in range(0,weekday):
       print "{}  &"
   
-  print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi,tithi_end,nakshatram,nakshatram_end,rahu,yama)
+  print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi,tithi_end,nakshatram,nakshatram_end,rahu,yama)
 
   if weekday==6:
     print "\\\\ \hline"
@@ -287,6 +289,7 @@ while 1:
 
   last_sun_month = sun_month
  
+  print '%मकर'
   # For debugging specific dates
   #if m==4 and d==10:
   #  break
