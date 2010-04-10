@@ -4,6 +4,8 @@ import sys
 import math
 import swisseph
 from datetime import *
+import pytz
+from pytz import timezone
 
 # FUNCTION DEFINITIONS
 
@@ -119,7 +121,7 @@ tithi_names={1:'shukla~प्रथमा',
 #MAIN CODE
 
 #place = {'name':'Chennai','latitude':sexa2deci(13,4),'longitude':sexa2deci(80,17)}
-place = {'name':sys.argv[1], 'latitude':sexastr2deci(sys.argv[2]), 'longitude':sexastr2deci(sys.argv[3]), 'tz':float(sys.argv[4]), 'dst':float(sys.argv[5])}
+place = {'name':sys.argv[1], 'latitude':sexastr2deci(sys.argv[2]), 'longitude':sexastr2deci(sys.argv[3]), 'tz':sys.argv[4]}
 
 start_year = 2010
 year = 2010
@@ -128,8 +130,6 @@ jd_start=jd
 start_date = datetime(year=year,month=1,day=1,hour=0,minute=0,second=0)
 
 day_of_year=0
-tz_off = place['tz'] # Need to consider daylight saving etc too
-dst_bit = place['dst']
 
 swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
 
@@ -147,15 +147,10 @@ while 1:
   [y,m,d,t] = swisseph.revjul(jd)
   weekday = (swisseph.day_of_week(jd) + 1)%7 #swisseph has Mon = 0, non-intuitively!
 
-
-  #ADJUST FOR EUROPEAN DST, others will be more complex!
-
-  if dst_bit!=0:
-    if m==3 and d>24 and weekday==0:
-      tz_off=tz_off+1
-
-    if m==10 and d>24 and weekday==0:
-      tz_off=tz_off-1
+  loc_dt = pytz.utc.localize(datetime(y,m, d, 6, 0, 0)) #checking @ 6am UTC, should improve, esp. for DST etc - check @ 4/5/6am local?
+  x=loc_dt.astimezone(timezone(place['tz'])) #convert to timezone
+  utc_off=datetime.utcoffset(x) #compute offset from UTC
+  tz_off=utc_off.seconds/3600.0 #hours...
 
   jd_rise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=place['longitude'],lat=place['latitude'],rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
   jd_rise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,lon=place['longitude'],lat=place['latitude'],rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
@@ -288,8 +283,7 @@ while 1:
   year = swisseph.revjul(jd)[0]
 
   last_sun_month = sun_month
- 
-  print '%मकर'
+
   # For debugging specific dates
   #if m==4 and d==10:
   #  break

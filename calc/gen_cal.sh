@@ -1,7 +1,7 @@
 #!/bin/bash
-if [[ $# -ne 5 ]]
+if [[ $# -ne 4 ]]
 then
-  echo "Usage: $0 <city name> <lat> <lon> <tz offset> <dst - 0/1>"
+  echo "Usage: $0 <city name> <lat> <lon> <tz name>"
   exit 1
 fi
 
@@ -9,11 +9,10 @@ city_name=$1
 lat=$2
 lon=$3
 tz=$4
-dst=$5
 
 y=2010
 
-./write_panchangam_tex.py $city_name $lat $lon $tz $dst > $y-$city_name.tex
+./write_panchangam_tex.py $city_name $lat $lon $tz > $y-$city_name.tex
 
 cat cal_template.tex | sed "s/FILENAME/$y-$city_name.tex/;s/YEAR/$y/;s/CITY/$city_name/" > cal-$y-$city_name.tex
 
