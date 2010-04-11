@@ -147,10 +147,8 @@ while 1:
   [y,m,d,t] = swisseph.revjul(jd)
   weekday = (swisseph.day_of_week(jd) + 1)%7 #swisseph has Mon = 0, non-intuitively!
 
-  loc_dt = pytz.utc.localize(datetime(y,m, d, 6, 0, 0)) #checking @ 6am UTC, should improve, esp. for DST etc - check @ 4/5/6am local?
-  x=loc_dt.astimezone(timezone(place['tz'])) #convert to timezone
-  utc_off=datetime.utcoffset(x) #compute offset from UTC
-  tz_off=utc_off.seconds/3600.0 #hours...
+  local_time = pytz.timezone(place['tz']).localize(datetime(y,m, d, 6, 0, 0)) #checking @ 6am local - can we do any better?
+  tz_off=datetime.utcoffset(local_time).seconds/3600.0 #compute offset from UTC
 
   jd_rise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=place['longitude'],lat=place['latitude'],rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
   jd_rise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,lon=place['longitude'],lat=place['latitude'],rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
