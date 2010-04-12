@@ -199,36 +199,36 @@ while 1:
 
   tithi = tithi_names[int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))]
   tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
-  t_end = tithi_remaining/(daily_motion_moon-daily_motion_sun)*24.0
+  tithi_end = tithi_remaining/(daily_motion_moon-daily_motion_sun)*24.0
 
-  if t_end/24.0+jd_rise>jd_rise_tmrw:
-    tithi_end = '\\textsf{अहोरात्रम्}'
+  if tithi_end/24.0+jd_rise>jd_rise_tmrw:
+    tithi_end_str = '\\textsf{अहोरात्रम्}'
   else:
-    te=deci2sexa(t_rise+t_end)
+    te=deci2sexa(t_rise+tithi_end)
     if te[0]>=24:
       suff = '(+1)'
       te[0] = te[0]-24
     else:
       suff = '\\hspace{2ex}'
   
-    tithi_end = '%02d:%02d%s' % (te[0],te[1],suff)
+    tithi_end_str = '%02d:%02d%s' % (te[0],te[1],suff)
 
 
   nakshatram = nakshatra_names[int(1+math.floor((longitude_moon%360) /(360.0/27)))]
   nakshatram_remaining = (360.0/27) - ((longitude_moon%360) % (360.0/27))
-  n_end = nakshatram_remaining/daily_motion_moon*24
+  nakshatram_end = nakshatram_remaining/daily_motion_moon*24
 
-  if n_end/24.0+jd_rise>jd_rise_tmrw:
-    nakshatram_end = '\\textsf{अहोरात्रम्}'
+  if nakshatram_end/24.0+jd_rise>jd_rise_tmrw:
+    nakshatram_end_str = '\\textsf{अहोरात्रम्}'
   else:
-    ne=deci2sexa(t_rise+n_end)
+    ne=deci2sexa(t_rise+nakshatram_end)
     if ne[0]>=24:
       ne[0] = ne[0]-24
       suff = '(+1)'
     else:
       suff='\\hspace{2ex}'
   
-    nakshatram_end = '%02d:%02d%s' % (ne[0],ne[1],suff)
+    nakshatram_end_str = '%02d:%02d%s' % (ne[0],ne[1],suff)
 
   [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
   [sh, sm, ss] = deci2sexa(t_set) #set_t hour, set minute
@@ -270,7 +270,7 @@ while 1:
     for i in range(0,weekday):
       print "{}  &"
   
-  print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi,tithi_end,nakshatram,nakshatram_end,rahu,yama)
+  print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi,tithi_end_str,nakshatram,nakshatram_end_str,rahu,yama)
 
   if weekday==6:
     print "\\\\ \hline"
