@@ -14,11 +14,9 @@ y=2010
 
 echo -ne "Computing panchangam for $city_name ($lat,$lon) - $tz... "
 
-./write_panchangam_tex.py $city_name $lat $lon $tz > $y-$city_name.tex
+./write_panchangam_tex.py $city_name $lat $lon $tz > cal-$y-$city_name.tex
 
 echo -ne "done. "
-
-cat cal_template.tex | sed "s/FILENAME/$y-$city_name.tex/;s/YEAR/$y/;s/CITY/$city_name/" > cal-$y-$city_name.tex
 
 echo -ne "Generating PDF... (log --> /tmp/cal-$y-$city_name.texlog)"
 
@@ -28,7 +26,7 @@ echo done
 
 mkdir -p data
 
-mv $y-* cal-* data/
+mv cal-* data/
 
 mkdir -p pdf
 

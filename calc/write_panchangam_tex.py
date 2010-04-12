@@ -120,8 +120,10 @@ tithi_names={1:'shukla~प्रथमा',
 
 #MAIN CODE
 
-#place = {'name':'Chennai','latitude':sexa2deci(13,4),'longitude':sexa2deci(80,17)}
-place = {'name':sys.argv[1], 'latitude':sexastr2deci(sys.argv[2]), 'longitude':sexastr2deci(sys.argv[3]), 'tz':sys.argv[4]}
+city_name = sys.argv[1]
+latitude = sexastr2deci(sys.argv[2])
+longitude = sexastr2deci(sys.argv[3])
+tz = sys.argv[4]
 
 start_year = 2010
 year = 2010
@@ -137,6 +139,18 @@ sun_month_day = 16 #this has to be done in a generic fashion, by scanning for th
 
 month_start_after_set = 0
 
+template_file=open('cal_template.tex')
+template_lines=template_file.readlines()
+for i in range(0,len(template_lines)-3):
+  print template_lines[i][:-1]
+
+
+print '\\mbox{}'
+print '{\\font\\x="Warnock Pro" at 60 pt\\x %d\\\\[0.5cm]}' % year
+print '\\mbox{}'
+print '{\\font\\x="Warnock Pro" at 48 pt\\x \\uppercase{%s}\\\\[0.3cm]}' % city_name
+print '\hrule'
+
 while 1:
   if year>start_year:
     break
@@ -147,12 +161,12 @@ while 1:
   [y,m,d,t] = swisseph.revjul(jd)
   weekday = (swisseph.day_of_week(jd) + 1)%7 #swisseph has Mon = 0, non-intuitively!
 
-  local_time = pytz.timezone(place['tz']).localize(datetime(y,m, d, 6, 0, 0)) #checking @ 6am local - can we do any better?
+  local_time = pytz.timezone(tz).localize(datetime(y,m, d, 6, 0, 0)) #checking @ 6am local - can we do any better?
   tz_off=datetime.utcoffset(local_time).seconds/3600.0 #compute offset from UTC
 
-  jd_rise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=place['longitude'],lat=place['latitude'],rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
-  jd_rise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,lon=place['longitude'],lat=place['latitude'],rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
-  jd_set =swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=place['longitude'],lat=place['latitude'],rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
+  jd_rise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
+  jd_rise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
+  jd_set =swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
 
   [_y,_m,_d, t_rise]=swisseph.revjul(jd_rise+tz_off/24.0)
   [_y,_m,_d, t_set]=swisseph.revjul(jd_set+tz_off/24.0)
@@ -285,7 +299,11 @@ while 1:
   # For debugging specific dates
   #if m==4 and d==10:
   #  break
-  
+
 print "\\\\ \hline"
 print '\end{tabular}'
 print '\n\n%\clearpage'
+
+#print '\\input{%d-%s.tex}' % (year,city_name)
+print template_lines[-2][:-1]
+print template_lines[-1][:-1]
