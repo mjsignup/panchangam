@@ -38,6 +38,23 @@ def print_time (d):
   t=d.timetuple()
   return '%02d:%02d' % (t[3],t[4])
 
+def get_last_dhanur_transit (jd):
+  jd_dhanur = jd-16
+  return jd_dhanur
+
+def print_end_time (end_time, day_night_length, rise_time):
+  if end_time/24.0>day_night_length:
+    end_time_str = '\\textsf{अहोरात्रम्}'
+  else:
+    te=deci2sexa(rise_time+end_time)
+    if te[0]>=24:
+      suff = '(+1)'
+      te[0] = te[0]-24
+    else:
+      suff = '\\hspace{2ex}'
+    end_time_str = '%02d:%02d%s' % (te[0],te[1],suff)
+  return end_time_str
+
 #USEFUL 'constants'
 yamakandam_octets  = [5,4,3,2,1,7,6]
 rahukalam_octets = [8,2,7,5,6,4,3]
@@ -87,36 +104,22 @@ masa_names={1:'मेष',
 12:'मीन'
 }
 
-tithi_names={1:'shukla~प्रथमा',
-2:'shukla~द्वितीया',
-3:'shukla~तृतीया',
-4:'shukla~चतुर्थी',
-5:'shukla~पञ्चमी',
-6:'shukla~षष्ठी',
-7:'shukla~सप्तमी',
-8:'shukla~अष्टमी',
-9:'shukla~नवमी',
-10:'shukla~दशमी',
-11:'shukla~एकादशी',
-12:'shukla~द्वादशी',
-13:'shukla~त्रयोदशी',
-14:'shukla~चतुर्दशी',
-15:'fullmoon~पूर्णिमा',
-16:'krishna~प्रथमा',
-17:'krishna~द्वितीया',
-18:'krishna~तृतीया',
-19:'krishna~चतुर्थी',
-20:'krishna~पञ्चमी',
-21:'krishna~षष्ठी',
-22:'krishna~सप्तमी',
-23:'krishna~अष्टमी',
-24:'krishna~नवमी',
-25:'krishna~दशमी',
-26:'krishna~एकादशी',
-27:'krishna~द्वादशी',
-28:'krishna~त्रयोदशी',
-29:'krishna~चतुर्दशी',
-30:'newmoon~अमावस्या'}
+tithi_names={1:'~प्रथमा',
+2:'~द्वितीया',
+3:'~तृतीया',
+4:'~चतुर्थी',
+5:'~पञ्चमी',
+6:'~षष्ठी',
+7:'~सप्तमी',
+8:'~अष्टमी',
+9:'~नवमी',
+10:'~दशमी',
+11:'~एकादशी',
+12:'~द्वादशी',
+13:'~त्रयोदशी',
+14:'~चतुर्दशी',
+15:'~पूर्णिमा',
+30:'~अमावस्या'}
 
 #MAIN CODE
 
@@ -125,8 +128,8 @@ latitude = sexastr2deci(sys.argv[2])
 longitude = sexastr2deci(sys.argv[3])
 tz = sys.argv[4]
 
-start_year = 2010
-year = 2010
+start_year = int(sys.argv[5])
+year = start_year
 jd=swisseph.julday(year,1,1,0)
 jd_start=jd
 start_date = datetime(year=year,month=1,day=1,hour=0,minute=0,second=0)
@@ -211,38 +214,32 @@ while 1:
   
   month_data = '\\sunmonth{%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_end_time)
 
-  tithi = tithi_names[int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))]
+  tithi = int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))
+  if tithi%15 != 0:
+    if tithi<15:
+      paksha = 'shukla'
+    else:
+      paksha = 'krishna'
+  else:
+    if tithi == 15:
+      paksha = 'fullmoon'
+    elif tithi == 30:
+      paksha = 'newmoon'
+
+  if tithi%15 == 0:
+    tithi_str = paksha + tithi_names[tithi]
+  else:
+    tithi_str = paksha + tithi_names[tithi%15]
+  
   tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
   tithi_end = tithi_remaining/(daily_motion_moon-daily_motion_sun)*24.0
-
-  if tithi_end/24.0+jd_rise>jd_rise_tmrw:
-    tithi_end_str = '\\textsf{अहोरात्रम्}'
-  else:
-    te=deci2sexa(t_rise+tithi_end)
-    if te[0]>=24:
-      suff = '(+1)'
-      te[0] = te[0]-24
-    else:
-      suff = '\\hspace{2ex}'
-  
-    tithi_end_str = '%02d:%02d%s' % (te[0],te[1],suff)
+  tithi_end_str = print_end_time(tithi_end,jd_rise_tmrw-jd_rise,t_rise)
 
 
-  nakshatram = nakshatra_names[int(1+math.floor((longitude_moon%360) /(360.0/27)))]
+  nakshatram_str = nakshatra_names[int(1+math.floor((longitude_moon%360) /(360.0/27)))]
   nakshatram_remaining = (360.0/27) - ((longitude_moon%360) % (360.0/27))
   nakshatram_end = nakshatram_remaining/daily_motion_moon*24
-
-  if nakshatram_end/24.0+jd_rise>jd_rise_tmrw:
-    nakshatram_end_str = '\\textsf{अहोरात्रम्}'
-  else:
-    ne=deci2sexa(t_rise+nakshatram_end)
-    if ne[0]>=24:
-      ne[0] = ne[0]-24
-      suff = '(+1)'
-    else:
-      suff='\\hspace{2ex}'
-  
-    nakshatram_end_str = '%02d:%02d%s' % (ne[0],ne[1],suff)
+  nakshatram_end_str = print_end_time(nakshatram_end,jd_rise_tmrw-jd_rise,t_rise)
 
   [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
   [sh, sm, ss] = deci2sexa(t_set) #set_t hour, set minute
@@ -284,7 +281,7 @@ while 1:
     for i in range(0,weekday):
       print "{}  &"
   
-  print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi,tithi_end_str,nakshatram,nakshatram_end_str,rahu,yama)
+  print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,rahu,yama)
 
   if weekday==6:
     print "\\\\ \hline"
