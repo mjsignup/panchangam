@@ -38,63 +38,31 @@ def print_time (d):
   t=d.timetuple()
   return '%02d:%02d' % (t[3],t[4])
 
-def get_last_dhanur_transit (jd_start,latitude,longitude,tz):
-  month_start_after_set = 0
-  sun_month_day = 15 #random start value
-  for jd in range(jd_start-30,jd_start):
+def get_last_dhanur_transit (jd_start,latitude,longitude):
+  swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
+  for d in range(-25,0):
+    jd = jd_start + d
     [y,m,d,t] = swisseph.revjul(jd)
-  
-    local_time = pytz.timezone(tz).localize(datetime(y,m, d, 6, 0, 0)) #checking @ 6am local - can we do any better?
-    tz_off=datetime.utcoffset(local_time).seconds/3600.0 #compute offset from UTC
   
     jd_rise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
     jd_rise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
     jd_set =swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
   
-    [_y,_m,_d, t_rise]=swisseph.revjul(jd_rise+tz_off/24.0)
-    [_y,_m,_d, t_set]=swisseph.revjul(jd_set+tz_off/24.0)
-     
     longitude_sun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
     longitude_sun_set=swisseph.calc_ut(jd_set,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_set)
-    sun_month_rise = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))];
-    sun_month = masa_names[int(1+math.floor(((longitude_sun_set)%360)/30.0))];
+    sun_month_rise = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))]
+    sun_month = masa_names[int(1+math.floor(((longitude_sun_set)%360)/30.0))]
     longitude_sun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
-    sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))];
-  
-    daily_motion_sun = (longitude_sun_tmrw-longitude_sun)%360
-  
-    #Solar month calculations
-    if month_start_after_set==1:
-      sun_month_day = 0
-      month_start_after_set = 0
-  
+    sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))]
+
+    #print '%f:%d-%d-%d: rise=%s, set=%s, tmrw=%s' %(jd,y,m,d,sun_month_rise,sun_month,sun_month_tmrw)
+
     if sun_month_rise!=sun_month_tmrw:
       if sun_month!=sun_month_tmrw:
-        month_start_after_set=1
-        sun_month_day = sun_month_day + 1
-      #mAsa pirappu!
-      #sun_month = sun_month_tmrw #sun moves into next rAsi before sunset -- check rules!
+        return jd+1
       else:
-        sun_month_day = 1
-      month_remaining = 30-(longitude_sun%30.0);
-      month_end = month_remaining/daily_motion_sun*24.0
-      me = deci2sexa(t_rise+month_end);
-      if me[0]>=24:
-        suff='(+1)'
-        me[0] = me[0] - 24
-      else:
-        suff='\\hspace{2ex}'
-      sun_month_end_time = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %02d:%02d%s}' % (last_sun_month,me[0],me[1],suff)
-    else:
-      sun_month_day = sun_month_day + 1
-      sun_month_end_time = ''
-    
-    if sun_month_day == 1:
-      jd_dhanur = jd
-      break
-    
-  return jd_dhanur
-
+        return jd
+  
 def print_end_time (end_time, day_night_length, rise_time):
   if end_time/24.0>day_night_length:
     end_time_str = '\\textsf{अहोरात्रम्}'
@@ -190,7 +158,8 @@ def main():
   
   swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
   
-  sun_month_day = 16 #this has to be done in a generic fashion, by scanning for the transit into dhanur of the last year!
+  sun_month_day = jd-get_last_dhanur_transit(jd,latitude,longitude)
+  #this has to be done in a generic fashion, by scanning for the transit into dhanur of the last year!
   
   month_start_after_set = 0
   
@@ -206,10 +175,8 @@ def main():
   print '{\\font\\x="Warnock Pro" at 48 pt\\x \\uppercase{%s}\\\\[0.3cm]}' % city_name
   print '\hrule'
   
-  while 1:
-    if year>start_year:
-      break
-  
+  while year<=start_year:
+
     day_of_year = day_of_year + 1  
   
     [y,m,d,t] = swisseph.revjul(jd)
@@ -230,10 +197,10 @@ def main():
   
     longitude_sun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
     longitude_sun_set=swisseph.calc_ut(jd_set,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_set)
-    sun_month_rise = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))];
-    sun_month = masa_names[int(1+math.floor(((longitude_sun_set)%360)/30.0))];
+    sun_month_rise = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))]
+    sun_month = masa_names[int(1+math.floor(((longitude_sun_set)%360)/30.0))]
     longitude_sun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
-    sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))];
+    sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))]
   
     daily_motion_moon = (longitude_moon_tmrw-longitude_moon)%360
     daily_motion_sun = (longitude_sun_tmrw-longitude_sun)%360
@@ -251,9 +218,9 @@ def main():
       #sun_month = sun_month_tmrw #sun moves into next rAsi before sunset -- check rules!
       else:
         sun_month_day = 1
-      month_remaining = 30-(longitude_sun%30.0);
+      month_remaining = 30-(longitude_sun%30.0)
       month_end = month_remaining/daily_motion_sun*24.0
-      me = deci2sexa(t_rise+month_end);
+      me = deci2sexa(t_rise+month_end)
       if me[0]>=24:
         suff='(+1)'
         me[0] = me[0] - 24
@@ -265,6 +232,7 @@ def main():
       sun_month_end_time = ''
     
     month_data = '\\sunmonth{%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_end_time)
+    #print '%%@%f:%d-%d-%d: rise=%s, set=%s, tmrw=%s' %(jd,y,m,d,sun_month_rise,sun_month,sun_month_tmrw)
   
     #Compute tithi details
     tithi = int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))
