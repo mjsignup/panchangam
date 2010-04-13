@@ -297,7 +297,8 @@ while 1:
   #if m==4 and d==10:
   #  break
 
-print "\\\\ \hline"
+if weekday!=6:
+ print "\\\\ \hline"
 print '\end{tabular}'
 print '\n\n%\clearpage'
 
