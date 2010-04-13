@@ -38,8 +38,61 @@ def print_time (d):
   t=d.timetuple()
   return '%02d:%02d' % (t[3],t[4])
 
-def get_last_dhanur_transit (jd):
-  jd_dhanur = jd-16
+def get_last_dhanur_transit (jd_start,latitude,longitude,tz):
+  month_start_after_set = 0
+  sun_month_day = 15 #random start value
+  for jd in range(jd_start-30,jd_start):
+    [y,m,d,t] = swisseph.revjul(jd)
+  
+    local_time = pytz.timezone(tz).localize(datetime(y,m, d, 6, 0, 0)) #checking @ 6am local - can we do any better?
+    tz_off=datetime.utcoffset(local_time).seconds/3600.0 #compute offset from UTC
+  
+    jd_rise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
+    jd_rise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
+    jd_set =swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
+  
+    [_y,_m,_d, t_rise]=swisseph.revjul(jd_rise+tz_off/24.0)
+    [_y,_m,_d, t_set]=swisseph.revjul(jd_set+tz_off/24.0)
+     
+    longitude_sun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
+    longitude_sun_set=swisseph.calc_ut(jd_set,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_set)
+    sun_month_rise = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))];
+    sun_month = masa_names[int(1+math.floor(((longitude_sun_set)%360)/30.0))];
+    longitude_sun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
+    sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))];
+  
+    daily_motion_sun = (longitude_sun_tmrw-longitude_sun)%360
+  
+    #Solar month calculations
+    if month_start_after_set==1:
+      sun_month_day = 0
+      month_start_after_set = 0
+  
+    if sun_month_rise!=sun_month_tmrw:
+      if sun_month!=sun_month_tmrw:
+        month_start_after_set=1
+        sun_month_day = sun_month_day + 1
+      #mAsa pirappu!
+      #sun_month = sun_month_tmrw #sun moves into next rAsi before sunset -- check rules!
+      else:
+        sun_month_day = 1
+      month_remaining = 30-(longitude_sun%30.0);
+      month_end = month_remaining/daily_motion_sun*24.0
+      me = deci2sexa(t_rise+month_end);
+      if me[0]>=24:
+        suff='(+1)'
+        me[0] = me[0] - 24
+      else:
+        suff='\\hspace{2ex}'
+      sun_month_end_time = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %02d:%02d%s}' % (last_sun_month,me[0],me[1],suff)
+    else:
+      sun_month_day = sun_month_day + 1
+      sun_month_end_time = ''
+    
+    if sun_month_day == 1:
+      jd_dhanur = jd
+      break
+    
   return jd_dhanur
 
 def print_end_time (end_time, day_night_length, rise_time):
@@ -101,8 +154,7 @@ masa_names={1:'मेष',
 9:'धनुः',
 10:'मकर',
 11:'कुम्भ',
-12:'मीन'
-}
+12:'मीन'}
 
 tithi_names={1:'~प्रथमा',
 2:'~द्वितीया',
@@ -122,186 +174,194 @@ tithi_names={1:'~प्रथमा',
 30:'~अमावस्या'}
 
 #MAIN CODE
-
-city_name = sys.argv[1]
-latitude = sexastr2deci(sys.argv[2])
-longitude = sexastr2deci(sys.argv[3])
-tz = sys.argv[4]
-
-start_year = int(sys.argv[5])
-year = start_year
-jd=swisseph.julday(year,1,1,0)
-jd_start=jd
-start_date = datetime(year=year,month=1,day=1,hour=0,minute=0,second=0)
-
-day_of_year=0
-
-swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
-
-sun_month_day = 16 #this has to be done in a generic fashion, by scanning for the transit into dhanur of the last year!
-
-month_start_after_set = 0
-
-template_file=open('cal_template.tex')
-template_lines=template_file.readlines()
-for i in range(0,len(template_lines)-3):
-  print template_lines[i][:-1]
-
-
-print '\\mbox{}'
-print '{\\font\\x="Warnock Pro" at 60 pt\\x %d\\\\[0.5cm]}' % year
-print '\\mbox{}'
-print '{\\font\\x="Warnock Pro" at 48 pt\\x \\uppercase{%s}\\\\[0.3cm]}' % city_name
-print '\hrule'
-
-while 1:
-  if year>start_year:
-    break
-
-  day_of_year = day_of_year + 1  
-
-
-  [y,m,d,t] = swisseph.revjul(jd)
-  weekday = (swisseph.day_of_week(jd) + 1)%7 #swisseph has Mon = 0, non-intuitively!
-
-  local_time = pytz.timezone(tz).localize(datetime(y,m, d, 6, 0, 0)) #checking @ 6am local - can we do any better?
-  tz_off=datetime.utcoffset(local_time).seconds/3600.0 #compute offset from UTC
-
-  jd_rise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
-  jd_rise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
-  jd_set =swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
-
-  [_y,_m,_d, t_rise]=swisseph.revjul(jd_rise+tz_off/24.0)
-  [_y,_m,_d, t_set]=swisseph.revjul(jd_set+tz_off/24.0)
-
-  longitude_moon=swisseph.calc_ut(jd_rise,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise)
-  longitude_moon_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise+1)
-
-  longitude_sun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
-  longitude_sun_set=swisseph.calc_ut(jd_set,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_set)
-  sun_month_rise = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))];
-  sun_month = masa_names[int(1+math.floor(((longitude_sun_set)%360)/30.0))];
-  longitude_sun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
-  sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))];
-
-  daily_motion_moon = (longitude_moon_tmrw-longitude_moon)%360
-  daily_motion_sun = (longitude_sun_tmrw-longitude_sun)%360
-
-  if month_start_after_set==1:
-    sun_month_day = 0
-    month_start_after_set = 0
-
-  if sun_month_rise!=sun_month_tmrw:
-    if sun_month!=sun_month_tmrw:
-      month_start_after_set=1
+def main():
+  city_name = sys.argv[1]
+  latitude = sexastr2deci(sys.argv[2])
+  longitude = sexastr2deci(sys.argv[3])
+  tz = sys.argv[4]
+  
+  start_year = int(sys.argv[5])
+  year = start_year
+  jd=swisseph.julday(year,1,1,0)
+  jd_start=jd
+  start_date = datetime(year=year,month=1,day=1,hour=0,minute=0,second=0)
+  
+  day_of_year=0
+  
+  swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
+  
+  sun_month_day = 16 #this has to be done in a generic fashion, by scanning for the transit into dhanur of the last year!
+  
+  month_start_after_set = 0
+  
+  template_file=open('cal_template.tex')
+  template_lines=template_file.readlines()
+  for i in range(0,len(template_lines)-3):
+    print template_lines[i][:-1]
+  
+  
+  print '\\mbox{}'
+  print '{\\font\\x="Warnock Pro" at 60 pt\\x %d\\\\[0.5cm]}' % year
+  print '\\mbox{}'
+  print '{\\font\\x="Warnock Pro" at 48 pt\\x \\uppercase{%s}\\\\[0.3cm]}' % city_name
+  print '\hrule'
+  
+  while 1:
+    if year>start_year:
+      break
+  
+    day_of_year = day_of_year + 1  
+  
+    [y,m,d,t] = swisseph.revjul(jd)
+    weekday = (swisseph.day_of_week(jd) + 1)%7 #swisseph has Mon = 0, non-intuitively!
+  
+    local_time = pytz.timezone(tz).localize(datetime(y,m, d, 6, 0, 0)) #checking @ 6am local - can we do any better?
+    tz_off=datetime.utcoffset(local_time).seconds/3600.0 #compute offset from UTC
+  
+    jd_rise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
+    jd_rise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
+    jd_set =swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
+  
+    [_y,_m,_d, t_rise]=swisseph.revjul(jd_rise+tz_off/24.0)
+    [_y,_m,_d, t_set]=swisseph.revjul(jd_set+tz_off/24.0)
+  
+    longitude_moon=swisseph.calc_ut(jd_rise,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise)
+    longitude_moon_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise+1)
+  
+    longitude_sun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
+    longitude_sun_set=swisseph.calc_ut(jd_set,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_set)
+    sun_month_rise = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))];
+    sun_month = masa_names[int(1+math.floor(((longitude_sun_set)%360)/30.0))];
+    longitude_sun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
+    sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))];
+  
+    daily_motion_moon = (longitude_moon_tmrw-longitude_moon)%360
+    daily_motion_sun = (longitude_sun_tmrw-longitude_sun)%360
+  
+    #Solar month calculations
+    if month_start_after_set==1:
+      sun_month_day = 0
+      month_start_after_set = 0
+  
+    if sun_month_rise!=sun_month_tmrw:
+      if sun_month!=sun_month_tmrw:
+        month_start_after_set=1
+        sun_month_day = sun_month_day + 1
+      #mAsa pirappu!
+      #sun_month = sun_month_tmrw #sun moves into next rAsi before sunset -- check rules!
+      else:
+        sun_month_day = 1
+      month_remaining = 30-(longitude_sun%30.0);
+      month_end = month_remaining/daily_motion_sun*24.0
+      me = deci2sexa(t_rise+month_end);
+      if me[0]>=24:
+        suff='(+1)'
+        me[0] = me[0] - 24
+      else:
+        suff='\\hspace{2ex}'
+      sun_month_end_time = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %02d:%02d%s}' % (last_sun_month,me[0],me[1],suff)
+    else:
       sun_month_day = sun_month_day + 1
-    #mAsa pirappu!
-    #sun_month = sun_month_tmrw #sun moves into next rAsi before sunset -- check rules!
+      sun_month_end_time = ''
+    
+    month_data = '\\sunmonth{%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_end_time)
+  
+    #Compute tithi details
+    tithi = int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))
+    if tithi%15 != 0:
+      if tithi<15:
+        paksha = 'shukla'
+      else:
+        paksha = 'krishna'
     else:
-      sun_month_day = 1
-    month_remaining = 30-(longitude_sun%30.0);
-    month_end = month_remaining/daily_motion_sun*24.0
-    me = deci2sexa(t_rise+month_end);
-    if me[0]>=24:
-      suff='(+1)'
-      me[0] = me[0] - 24
+      if tithi == 15:
+        paksha = 'fullmoon'
+      elif tithi == 30:
+        paksha = 'newmoon'
+  
+    if tithi%15 == 0:
+      tithi_str = paksha + tithi_names[tithi]
     else:
-      suff='\\hspace{2ex}'
-    sun_month_end_time = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %02d:%02d%s}' % (last_sun_month,me[0],me[1],suff)
-  else:
-    sun_month_day = sun_month_day + 1
-    sun_month_end_time = ''
+      tithi_str = paksha + tithi_names[tithi%15]
+    
+    tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
+    tithi_end = tithi_remaining/(daily_motion_moon-daily_motion_sun)*24.0
+    tithi_end_str = print_end_time(tithi_end,jd_rise_tmrw-jd_rise,t_rise)
   
-  month_data = '\\sunmonth{%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_end_time)
-
-  tithi = int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))
-  if tithi%15 != 0:
-    if tithi<15:
-      paksha = 'shukla'
+    #Compute nakshatram details
+    nakshatram_str = nakshatra_names[int(1+math.floor((longitude_moon%360) /(360.0/27)))]
+    nakshatram_remaining = (360.0/27) - ((longitude_moon%360) % (360.0/27))
+    nakshatram_end = nakshatram_remaining/daily_motion_moon*24
+    nakshatram_end_str = print_end_time(nakshatram_end,jd_rise_tmrw-jd_rise,t_rise)
+   
+    #Sunrise/sunset and related stuff (like rahu, yama)
+    [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
+    [sh, sm, ss] = deci2sexa(t_set) #set_t hour, set minute
+  
+    present_day = start_date + timedelta(days=day_of_year)
+    rise_t = present_day + timedelta(hours=rh,minutes=rm)
+    set_t = present_day + timedelta(hours=sh,minutes=sm)
+  
+    length_of_day = set_t-rise_t
+    yamakandam_start = rise_t + timedelta(seconds=(1/8.0)*(yamakandam_octets[weekday]-1)*length_of_day.seconds)
+    yamakandam_end = yamakandam_start + timedelta(seconds=(1/8.0)*length_of_day.seconds)
+    rahukalam_start = rise_t + timedelta(seconds=(1/8.0)*(rahukalam_octets[weekday]-1)*length_of_day.seconds)
+    rahukalam_end = rahukalam_start + timedelta(seconds=(1/8.0)*length_of_day.seconds)
+    madhyahnikam_start = rise_t + timedelta(seconds=(1/5.0)*length_of_day.seconds)
+  
+    rise = '%02d:%02d' % (rh,rm)
+    set = '%02d:%02d' % (sh,sm)
+    madhya = print_time(madhyahnikam_start)
+    rahu = '%s-%s' % (print_time(rahukalam_start), print_time(rahukalam_end))
+    yama = '%s-%s' % (print_time(yamakandam_start),print_time(yamakandam_end))
+    
+    #Layout calendar in LATeX format
+    if d==1:
+      if m>1:
+        if weekday!=0: #Space till Sunday
+          for i in range(weekday,6):
+            print "{}  &"
+          print "\\\\ \hline"
+        print '\end{tabular}'
+        print '\n\n'
+  
+      #Begin tabular
+      print '\\begin{tabular}{|c|c|c|c|c|c|c|}'
+      print '\multicolumn{7}{c}{\Large \\bfseries %s %s}\\\\[3mm]' % (month[m],y)
+      print '\hline'
+      print '\\textbf{SUN} & \\textbf{MON} & \\textbf{TUE} & \\textbf{WED} & \\textbf{THU} & \\textbf{FRI} & \\textbf{SAT} \\\\ \hline'
+      #print '\\textbf{भानु} & \\textbf{इन्दु} & \\textbf{भौम} & \\textbf{बुध} & \\textbf{गुरु} & \\textbf{भृगु} & \\textbf{स्थिर} \\\\ \hline'
+  
+      #Blanks for previous weekdays
+      for i in range(0,weekday):
+        print "{}  &"
+    
+    print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,rahu,yama)
+  
+    if weekday==6:
+      print "\\\\ \hline"
     else:
-      paksha = 'krishna'
-  else:
-    if tithi == 15:
-      paksha = 'fullmoon'
-    elif tithi == 30:
-      paksha = 'newmoon'
-
-  if tithi%15 == 0:
-    tithi_str = paksha + tithi_names[tithi]
-  else:
-    tithi_str = paksha + tithi_names[tithi%15]
+      print "&"
   
-  tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
-  tithi_end = tithi_remaining/(daily_motion_moon-daily_motion_sun)*24.0
-  tithi_end_str = print_end_time(tithi_end,jd_rise_tmrw-jd_rise,t_rise)
-
-
-  nakshatram_str = nakshatra_names[int(1+math.floor((longitude_moon%360) /(360.0/27)))]
-  nakshatram_remaining = (360.0/27) - ((longitude_moon%360) % (360.0/27))
-  nakshatram_end = nakshatram_remaining/daily_motion_moon*24
-  nakshatram_end_str = print_end_time(nakshatram_end,jd_rise_tmrw-jd_rise,t_rise)
-
-  [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
-  [sh, sm, ss] = deci2sexa(t_set) #set_t hour, set minute
-
-  present_day = start_date + timedelta(days=day_of_year)
-  rise_t = present_day + timedelta(hours=rh,minutes=rm)
-  set_t = present_day + timedelta(hours=sh,minutes=sm)
-
-  length_of_day = set_t-rise_t
-  yamakandam_start = rise_t + timedelta(seconds=(1/8.0)*(yamakandam_octets[weekday]-1)*length_of_day.seconds)
-  yamakandam_end = yamakandam_start + timedelta(seconds=(1/8.0)*length_of_day.seconds)
-  rahukalam_start = rise_t + timedelta(seconds=(1/8.0)*(rahukalam_octets[weekday]-1)*length_of_day.seconds)
-  rahukalam_end = rahukalam_start + timedelta(seconds=(1/8.0)*length_of_day.seconds)
-  madhyahnikam_start = rise_t + timedelta(seconds=(1/5.0)*length_of_day.seconds)
-
-  rise = '%02d:%02d' % (rh,rm)
-  set = '%02d:%02d' % (sh,sm)
-  madhya = print_time(madhyahnikam_start)
-  rahu = '%s-%s' % (print_time(rahukalam_start), print_time(rahukalam_end))
-  yama = '%s-%s' % (print_time(yamakandam_start),print_time(yamakandam_end))
+    jd = jd + 1
+    year = swisseph.revjul(jd)[0]
   
-  if d==1:
-    if m>1:
-      if weekday!=0: #Space till Sunday
-        for i in range(weekday,6):
-          print "{}  &"
-        print "\\\\ \hline"
-      print '\end{tabular}'
-      print '\n\n%\clearpage'
-
-    #Begin tabular
-    print '\\begin{tabular}{|c|c|c|c|c|c|c|}'
-    print '\multicolumn{7}{c}{\Large \\bfseries %s %s}\\\\[3mm]' % (month[m],y)
-    print '\hline'
-    print '\\textbf{SUN} & \\textbf{MON} & \\textbf{TUE} & \\textbf{WED} & \\textbf{THU} & \\textbf{FRI} & \\textbf{SAT} \\\\ \hline'
-    #print '\\textbf{भानु} & \\textbf{इन्दु} & \\textbf{भौम} & \\textbf{बुध} & \\textbf{गुरु} & \\textbf{भृगु} & \\textbf{स्थिर} \\\\ \hline'
-
-    #Blanks for previous weekdays
-    for i in range(0,weekday):
-      print "{}  &"
+    last_sun_month = sun_month
   
-  print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,rahu,yama)
+    # For debugging specific dates
+    #if m==4 and d==10:
+    #  break
+  
+  if weekday!=6:
+   print "\\\\ \hline"
+  print '\end{tabular}'
+  print '\n\n'
+  
+  #print '\\input{%d-%s.tex}' % (year,city_name)
+  print template_lines[-2][:-1]
+  print template_lines[-1][:-1]
 
-  if weekday==6:
-    print "\\\\ \hline"
-  else:
-    print "&"
-
-  jd = jd + 1
-  year = swisseph.revjul(jd)[0]
-
-  last_sun_month = sun_month
-
-  # For debugging specific dates
-  #if m==4 and d==10:
-  #  break
-
-if weekday!=6:
- print "\\\\ \hline"
-print '\end{tabular}'
-print '\n\n%\clearpage'
-
-#print '\\input{%d-%s.tex}' % (year,city_name)
-print template_lines[-2][:-1]
-print template_lines[-1][:-1]
+if __name__=='__main__':
+  main()
+else:
+  '''Imported as a module'''
