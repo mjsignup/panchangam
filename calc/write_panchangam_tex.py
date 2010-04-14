@@ -230,7 +230,7 @@ def main():
     print template_lines[i][:-1]
   
   samvatsara_id = (year - 1568)%60 + 1; #distance from prabhava
-  samvatsara_names = '%s–%s' % (year_names[samvatsara_id], year_names[samvatsara_id+1]);
+  samvatsara_names = '%s–%s' % (year_names[samvatsara_id], year_names[(samvatsara_id%60)+1]);
   
   print '\\mbox{}'
   print '{\\font\\x="Warnock Pro" at 60 pt\\x %d\\\\[0.3cm]}' % year
