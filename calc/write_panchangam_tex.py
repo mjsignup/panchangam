@@ -320,8 +320,10 @@ def main():
     #if m==4 and d==10:
     #  break
   
+  for i in range(weekday+1,6):
+    print "{}  &"
   if weekday!=6:
-   print "\\\\ \hline"
+    print "\\\\ \hline"
   print '\end{tabular}'
   print '\n\n'
   
