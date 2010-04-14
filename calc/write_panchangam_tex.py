@@ -190,7 +190,7 @@ year_names={1:'प्रभव',
 47:'प्रमादीच',
 48:'आनन्द',
 49:'राक्षस',
-50:'अनल',
+50:'नल',
 51:'पिङ्गल',
 52:'कलायुक्ति',
 53:'सिद्धार्थी',
@@ -300,10 +300,7 @@ def main():
     #Compute tithi details
     tithi = int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))
     if tithi%15 != 0:
-      if tithi<15:
-        paksha = 'shukla'
-      else:
-        paksha = 'krishna'
+      paksha = ('shukla' if tithi<15 else 'krishna')
     else:
       if tithi == 15:
         paksha = 'fullmoon'
@@ -375,9 +372,11 @@ def main():
       print "&"
   
     jd = jd + 1
-    year = swisseph.revjul(jd)[0]
-  
+
     last_sun_month = sun_month
+
+    if m==12 and d==31:
+      year = year + 1
   
     # For debugging specific dates
     #if m==4 and d==10:
