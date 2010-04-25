@@ -299,28 +299,58 @@ def main():
   
     #Compute tithi details
     tithi = int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))
-    if tithi%15 != 0:
-      paksha = ('shukla' if tithi<15 else 'krishna')
-    else:
-      if tithi == 15:
-        paksha = 'fullmoon'
-      elif tithi == 30:
-        paksha = 'newmoon'
-  
-    if tithi%15 == 0:
-      tithi_str = paksha + tithi_names[tithi]
-    else:
-      tithi_str = paksha + tithi_names[tithi%15]
+    tithi_tmrw = int(1+math.floor((longitude_moon_tmrw-longitude_sun_tmrw)%360 / 12.0))
+
+    if tithi_tmrw-tithi>1:
+      #double change
+      if tithi%15 != 0:
+        paksha = ('shukla' if tithi<15 else 'krishna')
+      else:
+        if tithi == 15:
+          paksha = 'fullmoon'
+        elif tithi == 30:
+          paksha = 'newmoon'
     
-    tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
-    tithi_end = tithi_remaining/(daily_motion_moon-daily_motion_sun)*24.0
-    tithi_end_str = print_end_time(tithi_end,jd_rise_tmrw-jd_rise,t_rise)
+      if tithi%15 == 0:
+        tithi_str = paksha + tithi_names[tithi]
+      else:
+        tithi_str = paksha + tithi_names[tithi%15]
+      
+      tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
+      tithi_end = tithi_remaining/(daily_motion_moon-daily_motion_sun)*24.0
+      tithi_end_str = print_end_time(tithi_end,jd_rise_tmrw-jd_rise,t_rise)
+    else:
+      if tithi%15 != 0:
+        paksha = ('shukla' if tithi<15 else 'krishna')
+      else:
+        if tithi == 15:
+          paksha = 'fullmoon'
+        elif tithi == 30:
+          paksha = 'newmoon'
+    
+      if tithi%15 == 0:
+        tithi_str = paksha + tithi_names[tithi]
+      else:
+        tithi_str = paksha + tithi_names[tithi%15]
+      
+      tithi_remaining = 12-(((longitude_moon-longitude_sun)%360)%12)
+      tithi_end = tithi_remaining/(daily_motion_moon-daily_motion_sun)*24.0
+      tithi_end_str = print_end_time(tithi_end,jd_rise_tmrw-jd_rise,t_rise)
   
     #Compute nakshatram details
-    nakshatram_str = nakshatra_names[int(1+math.floor((longitude_moon%360) /(360.0/27)))]
-    nakshatram_remaining = (360.0/27) - ((longitude_moon%360) % (360.0/27))
-    nakshatram_end = nakshatram_remaining/daily_motion_moon*24
-    nakshatram_end_str = print_end_time(nakshatram_end,jd_rise_tmrw-jd_rise,t_rise)
+    n_id = int(1+math.floor((longitude_moon%360) /(360.0/27)))
+    n_id_tmrw = int(1+math.floor((longitude_moon_tmrw%360) /(360.0/27)))
+    if n_id_tmrw-n_id > 1:
+      #there is a double change
+      nakshatram_str = nakshatra_names[n_id];
+      nakshatram_remaining = (360.0/27) - ((longitude_moon%360) % (360.0/27))
+      nakshatram_end = nakshatram_remaining/daily_motion_moon*24
+      nakshatram_end_str = print_end_time(nakshatram_end,jd_rise_tmrw-jd_rise,t_rise)
+    else:
+      nakshatram_str = nakshatra_names[n_id];
+      nakshatram_remaining = (360.0/27) - ((longitude_moon%360) % (360.0/27))
+      nakshatram_end = nakshatram_remaining/daily_motion_moon*24
+      nakshatram_end_str = print_end_time(nakshatram_end,jd_rise_tmrw-jd_rise,t_rise)
    
     #Sunrise/sunset and related stuff (like rahu, yama)
     [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
