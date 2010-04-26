@@ -20,8 +20,8 @@
 
 
 \defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
-%\setmainfont{Scala Sans LF}
-\setmainfont{Minion Pro}
+\setmainfont[BoldFont={Minion Pro Bold}]{Scala Sans LF}
+%\setmainfont{Minion Pro}
 \setsansfont{Sanskrit 2003:script=deva}
 
 %%%%%%% Numbers and counters %%%%%%%
@@ -60,20 +60,20 @@
 %\mbox{{\sun\tiny\DOWNarrow} \scriptsize  #2}~\scriptsize{\mbox{(\textsf{स} #3)}}
 %}
 \newcommand{\sundata}[3]{%
-\mbox{{\sun\tiny\UParrow} \scriptsize{#1} {\sun\tiny\DOWNarrow} \scriptsize{#2} \tiny{\mbox{(\textsf{स} #3)}}}
+\mbox{{\sun\tiny\UParrow} {\scriptsize #1} {\sun\tiny\DOWNarrow} {\scriptsize #2} \tiny{\mbox{(\textsf{स} #3)}}}
 }
 \newcommand{\caldata}[9]{%
-\begin{minipage}{3.25cm}
-\begin{minipage}[t]{1.95cm}
+\begin{minipage}{3.35cm}
+\begin{minipage}[t]{2.15cm}
 #2\\
 %\mbox{}\\
 %\SunshineOpenCircled
 #3\\\scriptsize
+\mbox{\textsf{राहु}~#8~~\textsf{यम}~#9}\\
 \mbox{#4}\\
 \mbox{#5}\\
 \mbox{#6}\\
 \mbox{#7}\\
-\mbox{\textsf{राहु}~#8~~\textsf{यम}~#9}\\
 \end{minipage}\begin{minipage}[c]{1.2cm}
 \vspace{.4ex}
 \hfill \mbox{\textcolor{blue}{\font\x="Minion Pro" at 32 pt\x #1}\hspace{-2mm}}
@@ -90,6 +90,7 @@
 
 
 \begin{document}
+\rmfamily
 \pagestyle{empty}
 \begin{center}
 \mbox{}\\[2.5in]

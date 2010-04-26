@@ -24,7 +24,7 @@ echo -ne "Computing $y panchangam for $city_name ($lat,$lon) - $tz... "
 ./write_panchangam_tex.py $city_name $lat $lon $tz $y > cal-$y-$city_name.tex
 echo "done. "
 
-echo -ne "Generating PDF... (log --> /tmp/cal-$y-$city_name.texlog)"
+echo -ne "Generating PDF (log --> /tmp/cal-$y-$city_name.texlog)... "
 xelatex cal-$y-$city_name.tex > /tmp/cal-$y-$city_name.texlog
 echo done
 

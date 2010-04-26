@@ -377,8 +377,8 @@ def main():
     rise = '%02d:%02d' % (rh,rm)
     set = '%02d:%02d' % (sh,sm)
     madhya = print_time(madhyahnikam_start)
-    rahu = '%s-%s' % (print_time(rahukalam_start), print_time(rahukalam_end))
-    yama = '%s-%s' % (print_time(yamakandam_start),print_time(yamakandam_end))
+    rahu = '%s--%s' % (print_time(rahukalam_start), print_time(rahukalam_end))
+    yama = '%s--%s' % (print_time(yamakandam_start),print_time(yamakandam_end))
     
     #Layout calendar in LATeX format
     if d==1:
