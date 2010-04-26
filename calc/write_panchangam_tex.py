@@ -401,15 +401,22 @@ def main():
       for i in range(0,weekday):
         print "{}  &"
     
-    #print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,rahu,yama)
+#    if nakshatram_end_str_2!='' and tithi_end_str_2!='':
+#      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2,nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2,rahu,yama)
+#    elif nakshatram_end_str_2!='' and tithi_end_str_2=='':
+#      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2,rahu,yama)
+#    elif nakshatram_end_str_2=='' and tithi_end_str_2!='':
+#      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2,nakshatram_str,nakshatram_end_str,rahu,yama)
+#    elif nakshatram_end_str_2=='' and tithi_end_str_2=='':
+#      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,rahu,yama)
     if nakshatram_end_str_2!='' and tithi_end_str_2!='':
-      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2,nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2,rahu,yama)
+      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2,nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2,rahu,yama)
     elif nakshatram_end_str_2!='' and tithi_end_str_2=='':
-      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2,rahu,yama)
+      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2,rahu,yama)
     elif nakshatram_end_str_2=='' and tithi_end_str_2!='':
-      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2,nakshatram_str,nakshatram_end_str,rahu,yama)
+      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2,nakshatram_str,nakshatram_end_str,rahu,yama)
     elif nakshatram_end_str_2=='' and tithi_end_str_2=='':
-      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{}{%s}{%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,rahu,yama)
+      print '\caldata{%s}{%s}{\\sundata{%s}{%s}{%s}}{}{}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,rahu,yama)
 
   
     if weekday==6:
