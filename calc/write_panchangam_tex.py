@@ -303,7 +303,7 @@ def main():
 
     if (tithi_tmrw-tithi)%30 > 1:
       #double change
-      tithi_2=tithi+1
+      tithi_2=(tithi%30)+1
       if tithi_2%15 != 0:
         paksha = ('shukla' if tithi_2<15 else 'krishna')
       else:
@@ -351,7 +351,7 @@ def main():
     n_id_tmrw = int(1+math.floor((longitude_moon_tmrw%360) /(360.0/27)))
     if (n_id_tmrw-n_id)%27 > 1:
       #there is a double change
-      nakshatram_str_2 = nakshatra_names[n_id+1]
+      nakshatram_str_2 = nakshatra_names[n_id%27+1]
       nakshatram_remaining_2 = (360.0/27)+(360.0/27) - ((longitude_moon%360) % (360.0/27))
       nakshatram_end_2 = nakshatram_remaining_2/daily_motion_moon*24
       nakshatram_end_str_2 = print_end_time(nakshatram_end_2,jd_rise_tmrw-jd_rise,t_rise)
