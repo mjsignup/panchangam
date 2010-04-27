@@ -26,6 +26,7 @@ echo "done. "
 
 echo -ne "Generating PDF (log --> /tmp/cal-$y-$city_name.texlog)... "
 xelatex cal-$y-$city_name.tex > /tmp/cal-$y-$city_name.texlog
+rm cal-$y-$city_name.log
 echo done
 
 mkdir -p data
