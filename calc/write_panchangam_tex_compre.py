@@ -279,7 +279,7 @@ def main():
       karanam_3=((karanam+1)%60)+1
       karanam_str_3 = karanam_names[karanam_3]
       
-      karanam_remaining_3 = (360.0/27.0)*2+(360.0/27.0)-(((longitude_moon-longitude_sun)%360)%(360.0/27.0))
+      karanam_remaining_3 = 6*2+6-(((longitude_moon-longitude_sun)%360)%6)
       karanam_end_3 = karanam_remaining_3/(daily_motion_moon-daily_motion_sun)*24.0
       karanam_end_str_3 = print_end_time(karanam_end_3,jd_rise_tmrw-jd_rise,t_rise)
       if karanam_end_str_3 == '\\textsf{अहोरात्रम्}':
@@ -296,7 +296,7 @@ def main():
       karanam_2=(karanam%60)+1
       karanam_str_2 = karanam_names[karanam_2]
       
-      karanam_remaining_2 = (360.0/27.0)+(360.0/27.0)-(((longitude_moon-longitude_sun)%360)%(360.0/27.0))
+      karanam_remaining_2 = 6+6-(((longitude_moon-longitude_sun)%360)%6)
       karanam_end_2 = karanam_remaining_2/(daily_motion_moon-daily_motion_sun)*24.0
       karanam_end_str_2 = print_end_time(karanam_end_2,jd_rise_tmrw-jd_rise,t_rise)
       if karanam_end_str_2 == '\\textsf{अहोरात्रम्}':
