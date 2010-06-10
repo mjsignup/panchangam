@@ -257,39 +257,40 @@ def main():
     karanam = int(1+math.floor((longitude_moon-longitude_sun)%360 / 6.0))
     karanam_tmrw = int(1+math.floor((longitude_moon_tmrw-longitude_sun_tmrw)%360 / 6.0))
 
-    if (karanam_tmrw-karanam)%60 > 3:
-      #quadruple change
-      karanam_4=((karanam+2)%60)+1
-      karanam_str_4 = karanam_names[karanam_4]
-      
-      karanam_remaining_4 = 6*3+6-(((longitude_moon-longitude_sun)%360)%6)
-      karanam_end_4 = karanam_remaining_4/(daily_motion_moon-daily_motion_sun)*24.0
-      karanam_end_str_4 = print_end_time(karanam_end_4,jd_rise_tmrw-jd_rise,t_rise)
-      if karanam_end_str_4 == '\\textsf{अहोरात्रम्}':
-        #needs correction, owing to the fact that we compute longitude every 24h, rather than at next sunrise
-        #the second karanam cannot be 'all day'! It's ending will reflect in tomorrow's calendar
-        karanam_str_4 = ''
-        karanam_end_str_4 = ''
-    else:
-     karanam_str_4 = ''
-     karanam_end_str_4 = ''
+#    There cannot be more than 3 karanams in a day, because total arc ~ 12 deg and per yogam is 6 deg
+#    if (karanam_tmrw-karanam)%60 > 3:
+#      #quadruple change
+#      karanam_4=((karanam+2)%60)+1
+#      karanam_str_4 = karanam_names[karanam_4]
+#      
+#      karanam_remaining_4 = 6*3+6-(((longitude_moon-longitude_sun)%360)%6)
+#      karanam_end_4 = karanam_remaining_4/(daily_motion_moon-daily_motion_sun)*24.0
+#      karanam_end_str_4 = print_end_time(karanam_end_4,jd_rise_tmrw-jd_rise,t_rise)
+#      if karanam_end_str_4 == '\\textsf{अहोरात्रम्}':
+#        #needs correction, owing to the fact that we compute longitude every 24h, rather than at next sunrise
+#        #the second karanam cannot be 'all day'! It's ending will reflect in tomorrow's calendar
+#        karanam_str_4 = ''
+#        karanam_end_str_4 = ''
+#    else:
+#     karanam_str_4 = ''
+#     karanam_end_str_4 = ''
 
-    if (karanam_tmrw-karanam)%60 > 2:
-      #triple change
-      karanam_3=((karanam+1)%60)+1
-      karanam_str_3 = karanam_names[karanam_3]
-      
-      karanam_remaining_3 = 6*2+6-(((longitude_moon-longitude_sun)%360)%6)
-      karanam_end_3 = karanam_remaining_3/(daily_motion_moon-daily_motion_sun)*24.0
-      karanam_end_str_3 = print_end_time(karanam_end_3,jd_rise_tmrw-jd_rise,t_rise)
-      if karanam_end_str_3 == '\\textsf{अहोरात्रम्}':
-        #needs correction, owing to the fact that we compute longitude every 24h, rather than at next sunrise
-        #the second karanam cannot be 'all day'! It's ending will reflect in tomorrow's calendar
-        karanam_str_3 = ''
-        karanam_end_str_3 = ''
-    else:
-     karanam_str_3 = ''
-     karanam_end_str_3 = ''
+     if (karanam_tmrw-karanam)%60 > 2:
+       #triple change
+       karanam_3=((karanam+1)%60)+1
+       karanam_str_3 = karanam_names[karanam_3]
+       
+       karanam_remaining_3 = 6*2+6-(((longitude_moon-longitude_sun)%360)%6)
+       karanam_end_3 = karanam_remaining_3/(daily_motion_moon-daily_motion_sun)*24.0
+       karanam_end_str_3 = print_end_time(karanam_end_3,jd_rise_tmrw-jd_rise,t_rise)
+       if karanam_end_str_3 == '\\textsf{अहोरात्रम्}':
+         #needs correction, owing to the fact that we compute longitude every 24h, rather than at next sunrise
+         #the second karanam cannot be 'all day'! It's ending will reflect in tomorrow's calendar
+         karanam_str_3 = ''
+         karanam_end_str_3 = ''
+     else:
+      karanam_str_3 = ''
+      karanam_end_str_3 = ''
 
     if (karanam_tmrw-karanam)%60 > 1:
       #double change
@@ -316,35 +317,35 @@ def main():
     print '%%Karanam 1: %s; end: %s;'  % (karanam_str,karanam_end_str)
     print  ' Karanam 2: %s; end: %s;'  % (karanam_str_2,karanam_end_str_2)
     print  ' Karanam 3: %s; end: %s;'  % (karanam_str_3,karanam_end_str_3)
-    print  ' Karanam 4: %s; end: %s\n' % (karanam_str_4,karanam_end_str_4)
 
     #Compute yogam details
     yogam = int(1+math.floor((longitude_moon+longitude_sun)%360 / (360.0/27.0)))
-    yogam_tmrw = int(1+math.floor((longitude_moon_tmrw-longitude_sun_tmrw)%360 / (360.0/27.0)))
+    yogam_tmrw = int(1+math.floor((longitude_moon_tmrw+longitude_sun_tmrw)%360 / (360.0/27.0)))
 
-    if (yogam_tmrw-yogam)%27 > 2:
-      #triple change
-      yogam_3=((yogam+1)%27)+1
-      yogam_str_3 = yogam_names[yogam_3]
-      
-      yogam_remaining_3 = (360.0/27.0)+(360.0/27.0)-(((longitude_moon+longitude_sun)%360)%(360.0/27.0))
-      yogam_end_3 = yogam_remaining_3/(daily_motion_moon+daily_motion_sun)*24.0
-      yogam_end_str_3 = print_end_time(yogam_end_3,jd_rise_tmrw-jd_rise,t_rise)
-      if yogam_end_str_3 == '\\textsf{अहोरात्रम्}':
-        #needs correction, owing to the fact that we compute longitude every 24h, rather than at next sunrise
-        #the second yogam cannot be 'all day'! It's ending will reflect in tomorrow's calendar
-        yogam_str_3 = ''
-        yogam_end_str_3 = ''
-    else:
-     yogam_str_3 = ''
-     yogam_end_str_3 = ''
+#    There cannot be more than 2 yogams in a day, because total arc = 13 deg and per yogam is 13.333 deg
+#    if (yogam_tmrw-yogam)%27 > 2:
+#      #triple change
+#      yogam_3=((yogam+1)%27)+1
+#      yogam_str_3 = yogam_names[yogam_3]
+#      
+#      yogam_remaining_3 = 3.0*(360.0/27.0)-(((longitude_moon+longitude_sun)%360)%(360.0/27.0))
+#      yogam_end_3 = yogam_remaining_3/(daily_motion_moon+daily_motion_sun)*24.0
+#      yogam_end_str_3 = print_end_time(yogam_end_3,jd_rise_tmrw-jd_rise,t_rise)
+#      if yogam_end_str_3 == '\\textsf{अहोरात्रम्}':
+#        #needs correction, owing to the fact that we compute longitude every 24h, rather than at next sunrise
+#        #the second yogam cannot be 'all day'! It's ending will reflect in tomorrow's calendar
+#        yogam_str_3 = ''
+#        yogam_end_str_3 = ''
+#    else:
+#     yogam_str_3 = ''
+#     yogam_end_str_3 = ''
 
     if (yogam_tmrw-yogam)%27 > 1:
       #double change
       yogam_2=(yogam%27)+1
       yogam_str_2 = yogam_names[yogam_2]
       
-      yogam_remaining_2 = (360.0/27.0)+(360.0/27.0)-(((longitude_moon+longitude_sun)%360)%(360.0/27.0))
+      yogam_remaining_2 = 2.0*(360.0/27.0)-(((longitude_moon+longitude_sun)%360)%(360.0/27.0))
       yogam_end_2 = yogam_remaining_2/(daily_motion_moon+daily_motion_sun)*24.0
       yogam_end_str_2 = print_end_time(yogam_end_2,jd_rise_tmrw-jd_rise,t_rise)
       if yogam_end_str_2 == '\\textsf{अहोरात्रम्}':
@@ -364,7 +365,6 @@ def main():
 
     print '%%Yogam 1: %s; end: %s;' % (yogam_str,yogam_end_str)
     print ' Yogam 2: %s; end: %s;' % (yogam_str_2,yogam_end_str_2)
-    print ' Yogam 3: %s; end: %s\n' % (yogam_str_3,yogam_end_str_3)
 
     #Sunrise/sunset and related stuff (like rahu, yama)
     [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
