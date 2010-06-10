@@ -294,15 +294,28 @@ def main():
       #Blanks for previous weekdays
       for i in range(0,weekday):
         print "{}  &"
-    
-    if nakshatram_end_str_2!='' and tithi_end_str_2!='':
-      print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2,nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2,rahu,yama)
-    elif nakshatram_end_str_2!='' and tithi_end_str_2=='':
-      print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2,rahu,yama)
-    elif nakshatram_end_str_2=='' and tithi_end_str_2!='':
-      print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2,nakshatram_str,nakshatram_end_str,rahu,yama)
-    elif nakshatram_end_str_2=='' and tithi_end_str_2=='':
-      print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,rahu,yama)
+
+    #Create nakshatram data string
+    nEmpty=0
+
+    if nakshatram_end_str_2!='':
+      nakshatram_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2)
+    else:
+      nakshatram_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (nakshatram_str,nakshatram_end_str)
+      nEmpty = nEmpty + 1
+
+    if tithi_end_str_2!='':
+      tithi_data_string = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2)
+    else:
+      tithi_data_string = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str)
+      nEmpty = nEmpty + 1
+
+    empty_str=''
+    for i in range(0,nEmpty):
+      empty_str = empty_str+'{}'
+ 
+
+    print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}%s%s%s{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_data_string,nakshatram_data_string,empty_str,rahu,yama)
   
     if weekday==6:
       print "\\\\ \hline"
