@@ -408,8 +408,7 @@ def main():
       for i in range(0,weekday):
         print "{}  &"
 
-    #Create nakshatram data string
-    nEmpty=0
+    nEmpty=0 #number of empty placeholders in the tithi-nakshatram-karanam-yogam data (depends upon triple/double karanams/yogams/nakshatrams/tithis per day)
 
     if nakshatram_end_str_2!='':
       nakshatram_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2)
@@ -423,12 +422,27 @@ def main():
       tithi_data_string = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str)
       nEmpty = nEmpty + 1
 
+    if karanam_end_str_3!='':
+      karanam_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (karanam_str,karanam_end_str,karanam_str_2,karanam_end_str_2,karanam_str_3,karanam_end_str_3)
+    elif karanam_end_str_2!='':
+      karanam_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (karanam_str,karanam_end_str,karanam_str_2,karanam_end_str_2)
+      nEmpty = nEmpty + 1
+    else:
+      karanam_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (karanam_str,karanam_end_str)
+      nEmpty = nEmpty + 2
+
+    if yogam_end_str_2!='':
+      yogam_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (yogam_str,yogam_end_str,yogam_str_2,yogam_end_str_2)
+    else:
+      yogam_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (yogam_str,yogam_end_str)
+      nEmpty = nEmpty + 1
+
     empty_str=''
     for i in range(0,nEmpty):
       empty_str = empty_str+'{}'
  
 
-    print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}%s%s%s{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_data_string,nakshatram_data_string,empty_str,rahu,yama)
+    print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\tnyk{%s}{%s}{%s}{%s}{%s}}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_data_string,nakshatram_data_string,yogam_data_string,karanam_data_string,empty_str,rahu,yama)
   
     if weekday==6:
       print "\\\\ \hline"
