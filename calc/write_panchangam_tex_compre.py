@@ -310,7 +310,7 @@ def main():
     
     karanam_str = karanam_names[karanam]
     
-    karanam_remaining = (360.0/27.0)-(((longitude_moon-longitude_sun)%360)%(360.0/27.0))
+    karanam_remaining = 6-(((longitude_moon-longitude_sun)%6)%6)
     karanam_end = karanam_remaining/(daily_motion_moon-daily_motion_sun)*24.0
     karanam_end_str = print_end_time(karanam_end,jd_rise_tmrw-jd_rise,t_rise)
     print '%%Karanam 1: %s; end: %s;'  % (karanam_str,karanam_end_str)
