@@ -108,7 +108,7 @@ def main():
   
   month_start_after_set = 0
   
-  template_file=open('cal_template.tex')
+  template_file=open('cal_template_compre.tex')
   template_lines=template_file.readlines()
   for i in range(0,len(template_lines)-3):
     print template_lines[i][:-1]
@@ -275,22 +275,22 @@ def main():
 #     karanam_str_4 = ''
 #     karanam_end_str_4 = ''
 
-     if (karanam_tmrw-karanam)%60 > 2:
-       #triple change
-       karanam_3=((karanam+1)%60)+1
-       karanam_str_3 = karanam_names[karanam_3]
-       
-       karanam_remaining_3 = 6*2+6-(((longitude_moon-longitude_sun)%360)%6)
-       karanam_end_3 = karanam_remaining_3/(daily_motion_moon-daily_motion_sun)*24.0
-       karanam_end_str_3 = print_end_time(karanam_end_3,jd_rise_tmrw-jd_rise,t_rise)
-       if karanam_end_str_3 == '\\textsf{अहोरात्रम्}':
-         #needs correction, owing to the fact that we compute longitude every 24h, rather than at next sunrise
-         #the second karanam cannot be 'all day'! It's ending will reflect in tomorrow's calendar
-         karanam_str_3 = ''
-         karanam_end_str_3 = ''
-     else:
-      karanam_str_3 = ''
-      karanam_end_str_3 = ''
+    if (karanam_tmrw-karanam)%60 > 2:
+      #triple change
+      karanam_3=((karanam+1)%60)+1
+      karanam_str_3 = karanam_names[karanam_3]
+      
+      karanam_remaining_3 = 6*2+6-(((longitude_moon-longitude_sun)%360)%6)
+      karanam_end_3 = karanam_remaining_3/(daily_motion_moon-daily_motion_sun)*24.0
+      karanam_end_str_3 = print_end_time(karanam_end_3,jd_rise_tmrw-jd_rise,t_rise)
+      if karanam_end_str_3 == '\\textsf{अहोरात्रम्}':
+        #needs correction, owing to the fact that we compute longitude every 24h, rather than at next sunrise
+        #the second karanam cannot be 'all day'! It's ending will reflect in tomorrow's calendar
+        karanam_str_3 = ''
+        karanam_end_str_3 = ''
+    else:
+     karanam_str_3 = ''
+     karanam_end_str_3 = ''
 
     if (karanam_tmrw-karanam)%60 > 1:
       #double change
@@ -314,9 +314,9 @@ def main():
     karanam_remaining = 6-(((longitude_moon-longitude_sun)%6)%6)
     karanam_end = karanam_remaining/(daily_motion_moon-daily_motion_sun)*24.0
     karanam_end_str = print_end_time(karanam_end,jd_rise_tmrw-jd_rise,t_rise)
-    print '%%Karanam 1: %s; end: %s;'  % (karanam_str,karanam_end_str)
-    print  ' Karanam 2: %s; end: %s;'  % (karanam_str_2,karanam_end_str_2)
-    print  ' Karanam 3: %s; end: %s;'  % (karanam_str_3,karanam_end_str_3)
+    #print '%%Karanam 1: %s; end: %s;'  % (karanam_str,karanam_end_str)
+    #print  ' Karanam 2: %s; end: %s;'  % (karanam_str_2,karanam_end_str_2)
+    #print  ' Karanam 3: %s; end: %s;'  % (karanam_str_3,karanam_end_str_3)
 
     #Compute yogam details
     yogam = int(1+math.floor((longitude_moon+longitude_sun)%360 / (360.0/27.0)))
@@ -363,8 +363,8 @@ def main():
     yogam_end = yogam_remaining/(daily_motion_moon+daily_motion_sun)*24.0
     yogam_end_str = print_end_time(yogam_end,jd_rise_tmrw-jd_rise,t_rise)
 
-    print '%%Yogam 1: %s; end: %s;' % (yogam_str,yogam_end_str)
-    print ' Yogam 2: %s; end: %s;' % (yogam_str_2,yogam_end_str_2)
+    #print '%%Yogam 1: %s; end: %s;' % (yogam_str,yogam_end_str)
+    #print ' Yogam 2: %s; end: %s;' % (yogam_str_2,yogam_end_str_2)
 
     #Sunrise/sunset and related stuff (like rahu, yama)
     [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
@@ -407,15 +407,28 @@ def main():
       #Blanks for previous weekdays
       for i in range(0,weekday):
         print "{}  &"
-    
-    if nakshatram_end_str_2!='' and tithi_end_str_2!='':
-      print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2,nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2,rahu,yama)
-    elif nakshatram_end_str_2!='' and tithi_end_str_2=='':
-      print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2,rahu,yama)
-    elif nakshatram_end_str_2=='' and tithi_end_str_2!='':
-      print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2,nakshatram_str,nakshatram_end_str,rahu,yama)
-    elif nakshatram_end_str_2=='' and tithi_end_str_2=='':
-      print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{}{}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_str,tithi_end_str,nakshatram_str,nakshatram_end_str,rahu,yama)
+
+    #Create nakshatram data string
+    nEmpty=0
+
+    if nakshatram_end_str_2!='':
+      nakshatram_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2)
+    else:
+      nakshatram_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (nakshatram_str,nakshatram_end_str)
+      nEmpty = nEmpty + 1
+
+    if tithi_end_str_2!='':
+      tithi_data_string = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2)
+    else:
+      tithi_data_string = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str)
+      nEmpty = nEmpty + 1
+
+    empty_str=''
+    for i in range(0,nEmpty):
+      empty_str = empty_str+'{}'
+ 
+
+    print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}%s%s%s{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_data_string,nakshatram_data_string,empty_str,rahu,yama)
   
     if weekday==6:
       print "\\\\ \hline"
