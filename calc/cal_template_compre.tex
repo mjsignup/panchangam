@@ -1,4 +1,4 @@
-\documentclass[a3paper,11pt,portrait]{article}
+\documentclass[a3paper,12pt,landscape]{article}
 \usepackage[sort&compress,square,numbers]{natbib}
 
 \usepackage[xetex]{graphicx}
@@ -61,15 +61,14 @@
 \newcommand{\sundata}[3]{%
 \mbox{{\sun\tiny\UParrow} {\scriptsize #1} {\sun\tiny\DOWNarrow} {\scriptsize #2} \tiny{\mbox{(\textsf{स} #3)}}}
 }
-\newcommand{\tnyk}[5]{
+\newcommand{\tnyk}[4]{
 \mbox{#1}\\
 \mbox{#2}\\
-\textsf{योगं:}~#3\\
-\textsf{करणं:}~#4\\
-#5}
+\mbox{\textsf{योगं:}~#3}\\
+\textsf{करणं:}~#4\\}
 \newcommand{\caldata}[5]{%
-\begin{minipage}{3.35cm}
-\begin{minipage}[t]{2.15cm}
+\begin{minipage}[t]{4.85cm}
+\begin{minipage}[t]{3.65cm}
 #2\\
 %\mbox{}\\
 %\SunshineOpenCircled
@@ -78,8 +77,8 @@
 \mbox{#5}\\
 #4\\
 \end{minipage}\begin{minipage}[c]{1.2cm}
-\vspace{.4ex}
-\hfill \mbox{{\font\x="Minion Pro" at 32 pt\x #1}\hspace{-2mm}}
+\vspace{1ex}
+\hfill \mbox{{\font\x="Warnock Pro" at 40 pt\x #1}\hspace{-2mm}}
 \end{minipage}
 \end{minipage}
 }

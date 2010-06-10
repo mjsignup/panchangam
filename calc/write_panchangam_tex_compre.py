@@ -258,22 +258,6 @@ def main():
     karanam_tmrw = int(1+math.floor((longitude_moon_tmrw-longitude_sun_tmrw)%360 / 6.0))
 
 #    There cannot be more than 3 karanams in a day, because total arc ~ 12 deg and per yogam is 6 deg
-#    if (karanam_tmrw-karanam)%60 > 3:
-#      #quadruple change
-#      karanam_4=((karanam+2)%60)+1
-#      karanam_str_4 = karanam_names[karanam_4]
-#      
-#      karanam_remaining_4 = 6*3+6-(((longitude_moon-longitude_sun)%360)%6)
-#      karanam_end_4 = karanam_remaining_4/(daily_motion_moon-daily_motion_sun)*24.0
-#      karanam_end_str_4 = print_end_time(karanam_end_4,jd_rise_tmrw-jd_rise,t_rise)
-#      if karanam_end_str_4 == '\\textsf{अहोरात्रम्}':
-#        #needs correction, owing to the fact that we compute longitude every 24h, rather than at next sunrise
-#        #the second karanam cannot be 'all day'! It's ending will reflect in tomorrow's calendar
-#        karanam_str_4 = ''
-#        karanam_end_str_4 = ''
-#    else:
-#     karanam_str_4 = ''
-#     karanam_end_str_4 = ''
 
     if (karanam_tmrw-karanam)%60 > 2:
       #triple change
@@ -314,31 +298,12 @@ def main():
     karanam_remaining = 6-(((longitude_moon-longitude_sun)%6)%6)
     karanam_end = karanam_remaining/(daily_motion_moon-daily_motion_sun)*24.0
     karanam_end_str = print_end_time(karanam_end,jd_rise_tmrw-jd_rise,t_rise)
-    #print '%%Karanam 1: %s; end: %s;'  % (karanam_str,karanam_end_str)
-    #print  ' Karanam 2: %s; end: %s;'  % (karanam_str_2,karanam_end_str_2)
-    #print  ' Karanam 3: %s; end: %s;'  % (karanam_str_3,karanam_end_str_3)
 
     #Compute yogam details
     yogam = int(1+math.floor((longitude_moon+longitude_sun)%360 / (360.0/27.0)))
     yogam_tmrw = int(1+math.floor((longitude_moon_tmrw+longitude_sun_tmrw)%360 / (360.0/27.0)))
 
 #    There cannot be more than 2 yogams in a day, because total arc = 13 deg and per yogam is 13.333 deg
-#    if (yogam_tmrw-yogam)%27 > 2:
-#      #triple change
-#      yogam_3=((yogam+1)%27)+1
-#      yogam_str_3 = yogam_names[yogam_3]
-#      
-#      yogam_remaining_3 = 3.0*(360.0/27.0)-(((longitude_moon+longitude_sun)%360)%(360.0/27.0))
-#      yogam_end_3 = yogam_remaining_3/(daily_motion_moon+daily_motion_sun)*24.0
-#      yogam_end_str_3 = print_end_time(yogam_end_3,jd_rise_tmrw-jd_rise,t_rise)
-#      if yogam_end_str_3 == '\\textsf{अहोरात्रम्}':
-#        #needs correction, owing to the fact that we compute longitude every 24h, rather than at next sunrise
-#        #the second yogam cannot be 'all day'! It's ending will reflect in tomorrow's calendar
-#        yogam_str_3 = ''
-#        yogam_end_str_3 = ''
-#    else:
-#     yogam_str_3 = ''
-#     yogam_end_str_3 = ''
 
     if (yogam_tmrw-yogam)%27 > 1:
       #double change
@@ -362,9 +327,6 @@ def main():
     yogam_remaining = (360.0/27.0)-(((longitude_moon+longitude_sun)%360)%(360.0/27.0))
     yogam_end = yogam_remaining/(daily_motion_moon+daily_motion_sun)*24.0
     yogam_end_str = print_end_time(yogam_end,jd_rise_tmrw-jd_rise,t_rise)
-
-    #print '%%Yogam 1: %s; end: %s;' % (yogam_str,yogam_end_str)
-    #print ' Yogam 2: %s; end: %s;' % (yogam_str_2,yogam_end_str_2)
 
     #Sunrise/sunset and related stuff (like rahu, yama)
     [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
@@ -408,41 +370,31 @@ def main():
       for i in range(0,weekday):
         print "{}  &"
 
-    nEmpty=0 #number of empty placeholders in the tithi-nakshatram-karanam-yogam data (depends upon triple/double karanams/yogams/nakshatrams/tithis per day)
-
     if nakshatram_end_str_2!='':
-      nakshatram_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2)
+      nakshatram_data_string = '\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2)
     else:
       nakshatram_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (nakshatram_str,nakshatram_end_str)
-      nEmpty = nEmpty + 1
 
     if tithi_end_str_2!='':
-      tithi_data_string = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2)
+      tithi_data_string = '\\mbox{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}\\mbox{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2)
     else:
       tithi_data_string = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str)
-      nEmpty = nEmpty + 1
 
     if karanam_end_str_3!='':
-      karanam_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (karanam_str,karanam_end_str,karanam_str_2,karanam_end_str_2,karanam_str_3,karanam_end_str_3)
+      karanam_data_string = '\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}\\\\\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (karanam_str,karanam_end_str,karanam_str_2,karanam_end_str_2,karanam_str_3,karanam_end_str_3)
     elif karanam_end_str_2!='':
-      karanam_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (karanam_str,karanam_end_str,karanam_str_2,karanam_end_str_2)
-      nEmpty = nEmpty + 1
+      karanam_data_string = '\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (karanam_str,karanam_end_str,karanam_str_2,karanam_end_str_2)
     else:
-      karanam_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (karanam_str,karanam_end_str)
-      nEmpty = nEmpty + 2
+      karanam_data_string = '\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (karanam_str,karanam_end_str)
 
     if yogam_end_str_2!='':
-      yogam_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (yogam_str,yogam_end_str,yogam_str_2,yogam_end_str_2)
+      yogam_data_string = '\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (yogam_str,yogam_end_str,yogam_str_2,yogam_end_str_2)
     else:
-      yogam_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (yogam_str,yogam_end_str)
-      nEmpty = nEmpty + 1
+      yogam_data_string = '\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (yogam_str,yogam_end_str)
 
-    empty_str=''
-    for i in range(0,nEmpty):
-      empty_str = empty_str+'{}'
  
 
-    print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\tnyk{%s}{%s}{%s}{%s}{%s}}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_data_string,nakshatram_data_string,yogam_data_string,karanam_data_string,empty_str,rahu,yama)
+    print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\tnyk{%s}{%s}{%s}{%s}}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_data_string,nakshatram_data_string,yogam_data_string,karanam_data_string,rahu,yama)
   
     if weekday==6:
       print "\\\\ \hline"
