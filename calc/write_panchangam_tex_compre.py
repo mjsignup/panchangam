@@ -189,12 +189,12 @@ def main():
       #double change
       tithi_2=(tithi%30)+1
       if tithi_2%15 != 0:
-        paksha = ('shukla' if tithi_2<15 else 'krishna')
+        paksha = (paksha_names['shukla'] if tithi_2<15 else paksha_names['krishna'])
       else:
         if tithi_2 == 15:
-          paksha = 'fullmoon'
+          paksha = '\\fullmoon'
         elif tithi_2 == 30:
-          paksha = 'newmoon'
+          paksha = '\\newmoon'
     
       if tithi_2%15 == 0:
         tithi_str_2 = paksha + tithi_names[tithi_2]
@@ -214,12 +214,12 @@ def main():
      tithi_end_str_2 = ''
     
     if tithi%15 != 0:
-      paksha = ('shukla' if tithi<15 else 'krishna')
+      paksha = (paksha_names['shukla'] if tithi<15 else paksha_names['krishna'])
     else:
       if tithi == 15:
-        paksha = 'fullmoon'
+        paksha = '\\fullmoon'
       elif tithi == 30:
-        paksha = 'newmoon'
+        paksha = '\\newmoon'
   
     if tithi%15 == 0:
       tithi_str = paksha + tithi_names[tithi]
@@ -376,9 +376,9 @@ def main():
       nakshatram_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (nakshatram_str,nakshatram_end_str)
 
     if tithi_end_str_2!='':
-      tithi_data_string = '\\mbox{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}\\mbox{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2)
+      tithi_data_string = '\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str,tithi_str_2,tithi_end_str_2)
     else:
-      tithi_data_string = '{\\textsf{\\%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str)
+      tithi_data_string = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (tithi_str,tithi_end_str)
 
     if karanam_end_str_3!='':
       karanam_data_string = '\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}\\\\\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (karanam_str,karanam_end_str,karanam_str_2,karanam_end_str_2,karanam_str_3,karanam_end_str_3)
