@@ -56,8 +56,6 @@ def get_last_dhanur_transit (jd_start,latitude,longitude):
     longitude_sun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
     sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))]
 
-    #print '%f:%d-%d-%d: rise=%s, set=%s, tmrw=%s' %(jd,y,m,d,sun_month_rise,sun_month,sun_month_tmrw)
-
     if sun_month_rise!=sun_month_tmrw:
       if sun_month!=sun_month_tmrw:
         return jd+1
@@ -179,7 +177,6 @@ def main():
       sun_month_end_time = ''
     
     month_data = '\\sunmonth{%s}{%d}{%s}' % (sun_month,sun_month_day,sun_month_end_time)
-    #print '%%@%f:%d-%d-%d: rise=%s, set=%s, tmrw=%s' %(jd,y,m,d,sun_month_rise,sun_month,sun_month_tmrw)
   
     #Compute tithi details
     tithi = int(1+math.floor((longitude_moon-longitude_sun)%360 / 12.0))
@@ -303,7 +300,7 @@ def main():
     yogam = int(1+math.floor((longitude_moon+longitude_sun)%360 / (360.0/27.0)))
     yogam_tmrw = int(1+math.floor((longitude_moon_tmrw+longitude_sun_tmrw)%360 / (360.0/27.0)))
 
-#    There cannot be more than 2 yogams in a day, because total arc = 13 deg and per yogam is 13.333 deg
+    #There cannot be more than 2 yogams in a day, because total arc = 13 deg and per yogam is 13.333 deg
 
     if (yogam_tmrw-yogam)%27 > 1:
       #double change
@@ -349,27 +346,6 @@ def main():
     rahu = '%s--%s' % (print_time(rahukalam_start), print_time(rahukalam_end))
     yama = '%s--%s' % (print_time(yamakandam_start),print_time(yamakandam_end))
     
-    #Layout calendar in LATeX format
-    if d==1:
-      if m>1:
-        if weekday!=0: #Space till Sunday
-          for i in range(weekday,6):
-            print "{}  &"
-          print "\\\\ \hline"
-        print '\end{tabular}'
-        print '\n\n'
-  
-      #Begin tabular
-      print '\\begin{tabular}{|c|c|c|c|c|c|c|}'
-      print '\multicolumn{7}{c}{\Large \\bfseries %s %s}\\\\[3mm]' % (month[m],y)
-      print '\hline'
-      print '\\textbf{SUN} & \\textbf{MON} & \\textbf{TUE} & \\textbf{WED} & \\textbf{THU} & \\textbf{FRI} & \\textbf{SAT} \\\\ \hline'
-      #print '\\textbf{भानु} & \\textbf{इन्दु} & \\textbf{भौम} & \\textbf{बुध} & \\textbf{गुरु} & \\textbf{भृगु} & \\textbf{स्थिर} \\\\ \hline'
-  
-      #Blanks for previous weekdays
-      for i in range(0,weekday):
-        print "{}  &"
-
     if nakshatram_end_str_2!='':
       nakshatram_data_string = '\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (nakshatram_str,nakshatram_end_str,nakshatram_str_2,nakshatram_end_str_2)
     else:
@@ -392,7 +368,26 @@ def main():
     else:
       yogam_data_string = '\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' % (yogam_str,yogam_end_str)
 
- 
+    #Layout calendar in LATeX format
+    if d==1:
+      if m>1:
+        if weekday!=0: #Space till Sunday
+          for i in range(weekday,6):
+            print "{}  &"
+          print "\\\\ \hline"
+        print '\end{tabular}'
+        print '\n\n'
+  
+      #Begin tabular
+      print '\\begin{tabular}{|c|c|c|c|c|c|c|}'
+      print '\multicolumn{7}{c}{\Large \\bfseries %s %s}\\\\[3mm]' % (month[m],y)
+      print '\hline'
+      print '\\textbf{SUN} & \\textbf{MON} & \\textbf{TUE} & \\textbf{WED} & \\textbf{THU} & \\textbf{FRI} & \\textbf{SAT} \\\\ \hline'
+      #print '\\textbf{भानु} & \\textbf{इन्दु} & \\textbf{भौम} & \\textbf{बुध} & \\textbf{गुरु} & \\textbf{भृगु} & \\textbf{स्थिर} \\\\ \hline'
+  
+      #Blanks for previous weekdays
+      for i in range(0,weekday):
+        print "{}  &"
 
     print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\tnyk{%s}{%s}{%s}{%s}}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],d,month_data,rise,set,madhya,tithi_data_string,nakshatram_data_string,yogam_data_string,karanam_data_string,rahu,yama)
   
@@ -419,7 +414,6 @@ def main():
   print '\end{tabular}'
   print '\n\n'
   
-  #print '\\input{%d-%s.tex}' % (year,city_name)
   print template_lines[-2][:-1]
   print template_lines[-1][:-1]
 
