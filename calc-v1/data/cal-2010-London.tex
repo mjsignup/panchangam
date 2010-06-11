@@ -1,0 +1,1007 @@
+\documentclass[a4paper,11pt,landscape]{article}
+\usepackage[sort&compress,square,numbers]{natbib}
+
+\usepackage[xetex]{graphicx}
+%\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage[normalsections]{savetrees}
+\usepackage{euler}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{bbding}
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+%\usepackage[bookmarks, colorlinks, breaklinks, pdftitle={Karthik Raman - vita},pdfauthor={Karthik Raman}]{hyperref} 
+\usepackage[dvipsnames]{xcolor} 
+\usepackage{wasysym} 
+%\hypersetup{linkcolor=Sepia,citecolor=blue,filecolor=black,urlcolor=Blue} 
+
+
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+\setmainfont[BoldFont=ScalaSans-BoldLF]{Scala Sans LF}
+\setsansfont{Sanskrit 2003:script=deva}
+
+%%%%%%% Numbers and counters %%%%%%%
+\newcount\num
+\newcount\tempone \newcount\temptwo
+\newcommand{\devanumber}[1]{%
+\num=#1\devanumberrecurse}
+
+\newcommand{\devanumberrecurse}{%
+{\tempone=\num
+%  \showthe\tempone\ %
+\ifnum\num > 0 
+	\divide \num by 10%
+	\temptwo=\num \multiply\temptwo by -10%
+	\devanumberrecurse%
+% 	\\stage 2\ %
+% 	\showthe\temptwo\ %
+% 	temp1=\number\tempone\ %
+% 	num=\number\num\ %
+	\advance\tempone by \temptwo%
+	\devadigit
+\fi
+}}
+
+\newcommand{\devadigit}{%
+\ifcase\tempone०\or१\or२\or३\or४\or५\or६\or७\or८\or९\fi%\number\tempone%
+}
+
+%%%%%%%% Calendar display stuff %%%%%%%%%%%
+\newcommand{\sunmonth}[3]{%
+\footnotesize\textsf{#1~\devanumber{#2}}\\
+\mbox{\scriptsize #3}
+}
+%\newcommand{\sundata}[3]{%
+%\mbox{{\sun\tiny\UParrow} \scriptsize #1}\\
+%\mbox{{\sun\tiny\DOWNarrow} \scriptsize  #2}~\scriptsize{\mbox{(\textsf{स} #3)}}
+%}
+\newcommand{\sundata}[3]{%
+\mbox{{\sun\tiny\UParrow} {\scriptsize #1} {\sun\tiny\DOWNarrow} {\scriptsize #2} \tiny{\mbox{(\textsf{स} #3)}}}
+}
+\newcommand{\caldata}[8]{%
+\begin{minipage}{3.35cm}
+\begin{minipage}[t]{2.15cm}
+#2\\
+%\mbox{}\\
+%\SunshineOpenCircled
+#3\\
+\scriptsize
+\mbox{#8}\\
+\mbox{#4}\\
+\mbox{#5}\\
+\mbox{#6}\\
+\mbox{#7}\\
+\end{minipage}\begin{minipage}[c]{1.2cm}
+\vspace{.4ex}
+\hfill \mbox{{\font\x="Minion Pro" at 32 pt\x #1}\hspace{-2mm}}
+\end{minipage}
+\end{minipage}
+}
+
+\addtolength{\headsep}{-3ex}
+\pagestyle{empty}
+
+
+\newcommand{\shukla}{शुक्ल}
+\newcommand{\krishna}{कृष्ण}
+
+
+\begin{document}
+\rmfamily
+\pagestyle{empty}
+\begin{center}
+\mbox{}\\[2.5in]
+\hrule\mbox{}
+\mbox{}\\[1ex]
+\mbox{}
+{\font\x="Warnock Pro" at 60 pt\x 2010\\[0.3cm]}
+\mbox{\font\x="Sanskrit 2003:script=deva" at 48 pt\x विरोधी–विकृति}\\[0.5cm]
+{\font\x="Warnock Pro" at 48 pt\x \uppercase{London}\\[0.3cm]}
+\hrule
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries JANUARY 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{धनुः}{17}{}}{\sundata{08:07}{15:59}{09:41}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 15:43\hspace{2ex}}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 22:26\hspace{2ex}}{}{}{\textsf{राहु}~11:04--12:03~~\textsf{यम}~14:01--15:00} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{धनुः}{18}{}}{\sundata{08:06}{16:00}{09:40}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 12:14\hspace{2ex}}{\textsf{पुष्य} {\tiny \RIGHTarrow} 19:43\hspace{2ex}}{}{}{\textsf{राहु}~10:04--11:03~~\textsf{यम}~13:02--14:01} 
+\\ \hline
+\caldata{\textcolor{blue}{3}}{\sunmonth{धनुः}{19}{}}{\sundata{08:06}{16:01}{09:41}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 08:50\hspace{2ex}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 05:45(+1)}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 17:10\hspace{2ex}}{}{\textsf{राहु}~15:01--16:01~~\textsf{यम}~12:03--13:02} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{धनुः}{20}{}}{\sundata{08:06}{16:02}{09:41}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 03:04(+1)}{\textsf{मघा} {\tiny \RIGHTarrow} 14:56\hspace{2ex}}{}{}{\textsf{राहु}~09:05--10:05~~\textsf{यम}~11:04--12:04} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{धनुः}{21}{}}{\sundata{08:06}{16:03}{09:41}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 00:54(+1)}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 13:08\hspace{2ex}}{}{}{\textsf{राहु}~14:03--15:03~~\textsf{यम}~10:05--11:04} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{धनुः}{22}{}}{\sundata{08:05}{16:05}{09:41}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 23:18\hspace{2ex}}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 11:53\hspace{2ex}}{}{}{\textsf{राहु}~12:05--13:05~~\textsf{यम}~09:05--10:05} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{धनुः}{23}{}}{\sundata{08:05}{16:06}{09:41}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 22:20\hspace{2ex}}{\textsf{हस्त} {\tiny \RIGHTarrow} 11:14\hspace{2ex}}{}{}{\textsf{राहु}~13:05--14:05~~\textsf{यम}~08:05--09:05} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{धनुः}{24}{}}{\sundata{08:04}{16:07}{09:40}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 22:01\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 11:14\hspace{2ex}}{}{}{\textsf{राहु}~11:05--12:05~~\textsf{यम}~14:06--15:06} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{धनुः}{25}{}}{\sundata{08:04}{16:09}{09:41}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 22:20\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 11:52\hspace{2ex}}{}{}{\textsf{राहु}~10:05--11:05~~\textsf{यम}~13:07--14:07} 
+\\ \hline
+\caldata{\textcolor{blue}{10}}{\sunmonth{धनुः}{26}{}}{\sundata{08:03}{16:10}{09:40}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 23:14\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 13:05\hspace{2ex}}{}{}{\textsf{राहु}~15:09--16:10~~\textsf{यम}~12:06--13:07} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{धनुः}{27}{}}{\sundata{08:03}{16:11}{09:40}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 00:39(+1)}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 14:49\hspace{2ex}}{}{}{\textsf{राहु}~09:04--10:05~~\textsf{यम}~11:06--12:07} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{धनुः}{28}{}}{\sundata{08:02}{16:13}{09:40}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 02:30(+1)}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 17:00\hspace{2ex}}{}{}{\textsf{राहु}~14:10--15:11~~\textsf{यम}~10:04--11:06} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{धनुः}{29}{{\textsf{धनुः} {\tiny \RIGHTarrow} 07:01(+1)}}}{\sundata{08:01}{16:14}{09:39}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 04:42(+1)}{\textsf{मूला} {\tiny \RIGHTarrow} 19:33\hspace{2ex}}{}{}{\textsf{राहु}~12:07--13:09~~\textsf{यम}~09:02--10:04} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{मकर}{1}{}}{\sundata{08:01}{16:16}{09:40}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 07:11(+1)}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 22:23\hspace{2ex}}{}{}{\textsf{राहु}~13:10--14:12~~\textsf{यम}~08:01--09:02} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{मकर}{2}{}}{\sundata{08:00}{16:17}{09:39}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 01:24(+1)}{}{}{\textsf{राहु}~11:06--12:08~~\textsf{यम}~14:12--15:14} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{मकर}{3}{}}{\sundata{07:59}{16:19}{09:39}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 09:50\hspace{2ex}}{\textsf{श्रवण} {\tiny \RIGHTarrow} 04:31(+1)}{}{}{\textsf{राहु}~10:04--11:06~~\textsf{यम}~13:11--14:14} 
+\\ \hline
+\caldata{\textcolor{blue}{17}}{\sunmonth{मकर}{4}{}}{\sundata{07:58}{16:21}{09:38}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 12:34\hspace{2ex}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 07:37(+1)}{}{}{\textsf{राहु}~15:18--16:21~~\textsf{यम}~12:09--13:12} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{मकर}{5}{}}{\sundata{07:57}{16:22}{09:38}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 15:14\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~09:00--10:03~~\textsf{यम}~11:06--12:09} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{मकर}{6}{}}{\sundata{07:56}{16:24}{09:37}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 17:42\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 10:35\hspace{2ex}}{}{}{\textsf{राहु}~14:17--15:20~~\textsf{यम}~10:03--11:06} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{मकर}{7}{}}{\sundata{07:55}{16:26}{09:37}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 19:50\hspace{2ex}}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 13:16\hspace{2ex}}{}{}{\textsf{राहु}~12:10--13:14~~\textsf{यम}~08:58--10:02} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{मकर}{8}{}}{\sundata{07:54}{16:27}{09:36}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 21:30\hspace{2ex}}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 15:31\hspace{2ex}}{}{}{\textsf{राहु}~13:14--14:18~~\textsf{यम}~07:54--08:58} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{मकर}{9}{}}{\sundata{07:53}{16:29}{09:36}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 22:32\hspace{2ex}}{\textsf{रेवती} {\tiny \RIGHTarrow} 17:13\hspace{2ex}}{}{}{\textsf{राहु}~11:06--12:11~~\textsf{यम}~14:20--15:24} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{मकर}{10}{}}{\sundata{07:52}{16:31}{09:35}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 22:52\hspace{2ex}}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 18:14\hspace{2ex}}{}{}{\textsf{राहु}~10:01--11:06~~\textsf{यम}~13:16--14:21} 
+\\ \hline
+\caldata{\textcolor{blue}{24}}{\sunmonth{मकर}{11}{}}{\sundata{07:50}{16:32}{09:34}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 22:24\hspace{2ex}}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 18:32\hspace{2ex}}{}{}{\textsf{राहु}~15:26--16:32~~\textsf{यम}~12:11--13:16} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{मकर}{12}{}}{\sundata{07:49}{16:34}{09:34}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 21:10\hspace{2ex}}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 18:04\hspace{2ex}}{}{}{\textsf{राहु}~08:54--10:00~~\textsf{यम}~11:05--12:11} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{मकर}{13}{}}{\sundata{07:48}{16:36}{09:33}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 19:13\hspace{2ex}}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 16:52\hspace{2ex}}{}{}{\textsf{राहु}~14:24--15:30~~\textsf{यम}~10:00--11:06} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{मकर}{14}{}}{\sundata{07:46}{16:38}{09:32}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 16:37\hspace{2ex}}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 15:02\hspace{2ex}}{}{}{\textsf{राहु}~12:12--13:18~~\textsf{यम}~08:52--09:59} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{मकर}{15}{}}{\sundata{07:45}{16:39}{09:31}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 13:31\hspace{2ex}}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 12:41\hspace{2ex}}{}{}{\textsf{राहु}~13:18--14:25~~\textsf{यम}~07:45--08:51} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{मकर}{16}{}}{\sundata{07:44}{16:41}{09:31}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 10:01\hspace{2ex}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 06:17(+1)}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 09:56\hspace{2ex}}{\textsf{पुष्य} {\tiny \RIGHTarrow} 06:57(+1)}{\textsf{राहु}~11:05--12:12~~\textsf{यम}~14:26--15:33} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{मकर}{17}{}}{\sundata{07:42}{16:43}{09:30}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 02:30(+1)}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 03:55(+1)}{}{}{\textsf{राहु}~09:57--11:04~~\textsf{यम}~13:20--14:27} 
+\\ \hline
+\caldata{\textcolor{blue}{31}}{\sunmonth{मकर}{18}{}}{\sundata{07:41}{16:45}{09:29}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 22:52\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 01:02(+1)}{}{}{\textsf{राहु}~15:37--16:45~~\textsf{यम}~12:13--13:21} 
+&
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries FEBRUARY 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{मकर}{19}{}}{\sundata{07:39}{16:47}{09:28}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 19:31\hspace{2ex}}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 22:29\hspace{2ex}}{}{}{\textsf{राहु}~08:47--09:56~~\textsf{यम}~11:04--12:13} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{मकर}{20}{}}{\sundata{07:38}{16:48}{09:28}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 16:37\hspace{2ex}}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 20:24\hspace{2ex}}{}{}{\textsf{राहु}~14:30--15:39~~\textsf{यम}~09:55--11:04} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{मकर}{21}{}}{\sundata{07:36}{16:50}{09:26}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 14:19\hspace{2ex}}{\textsf{हस्त} {\tiny \RIGHTarrow} 18:56\hspace{2ex}}{}{}{\textsf{राहु}~12:13--13:22~~\textsf{यम}~08:45--09:54} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{मकर}{22}{}}{\sundata{07:34}{16:52}{09:25}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 12:44\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 18:12\hspace{2ex}}{}{}{\textsf{राहु}~13:22--14:32~~\textsf{यम}~07:34--08:43} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{मकर}{23}{}}{\sundata{07:33}{16:54}{09:25}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 11:56\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 18:14\hspace{2ex}}{}{}{\textsf{राहु}~11:03--12:13~~\textsf{यम}~14:33--15:43} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{मकर}{24}{}}{\sundata{07:31}{16:56}{09:24}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 11:59\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 19:04\hspace{2ex}}{}{}{\textsf{राहु}~09:52--11:02~~\textsf{यम}~13:24--14:34} 
+\\ \hline
+\caldata{\textcolor{blue}{7}}{\sunmonth{मकर}{25}{}}{\sundata{07:29}{16:58}{09:22}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 12:48\hspace{2ex}}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 20:38\hspace{2ex}}{}{}{\textsf{राहु}~15:46--16:58~~\textsf{यम}~12:13--13:24} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{मकर}{26}{}}{\sundata{07:28}{16:59}{09:22}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 14:19\hspace{2ex}}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 22:48\hspace{2ex}}{}{}{\textsf{राहु}~08:39--09:50~~\textsf{यम}~11:02--12:13} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{मकर}{27}{}}{\sundata{07:26}{17:01}{09:21}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 16:22\hspace{2ex}}{\textsf{मूला} {\tiny \RIGHTarrow} 01:27(+1)}{}{}{\textsf{राहु}~14:37--15:49~~\textsf{यम}~09:49--11:01} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{मकर}{28}{}}{\sundata{07:24}{17:03}{09:19}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 18:48\hspace{2ex}}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 04:25(+1)}{}{}{\textsf{राहु}~12:13--13:25~~\textsf{यम}~08:36--09:48} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{मकर}{29}{}}{\sundata{07:22}{17:05}{09:18}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 21:27\hspace{2ex}}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~13:26--14:39~~\textsf{यम}~07:22--08:34} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{मकर}{30}{{\textsf{मकर} {\tiny \RIGHTarrow} 20:00\hspace{2ex}}}}{\sundata{07:20}{17:07}{09:17}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 00:10(+1)}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 07:32\hspace{2ex}}{}{}{\textsf{राहु}~11:00--12:13~~\textsf{यम}~14:40--15:53} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{कुम्भ}{1}{}}{\sundata{07:19}{17:09}{09:17}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 02:50(+1)}{\textsf{श्रवण} {\tiny \RIGHTarrow} 10:40\hspace{2ex}}{}{}{\textsf{राहु}~09:46--11:00~~\textsf{यम}~13:27--14:41} 
+\\ \hline
+\caldata{\textcolor{blue}{14}}{\sunmonth{कुम्भ}{2}{}}{\sundata{07:17}{17:11}{09:15}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 05:21(+1)}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 13:42\hspace{2ex}}{}{}{\textsf{राहु}~15:56--17:11~~\textsf{यम}~12:14--13:28} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{कुम्भ}{3}{}}{\sundata{07:15}{17:12}{09:14}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 16:34\hspace{2ex}}{}{}{\textsf{राहु}~08:29--09:44~~\textsf{यम}~10:58--12:13} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{कुम्भ}{4}{}}{\sundata{07:13}{17:14}{09:13}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 07:38\hspace{2ex}}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 19:10\hspace{2ex}}{}{}{\textsf{राहु}~14:43--15:58~~\textsf{यम}~09:43--10:58} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{कुम्भ}{5}{}}{\sundata{07:11}{17:16}{09:12}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 09:36\hspace{2ex}}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 21:28\hspace{2ex}}{}{}{\textsf{राहु}~12:13--13:29~~\textsf{यम}~08:26--09:42} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{कुम्भ}{6}{}}{\sundata{07:09}{17:18}{09:10}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 11:10\hspace{2ex}}{\textsf{रेवती} {\tiny \RIGHTarrow} 23:21\hspace{2ex}}{}{}{\textsf{राहु}~13:29--14:45~~\textsf{यम}~07:09--08:25} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{कुम्भ}{7}{}}{\sundata{07:07}{17:20}{09:09}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 12:17\hspace{2ex}}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 00:47(+1)}{}{}{\textsf{राहु}~10:56--12:13~~\textsf{यम}~14:46--16:03} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{कुम्भ}{8}{}}{\sundata{07:05}{17:21}{09:08}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 12:53\hspace{2ex}}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 01:40(+1)}{}{}{\textsf{राहु}~09:39--10:56~~\textsf{यम}~13:30--14:47} 
+\\ \hline
+\caldata{\textcolor{blue}{21}}{\sunmonth{कुम्भ}{9}{}}{\sundata{07:03}{17:23}{09:07}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 12:52\hspace{2ex}}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 01:56(+1)}{}{}{\textsf{राहु}~16:05--17:23~~\textsf{यम}~12:13--13:30} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{कुम्भ}{10}{}}{\sundata{07:01}{17:25}{09:05}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 12:14\hspace{2ex}}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 01:34(+1)}{}{}{\textsf{राहु}~08:19--09:37~~\textsf{यम}~10:55--12:13} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{कुम्भ}{11}{}}{\sundata{06:59}{17:27}{09:04}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 10:56\hspace{2ex}}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 00:32(+1)}{}{}{\textsf{राहु}~14:50--16:08~~\textsf{यम}~09:36--10:54} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{कुम्भ}{12}{}}{\sundata{06:57}{17:29}{09:03}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 09:00\hspace{2ex}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 06:28(+1)}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 22:54\hspace{2ex}}{}{\textsf{राहु}~12:13--13:32~~\textsf{यम}~08:16--09:35} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{कुम्भ}{13}{}}{\sundata{06:55}{17:30}{09:02}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 03:23(+1)}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 20:45\hspace{2ex}}{}{}{\textsf{राहु}~13:31--14:51~~\textsf{यम}~06:55--08:14} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{कुम्भ}{14}{}}{\sundata{06:52}{17:32}{09:00}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 23:57\hspace{2ex}}{\textsf{पुष्य} {\tiny \RIGHTarrow} 18:12\hspace{2ex}}{}{}{\textsf{राहु}~10:52--12:12~~\textsf{यम}~14:52--16:12} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{कुम्भ}{15}{}}{\sundata{06:50}{17:34}{08:58}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 20:20\hspace{2ex}}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 15:23\hspace{2ex}}{}{}{\textsf{राहु}~09:31--10:51~~\textsf{यम}~13:32--14:53} 
+\\ \hline
+\caldata{\textcolor{blue}{28}}{\sunmonth{कुम्भ}{16}{}}{\sundata{06:48}{17:36}{08:57}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 16:39\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 12:27\hspace{2ex}}{}{}{\textsf{राहु}~16:15--17:36~~\textsf{यम}~12:12--13:33} 
+&
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries MARCH 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{कुम्भ}{17}{}}{\sundata{06:46}{17:38}{08:56}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 13:04\hspace{2ex}}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 09:35\hspace{2ex}}{}{}{\textsf{राहु}~08:07--09:29~~\textsf{यम}~10:50--12:12} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{कुम्भ}{18}{}}{\sundata{06:44}{17:39}{08:55}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 09:46\hspace{2ex}}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 06:58\hspace{2ex}}{\textsf{हस्त} {\tiny \RIGHTarrow} 04:51(+1)}{}{\textsf{राहु}~14:55--16:17~~\textsf{यम}~09:27--10:49} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{कुम्भ}{19}{}}{\sundata{06:42}{17:41}{08:53}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 06:55\hspace{2ex}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 04:46(+1)}{\textsf{चित्रा} {\tiny \RIGHTarrow} 03:22(+1)}{}{\textsf{राहु}~12:11--13:33~~\textsf{यम}~08:04--09:26} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{कुम्भ}{20}{}}{\sundata{06:40}{17:43}{08:52}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 03:24(+1)}{\textsf{स्वाति} {\tiny \RIGHTarrow} 02:38(+1)}{}{}{\textsf{राहु}~13:34--14:57~~\textsf{यम}~06:40--08:02} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{कुम्भ}{21}{}}{\sundata{06:37}{17:45}{08:50}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 02:53(+1)}{\textsf{विशाखा} {\tiny \RIGHTarrow} 02:43(+1)}{}{}{\textsf{राहु}~10:47--12:11~~\textsf{यम}~14:58--16:21} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{कुम्भ}{22}{}}{\sundata{06:35}{17:46}{08:49}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 03:14(+1)}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 03:40(+1)}{}{}{\textsf{राहु}~09:22--10:46~~\textsf{यम}~13:34--14:58} 
+\\ \hline
+\caldata{\textcolor{blue}{7}}{\sunmonth{कुम्भ}{23}{}}{\sundata{06:33}{17:48}{08:48}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 04:25(+1)}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 05:24(+1)}{}{}{\textsf{राहु}~16:23--17:48~~\textsf{यम}~12:10--13:34} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{कुम्भ}{24}{}}{\sundata{06:31}{17:50}{08:46}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 06:17(+1)}{\textsf{मूला} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~07:55--09:20~~\textsf{यम}~10:45--12:10} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{कुम्भ}{25}{}}{\sundata{06:28}{17:52}{08:44}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{मूला} {\tiny \RIGHTarrow} 07:49\hspace{2ex}}{}{}{\textsf{राहु}~15:01--16:26~~\textsf{यम}~09:19--10:44} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{कुम्भ}{26}{}}{\sundata{06:26}{17:53}{08:43}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 08:41\hspace{2ex}}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 10:43\hspace{2ex}}{}{}{\textsf{राहु}~12:09--13:35~~\textsf{यम}~07:51--09:17} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{कुम्भ}{27}{}}{\sundata{06:24}{17:55}{08:42}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 11:21\hspace{2ex}}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 13:51\hspace{2ex}}{}{}{\textsf{राहु}~13:35--15:02~~\textsf{यम}~06:24--07:50} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{कुम्भ}{28}{}}{\sundata{06:22}{17:57}{08:41}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 14:04\hspace{2ex}}{\textsf{श्रवण} {\tiny \RIGHTarrow} 17:01\hspace{2ex}}{}{}{\textsf{राहु}~10:42--12:09~~\textsf{यम}~15:03--16:30} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{कुम्भ}{29}{}}{\sundata{06:20}{17:58}{08:39}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 16:39\hspace{2ex}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 20:02\hspace{2ex}}{}{}{\textsf{राहु}~09:14--10:41~~\textsf{यम}~13:36--15:03} 
+\\ \hline
+\caldata{\textcolor{blue}{14}}{\sunmonth{मीन}{1}{{\textsf{कुम्भ} {\tiny \RIGHTarrow} 16:52\hspace{2ex}}}}{\sundata{06:17}{18:00}{08:37}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 18:59\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 22:49\hspace{2ex}}{}{}{\textsf{राहु}~16:32--18:00~~\textsf{यम}~12:08--13:36} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{मीन}{2}{}}{\sundata{06:15}{18:02}{08:36}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 20:58\hspace{2ex}}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 01:15(+1)}{}{}{\textsf{राहु}~07:43--09:11~~\textsf{यम}~10:40--12:08} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{मीन}{3}{}}{\sundata{06:13}{18:04}{08:35}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 22:35\hspace{2ex}}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 03:20(+1)}{}{}{\textsf{राहु}~15:06--16:35~~\textsf{यम}~09:10--10:39} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{मीन}{4}{}}{\sundata{06:10}{18:05}{08:33}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 23:48\hspace{2ex}}{\textsf{रेवती} {\tiny \RIGHTarrow} 05:02(+1)}{}{}{\textsf{राहु}~12:07--13:36~~\textsf{यम}~07:39--09:08} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{मीन}{5}{}}{\sundata{06:08}{18:07}{08:31}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 00:36(+1)}{\textsf{अश्विनी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~13:37--15:07~~\textsf{यम}~06:08--07:37} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{मीन}{6}{}}{\sundata{06:06}{18:09}{08:30}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 01:01(+1)}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 06:21\hspace{2ex}}{}{}{\textsf{राहु}~10:37--12:07~~\textsf{यम}~15:08--16:38} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{मीन}{7}{}}{\sundata{06:04}{18:10}{08:29}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 01:00(+1)}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 07:15\hspace{2ex}}{}{}{\textsf{राहु}~09:05--10:36~~\textsf{यम}~13:37--15:08} 
+\\ \hline
+\caldata{\textcolor{blue}{21}}{\sunmonth{मीन}{8}{}}{\sundata{06:01}{18:12}{08:27}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 00:32(+1)}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 07:45\hspace{2ex}}{}{}{\textsf{राहु}~16:40--18:12~~\textsf{यम}~12:06--13:37} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{मीन}{9}{}}{\sundata{05:59}{18:14}{08:26}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 23:35\hspace{2ex}}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 07:49\hspace{2ex}}{}{}{\textsf{राहु}~07:30--09:02~~\textsf{यम}~10:34--12:06} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{मीन}{10}{}}{\sundata{05:57}{18:15}{08:24}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 22:10\hspace{2ex}}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 07:24\hspace{2ex}}{}{}{\textsf{राहु}~15:10--16:42~~\textsf{यम}~09:01--10:33} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{मीन}{11}{}}{\sundata{05:55}{18:17}{08:23}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 20:15\hspace{2ex}}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 06:31\hspace{2ex}}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 05:09(+1)}{}{\textsf{राहु}~12:06--13:38~~\textsf{यम}~07:27--09:00} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{मीन}{12}{}}{\sundata{05:52}{18:19}{08:21}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 17:53\hspace{2ex}}{\textsf{पुष्य} {\tiny \RIGHTarrow} 03:21(+1)}{}{}{\textsf{राहु}~13:38--15:12~~\textsf{यम}~05:52--07:25} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{मीन}{13}{}}{\sundata{05:50}{18:21}{08:20}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 15:08\hspace{2ex}}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 01:11(+1)}{}{}{\textsf{राहु}~10:31--12:05~~\textsf{यम}~15:13--16:47} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{मीन}{14}{}}{\sundata{05:48}{18:22}{08:18}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 12:05\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 22:47\hspace{2ex}}{}{}{\textsf{राहु}~08:56--10:30~~\textsf{यम}~13:39--15:13} 
+\\ \hline
+\caldata{\textcolor{blue}{28}}{\sunmonth{मीन}{15}{}}{\sundata{06:45}{19:24}{09:16}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 09:51\hspace{2ex}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 06:34(+1)}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 21:17\hspace{2ex}}{}{\textsf{राहु}~17:49--19:24~~\textsf{यम}~13:04--14:39} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{मीन}{16}{}}{\sundata{06:43}{19:26}{09:15}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 03:26(+1)}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 18:52\hspace{2ex}}{}{}{\textsf{राहु}~08:18--09:53~~\textsf{यम}~11:29--13:04} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{मीन}{17}{}}{\sundata{06:41}{19:27}{09:14}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 00:37(+1)}{\textsf{हस्त} {\tiny \RIGHTarrow} 16:40\hspace{2ex}}{}{}{\textsf{राहु}~16:15--17:51~~\textsf{यम}~09:52--11:28} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{मीन}{18}{}}{\sundata{06:39}{19:29}{09:13}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 22:17\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 14:52\hspace{2ex}}{}{}{\textsf{राहु}~13:04--14:40~~\textsf{यम}~08:15--09:51} 
+&
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries APRIL 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{मीन}{19}{}}{\sundata{06:36}{19:31}{09:11}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 20:34\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 13:39\hspace{2ex}}{}{}{\textsf{राहु}~14:40--16:17~~\textsf{यम}~06:36--08:12} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{मीन}{20}{}}{\sundata{06:34}{19:32}{09:09}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 19:37\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 13:09\hspace{2ex}}{}{}{\textsf{राहु}~11:25--13:03~~\textsf{यम}~16:17--17:54} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{मीन}{21}{}}{\sundata{06:32}{19:34}{09:08}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 19:29\hspace{2ex}}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 13:28\hspace{2ex}}{}{}{\textsf{राहु}~09:47--11:25~~\textsf{यम}~14:40--16:18} 
+\\ \hline
+\caldata{\textcolor{blue}{4}}{\sunmonth{मीन}{22}{}}{\sundata{06:30}{19:36}{09:07}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 20:12\hspace{2ex}}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 14:36\hspace{2ex}}{}{}{\textsf{राहु}~17:57--19:36~~\textsf{यम}~13:03--14:41} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{मीन}{23}{}}{\sundata{06:27}{19:37}{09:05}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 21:40\hspace{2ex}}{\textsf{मूला} {\tiny \RIGHTarrow} 16:31\hspace{2ex}}{}{}{\textsf{राहु}~08:05--09:44~~\textsf{यम}~11:23--13:02} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{मीन}{24}{}}{\sundata{06:25}{19:39}{09:03}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 23:46\hspace{2ex}}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 19:02\hspace{2ex}}{}{}{\textsf{राहु}~16:20--17:59~~\textsf{यम}~09:43--11:22} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{मीन}{25}{}}{\sundata{06:23}{19:41}{09:02}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 02:15(+1)}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 21:58\hspace{2ex}}{}{}{\textsf{राहु}~13:02--14:41~~\textsf{यम}~08:02--09:42} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{मीन}{26}{}}{\sundata{06:21}{19:42}{09:01}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 04:52(+1)}{\textsf{श्रवण} {\tiny \RIGHTarrow} 01:05(+1)}{}{}{\textsf{राहु}~14:41--16:21~~\textsf{यम}~06:21--08:01} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{मीन}{27}{}}{\sundata{06:18}{19:44}{08:59}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 04:08(+1)}{}{}{\textsf{राहु}~11:20--13:01~~\textsf{यम}~16:22--18:03} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{मीन}{28}{}}{\sundata{06:16}{19:46}{08:58}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 07:23\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~09:38--11:19~~\textsf{यम}~14:42--16:23} 
+\\ \hline
+\caldata{\textcolor{blue}{11}}{\sunmonth{मीन}{29}{}}{\sundata{06:14}{19:47}{08:56}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 09:35\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 06:55\hspace{2ex}}{}{}{\textsf{राहु}~18:05--19:47~~\textsf{यम}~13:00--14:42} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{मीन}{30}{}}{\sundata{06:12}{19:49}{08:55}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 11:21\hspace{2ex}}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 09:16\hspace{2ex}}{}{}{\textsf{राहु}~07:54--09:36~~\textsf{यम}~11:18--13:00} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{मीन}{31}{{\textsf{मीन} {\tiny \RIGHTarrow} 02:21(+1)}}}{\sundata{06:10}{19:51}{08:54}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 12:38\hspace{2ex}}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 11:09\hspace{2ex}}{}{}{\textsf{राहु}~16:25--18:08~~\textsf{यम}~09:35--11:17} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{मेष}{1}{}}{\sundata{06:07}{19:52}{08:52}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 13:26\hspace{2ex}}{\textsf{रेवती} {\tiny \RIGHTarrow} 12:34\hspace{2ex}}{}{}{\textsf{राहु}~12:59--14:42~~\textsf{यम}~07:50--09:33} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{मेष}{2}{}}{\sundata{06:05}{19:54}{08:50}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 13:45\hspace{2ex}}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 13:33\hspace{2ex}}{}{}{\textsf{राहु}~14:43--16:26~~\textsf{यम}~06:05--07:48} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{मेष}{3}{}}{\sundata{06:03}{19:56}{08:49}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 13:40\hspace{2ex}}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 14:06\hspace{2ex}}{}{}{\textsf{राहु}~11:15--12:59~~\textsf{यम}~16:27--18:11} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{मेष}{4}{}}{\sundata{06:01}{19:57}{08:48}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 13:12\hspace{2ex}}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 14:19\hspace{2ex}}{}{}{\textsf{राहु}~09:30--11:14~~\textsf{यम}~14:43--16:28} 
+\\ \hline
+\caldata{\textcolor{blue}{18}}{\sunmonth{मेष}{5}{}}{\sundata{05:59}{19:59}{08:47}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 12:24\hspace{2ex}}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 14:12\hspace{2ex}}{}{}{\textsf{राहु}~18:14--19:59~~\textsf{यम}~12:59--14:44} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{मेष}{6}{}}{\sundata{05:57}{20:01}{08:45}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 11:19\hspace{2ex}}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 13:47\hspace{2ex}}{}{}{\textsf{राहु}~07:42--09:28~~\textsf{यम}~11:13--12:59} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{मेष}{7}{}}{\sundata{05:55}{20:02}{08:44}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 09:55\hspace{2ex}}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 13:05\hspace{2ex}}{}{}{\textsf{राहु}~16:30--18:16~~\textsf{यम}~09:26--11:12} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{मेष}{8}{}}{\sundata{05:53}{20:04}{08:43}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 08:15\hspace{2ex}}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 12:06\hspace{2ex}}{}{}{\textsf{राहु}~12:58--14:44~~\textsf{यम}~07:39--09:25} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{मेष}{9}{}}{\sundata{05:51}{20:06}{08:42}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 06:18\hspace{2ex}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 04:05(+1)}{\textsf{पुष्य} {\tiny \RIGHTarrow} 10:50\hspace{2ex}}{}{\textsf{राहु}~14:45--16:32~~\textsf{यम}~05:51--07:37} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{मेष}{10}{}}{\sundata{05:49}{20:07}{08:40}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 01:38(+1)}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 09:20\hspace{2ex}}{}{}{\textsf{राहु}~11:10--12:58~~\textsf{यम}~16:32--18:19} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{मेष}{11}{}}{\sundata{05:47}{20:09}{08:39}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 23:03\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 07:38\hspace{2ex}}{}{}{\textsf{राहु}~09:22--11:10~~\textsf{यम}~14:45--16:33} 
+\\ \hline
+\caldata{\textcolor{blue}{25}}{\sunmonth{मेष}{12}{}}{\sundata{05:45}{20:11}{08:38}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 20:25\hspace{2ex}}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 05:47\hspace{2ex}}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 03:55(+1)}{}{\textsf{राहु}~18:22--20:11~~\textsf{यम}~12:58--14:46} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{मेष}{13}{}}{\sundata{05:43}{20:12}{08:36}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 17:50\hspace{2ex}}{\textsf{हस्त} {\tiny \RIGHTarrow} 02:09(+1)}{}{}{\textsf{राहु}~07:31--09:20~~\textsf{यम}~11:08--12:57} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{मेष}{14}{}}{\sundata{05:41}{20:14}{08:35}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 15:26\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 00:38(+1)}{}{}{\textsf{राहु}~16:35--18:24~~\textsf{यम}~09:19--11:08} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{मेष}{15}{}}{\sundata{05:39}{20:16}{08:34}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 13:22\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 23:30\hspace{2ex}}{}{}{\textsf{राहु}~12:57--14:47~~\textsf{यम}~07:28--09:18} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{मेष}{16}{}}{\sundata{05:37}{20:17}{08:33}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 11:45\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 22:54\hspace{2ex}}{}{}{\textsf{राहु}~14:47--16:37~~\textsf{यम}~05:37--07:27} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{मेष}{17}{}}{\sundata{05:35}{20:19}{08:31}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 10:44\hspace{2ex}}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 22:56\hspace{2ex}}{}{}{\textsf{राहु}~11:06--12:57~~\textsf{यम}~16:38--18:28} 
+&
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries MAY 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{मेष}{18}{}}{\sundata{05:33}{20:20}{08:30}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 10:25\hspace{2ex}}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 23:41\hspace{2ex}}{}{}{\textsf{राहु}~09:14--11:05~~\textsf{यम}~14:47--16:38} 
+\\ \hline
+\caldata{\textcolor{blue}{2}}{\sunmonth{मेष}{19}{}}{\sundata{05:31}{20:22}{08:29}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 10:50\hspace{2ex}}{\textsf{मूला} {\tiny \RIGHTarrow} 01:08(+1)}{}{}{\textsf{राहु}~18:30--20:22~~\textsf{यम}~12:56--14:47} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{मेष}{20}{}}{\sundata{05:29}{20:24}{08:28}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 12:00\hspace{2ex}}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 03:15(+1)}{}{}{\textsf{राहु}~07:20--09:12~~\textsf{यम}~11:04--12:56} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{मेष}{21}{}}{\sundata{05:27}{20:25}{08:26}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 13:47\hspace{2ex}}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~16:40--18:32~~\textsf{यम}~09:11--11:03} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{मेष}{22}{}}{\sundata{05:26}{20:27}{08:26}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 16:02\hspace{2ex}}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 05:54\hspace{2ex}}{}{}{\textsf{राहु}~12:56--14:49~~\textsf{यम}~07:18--09:11} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{मेष}{23}{}}{\sundata{05:24}{20:29}{08:25}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 18:30\hspace{2ex}}{\textsf{श्रवण} {\tiny \RIGHTarrow} 08:52\hspace{2ex}}{}{}{\textsf{राहु}~14:49--16:42~~\textsf{यम}~05:24--07:17} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{मेष}{24}{}}{\sundata{05:22}{20:30}{08:23}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 20:56\hspace{2ex}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 11:53\hspace{2ex}}{}{}{\textsf{राहु}~11:02--12:56~~\textsf{यम}~16:43--18:36} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{मेष}{25}{}}{\sundata{05:20}{20:32}{08:22}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 23:08\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 14:44\hspace{2ex}}{}{}{\textsf{राहु}~09:08--11:02~~\textsf{यम}~14:50--16:44} 
+\\ \hline
+\caldata{\textcolor{blue}{9}}{\sunmonth{मेष}{26}{}}{\sundata{05:19}{20:33}{08:21}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 00:52(+1)}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 17:11\hspace{2ex}}{}{}{\textsf{राहु}~18:38--20:33~~\textsf{यम}~12:56--14:50} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{मेष}{27}{}}{\sundata{05:17}{20:35}{08:20}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 02:03(+1)}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 19:08\hspace{2ex}}{}{}{\textsf{राहु}~07:11--09:06~~\textsf{यम}~11:01--12:56} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{मेष}{28}{}}{\sundata{05:15}{20:36}{08:19}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 02:37(+1)}{\textsf{रेवती} {\tiny \RIGHTarrow} 20:31\hspace{2ex}}{}{}{\textsf{राहु}~16:45--18:40~~\textsf{यम}~09:05--11:00} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{मेष}{29}{}}{\sundata{05:14}{20:38}{08:18}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 02:36(+1)}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 21:18\hspace{2ex}}{}{}{\textsf{राहु}~12:56--14:51~~\textsf{यम}~07:09--09:05} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{मेष}{30}{}}{\sundata{05:12}{20:39}{08:17}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 02:02(+1)}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 21:33\hspace{2ex}}{}{}{\textsf{राहु}~14:51--16:47~~\textsf{यम}~05:12--07:07} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{मेष}{31}{{\textsf{मेष} {\tiny \RIGHTarrow} 23:10\hspace{2ex}}}}{\sundata{05:11}{20:41}{08:17}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 01:01(+1)}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 21:20\hspace{2ex}}{}{}{\textsf{राहु}~10:59--12:56~~\textsf{यम}~16:48--18:44} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{वृषभ}{1}{}}{\sundata{05:09}{20:42}{08:15}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 23:38\hspace{2ex}}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 20:45\hspace{2ex}}{}{}{\textsf{राहु}~09:02--10:58~~\textsf{यम}~14:52--16:48} 
+\\ \hline
+\caldata{\textcolor{blue}{16}}{\sunmonth{वृषभ}{2}{}}{\sundata{05:08}{20:44}{08:15}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 21:58\hspace{2ex}}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 19:53\hspace{2ex}}{}{}{\textsf{राहु}~18:47--20:44~~\textsf{यम}~12:56--14:53} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{वृषभ}{3}{}}{\sundata{05:06}{20:45}{08:13}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 20:06\hspace{2ex}}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 18:47\hspace{2ex}}{}{}{\textsf{राहु}~07:03--09:00~~\textsf{यम}~10:58--12:55} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{वृषभ}{4}{}}{\sundata{05:05}{20:47}{08:13}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 18:05\hspace{2ex}}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 17:33\hspace{2ex}}{}{}{\textsf{राहु}~16:51--18:49~~\textsf{यम}~09:00--10:58} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{वृषभ}{5}{}}{\sundata{05:04}{20:48}{08:12}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 15:59\hspace{2ex}}{\textsf{पुष्य} {\tiny \RIGHTarrow} 16:12\hspace{2ex}}{}{}{\textsf{राहु}~12:56--14:54~~\textsf{यम}~07:02--09:00} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{वृषभ}{6}{}}{\sundata{05:02}{20:50}{08:11}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 13:48\hspace{2ex}}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 14:48\hspace{2ex}}{}{}{\textsf{राहु}~14:54--16:53~~\textsf{यम}~05:02--07:00} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{वृषभ}{7}{}}{\sundata{05:01}{20:51}{08:11}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 11:36\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 13:23\hspace{2ex}}{}{}{\textsf{राहु}~10:57--12:56~~\textsf{यम}~16:53--18:52} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{वृषभ}{8}{}}{\sundata{05:00}{20:53}{08:10}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 09:25\hspace{2ex}}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 11:59\hspace{2ex}}{}{}{\textsf{राहु}~08:58--10:57~~\textsf{यम}~14:55--16:54} 
+\\ \hline
+\caldata{\textcolor{blue}{23}}{\sunmonth{वृषभ}{9}{}}{\sundata{04:59}{20:54}{08:10}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 07:17\hspace{2ex}}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 10:39\hspace{2ex}}{}{}{\textsf{राहु}~18:54--20:54~~\textsf{यम}~12:56--14:55} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{वृषभ}{10}{}}{\sundata{04:57}{20:55}{08:08}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 05:16\hspace{2ex}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 03:28(+1)}{\textsf{हस्त} {\tiny \RIGHTarrow} 09:27\hspace{2ex}}{}{\textsf{राहु}~06:56--08:56~~\textsf{यम}~10:56--12:56} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{वृषभ}{11}{}}{\sundata{04:56}{20:56}{08:08}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 01:58(+1)}{\textsf{चित्रा} {\tiny \RIGHTarrow} 08:27\hspace{2ex}}{}{}{\textsf{राहु}~16:56--18:56~~\textsf{यम}~08:56--10:56} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{वृषभ}{12}{}}{\sundata{04:55}{20:58}{08:07}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 00:50(+1)}{\textsf{स्वाति} {\tiny \RIGHTarrow} 07:46\hspace{2ex}}{}{}{\textsf{राहु}~12:56--14:56~~\textsf{यम}~06:55--08:55} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{वृषभ}{13}{}}{\sundata{04:54}{20:59}{08:07}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 00:09(+1)}{\textsf{विशाखा} {\tiny \RIGHTarrow} 07:29\hspace{2ex}}{}{}{\textsf{राहु}~14:57--16:57~~\textsf{यम}~04:54--06:54} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{वृषभ}{14}{}}{\sundata{04:53}{21:00}{08:06}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 00:02(+1)}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 07:41\hspace{2ex}}{}{}{\textsf{राहु}~10:55--12:56~~\textsf{यम}~16:58--18:59} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{वृषभ}{15}{}}{\sundata{04:52}{21:01}{08:05}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 00:29(+1)}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 08:26\hspace{2ex}}{}{}{\textsf{राहु}~08:54--10:55~~\textsf{यम}~14:57--16:58} 
+\\ \hline
+\caldata{\textcolor{blue}{30}}{\sunmonth{वृषभ}{16}{}}{\sundata{04:51}{21:03}{08:05}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 01:33(+1)}{\textsf{मूला} {\tiny \RIGHTarrow} 09:47\hspace{2ex}}{}{}{\textsf{राहु}~19:01--21:03~~\textsf{यम}~12:57--14:58} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{वृषभ}{17}{}}{\sundata{04:50}{21:04}{08:04}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 03:10(+1)}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 11:43\hspace{2ex}}{}{}{\textsf{राहु}~06:51--08:53~~\textsf{यम}~10:55--12:57} 
+&
+{}  &
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries JUNE 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{वृषभ}{18}{}}{\sundata{04:50}{21:05}{08:05}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 14:08\hspace{2ex}}{}{}{\textsf{राहु}~17:01--19:03~~\textsf{यम}~08:53--10:55} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{वृषभ}{19}{}}{\sundata{04:49}{21:06}{08:04}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 05:14\hspace{2ex}}{\textsf{श्रवण} {\tiny \RIGHTarrow} 16:56\hspace{2ex}}{}{}{\textsf{राहु}~12:57--14:59~~\textsf{यम}~06:51--08:53} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{वृषभ}{20}{}}{\sundata{04:48}{21:07}{08:03}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 07:36\hspace{2ex}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 19:54\hspace{2ex}}{}{}{\textsf{राहु}~14:59--17:02~~\textsf{यम}~04:48--06:50} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{वृषभ}{21}{}}{\sundata{04:47}{21:08}{08:03}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 10:02\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 22:50\hspace{2ex}}{}{}{\textsf{राहु}~10:54--12:57~~\textsf{यम}~17:02--19:05} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{वृषभ}{22}{}}{\sundata{04:47}{21:09}{08:03}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 12:16\hspace{2ex}}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 01:31(+1)}{}{}{\textsf{राहु}~08:52--10:55~~\textsf{यम}~15:00--17:03} 
+\\ \hline
+\caldata{\textcolor{blue}{6}}{\sunmonth{वृषभ}{23}{}}{\sundata{04:46}{21:10}{08:02}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 14:07\hspace{2ex}}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 03:45(+1)}{}{}{\textsf{राहु}~19:07--21:10~~\textsf{यम}~12:58--15:01} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{वृषभ}{24}{}}{\sundata{04:46}{21:11}{08:03}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 15:25\hspace{2ex}}{\textsf{रेवती} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~06:49--08:52~~\textsf{यम}~10:55--12:58} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{वृषभ}{25}{}}{\sundata{04:45}{21:11}{08:02}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 16:04\hspace{2ex}}{\textsf{रेवती} {\tiny \RIGHTarrow} 05:22\hspace{2ex}}{}{}{\textsf{राहु}~17:04--19:07~~\textsf{यम}~08:51--10:54} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{वृषभ}{26}{}}{\sundata{04:45}{21:12}{08:02}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 16:02\hspace{2ex}}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 06:17\hspace{2ex}}{}{}{\textsf{राहु}~12:58--15:01~~\textsf{यम}~06:48--08:51} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{वृषभ}{27}{}}{\sundata{04:44}{21:13}{08:01}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 15:19\hspace{2ex}}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 06:33\hspace{2ex}}{}{}{\textsf{राहु}~15:02--17:05~~\textsf{यम}~04:44--06:47} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{वृषभ}{28}{}}{\sundata{04:44}{21:14}{08:02}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 14:00\hspace{2ex}}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 06:11\hspace{2ex}}{}{}{\textsf{राहु}~10:55--12:59~~\textsf{यम}~17:06--19:10} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{वृषभ}{29}{}}{\sundata{04:44}{21:14}{08:02}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 12:11\hspace{2ex}}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 05:17\hspace{2ex}}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 03:57(+1)}{}{\textsf{राहु}~08:51--10:55~~\textsf{यम}~15:02--17:06} 
+\\ \hline
+\caldata{\textcolor{blue}{13}}{\sunmonth{वृषभ}{30}{}}{\sundata{04:43}{21:15}{08:01}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 09:59\hspace{2ex}}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 02:18(+1)}{}{}{\textsf{राहु}~19:11--21:15~~\textsf{यम}~12:59--15:03} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{वृषभ}{31}{}}{\sundata{04:43}{21:15}{08:01}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 07:30\hspace{2ex}}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 00:28(+1)}{}{}{\textsf{राहु}~06:47--08:51~~\textsf{यम}~10:55--12:59} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{मिथुन}{1}{{\textsf{वृषभ} {\tiny \RIGHTarrow} 05:43\hspace{2ex}}}}{\sundata{04:43}{21:16}{08:01}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 04:50\hspace{2ex}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 02:07(+1)}{\textsf{पुष्य} {\tiny \RIGHTarrow} 22:34\hspace{2ex}}{}{\textsf{राहु}~17:07--19:11~~\textsf{यम}~08:51--10:55} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{मिथुन}{2}{}}{\sundata{04:43}{21:16}{08:01}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 23:28\hspace{2ex}}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 20:42\hspace{2ex}}{}{}{\textsf{राहु}~12:59--15:03~~\textsf{यम}~06:47--08:51} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{मिथुन}{3}{}}{\sundata{04:43}{21:17}{08:01}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 20:56\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 18:57\hspace{2ex}}{}{}{\textsf{राहु}~15:04--17:08~~\textsf{यम}~04:43--06:47} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{मिथुन}{4}{}}{\sundata{04:43}{21:17}{08:01}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 18:36\hspace{2ex}}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 17:24\hspace{2ex}}{}{}{\textsf{राहु}~10:55--13:00~~\textsf{यम}~17:08--19:12} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{मिथुन}{5}{}}{\sundata{04:43}{21:18}{08:02}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 16:31\hspace{2ex}}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 16:06\hspace{2ex}}{}{}{\textsf{राहु}~08:51--10:56~~\textsf{यम}~15:04--17:09} 
+\\ \hline
+\caldata{\textcolor{blue}{20}}{\sunmonth{मिथुन}{6}{}}{\sundata{04:43}{21:18}{08:02}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 14:45\hspace{2ex}}{\textsf{हस्त} {\tiny \RIGHTarrow} 15:06\hspace{2ex}}{}{}{\textsf{राहु}~19:13--21:18~~\textsf{यम}~13:00--15:04} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{मिथुन}{7}{}}{\sundata{04:43}{21:18}{08:02}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 13:19\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 14:27\hspace{2ex}}{}{}{\textsf{राहु}~06:47--08:51~~\textsf{यम}~10:56--13:00} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{मिथुन}{8}{}}{\sundata{04:44}{21:18}{08:02}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 12:17\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 14:11\hspace{2ex}}{}{}{\textsf{राहु}~17:09--19:13~~\textsf{यम}~08:52--10:56} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{मिथुन}{9}{}}{\sundata{04:44}{21:18}{08:02}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 11:40\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 14:20\hspace{2ex}}{}{}{\textsf{राहु}~13:01--15:05~~\textsf{यम}~06:48--08:52} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{मिथुन}{10}{}}{\sundata{04:44}{21:18}{08:02}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 11:29\hspace{2ex}}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 14:56\hspace{2ex}}{}{}{\textsf{राहु}~15:05--17:09~~\textsf{यम}~04:44--06:48} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{मिथुन}{11}{}}{\sundata{04:45}{21:18}{08:03}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 11:46\hspace{2ex}}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 15:59\hspace{2ex}}{}{}{\textsf{राहु}~10:57--13:01~~\textsf{यम}~17:09--19:13} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{मिथुन}{12}{}}{\sundata{04:45}{21:18}{08:03}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 12:33\hspace{2ex}}{\textsf{मूला} {\tiny \RIGHTarrow} 17:30\hspace{2ex}}{}{}{\textsf{राहु}~08:53--10:57~~\textsf{यम}~15:05--17:09} 
+\\ \hline
+\caldata{\textcolor{blue}{27}}{\sunmonth{मिथुन}{13}{}}{\sundata{04:46}{21:18}{08:04}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 13:47\hspace{2ex}}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 19:28\hspace{2ex}}{}{}{\textsf{राहु}~19:14--21:18~~\textsf{यम}~13:02--15:06} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{मिथुन}{14}{}}{\sundata{04:46}{21:18}{08:04}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 15:28\hspace{2ex}}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 21:51\hspace{2ex}}{}{}{\textsf{राहु}~06:50--08:54~~\textsf{यम}~10:58--13:02} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{मिथुन}{15}{}}{\sundata{04:47}{21:18}{08:05}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 17:31\hspace{2ex}}{\textsf{श्रवण} {\tiny \RIGHTarrow} 00:34(+1)}{}{}{\textsf{राहु}~17:10--19:14~~\textsf{यम}~08:54--10:58} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{मिथुन}{16}{}}{\sundata{04:47}{21:18}{08:05}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 19:50\hspace{2ex}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 03:31(+1)}{}{}{\textsf{राहु}~13:02--15:06~~\textsf{यम}~06:50--08:54} 
+&
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries JULY 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{मिथुन}{17}{}}{\sundata{04:48}{21:18}{08:06}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 22:15\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~15:06--17:10~~\textsf{यम}~04:48--06:51} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{मिथुन}{18}{}}{\sundata{04:49}{21:17}{08:06}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 00:36(+1)}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 06:31\hspace{2ex}}{}{}{\textsf{राहु}~10:59--13:03~~\textsf{यम}~17:10--19:13} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{मिथुन}{19}{}}{\sundata{04:49}{21:17}{08:06}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 02:41(+1)}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 09:22\hspace{2ex}}{}{}{\textsf{राहु}~08:56--10:59~~\textsf{यम}~15:06--17:10} 
+\\ \hline
+\caldata{\textcolor{blue}{4}}{\sunmonth{मिथुन}{20}{}}{\sundata{04:50}{21:16}{08:07}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 04:19(+1)}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 11:53\hspace{2ex}}{}{}{\textsf{राहु}~19:12--21:16~~\textsf{यम}~13:03--15:06} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{मिथुन}{21}{}}{\sundata{04:51}{21:16}{08:08}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{रेवती} {\tiny \RIGHTarrow} 13:54\hspace{2ex}}{}{}{\textsf{राहु}~06:54--08:57~~\textsf{यम}~11:00--13:03} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{मिथुन}{22}{}}{\sundata{04:52}{21:15}{08:08}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 05:18\hspace{2ex}}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 15:17\hspace{2ex}}{}{}{\textsf{राहु}~17:09--19:12~~\textsf{यम}~08:57--11:00} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{मिथुन}{23}{}}{\sundata{04:53}{21:15}{08:09}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 05:35\hspace{2ex}}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 15:56\hspace{2ex}}{}{}{\textsf{राहु}~13:04--15:06~~\textsf{यम}~06:55--08:58} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{मिथुन}{24}{}}{\sundata{04:54}{21:14}{08:10}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 05:07\hspace{2ex}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 03:53(+1)}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 15:51\hspace{2ex}}{}{\textsf{राहु}~15:06--17:09~~\textsf{यम}~04:54--06:56} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{मिथुन}{25}{}}{\sundata{04:55}{21:13}{08:10}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 01:58(+1)}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 15:04\hspace{2ex}}{}{}{\textsf{राहु}~11:01--13:04~~\textsf{यम}~17:08--19:10} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{मिथुन}{26}{}}{\sundata{04:56}{21:13}{08:11}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 23:30\hspace{2ex}}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 13:41\hspace{2ex}}{}{}{\textsf{राहु}~09:00--11:02~~\textsf{यम}~15:06--17:08} 
+\\ \hline
+\caldata{\textcolor{blue}{11}}{\sunmonth{मिथुन}{27}{}}{\sundata{04:57}{21:12}{08:12}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 20:37\hspace{2ex}}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 11:48\hspace{2ex}}{}{}{\textsf{राहु}~19:10--21:12~~\textsf{यम}~13:04--15:06} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{मिथुन}{28}{}}{\sundata{04:58}{21:11}{08:12}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 17:27\hspace{2ex}}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 09:33\hspace{2ex}}{}{}{\textsf{राहु}~06:59--09:01~~\textsf{यम}~11:02--13:04} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{मिथुन}{29}{}}{\sundata{04:59}{21:10}{08:13}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 14:08\hspace{2ex}}{\textsf{पुष्य} {\tiny \RIGHTarrow} 07:06\hspace{2ex}}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 04:34(+1)}{}{\textsf{राहु}~17:07--19:08~~\textsf{यम}~09:01--11:03} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{मिथुन}{30}{}}{\sundata{05:00}{21:09}{08:13}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 10:49\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 02:08(+1)}{}{}{\textsf{राहु}~13:04--15:05~~\textsf{यम}~07:01--09:02} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{मिथुन}{31}{}}{\sundata{05:01}{21:08}{08:14}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 07:36\hspace{2ex}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 04:39(+1)}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 23:58\hspace{2ex}}{}{\textsf{राहु}~15:05--17:06~~\textsf{यम}~05:01--07:01} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{कर्कटक}{1}{{\textsf{मिथुन} {\tiny \RIGHTarrow} 16:33\hspace{2ex}}}}{\sundata{05:02}{21:07}{08:15}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 02:07(+1)}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 22:09\hspace{2ex}}{}{}{\textsf{राहु}~11:03--13:04~~\textsf{यम}~17:05--19:06} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{कर्कटक}{2}{}}{\sundata{05:03}{21:06}{08:15}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 00:04(+1)}{\textsf{हस्त} {\tiny \RIGHTarrow} 20:47\hspace{2ex}}{}{}{\textsf{राहु}~09:03--11:04~~\textsf{यम}~15:04--17:05} 
+\\ \hline
+\caldata{\textcolor{blue}{18}}{\sunmonth{कर्कटक}{3}{}}{\sundata{05:05}{21:05}{08:17}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 22:32\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 19:56\hspace{2ex}}{}{}{\textsf{राहु}~19:05--21:05~~\textsf{यम}~13:05--15:05} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{कर्कटक}{4}{}}{\sundata{05:06}{21:04}{08:17}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 21:34\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 19:39\hspace{2ex}}{}{}{\textsf{राहु}~07:05--09:05~~\textsf{यम}~11:05--13:05} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{कर्कटक}{5}{}}{\sundata{05:07}{21:03}{08:18}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 21:10\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 19:57\hspace{2ex}}{}{}{\textsf{राहु}~17:04--19:03~~\textsf{यम}~09:06--11:05} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{कर्कटक}{6}{}}{\sundata{05:09}{21:02}{08:19}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 21:20\hspace{2ex}}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 20:47\hspace{2ex}}{}{}{\textsf{राहु}~13:05--15:04~~\textsf{यम}~07:08--09:07} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{कर्कटक}{7}{}}{\sundata{05:10}{21:00}{08:20}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 22:01\hspace{2ex}}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 22:08\hspace{2ex}}{}{}{\textsf{राहु}~15:03--17:02~~\textsf{यम}~05:10--07:08} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{कर्कटक}{8}{}}{\sundata{05:11}{20:59}{08:20}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 23:10\hspace{2ex}}{\textsf{मूला} {\tiny \RIGHTarrow} 23:55\hspace{2ex}}{}{}{\textsf{राहु}~11:06--13:05~~\textsf{यम}~17:02--19:00} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{कर्कटक}{9}{}}{\sundata{05:13}{20:58}{08:22}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 00:43(+1)}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 02:07(+1)}{}{}{\textsf{राहु}~09:09--11:07~~\textsf{यम}~15:03--17:01} 
+\\ \hline
+\caldata{\textcolor{blue}{25}}{\sunmonth{कर्कटक}{10}{}}{\sundata{05:14}{20:56}{08:22}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 02:37(+1)}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 04:37(+1)}{}{}{\textsf{राहु}~18:58--20:56~~\textsf{यम}~13:05--15:02} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{कर्कटक}{11}{}}{\sundata{05:15}{20:55}{08:23}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 04:47(+1)}{\textsf{श्रवण} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~07:12--09:10~~\textsf{यम}~11:07--13:05} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{कर्कटक}{12}{}}{\sundata{05:17}{20:53}{08:24}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{श्रवण} {\tiny \RIGHTarrow} 07:24\hspace{2ex}}{}{}{\textsf{राहु}~16:59--18:56~~\textsf{यम}~09:11--11:08} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{कर्कटक}{13}{}}{\sundata{05:18}{20:52}{08:24}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 07:08\hspace{2ex}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 10:21\hspace{2ex}}{}{}{\textsf{राहु}~13:05--15:01~~\textsf{यम}~07:14--09:11} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{कर्कटक}{14}{}}{\sundata{05:20}{20:50}{08:26}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 09:34\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 13:21\hspace{2ex}}{}{}{\textsf{राहु}~15:01--16:57~~\textsf{यम}~05:20--07:16} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{कर्कटक}{15}{}}{\sundata{05:21}{20:49}{08:26}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 11:58\hspace{2ex}}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 16:18\hspace{2ex}}{}{}{\textsf{राहु}~11:09--13:05~~\textsf{यम}~16:57--18:53} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{कर्कटक}{16}{}}{\sundata{05:23}{20:47}{08:27}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 14:11\hspace{2ex}}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 19:03\hspace{2ex}}{}{}{\textsf{राहु}~09:14--11:09~~\textsf{यम}~15:00--16:56} 
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries AUGUST 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+\caldata{\textcolor{blue}{1}}{\sunmonth{कर्कटक}{17}{}}{\sundata{05:24}{20:46}{08:28}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 16:03\hspace{2ex}}{\textsf{रेवती} {\tiny \RIGHTarrow} 21:27\hspace{2ex}}{}{}{\textsf{राहु}~18:50--20:46~~\textsf{यम}~13:05--15:00} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{कर्कटक}{18}{}}{\sundata{05:26}{20:44}{08:29}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 17:26\hspace{2ex}}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 23:20\hspace{2ex}}{}{}{\textsf{राहु}~07:20--09:15~~\textsf{यम}~11:10--13:05} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{कर्कटक}{19}{}}{\sundata{05:27}{20:42}{08:30}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 18:11\hspace{2ex}}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 00:36(+1)}{}{}{\textsf{राहु}~16:53--18:47~~\textsf{यम}~09:15--11:10} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{कर्कटक}{20}{}}{\sundata{05:29}{20:41}{08:31}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 18:12\hspace{2ex}}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 01:08(+1)}{}{}{\textsf{राहु}~13:05--14:59~~\textsf{यम}~07:23--09:17} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{कर्कटक}{21}{}}{\sundata{05:30}{20:39}{08:31}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 17:28\hspace{2ex}}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 00:53(+1)}{}{}{\textsf{राहु}~14:58--16:51~~\textsf{यम}~05:30--07:23} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{कर्कटक}{22}{}}{\sundata{05:32}{20:37}{08:33}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 15:58\hspace{2ex}}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 23:54\hspace{2ex}}{}{}{\textsf{राहु}~11:11--13:04~~\textsf{यम}~16:50--18:43} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{कर्कटक}{23}{}}{\sundata{05:33}{20:35}{08:33}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 13:47\hspace{2ex}}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 22:14\hspace{2ex}}{}{}{\textsf{राहु}~09:18--11:11~~\textsf{यम}~14:56--16:49} 
+\\ \hline
+\caldata{\textcolor{blue}{8}}{\sunmonth{कर्कटक}{24}{}}{\sundata{05:35}{20:34}{08:34}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 11:00\hspace{2ex}}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 20:01\hspace{2ex}}{}{}{\textsf{राहु}~18:41--20:34~~\textsf{यम}~13:04--14:56} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{कर्कटक}{25}{}}{\sundata{05:36}{20:32}{08:35}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 07:44\hspace{2ex}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 04:07(+1)}{\textsf{पुष्य} {\tiny \RIGHTarrow} 17:24\hspace{2ex}}{}{\textsf{राहु}~07:28--09:20~~\textsf{यम}~11:12--13:04} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{कर्कटक}{26}{}}{\sundata{05:38}{20:30}{08:36}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 00:21(+1)}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 14:32\hspace{2ex}}{}{}{\textsf{राहु}~16:47--18:38~~\textsf{यम}~09:21--11:12} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{कर्कटक}{27}{}}{\sundata{05:39}{20:28}{08:36}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 20:37\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 11:36\hspace{2ex}}{}{}{\textsf{राहु}~13:03--14:54~~\textsf{यम}~07:30--09:21} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{कर्कटक}{28}{}}{\sundata{05:41}{20:26}{08:38}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 17:05\hspace{2ex}}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 08:46\hspace{2ex}}{}{}{\textsf{राहु}~14:54--16:44~~\textsf{यम}~05:41--07:31} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{कर्कटक}{29}{}}{\sundata{05:43}{20:24}{08:39}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 13:52\hspace{2ex}}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 06:11\hspace{2ex}}{\textsf{हस्त} {\tiny \RIGHTarrow} 04:06(+1)}{}{\textsf{राहु}~11:13--13:03~~\textsf{यम}~16:43--18:33} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{कर्कटक}{30}{}}{\sundata{05:44}{20:22}{08:39}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 11:09\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 02:37(+1)}{}{}{\textsf{राहु}~09:23--11:13~~\textsf{यम}~14:52--16:42} 
+\\ \hline
+\caldata{\textcolor{blue}{15}}{\sunmonth{कर्कटक}{31}{}}{\sundata{05:46}{20:20}{08:40}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 09:03\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 01:49(+1)}{}{}{\textsf{राहु}~18:30--20:20~~\textsf{यम}~13:03--14:52} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{कर्कटक}{32}{{\textsf{कर्कटक} {\tiny \RIGHTarrow} 00:56(+1)}}}{\sundata{05:47}{20:18}{08:41}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 07:40\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 01:45(+1)}{}{}{\textsf{राहु}~07:35--09:24~~\textsf{यम}~11:13--13:02} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{सिंह}{1}{}}{\sundata{05:49}{20:16}{08:42}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 07:02\hspace{2ex}}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 02:23(+1)}{}{}{\textsf{राहु}~16:39--18:27~~\textsf{यम}~09:25--11:14} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{सिंह}{2}{}}{\sundata{05:51}{20:14}{08:43}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 07:09\hspace{2ex}}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 03:43(+1)}{}{}{\textsf{राहु}~13:02--14:50~~\textsf{यम}~07:38--09:26} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{सिंह}{3}{}}{\sundata{05:52}{20:12}{08:44}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 07:57\hspace{2ex}}{\textsf{मूला} {\tiny \RIGHTarrow} 05:36(+1)}{}{}{\textsf{राहु}~14:49--16:37~~\textsf{यम}~05:52--07:39} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{सिंह}{4}{}}{\sundata{05:54}{20:10}{08:45}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 09:20\hspace{2ex}}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~11:15--13:02~~\textsf{यम}~16:36--18:23} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{सिंह}{5}{}}{\sundata{05:55}{20:08}{08:45}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 11:10\hspace{2ex}}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 07:59\hspace{2ex}}{}{}{\textsf{राहु}~09:28--11:14~~\textsf{यम}~14:48--16:34} 
+\\ \hline
+\caldata{\textcolor{blue}{22}}{\sunmonth{सिंह}{6}{}}{\sundata{05:57}{20:06}{08:46}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 13:18\hspace{2ex}}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 10:40\hspace{2ex}}{}{}{\textsf{राहु}~18:19--20:06~~\textsf{यम}~13:01--14:47} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{सिंह}{7}{}}{\sundata{05:58}{20:04}{08:47}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 15:38\hspace{2ex}}{\textsf{श्रवण} {\tiny \RIGHTarrow} 13:33\hspace{2ex}}{}{}{\textsf{राहु}~07:43--09:29~~\textsf{यम}~11:15--13:01} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{सिंह}{8}{}}{\sundata{06:00}{20:02}{08:48}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 18:04\hspace{2ex}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 16:32\hspace{2ex}}{}{}{\textsf{राहु}~16:31--18:16~~\textsf{यम}~09:30--11:15} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{सिंह}{9}{}}{\sundata{06:02}{20:00}{08:49}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 20:30\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 19:31\hspace{2ex}}{}{}{\textsf{राहु}~13:01--14:45~~\textsf{यम}~07:46--09:31} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{सिंह}{10}{}}{\sundata{06:03}{19:57}{08:49}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 22:52\hspace{2ex}}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 22:26\hspace{2ex}}{}{}{\textsf{राहु}~14:44--16:28~~\textsf{यम}~06:03--07:47} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{सिंह}{11}{}}{\sundata{06:05}{19:55}{08:51}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 01:05(+1)}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 01:13(+1)}{}{}{\textsf{राहु}~11:16--13:00~~\textsf{यम}~16:27--18:11} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{सिंह}{12}{}}{\sundata{06:06}{19:53}{08:51}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 03:03(+1)}{\textsf{रेवती} {\tiny \RIGHTarrow} 03:45(+1)}{}{}{\textsf{राहु}~09:32--11:16~~\textsf{यम}~14:42--16:26} 
+\\ \hline
+\caldata{\textcolor{blue}{29}}{\sunmonth{सिंह}{13}{}}{\sundata{06:08}{19:51}{08:52}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 04:39(+1)}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 05:56(+1)}{}{}{\textsf{राहु}~18:08--19:51~~\textsf{यम}~12:59--14:42} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{सिंह}{14}{}}{\sundata{06:10}{19:49}{08:53}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 05:47(+1)}{\textsf{अपभरणी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~07:52--09:34~~\textsf{यम}~11:17--12:59} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{सिंह}{15}{}}{\sundata{06:11}{19:47}{08:54}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 07:39\hspace{2ex}}{}{}{\textsf{राहु}~16:23--18:05~~\textsf{यम}~09:35--11:17} 
+&
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries SEPTEMBER 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{सिंह}{16}{}}{\sundata{06:13}{19:44}{08:55}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 06:20\hspace{2ex}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 06:12(+1)}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 08:46\hspace{2ex}}{}{\textsf{राहु}~12:58--14:39~~\textsf{यम}~07:54--09:35} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{सिंह}{17}{}}{\sundata{06:14}{19:42}{08:55}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 05:19(+1)}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 09:14\hspace{2ex}}{}{}{\textsf{राहु}~14:39--16:20~~\textsf{यम}~06:14--07:55} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{सिंह}{18}{}}{\sundata{06:16}{19:40}{08:56}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 03:41(+1)}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 08:58\hspace{2ex}}{}{}{\textsf{राहु}~11:17--12:58~~\textsf{यम}~16:19--17:59} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{सिंह}{19}{}}{\sundata{06:18}{19:38}{08:58}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 01:22(+1)}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 08:00\hspace{2ex}}{}{}{\textsf{राहु}~09:38--11:18~~\textsf{यम}~14:38--16:18} 
+\\ \hline
+\caldata{\textcolor{blue}{5}}{\sunmonth{सिंह}{20}{}}{\sundata{06:19}{19:35}{08:58}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 22:26\hspace{2ex}}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 06:22\hspace{2ex}}{\textsf{पुष्य} {\tiny \RIGHTarrow} 04:05(+1)}{}{\textsf{राहु}~17:55--19:35~~\textsf{यम}~12:57--14:36} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{सिंह}{21}{}}{\sundata{06:21}{19:33}{08:59}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 19:03\hspace{2ex}}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 01:22(+1)}{}{}{\textsf{राहु}~08:00--09:39~~\textsf{यम}~11:18--12:57} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{सिंह}{22}{}}{\sundata{06:22}{19:31}{08:59}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 15:21\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 22:24\hspace{2ex}}{}{}{\textsf{राहु}~16:13--17:52~~\textsf{यम}~09:39--11:17} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{सिंह}{23}{}}{\sundata{06:24}{19:29}{09:01}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 11:30\hspace{2ex}}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 19:20\hspace{2ex}}{}{}{\textsf{राहु}~12:56--14:34~~\textsf{यम}~08:02--09:40} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{सिंह}{24}{}}{\sundata{06:25}{19:26}{09:01}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 07:38\hspace{2ex}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 04:00(+1)}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 16:23\hspace{2ex}}{}{\textsf{राहु}~14:33--16:10~~\textsf{यम}~06:25--08:02} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{सिंह}{25}{}}{\sundata{06:27}{19:24}{09:02}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 00:48(+1)}{\textsf{हस्त} {\tiny \RIGHTarrow} 13:43\hspace{2ex}}{}{}{\textsf{राहु}~11:18--12:55~~\textsf{यम}~16:09--17:46} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{सिंह}{26}{}}{\sundata{06:29}{19:22}{09:03}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 22:09\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 11:31\hspace{2ex}}{}{}{\textsf{राहु}~09:42--11:18~~\textsf{यम}~14:32--16:08} 
+\\ \hline
+\caldata{\textcolor{blue}{12}}{\sunmonth{सिंह}{27}{}}{\sundata{06:30}{19:19}{09:03}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 20:13\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 09:57\hspace{2ex}}{}{}{\textsf{राहु}~17:42--19:19~~\textsf{यम}~12:54--14:30} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{सिंह}{28}{}}{\sundata{06:32}{19:17}{09:05}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 19:04\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 09:10\hspace{2ex}}{}{}{\textsf{राहु}~08:07--09:43~~\textsf{यम}~11:18--12:54} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{सिंह}{29}{}}{\sundata{06:33}{19:15}{09:05}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 18:45\hspace{2ex}}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 09:13\hspace{2ex}}{}{}{\textsf{राहु}~16:04--17:39~~\textsf{यम}~09:43--11:18} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{सिंह}{30}{}}{\sundata{06:35}{19:13}{09:06}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 19:16\hspace{2ex}}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 10:06\hspace{2ex}}{}{}{\textsf{राहु}~12:54--14:28~~\textsf{यम}~08:09--09:44} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{सिंह}{31}{{\textsf{सिंह} {\tiny \RIGHTarrow} 00:52(+1)}}}{\sundata{06:37}{19:10}{09:07}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 20:31\hspace{2ex}}{\textsf{मूला} {\tiny \RIGHTarrow} 11:44\hspace{2ex}}{}{}{\textsf{राहु}~14:27--16:01~~\textsf{यम}~06:37--08:11} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{कन्या}{1}{}}{\sundata{06:38}{19:08}{09:08}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 22:21\hspace{2ex}}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 13:58\hspace{2ex}}{}{}{\textsf{राहु}~11:19--12:53~~\textsf{यम}~16:00--17:34} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{कन्या}{2}{}}{\sundata{06:40}{19:06}{09:09}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 00:35(+1)}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 16:39\hspace{2ex}}{}{}{\textsf{राहु}~09:46--11:19~~\textsf{यम}~14:26--15:59} 
+\\ \hline
+\caldata{\textcolor{blue}{19}}{\sunmonth{कन्या}{3}{}}{\sundata{06:41}{19:03}{09:09}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 03:02(+1)}{\textsf{श्रवण} {\tiny \RIGHTarrow} 19:35\hspace{2ex}}{}{}{\textsf{राहु}~17:30--19:03~~\textsf{यम}~12:52--14:24} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{कन्या}{4}{}}{\sundata{06:43}{19:01}{09:10}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 05:33(+1)}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 22:36\hspace{2ex}}{}{}{\textsf{राहु}~08:15--09:47~~\textsf{यम}~11:19--12:52} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{कन्या}{5}{}}{\sundata{06:45}{18:59}{09:11}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 01:35(+1)}{}{}{\textsf{राहु}~15:55--17:27~~\textsf{यम}~09:48--11:20} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{कन्या}{6}{}}{\sundata{06:46}{18:56}{09:12}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 08:00\hspace{2ex}}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 04:26(+1)}{}{}{\textsf{राहु}~12:51--14:22~~\textsf{यम}~08:17--09:48} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{कन्या}{7}{}}{\sundata{06:48}{18:54}{09:13}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 10:16\hspace{2ex}}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~14:21--15:52~~\textsf{यम}~06:48--08:18} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{कन्या}{8}{}}{\sundata{06:49}{18:52}{09:13}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 12:19\hspace{2ex}}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 07:05\hspace{2ex}}{}{}{\textsf{राहु}~11:20--12:50~~\textsf{यम}~15:51--17:21} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{कन्या}{9}{}}{\sundata{06:51}{18:49}{09:14}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 14:06\hspace{2ex}}{\textsf{रेवती} {\tiny \RIGHTarrow} 09:29\hspace{2ex}}{}{}{\textsf{राहु}~09:50--11:20~~\textsf{यम}~14:19--15:49} 
+\\ \hline
+\caldata{\textcolor{blue}{26}}{\sunmonth{कन्या}{10}{}}{\sundata{06:53}{18:47}{09:15}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 15:35\hspace{2ex}}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 11:35\hspace{2ex}}{}{}{\textsf{राहु}~17:17--18:47~~\textsf{यम}~12:50--14:19} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{कन्या}{11}{}}{\sundata{06:54}{18:45}{09:16}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 16:42\hspace{2ex}}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 13:20\hspace{2ex}}{}{}{\textsf{राहु}~08:22--09:51~~\textsf{यम}~11:20--12:49} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{कन्या}{12}{}}{\sundata{06:56}{18:43}{09:17}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 17:23\hspace{2ex}}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 14:42\hspace{2ex}}{}{}{\textsf{राहु}~15:46--17:14~~\textsf{यम}~09:52--11:21} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{कन्या}{13}{}}{\sundata{06:58}{18:40}{09:18}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 17:34\hspace{2ex}}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 15:34\hspace{2ex}}{}{}{\textsf{राहु}~12:49--14:16~~\textsf{यम}~08:25--09:53} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{कन्या}{14}{}}{\sundata{06:59}{18:38}{09:18}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 17:12\hspace{2ex}}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 15:54\hspace{2ex}}{}{}{\textsf{राहु}~14:15--15:43~~\textsf{यम}~06:59--08:26} 
+&
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries OCTOBER 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{कन्या}{15}{}}{\sundata{07:01}{18:36}{09:20}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 16:12\hspace{2ex}}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 15:37\hspace{2ex}}{}{}{\textsf{राहु}~11:21--12:48~~\textsf{यम}~15:42--17:09} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{कन्या}{16}{}}{\sundata{07:02}{18:33}{09:20}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 14:35\hspace{2ex}}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 14:44\hspace{2ex}}{}{}{\textsf{राहु}~09:54--11:21~~\textsf{यम}~14:13--15:40} 
+\\ \hline
+\caldata{\textcolor{blue}{3}}{\sunmonth{कन्या}{17}{}}{\sundata{07:04}{18:31}{09:21}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 12:23\hspace{2ex}}{\textsf{पुष्य} {\tiny \RIGHTarrow} 13:15\hspace{2ex}}{}{}{\textsf{राहु}~17:05--18:31~~\textsf{यम}~12:47--14:13} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{कन्या}{18}{}}{\sundata{07:06}{18:29}{09:22}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 09:38\hspace{2ex}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 06:27(+1)}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 11:14\hspace{2ex}}{}{\textsf{राहु}~08:31--09:56~~\textsf{यम}~11:22--12:47} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{कन्या}{19}{}}{\sundata{07:07}{18:27}{09:23}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 02:56(+1)}{\textsf{मघा} {\tiny \RIGHTarrow} 08:47\hspace{2ex}}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 06:03(+1)}{}{\textsf{राहु}~15:37--17:02~~\textsf{यम}~09:57--11:22} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{कन्या}{20}{}}{\sundata{07:09}{18:24}{09:24}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 23:19\hspace{2ex}}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 03:13(+1)}{}{}{\textsf{राहु}~12:46--14:10~~\textsf{यम}~08:33--09:57} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{कन्या}{21}{}}{\sundata{07:11}{18:22}{09:25}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 19:46\hspace{2ex}}{\textsf{हस्त} {\tiny \RIGHTarrow} 00:28(+1)}{}{}{\textsf{राहु}~14:10--15:34~~\textsf{यम}~07:11--08:34} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{कन्या}{22}{}}{\sundata{07:12}{18:20}{09:25}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 16:27\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 22:01\hspace{2ex}}{}{}{\textsf{राहु}~11:22--12:46~~\textsf{यम}~15:33--16:56} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{कन्या}{23}{}}{\sundata{07:14}{18:18}{09:26}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 13:31\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 20:01\hspace{2ex}}{}{}{\textsf{राहु}~10:00--11:23~~\textsf{यम}~14:09--15:32} 
+\\ \hline
+\caldata{\textcolor{blue}{10}}{\sunmonth{कन्या}{24}{}}{\sundata{07:16}{18:16}{09:28}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 11:10\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 18:39\hspace{2ex}}{}{}{\textsf{राहु}~16:53--18:16~~\textsf{यम}~12:46--14:08} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{कन्या}{25}{}}{\sundata{07:17}{18:13}{09:28}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 09:32\hspace{2ex}}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 18:01\hspace{2ex}}{}{}{\textsf{राहु}~08:39--10:01~~\textsf{यम}~11:23--12:45} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{कन्या}{26}{}}{\sundata{07:19}{18:11}{09:29}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 08:44\hspace{2ex}}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 18:13\hspace{2ex}}{}{}{\textsf{राहु}~15:28--16:49~~\textsf{यम}~10:02--11:23} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{कन्या}{27}{}}{\sundata{07:21}{18:09}{09:30}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 08:49\hspace{2ex}}{\textsf{मूला} {\tiny \RIGHTarrow} 19:15\hspace{2ex}}{}{}{\textsf{राहु}~12:45--14:06~~\textsf{यम}~08:42--10:03} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{कन्या}{28}{}}{\sundata{07:22}{18:07}{09:31}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 09:44\hspace{2ex}}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 21:02\hspace{2ex}}{}{}{\textsf{राहु}~14:05--15:25~~\textsf{यम}~07:22--08:42} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{कन्या}{29}{}}{\sundata{07:24}{18:05}{09:32}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 11:22\hspace{2ex}}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 23:25\hspace{2ex}}{}{}{\textsf{राहु}~11:24--12:44~~\textsf{यम}~15:24--16:44} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{कन्या}{30}{}}{\sundata{07:26}{18:03}{09:33}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 13:31\hspace{2ex}}{\textsf{श्रवण} {\tiny \RIGHTarrow} 02:13(+1)}{}{}{\textsf{राहु}~10:05--11:24~~\textsf{यम}~14:04--15:23} 
+\\ \hline
+\caldata{\textcolor{blue}{17}}{\sunmonth{तुला}{1}{{\textsf{कन्या} {\tiny \RIGHTarrow} 12:50\hspace{2ex}}}}{\sundata{07:28}{18:00}{09:34}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 15:58\hspace{2ex}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 05:13(+1)}{}{}{\textsf{राहु}~16:41--18:00~~\textsf{यम}~12:44--14:03} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{तुला}{2}{}}{\sundata{07:29}{17:58}{09:34}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 18:31\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~08:47--10:06~~\textsf{यम}~11:24--12:43} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{तुला}{3}{}}{\sundata{07:31}{17:56}{09:36}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 20:57\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 08:13\hspace{2ex}}{}{}{\textsf{राहु}~15:19--16:37~~\textsf{यम}~10:07--11:25} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{तुला}{4}{}}{\sundata{07:33}{17:54}{09:37}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 23:09\hspace{2ex}}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 11:02\hspace{2ex}}{}{}{\textsf{राहु}~12:43--14:01~~\textsf{यम}~08:50--10:08} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{तुला}{5}{}}{\sundata{07:34}{17:52}{09:37}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 01:03(+1)}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 13:35\hspace{2ex}}{}{}{\textsf{राहु}~14:00--15:17~~\textsf{यम}~07:34--08:51} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{तुला}{6}{}}{\sundata{07:36}{17:50}{09:38}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 02:34(+1)}{\textsf{रेवती} {\tiny \RIGHTarrow} 15:47\hspace{2ex}}{}{}{\textsf{राहु}~11:26--12:43~~\textsf{यम}~15:16--16:33} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{तुला}{7}{}}{\sundata{07:38}{17:48}{09:40}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 03:43(+1)}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 17:38\hspace{2ex}}{}{}{\textsf{राहु}~10:10--11:26~~\textsf{यम}~13:59--15:15} 
+\\ \hline
+\caldata{\textcolor{blue}{24}}{\sunmonth{तुला}{8}{}}{\sundata{07:40}{17:46}{09:41}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 04:30(+1)}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 19:08\hspace{2ex}}{}{}{\textsf{राहु}~16:30--17:46~~\textsf{यम}~12:43--13:58} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{तुला}{9}{}}{\sundata{07:41}{17:44}{09:41}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 04:54(+1)}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 20:15\hspace{2ex}}{}{}{\textsf{राहु}~08:56--10:11~~\textsf{यम}~11:27--12:42} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{तुला}{10}{}}{\sundata{07:43}{17:42}{09:42}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 04:56(+1)}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 21:01\hspace{2ex}}{}{}{\textsf{राहु}~15:12--16:27~~\textsf{यम}~10:12--11:27} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{तुला}{11}{}}{\sundata{07:45}{17:40}{09:44}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 04:33(+1)}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 21:24\hspace{2ex}}{}{}{\textsf{राहु}~12:42--13:56~~\textsf{यम}~08:59--10:13} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{तुला}{12}{}}{\sundata{07:47}{17:38}{09:45}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 03:45(+1)}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 21:23\hspace{2ex}}{}{}{\textsf{राहु}~13:56--15:10~~\textsf{यम}~07:47--09:00} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{तुला}{13}{}}{\sundata{07:48}{17:36}{09:45}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 02:30(+1)}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 20:56\hspace{2ex}}{}{}{\textsf{राहु}~11:28--12:42~~\textsf{यम}~15:09--16:22} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{तुला}{14}{}}{\sundata{07:50}{17:34}{09:46}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 00:48(+1)}{\textsf{पुष्य} {\tiny \RIGHTarrow} 20:03\hspace{2ex}}{}{}{\textsf{राहु}~10:16--11:29~~\textsf{यम}~13:55--15:08} 
+\\ \hline
+\caldata{\textcolor{blue}{31}}{\sunmonth{तुला}{15}{}}{\sundata{06:52}{16:33}{08:48}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 21:41\hspace{2ex}}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 17:44\hspace{2ex}}{}{}{\textsf{राहु}~15:20--16:33~~\textsf{यम}~11:42--12:55} 
+&
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries NOVEMBER 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{तुला}{16}{}}{\sundata{06:54}{16:31}{08:49}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 19:12\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 16:02\hspace{2ex}}{}{}{\textsf{राहु}~08:06--09:18~~\textsf{यम}~10:30--11:42} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{तुला}{17}{}}{\sundata{06:56}{16:29}{08:50}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 16:26\hspace{2ex}}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 14:02\hspace{2ex}}{}{}{\textsf{राहु}~14:05--15:17~~\textsf{यम}~09:19--10:30} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{तुला}{18}{}}{\sundata{06:57}{16:27}{08:51}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 13:29\hspace{2ex}}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 11:50\hspace{2ex}}{}{}{\textsf{राहु}~11:42--12:53~~\textsf{यम}~08:08--09:19} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{तुला}{19}{}}{\sundata{06:59}{16:25}{08:52}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 10:28\hspace{2ex}}{\textsf{हस्त} {\tiny \RIGHTarrow} 09:34\hspace{2ex}}{}{}{\textsf{राहु}~12:52--14:03~~\textsf{यम}~06:59--08:09} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{तुला}{20}{}}{\sundata{07:01}{16:24}{08:53}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 07:32\hspace{2ex}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 04:52(+1)}{\textsf{चित्रा} {\tiny \RIGHTarrow} 07:22\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 05:26(+1)}{\textsf{राहु}~10:32--11:42~~\textsf{यम}~14:03--15:13} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{तुला}{21}{}}{\sundata{07:03}{16:22}{08:54}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 02:39(+1)}{\textsf{विशाखा} {\tiny \RIGHTarrow} 03:56(+1)}{}{}{\textsf{राहु}~09:22--10:32~~\textsf{यम}~12:52--14:02} 
+\\ \hline
+\caldata{\textcolor{blue}{7}}{\sunmonth{तुला}{22}{}}{\sundata{07:04}{16:20}{08:55}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 00:59(+1)}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 03:00(+1)}{}{}{\textsf{राहु}~15:10--16:20~~\textsf{यम}~11:42--12:51} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{तुला}{23}{}}{\sundata{07:06}{16:19}{08:56}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 00:00(+1)}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 02:45(+1)}{}{}{\textsf{राहु}~08:15--09:24~~\textsf{यम}~10:33--11:42} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{तुला}{24}{}}{\sundata{07:08}{16:17}{08:57}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 23:47\hspace{2ex}}{\textsf{मूला} {\tiny \RIGHTarrow} 03:14(+1)}{}{}{\textsf{राहु}~13:59--15:08~~\textsf{यम}~09:25--10:33} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{तुला}{25}{}}{\sundata{07:10}{16:16}{08:59}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 00:20(+1)}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 04:28(+1)}{}{}{\textsf{राहु}~11:43--12:51~~\textsf{यम}~08:18--09:26} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{तुला}{26}{}}{\sundata{07:11}{16:14}{08:59}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 01:37(+1)}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 06:24(+1)}{}{}{\textsf{राहु}~12:50--13:58~~\textsf{यम}~07:11--08:18} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{तुला}{27}{}}{\sundata{07:13}{16:13}{09:01}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 03:31(+1)}{\textsf{श्रवण} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~10:35--11:43~~\textsf{यम}~13:58--15:05} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{तुला}{28}{}}{\sundata{07:15}{16:11}{09:02}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 05:51(+1)}{\textsf{श्रवण} {\tiny \RIGHTarrow} 08:54\hspace{2ex}}{}{}{\textsf{राहु}~09:29--10:36~~\textsf{यम}~12:50--13:57} 
+\\ \hline
+\caldata{\textcolor{blue}{14}}{\sunmonth{तुला}{29}{}}{\sundata{07:17}{16:10}{09:03}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 11:46\hspace{2ex}}{}{}{\textsf{राहु}~15:03--16:10~~\textsf{यम}~11:43--12:50} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{तुला}{30}{}}{\sundata{07:18}{16:08}{09:04}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 08:23\hspace{2ex}}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 14:44\hspace{2ex}}{}{}{\textsf{राहु}~08:24--09:30~~\textsf{यम}~10:36--11:43} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{वृश्चिक}{1}{{\textsf{तुला} {\tiny \RIGHTarrow} 11:41\hspace{2ex}}}}{\sundata{07:20}{16:07}{09:05}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 10:51\hspace{2ex}}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 17:36\hspace{2ex}}{}{}{\textsf{राहु}~13:55--15:01~~\textsf{यम}~09:31--10:37} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{वृश्चिक}{2}{}}{\sundata{07:22}{16:06}{09:06}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 13:04\hspace{2ex}}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 20:12\hspace{2ex}}{}{}{\textsf{राहु}~11:44--12:49~~\textsf{यम}~08:27--09:33} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{वृश्चिक}{3}{}}{\sundata{07:24}{16:04}{09:08}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 14:53\hspace{2ex}}{\textsf{रेवती} {\tiny \RIGHTarrow} 22:24\hspace{2ex}}{}{}{\textsf{राहु}~12:49--13:54~~\textsf{यम}~07:24--08:29} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{वृश्चिक}{4}{}}{\sundata{07:25}{16:03}{09:08}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 16:13\hspace{2ex}}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 00:07(+1)}{}{}{\textsf{राहु}~10:39--11:44~~\textsf{यम}~13:53--14:58} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{वृश्चिक}{5}{}}{\sundata{07:27}{16:02}{09:10}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 17:03\hspace{2ex}}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 01:21(+1)}{}{}{\textsf{राहु}~09:35--10:40~~\textsf{यम}~12:48--13:53} 
+\\ \hline
+\caldata{\textcolor{blue}{21}}{\sunmonth{वृश्चिक}{6}{}}{\sundata{07:29}{16:01}{09:11}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 17:23\hspace{2ex}}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 02:07(+1)}{}{}{\textsf{राहु}~14:57--16:01~~\textsf{यम}~11:45--12:49} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{वृश्चिक}{7}{}}{\sundata{07:30}{16:00}{09:12}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 17:16\hspace{2ex}}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 02:27(+1)}{}{}{\textsf{राहु}~08:33--09:37~~\textsf{यम}~10:41--11:45} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{वृश्चिक}{8}{}}{\sundata{07:32}{15:59}{09:13}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 16:45\hspace{2ex}}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 02:24(+1)}{}{}{\textsf{राहु}~13:52--14:55~~\textsf{यम}~09:38--10:42} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{वृश्चिक}{9}{}}{\sundata{07:33}{15:58}{09:14}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 15:52\hspace{2ex}}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 02:02(+1)}{}{}{\textsf{राहु}~11:45--12:48~~\textsf{यम}~08:36--09:39} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{वृश्चिक}{10}{}}{\sundata{07:35}{15:57}{09:15}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 14:41\hspace{2ex}}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 01:22(+1)}{}{}{\textsf{राहु}~12:48--13:51~~\textsf{यम}~07:35--08:37} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{वृश्चिक}{11}{}}{\sundata{07:36}{15:56}{09:16}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 13:13\hspace{2ex}}{\textsf{पुष्य} {\tiny \RIGHTarrow} 00:27(+1)}{}{}{\textsf{राहु}~10:43--11:46~~\textsf{यम}~13:51--14:53} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{वृश्चिक}{12}{}}{\sundata{07:38}{15:55}{09:17}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 11:31\hspace{2ex}}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 23:19\hspace{2ex}}{}{}{\textsf{राहु}~09:42--10:44~~\textsf{यम}~12:48--13:50} 
+\\ \hline
+\caldata{\textcolor{blue}{28}}{\sunmonth{वृश्चिक}{13}{}}{\sundata{07:39}{15:54}{09:18}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 09:37\hspace{2ex}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 07:32(+1)}{\textsf{मघा} {\tiny \RIGHTarrow} 22:00\hspace{2ex}}{}{\textsf{राहु}~14:52--15:54~~\textsf{यम}~11:46--12:48} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{वृश्चिक}{14}{}}{\sundata{07:41}{15:53}{09:19}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 05:19(+1)}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 20:32\hspace{2ex}}{}{}{\textsf{राहु}~08:42--09:44~~\textsf{यम}~10:45--11:47} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{वृश्चिक}{15}{}}{\sundata{07:42}{15:53}{09:20}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 03:02(+1)}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 18:59\hspace{2ex}}{}{}{\textsf{राहु}~13:50--14:51~~\textsf{यम}~09:44--10:46} 
+&
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries DECEMBER 2010}\\[3mm]
+\hline
+\textbf{SUN} & \textbf{MON} & \textbf{TUE} & \textbf{WED} & \textbf{THU} & \textbf{FRI} & \textbf{SAT} \\ \hline
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{वृश्चिक}{16}{}}{\sundata{07:44}{15:52}{09:21}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 00:46(+1)}{\textsf{हस्त} {\tiny \RIGHTarrow} 17:24\hspace{2ex}}{}{}{\textsf{राहु}~11:48--12:49~~\textsf{यम}~08:45--09:46} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{वृश्चिक}{17}{}}{\sundata{07:45}{15:51}{09:22}}{\textsf{\krishna~द्वादशी} {\tiny \RIGHTarrow} 22:35\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 15:53\hspace{2ex}}{}{}{\textsf{राहु}~12:48--13:49~~\textsf{यम}~07:45--08:45} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{वृश्चिक}{18}{}}{\sundata{07:47}{15:51}{09:23}}{\textsf{\krishna~त्रयोदशी} {\tiny \RIGHTarrow} 20:37\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 14:31\hspace{2ex}}{}{}{\textsf{राहु}~10:48--11:49~~\textsf{यम}~13:50--14:50} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{वृश्चिक}{19}{}}{\sundata{07:48}{15:50}{09:24}}{\textsf{\krishna~चतुर्दशी} {\tiny \RIGHTarrow} 18:56\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 13:25\hspace{2ex}}{}{}{\textsf{राहु}~09:48--10:48~~\textsf{यम}~12:49--13:49} 
+\\ \hline
+\caldata{\textcolor{blue}{5}}{\sunmonth{वृश्चिक}{20}{}}{\sundata{07:49}{15:50}{09:25}}{\textsf{\newmoon~अमावस्या} {\tiny \RIGHTarrow} 17:39\hspace{2ex}}{\textsf{अनूराधा} {\tiny \RIGHTarrow} 12:41\hspace{2ex}}{}{}{\textsf{राहु}~14:49--15:50~~\textsf{यम}~11:49--12:49} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{वृश्चिक}{21}{}}{\sundata{07:50}{15:49}{09:25}}{\textsf{\shukla~प्रथमा} {\tiny \RIGHTarrow} 16:54\hspace{2ex}}{\textsf{ज्येष्ठा} {\tiny \RIGHTarrow} 12:27\hspace{2ex}}{}{}{\textsf{राहु}~08:49--09:49~~\textsf{यम}~10:49--11:49} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{वृश्चिक}{22}{}}{\sundata{07:52}{15:49}{09:27}}{\textsf{\shukla~द्वितीया} {\tiny \RIGHTarrow} 16:44\hspace{2ex}}{\textsf{मूला} {\tiny \RIGHTarrow} 12:46\hspace{2ex}}{}{}{\textsf{राहु}~13:49--14:49~~\textsf{यम}~09:51--10:50} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{वृश्चिक}{23}{}}{\sundata{07:53}{15:49}{09:28}}{\textsf{\shukla~तृतीया} {\tiny \RIGHTarrow} 17:13\hspace{2ex}}{\textsf{पूर्वाषाढा} {\tiny \RIGHTarrow} 13:44\hspace{2ex}}{}{}{\textsf{राहु}~11:51--12:50~~\textsf{यम}~08:52--09:52} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{वृश्चिक}{24}{}}{\sundata{07:54}{15:48}{09:28}}{\textsf{\shukla~चतुर्थी} {\tiny \RIGHTarrow} 18:21\hspace{2ex}}{\textsf{उत्तराषाढा} {\tiny \RIGHTarrow} 15:18\hspace{2ex}}{}{}{\textsf{राहु}~12:50--13:49~~\textsf{यम}~07:54--08:53} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{वृश्चिक}{25}{}}{\sundata{07:55}{15:48}{09:29}}{\textsf{\shukla~पञ्चमी} {\tiny \RIGHTarrow} 20:04\hspace{2ex}}{\textsf{श्रवण} {\tiny \RIGHTarrow} 17:27\hspace{2ex}}{}{}{\textsf{राहु}~10:52--11:51~~\textsf{यम}~13:49--14:48} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{वृश्चिक}{26}{}}{\sundata{07:56}{15:48}{09:30}}{\textsf{\shukla~षष्ठी} {\tiny \RIGHTarrow} 22:15\hspace{2ex}}{\textsf{श्रविष्ठा} {\tiny \RIGHTarrow} 20:03\hspace{2ex}}{}{}{\textsf{राहु}~09:54--10:53~~\textsf{यम}~12:51--13:50} 
+\\ \hline
+\caldata{\textcolor{blue}{12}}{\sunmonth{वृश्चिक}{27}{}}{\sundata{07:57}{15:48}{09:31}}{\textsf{\shukla~सप्तमी} {\tiny \RIGHTarrow} 00:42(+1)}{\textsf{शतभिषक्} {\tiny \RIGHTarrow} 22:56\hspace{2ex}}{}{}{\textsf{राहु}~14:49--15:48~~\textsf{यम}~11:52--12:51} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{वृश्चिक}{28}{}}{\sundata{07:58}{15:48}{09:32}}{\textsf{\shukla~अष्टमी} {\tiny \RIGHTarrow} 03:13(+1)}{\textsf{पूर्वप्रोष्ठपदा} {\tiny \RIGHTarrow} 01:52(+1)}{}{}{\textsf{राहु}~08:56--09:55~~\textsf{यम}~10:54--11:53} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{वृश्चिक}{29}{}}{\sundata{07:59}{15:48}{09:32}}{\textsf{\shukla~नवमी} {\tiny \RIGHTarrow} 05:33(+1)}{\textsf{उत्तरप्रोष्ठपदा} {\tiny \RIGHTarrow} 04:39(+1)}{}{}{\textsf{राहु}~13:50--14:49~~\textsf{यम}~09:56--10:54} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{वृश्चिक}{30}{{\textsf{वृश्चिक} {\tiny \RIGHTarrow} 02:22(+1)}}}{\sundata{08:00}{15:48}{09:33}}{\textsf{\shukla~दशमी} {\tiny \RIGHTarrow} 07:31(+1)}{\textsf{रेवती} {\tiny \RIGHTarrow} 07:05(+1)}{}{}{\textsf{राहु}~11:54--12:52~~\textsf{यम}~08:58--09:57} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{धनुः}{1}{}}{\sundata{08:01}{15:48}{09:34}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{\textsf{अश्विनी} {\tiny \RIGHTarrow} \textsf{अहोरात्रम्}}{}{}{\textsf{राहु}~12:52--13:51~~\textsf{यम}~08:01--08:59} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{धनुः}{2}{}}{\sundata{08:01}{15:49}{09:34}}{\textsf{\shukla~एकादशी} {\tiny \RIGHTarrow} 08:55\hspace{2ex}}{\textsf{अश्विनी} {\tiny \RIGHTarrow} 08:59\hspace{2ex}}{}{}{\textsf{राहु}~10:56--11:55~~\textsf{यम}~13:52--14:50} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{धनुः}{3}{}}{\sundata{08:02}{15:49}{09:35}}{\textsf{\shukla~द्वादशी} {\tiny \RIGHTarrow} 09:41\hspace{2ex}}{\textsf{अपभरणी} {\tiny \RIGHTarrow} 10:17\hspace{2ex}}{}{}{\textsf{राहु}~09:58--10:57~~\textsf{यम}~12:53--13:52} 
+\\ \hline
+\caldata{\textcolor{blue}{19}}{\sunmonth{धनुः}{4}{}}{\sundata{08:03}{15:49}{09:36}}{\textsf{\shukla~त्रयोदशी} {\tiny \RIGHTarrow} 09:47\hspace{2ex}}{\textsf{कृत्तिका} {\tiny \RIGHTarrow} 10:56\hspace{2ex}}{}{}{\textsf{राहु}~14:50--15:49~~\textsf{यम}~11:56--12:54} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{धनुः}{5}{}}{\sundata{08:03}{15:50}{09:36}}{\textsf{\shukla~चतुर्दशी} {\tiny \RIGHTarrow} 09:17\hspace{2ex}}{\textsf{रोहिणी} {\tiny \RIGHTarrow} 11:00\hspace{2ex}}{}{}{\textsf{राहु}~09:01--09:59~~\textsf{यम}~10:58--11:56} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{धनुः}{6}{}}{\sundata{08:04}{15:50}{09:37}}{\textsf{\fullmoon~पूर्णिमा} {\tiny \RIGHTarrow} 08:13\hspace{2ex}}{\textsf{\krishna~प्रथमा} {\tiny \RIGHTarrow} 06:39(+1)}{\textsf{मृगशीर्ष} {\tiny \RIGHTarrow} 10:31\hspace{2ex}}{}{\textsf{राहु}~13:53--14:51~~\textsf{यम}~10:00--10:58} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{धनुः}{7}{}}{\sundata{08:05}{15:51}{09:38}}{\textsf{\krishna~द्वितीया} {\tiny \RIGHTarrow} 04:45(+1)}{\textsf{आर्द्रा} {\tiny \RIGHTarrow} 09:36\hspace{2ex}}{}{}{\textsf{राहु}~11:58--12:56~~\textsf{यम}~09:03--10:01} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{धनुः}{8}{}}{\sundata{08:05}{15:51}{09:38}}{\textsf{\krishna~तृतीया} {\tiny \RIGHTarrow} 02:35(+1)}{\textsf{पुनर्वसू} {\tiny \RIGHTarrow} 08:20\hspace{2ex}}{\textsf{पुष्य} {\tiny \RIGHTarrow} 06:50(+1)}{}{\textsf{राहु}~12:56--13:54~~\textsf{यम}~08:05--09:03} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{धनुः}{9}{}}{\sundata{08:05}{15:52}{09:38}}{\textsf{\krishna~चतुर्थी} {\tiny \RIGHTarrow} 00:17(+1)}{\textsf{आश्रेषा} {\tiny \RIGHTarrow} 05:11(+1)}{}{}{\textsf{राहु}~11:00--11:58~~\textsf{यम}~13:55--14:53} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{धनुः}{10}{}}{\sundata{08:06}{15:52}{09:39}}{\textsf{\krishna~पञ्चमी} {\tiny \RIGHTarrow} 21:56\hspace{2ex}}{\textsf{मघा} {\tiny \RIGHTarrow} 03:32(+1)}{}{}{\textsf{राहु}~10:02--11:00~~\textsf{यम}~12:57--13:55} 
+\\ \hline
+\caldata{\textcolor{blue}{26}}{\sunmonth{धनुः}{11}{}}{\sundata{08:06}{15:53}{09:39}}{\textsf{\krishna~षष्ठी} {\tiny \RIGHTarrow} 19:36\hspace{2ex}}{\textsf{पूर्वफल्गुनी} {\tiny \RIGHTarrow} 01:55(+1)}{}{}{\textsf{राहु}~14:54--15:53~~\textsf{यम}~11:59--12:57} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{धनुः}{12}{}}{\sundata{08:06}{15:54}{09:39}}{\textsf{\krishna~सप्तमी} {\tiny \RIGHTarrow} 17:23\hspace{2ex}}{\textsf{उत्तरफल्गुनी} {\tiny \RIGHTarrow} 00:25(+1)}{}{}{\textsf{राहु}~09:04--10:03~~\textsf{यम}~11:01--12:00} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{धनुः}{13}{}}{\sundata{08:06}{15:55}{09:39}}{\textsf{\krishna~अष्टमी} {\tiny \RIGHTarrow} 15:19\hspace{2ex}}{\textsf{हस्त} {\tiny \RIGHTarrow} 23:07\hspace{2ex}}{}{}{\textsf{राहु}~13:57--14:56~~\textsf{यम}~10:03--11:01} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{धनुः}{14}{}}{\sundata{08:07}{15:56}{09:40}}{\textsf{\krishna~नवमी} {\tiny \RIGHTarrow} 13:28\hspace{2ex}}{\textsf{चित्रा} {\tiny \RIGHTarrow} 22:01\hspace{2ex}}{}{}{\textsf{राहु}~12:01--13:00~~\textsf{यम}~09:05--10:04} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{धनुः}{15}{}}{\sundata{08:07}{15:57}{09:41}}{\textsf{\krishna~दशमी} {\tiny \RIGHTarrow} 11:51\hspace{2ex}}{\textsf{स्वाति} {\tiny \RIGHTarrow} 21:12\hspace{2ex}}{}{}{\textsf{राहु}~13:00--13:59~~\textsf{यम}~08:07--09:05} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{धनुः}{16}{}}{\sundata{08:07}{15:58}{09:41}}{\textsf{\krishna~एकादशी} {\tiny \RIGHTarrow} 10:33\hspace{2ex}}{\textsf{विशाखा} {\tiny \RIGHTarrow} 20:40\hspace{2ex}}{}{}{\textsf{राहु}~11:03--12:02~~\textsf{यम}~14:00--14:59} 
+&
+\\ \hline
+\end{tabular}
+
+
+
+\end{center}
+\end{document}

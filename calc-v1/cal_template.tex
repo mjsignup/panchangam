@@ -1,0 +1,101 @@
+\documentclass[a4paper,11pt,landscape]{article}
+\usepackage[sort&compress,square,numbers]{natbib}
+
+\usepackage[xetex]{graphicx}
+%\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage[normalsections]{savetrees}
+\usepackage{euler}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{bbding}
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+%\usepackage[bookmarks, colorlinks, breaklinks, pdftitle={Karthik Raman - vita},pdfauthor={Karthik Raman}]{hyperref} 
+\usepackage[dvipsnames]{xcolor} 
+\usepackage{wasysym} 
+%\hypersetup{linkcolor=Sepia,citecolor=blue,filecolor=black,urlcolor=Blue} 
+
+
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+\setmainfont[BoldFont=ScalaSans-BoldLF]{Scala Sans LF}
+\setsansfont{Sanskrit 2003:script=deva}
+
+%%%%%%% Numbers and counters %%%%%%%
+\newcount\num
+\newcount\tempone \newcount\temptwo
+\newcommand{\devanumber}[1]{%
+\num=#1\devanumberrecurse}
+
+\newcommand{\devanumberrecurse}{%
+{\tempone=\num
+%  \showthe\tempone\ %
+\ifnum\num > 0 
+	\divide \num by 10%
+	\temptwo=\num \multiply\temptwo by -10%
+	\devanumberrecurse%
+% 	\\stage 2\ %
+% 	\showthe\temptwo\ %
+% 	temp1=\number\tempone\ %
+% 	num=\number\num\ %
+	\advance\tempone by \temptwo%
+	\devadigit
+\fi
+}}
+
+\newcommand{\devadigit}{%
+\ifcase\tempone०\or१\or२\or३\or४\or५\or६\or७\or८\or९\fi%\number\tempone%
+}
+
+%%%%%%%% Calendar display stuff %%%%%%%%%%%
+\newcommand{\sunmonth}[3]{%
+\footnotesize\textsf{#1~\devanumber{#2}}\\
+\mbox{\scriptsize #3}
+}
+%\newcommand{\sundata}[3]{%
+%\mbox{{\sun\tiny\UParrow} \scriptsize #1}\\
+%\mbox{{\sun\tiny\DOWNarrow} \scriptsize  #2}~\scriptsize{\mbox{(\textsf{स} #3)}}
+%}
+\newcommand{\sundata}[3]{%
+\mbox{{\sun\tiny\UParrow} {\scriptsize #1} {\sun\tiny\DOWNarrow} {\scriptsize #2} \tiny{\mbox{(\textsf{स} #3)}}}
+}
+\newcommand{\caldata}[8]{%
+\begin{minipage}{3.35cm}
+\begin{minipage}[t]{2.15cm}
+#2\\
+%\mbox{}\\
+%\SunshineOpenCircled
+#3\\
+\scriptsize
+\mbox{#8}\\
+\mbox{#4}\\
+\mbox{#5}\\
+\mbox{#6}\\
+\mbox{#7}\\
+\end{minipage}\begin{minipage}[c]{1.2cm}
+\vspace{.4ex}
+\hfill \mbox{{\font\x="Minion Pro" at 32 pt\x #1}\hspace{-2mm}}
+\end{minipage}
+\end{minipage}
+}
+
+\addtolength{\headsep}{-3ex}
+\pagestyle{empty}
+
+
+\newcommand{\shukla}{शुक्ल}
+\newcommand{\krishna}{कृष्ण}
+
+
+\begin{document}
+\rmfamily
+\pagestyle{empty}
+\begin{center}
+\mbox{}\\[2.5in]
+\hrule\mbox{}
+\mbox{}\\[1ex]
+\input{FILENAME}
+\end{center}
+\end{document}
