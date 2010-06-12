@@ -314,18 +314,6 @@ def main():
       for i in range(0,weekday):
         print "{}  &"
 
-#    print '%%@@%d' % (d)
-#    print '%%@@%s' % (month_data[d])
-#    print '%%@@%s' % (sunrise[d])
-#    print '%%@@%s' % (sunset[d])
-#    print '%%@@%s' % (madhya[d])
-#    print '%%@@%s' % (tithi_data_string[d])
-#    print '%%@@%s' % (nakshatram_data_string[d])
-#    print '%%@@%s' % (yogam_data_string[d])
-#    print '%%@@%s' % (karanam_data_string[d])
-#    print '%%@@%s' % (rahu[d])
-#    print '%%@@%s' % (yama[d])
-
     print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\tnyk{%s}{%s}{%s}{%s}}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],
       dt,month_data[d],sunrise[d],sunset[d],madhya[d],tithi_data_string[d],nakshatram_data_string[d],
       yogam_data_string[d],karanam_data_string[d],rahu[d],yama[d])
