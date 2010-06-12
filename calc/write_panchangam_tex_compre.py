@@ -36,8 +36,8 @@ def deci2sexa(d):
   return [hour,minute,second]
 
 def print_time (d):
-  t=d.timetuple()
-  return '%02d:%02d' % (t[3],t[4])
+  [h,m,s]=deci2sexa(d)
+  return '%02d:%02d' % (h,m)
 
 def get_last_dhanur_transit (jd_start,latitude,longitude):
   swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
@@ -150,7 +150,6 @@ def main():
   year = start_year
   jd=swisseph.julday(year,1,1,0)
   jd_start=jd
-  start_date = datetime(year=year,month=1,day=1,hour=0,minute=0,second=0)
   
   swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
   
@@ -202,8 +201,8 @@ def main():
     jd_set =swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,
       lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
   
-    [_y,_m,_d, t_rise]=swisseph.revjul(jd_rise+tz_off/24.0)
-    [_y,_m,_d, t_set]=swisseph.revjul(jd_set+tz_off/24.0)
+    t_rise=(jd_rise-jd)*24.0+tz_off;
+    t_set=(jd_set-jd)*24.0+tz_off;
   
     longitude_moon=swisseph.calc_ut(jd_rise,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise)
     longitude_moon_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise+1)
@@ -251,16 +250,12 @@ def main():
     [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
     [sh, sm, ss] = deci2sexa(t_set) #set_t hour, set minute
   
-    present_day = start_date + timedelta(days=day_of_year)
-    rise_t = present_day + timedelta(hours=rh,minutes=rm)
-    set_t = present_day + timedelta(hours=sh,minutes=sm)
-  
-    length_of_day = set_t-rise_t
-    yamakandam_start = rise_t + timedelta(seconds=(1/8.0)*(yamakandam_octets[weekday]-1)*length_of_day.seconds)
-    yamakandam_end = yamakandam_start + timedelta(seconds=(1/8.0)*length_of_day.seconds)
-    rahukalam_start = rise_t + timedelta(seconds=(1/8.0)*(rahukalam_octets[weekday]-1)*length_of_day.seconds)
-    rahukalam_end = rahukalam_start + timedelta(seconds=(1/8.0)*length_of_day.seconds)
-    madhyahnikam_start = rise_t + timedelta(seconds=(1/5.0)*length_of_day.seconds)
+    length_of_day = t_set-t_rise
+    yamakandam_start = t_rise + (1/8.0)*(yamakandam_octets[weekday]-1)*length_of_day
+    yamakandam_end = yamakandam_start + (1/8.0)*length_of_day
+    rahukalam_start = t_rise + (1/8.0)*(rahukalam_octets[weekday]-1)*length_of_day
+    rahukalam_end = rahukalam_start + (1/8.0)*length_of_day
+    madhyahnikam_start = t_rise + (1/5.0)*length_of_day
   
     sunrise = '%02d:%02d' % (rh,rm)
     sunset = '%02d:%02d' % (sh,sm)
