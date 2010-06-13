@@ -174,29 +174,29 @@ def main():
 
 
   #INITIALISE VARIABLES
-  jd_rise=[0]*368
-  jd_set=[0]*368
-  longitude_moon=[0]*368
-  longitude_sun=[0]*368
-  longitude_sun_set=[0]*368
-  sun_month=[0]*368
-  sun_month_rise=[0]*368
-  month_data=['']*368
-  tithi_data_string=['']*368
-  nakshatram_data_string=['']*368
-  karanam_data_string=['']*368
-  yogam_data_string=['']*368
-  weekday=[0]*368
-  sunrise=['']*368
-  sunset=['']*368
-  madhya=['']*368
-  rahu=['']*368
-  yama=['']*368
+  jd_rise=[None]*368
+  jd_set=[None]*368
+  longitude_moon=[None]*368
+  longitude_sun=[None]*368
+  longitude_sun_set=[None]*368
+  sun_month=[None]*368
+  sun_month_rise=[None]*368
+  month_data=[None]*368
+  tithi_data_string=[None]*368
+  nakshatram_data_string=[None]*368
+  karanam_data_string=[None]*368
+  yogam_data_string=[None]*368
+  weekday=[None]*368
+  sunrise=[None]*368
+  sunset=[None]*368
+  madhya=[None]*368
+  rahu=[None]*368
+  yama=[None]*368
   
   weekday_start=swisseph.day_of_week(jd)+1
   #swisseph has Mon = 0, non-intuitively!
   
-  for d in range(1,367):
+  for d in range(0,367):
     jd = jd_start-1+d
     [y,m,dt,t] = swisseph.revjul(jd)
     weekday = (weekday_start -1 + d)%7 
@@ -206,51 +206,49 @@ def main():
     tz_off=datetime.utcoffset(local_time).seconds/3600.0 
     #compute offset from UTC
 
-    jd_rise[d]=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,
-      lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
     jd_rise[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
       lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
-    jd_set[d]=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,
+    jd_set[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
       lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
   
+    longitude_sun[d+1]=swisseph.calc_ut(jd_rise[d+1],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise[d+1])
+    longitude_moon[d+1]=swisseph.calc_ut(jd_rise[d+1],swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise[d+1])
+    longitude_sun_set[d+1]=swisseph.calc_ut(jd_set[d+1],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_set[d+1])
+    
+    sun_month[d+1] = masa_names[int(1+math.floor(((longitude_sun_set[d+1])%360)/30.0))]
+
+    sun_month_rise[d+1] = masa_names[int(1+math.floor(((longitude_sun[d+1])%360)/30.0))]
+
+    if(d==0):
+      continue
+
     t_rise=(jd_rise[d]-jd)*24.0+tz_off;
     t_set=(jd_set[d]-jd)*24.0+tz_off;
-  
-    longitude_moon[d]=swisseph.calc_ut(jd_rise[d],swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise[d])
-    longitude_moon[d+1]=swisseph.calc_ut(jd_rise[d+1],swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise[d+1])
-  
-    longitude_sun[d]=swisseph.calc_ut(jd_rise[d],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise[d])
-    longitude_sun_set[d]=swisseph.calc_ut(jd_set[d],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_set[d])
-    sun_month_rise[d] = masa_names[int(1+math.floor(((longitude_sun[d])%360)/30.0))]
-    sun_month[d] = masa_names[int(1+math.floor(((longitude_sun_set[d])%360)/30.0))]
-    longitude_sun[d+1]=swisseph.calc_ut(jd_rise[d+1],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise[d+1])
-    sun_month[d+1] = masa_names[int(1+math.floor(((longitude_sun[d+1])%360)/30.0))]
-  
+
   
     #Solar month calculations
     if month_start_after_set==1:
       sun_month_day = 0
       month_start_after_set = 0
   
-    if sun_month_rise[d]!=sun_month[d+1]:
-      if sun_month[d]!=sun_month[d+1]:
+    if sun_month[d]!=sun_month[d+1]:
+      sun_month_day = sun_month_day + 1
+
+      if sun_month[d]!=sun_month_rise[d+1]:
         month_start_after_set=1
-        sun_month_day = sun_month_day + 1
+        sun_month_end_time = get_angam_data_string(masa_names, 30, jd_rise[d],
+          jd_rise[d+1], t_rise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
+          longitude_sun[d+1], [0,1])
+ 
+    elif sun_month_rise[d]!=sun_month[d]:
       #mAsa pirappu!
       #sun moves into next rAsi before sunset -- check rules!
-      else:
-        sun_month_day = 1
-      month_remaining = 30-(longitude_sun[d]%30.0)
-      daily_motion_sun = (longitude_sun[d+1]-longitude_sun[d])%360
-      month_end = month_remaining/daily_motion_sun*(jd_rise[d+1]-jd_rise[d])*24.0
-      me = deci2sexa(t_rise+month_end)
-      if me[0]>=24:
-        suff='(+1)'
-        me[0] = me[0] - 24
-      else:
-        suff='\\hspace{2ex}'
-      sun_month_end_time = '{\\textsf{%s} {\\tiny \\RIGHTarrow} %02d:%02d%s}'%\
-        (sun_month[d-1],me[0],me[1],suff)
+      sun_month_day = 1
+
+      sun_month_end_time = get_angam_data_string(masa_names, 30, jd_rise[d],
+      jd_rise[d+1], t_rise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
+      longitude_sun[d+1], [0,1])
+    
     else:
       sun_month_day = sun_month_day + 1
       sun_month_end_time = ''
