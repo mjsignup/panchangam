@@ -131,7 +131,7 @@ def get_angam_data_string(angam_names, arc_len, jd_rise, jd_rise_tmrw,
   return angam_data_string
 
 #USEFUL 'constants'
-yamakandam_octets  = [5,4,3,2,1,7,6]
+yamagandam_octets  = [5,4,3,2,1,7,6]
 rahukalam_octets = [8,2,7,5,6,4,3]
 #wday = {'Mon':1, 'Tue':2,'Wed':3, 'Thu':4, 'Fri':5, 'Sat':6, 'Sun':0}
 #daycol = {0:'red',1:'blue',2:'blue',3:'blue',4:'blue',5:'blue',6:'red'}
@@ -261,8 +261,8 @@ def main():
     [sh, sm, ss] = deci2sexa(t_set) #set_t hour, set minute
   
     length_of_day = t_set-t_rise
-    yamakandam_start = t_rise + (1/8.0)*(yamakandam_octets[weekday]-1)*length_of_day
-    yamakandam_end = yamakandam_start + (1/8.0)*length_of_day
+    yamagandam_start = t_rise + (1/8.0)*(yamagandam_octets[weekday]-1)*length_of_day
+    yamagandam_end = yamagandam_start + (1/8.0)*length_of_day
     rahukalam_start = t_rise + (1/8.0)*(rahukalam_octets[weekday]-1)*length_of_day
     rahukalam_end = rahukalam_start + (1/8.0)*length_of_day
     madhyahnikam_start = t_rise + (1/5.0)*length_of_day
@@ -271,7 +271,7 @@ def main():
     sunset[d] = '%02d:%02d' % (sh,sm)
     madhya[d] = print_time(madhyahnikam_start)
     rahu[d] = '%s--%s' % (print_time(rahukalam_start), print_time(rahukalam_end))
-    yama[d] = '%s--%s' % (print_time(yamakandam_start),print_time(yamakandam_end))
+    yama[d] = '%s--%s' % (print_time(yamagandam_start),print_time(yamagandam_end))
     
     tithi_data_string[d]=get_angam_data_string(tithi_names, 12, jd_rise[d],
       jd_rise[d+1], t_rise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
