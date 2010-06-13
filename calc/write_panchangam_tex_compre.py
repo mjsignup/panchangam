@@ -45,18 +45,18 @@ def get_last_dhanur_transit (jd_start,latitude,longitude):
     jd = jd_start + d
     [y,m,d,t] = swisseph.revjul(jd)
   
-    jd_rise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,
+    jd_sunrise=swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,
       lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
-    jd_rise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
+    jd_sunrise_tmrw=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
       lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
-    jd_set =swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,
+    jd_sunset =swisseph.rise_trans(jd_start=jd,body=swisseph.SUN,lon=longitude,
       lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
   
-    longitude_sun=swisseph.calc_ut(jd_rise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise)
-    longitude_sun_set=swisseph.calc_ut(jd_set,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_set)
+    longitude_sun=swisseph.calc_ut(jd_sunrise,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_sunrise)
+    longitude_sun_set=swisseph.calc_ut(jd_sunset,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_sunset)
     sun_month_rise = masa_names[int(1+math.floor(((longitude_sun)%360)/30.0))]
     sun_month = masa_names[int(1+math.floor(((longitude_sun_set)%360)/30.0))]
-    longitude_sun_tmrw=swisseph.calc_ut(jd_rise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise+1)
+    longitude_sun_tmrw=swisseph.calc_ut(jd_sunrise+1,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_sunrise+1)
     sun_month_tmrw = masa_names[int(1+math.floor(((longitude_sun_tmrw)%360)/30.0))]
 
     if sun_month_rise!=sun_month_tmrw:
@@ -65,11 +65,11 @@ def get_last_dhanur_transit (jd_start,latitude,longitude):
       else:
         return jd
   
-def print_end_time (end_time, day_night_length, rise_time):
+def print_end_time (end_time, day_night_length, sunrise_time):
   if end_time/24.0>day_night_length:
     end_time_str = '\\textsf{अहोरात्रम्}'
   else:
-    te=deci2sexa(rise_time+end_time)
+    te=deci2sexa(sunrise_time+end_time)
     if te[0]>=24:
       suff = '(+1)'
       te[0] = te[0]-24
@@ -78,8 +78,8 @@ def print_end_time (end_time, day_night_length, rise_time):
     end_time_str = '%02d:%02d%s' % (te[0],te[1],suff)
   return end_time_str
 
-def get_angam_data_string(angam_names, arc_len, jd_rise, jd_rise_tmrw, 
-  t_rise, longitude_moon, longitude_sun, longitude_moon_tmrw, 
+def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw, 
+  t_sunrise, longitude_moon, longitude_sun, longitude_moon_tmrw, 
   longitude_sun_tmrw, w):
 
   daily_motion_moon = (longitude_moon_tmrw-longitude_moon)%360
@@ -107,7 +107,7 @@ def get_angam_data_string(angam_names, arc_len, jd_rise, jd_rise_tmrw,
         longitude_sun*w[1])%360)%arc_len)
       angam_end[i] = angam_remaining[i]/(daily_motion_moon*w[0]+
         daily_motion_sun*w[1])*24.0
-      angam_end_str[i] = print_end_time(angam_end[i],jd_rise_tmrw-jd_rise,t_rise)
+      angam_end_str[i] = print_end_time(angam_end[i],jd_sunrise_tmrw-jd_sunrise,t_sunrise)
     else:
       angam_str[i] = ''
       angam_end_str[i] = ''
@@ -174,8 +174,8 @@ def main():
 
 
   #INITIALISE VARIABLES
-  jd_rise=[None]*368
-  jd_set=[None]*368
+  jd_sunrise=[None]*368
+  jd_sunset=[None]*368
   longitude_moon=[None]*368
   longitude_sun=[None]*368
   longitude_sun_set=[None]*368
@@ -206,14 +206,14 @@ def main():
     tz_off=datetime.utcoffset(local_time).seconds/3600.0 
     #compute offset from UTC
 
-    jd_rise[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
+    jd_sunrise[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
       lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
-    jd_set[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
+    jd_sunset[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
       lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
   
-    longitude_sun[d+1]=swisseph.calc_ut(jd_rise[d+1],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_rise[d+1])
-    longitude_moon[d+1]=swisseph.calc_ut(jd_rise[d+1],swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_rise[d+1])
-    longitude_sun_set[d+1]=swisseph.calc_ut(jd_set[d+1],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_set[d+1])
+    longitude_sun[d+1]=swisseph.calc_ut(jd_sunrise[d+1],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_sunrise[d+1])
+    longitude_moon[d+1]=swisseph.calc_ut(jd_sunrise[d+1],swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_sunrise[d+1])
+    longitude_sun_set[d+1]=swisseph.calc_ut(jd_sunset[d+1],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_sunset[d+1])
     
     sun_month[d+1] = masa_names[int(1+math.floor(((longitude_sun_set[d+1])%360)/30.0))]
 
@@ -222,8 +222,8 @@ def main():
     if(d==0):
       continue
 
-    t_rise=(jd_rise[d]-jd)*24.0+tz_off;
-    t_set=(jd_set[d]-jd)*24.0+tz_off;
+    t_sunrise=(jd_sunrise[d]-jd)*24.0+tz_off;
+    t_sunset=(jd_sunset[d]-jd)*24.0+tz_off;
 
   
     #Solar month calculations
@@ -236,8 +236,8 @@ def main():
 
       if sun_month[d]!=sun_month_rise[d+1]:
         month_start_after_set=1
-        sun_month_end_time = get_angam_data_string(masa_names, 30, jd_rise[d],
-          jd_rise[d+1], t_rise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
+        sun_month_end_time = get_angam_data_string(masa_names, 30, jd_sunrise[d],
+          jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
           longitude_sun[d+1], [0,1])
  
     elif sun_month_rise[d]!=sun_month[d]:
@@ -245,8 +245,8 @@ def main():
       #sun moves into next rAsi before sunset -- check rules!
       sun_month_day = 1
 
-      sun_month_end_time = get_angam_data_string(masa_names, 30, jd_rise[d],
-      jd_rise[d+1], t_rise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
+      sun_month_end_time = get_angam_data_string(masa_names, 30, jd_sunrise[d],
+      jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
       longitude_sun[d+1], [0,1])
     
     else:
@@ -257,15 +257,15 @@ def main():
       sun_month_end_time)
   
     #Sunrise/sunset and related stuff (like rahu, yama)
-    [rh, rm, rs] = deci2sexa(t_rise) #rise_t hour, rise minute
-    [sh, sm, ss] = deci2sexa(t_set) #set_t hour, set minute
+    [rh, rm, rs] = deci2sexa(t_sunrise) #sunrise hour, minute
+    [sh, sm, ss] = deci2sexa(t_sunset) #sunrise hour, minute
   
-    length_of_day = t_set-t_rise
-    yamagandam_start = t_rise + (1/8.0)*(yamagandam_octets[weekday]-1)*length_of_day
+    length_of_day = t_sunset-t_sunrise
+    yamagandam_start = t_sunrise + (1/8.0)*(yamagandam_octets[weekday]-1)*length_of_day
     yamagandam_end = yamagandam_start + (1/8.0)*length_of_day
-    rahukalam_start = t_rise + (1/8.0)*(rahukalam_octets[weekday]-1)*length_of_day
+    rahukalam_start = t_sunrise + (1/8.0)*(rahukalam_octets[weekday]-1)*length_of_day
     rahukalam_end = rahukalam_start + (1/8.0)*length_of_day
-    madhyahnikam_start = t_rise + (1/5.0)*length_of_day
+    madhyahnikam_start = t_sunrise + (1/5.0)*length_of_day
   
     sunrise[d] = '%02d:%02d' % (rh,rm)
     sunset[d] = '%02d:%02d' % (sh,sm)
@@ -273,17 +273,17 @@ def main():
     rahu[d] = '%s--%s' % (print_time(rahukalam_start), print_time(rahukalam_end))
     yama[d] = '%s--%s' % (print_time(yamagandam_start),print_time(yamagandam_end))
     
-    tithi_data_string[d]=get_angam_data_string(tithi_names, 12, jd_rise[d],
-      jd_rise[d+1], t_rise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
+    tithi_data_string[d]=get_angam_data_string(tithi_names, 12, jd_sunrise[d],
+      jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
       longitude_sun[d+1], [1,-1])
     nakshatram_data_string[d]=get_angam_data_string(nakshatra_names, (360.0/27.0),
-      jd_rise[d], jd_rise[d+1], t_rise, longitude_moon[d], longitude_sun[d], 
+      jd_sunrise[d], jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], 
       longitude_moon[d+1], longitude_sun[d+1], [1,0])
-    karanam_data_string[d]=get_angam_data_string(karanam_names, 6, jd_rise[d],
-      jd_rise[d+1], t_rise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
+    karanam_data_string[d]=get_angam_data_string(karanam_names, 6, jd_sunrise[d],
+      jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
       longitude_sun[d+1], [1,-1])
-    yogam_data_string[d]=get_angam_data_string(yogam_names, (360.0/27.0), jd_rise[d],
-      jd_rise[d+1], t_rise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
+    yogam_data_string[d]=get_angam_data_string(yogam_names, (360.0/27.0), jd_sunrise[d],
+      jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
       longitude_sun[d+1], [1,1])
 
   for d in range(1,367):
