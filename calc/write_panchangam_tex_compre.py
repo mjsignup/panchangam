@@ -128,7 +128,7 @@ def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw,
       angam_data_string = '%s\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' \
         % (angam_data_string,angam_str[i],angam_end_str[i])
     
-  return angam_data_string
+  return [angam[0],angam_data_string]
 
 #USEFUL 'constants'
 yamagandam_octets  = [5,4,3,2,1,7,6]
@@ -176,22 +176,30 @@ def main():
   #INITIALISE VARIABLES
   jd_sunrise=[None]*368
   jd_sunset=[None]*368
+  jd_moonrise=[None]*368
   longitude_moon=[None]*368
   longitude_sun=[None]*368
   longitude_sun_set=[None]*368
+  sun_month_id=[None]*368
   sun_month=[None]*368
   sun_month_rise=[None]*368
+  moon_month=[None]*368
   month_data=[None]*368
   tithi_data_string=[None]*368
+  tithi_sunrise=[None]*368
   nakshatram_data_string=[None]*368
+  nakshatram_sunrise=[None]*368
   karanam_data_string=[None]*368
+  karanam_sunrise=[None]*368
   yogam_data_string=[None]*368
+  yogam_sunrise=[None]*368
   weekday=[None]*368
   sunrise=[None]*368
   sunset=[None]*368
   madhya=[None]*368
   rahu=[None]*368
   yama=[None]*368
+  festivals=[None]*368
   
   weekday_start=swisseph.day_of_week(jd)+1
   #swisseph has Mon = 0, non-intuitively!
@@ -210,11 +218,14 @@ def main():
       lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
     jd_sunset[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
       lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
+    jd_moonrise[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.MOON,
+      lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
   
     longitude_sun[d+1]=swisseph.calc_ut(jd_sunrise[d+1],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_sunrise[d+1])
     longitude_moon[d+1]=swisseph.calc_ut(jd_sunrise[d+1],swisseph.MOON)[0]-swisseph.get_ayanamsa(jd_sunrise[d+1])
     longitude_sun_set[d+1]=swisseph.calc_ut(jd_sunset[d+1],swisseph.SUN)[0]-swisseph.get_ayanamsa(jd_sunset[d+1])
     
+    sun_month_id[d+1] = int(1+math.floor(((longitude_sun_set[d+1])%360)/30.0))
     sun_month[d+1] = masa_names[int(1+math.floor(((longitude_sun_set[d+1])%360)/30.0))]
 
     sun_month_rise[d+1] = masa_names[int(1+math.floor(((longitude_sun[d+1])%360)/30.0))]
@@ -236,7 +247,7 @@ def main():
 
       if sun_month[d]!=sun_month_rise[d+1]:
         month_start_after_set=1
-        sun_month_end_time = get_angam_data_string(masa_names, 30, jd_sunrise[d],
+        [_m,sun_month_end_time] = get_angam_data_string(masa_names, 30, jd_sunrise[d],
           jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
           longitude_sun[d+1], [0,1])
  
@@ -245,7 +256,7 @@ def main():
       #sun moves into next rAsi before sunset -- check rules!
       sun_month_day = 1
 
-      sun_month_end_time = get_angam_data_string(masa_names, 30, jd_sunrise[d],
+      [_m,sun_month_end_time] = get_angam_data_string(masa_names, 30, jd_sunrise[d],
       jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
       longitude_sun[d+1], [0,1])
     
@@ -257,8 +268,8 @@ def main():
       sun_month_end_time)
   
     #Sunrise/sunset and related stuff (like rahu, yama)
-    [rh, rm, rs] = deci2sexa(t_sunrise) #sunrise hour, minute
-    [sh, sm, ss] = deci2sexa(t_sunset) #sunrise hour, minute
+    [rhs, rms, rss] = deci2sexa(t_sunrise)  #rise hour sun, rise minute sun, rise sec sun
+    [shs, sms, sss] = deci2sexa(t_sunset)   
   
     length_of_day = t_sunset-t_sunrise
     yamagandam_start = t_sunrise + (1/8.0)*(yamagandam_octets[weekday]-1)*length_of_day
@@ -267,29 +278,54 @@ def main():
     rahukalam_end = rahukalam_start + (1/8.0)*length_of_day
     madhyahnikam_start = t_sunrise + (1/5.0)*length_of_day
   
-    sunrise[d] = '%02d:%02d' % (rh,rm)
-    sunset[d] = '%02d:%02d' % (sh,sm)
+    sunrise[d]  = '%02d:%02d' % (rhs,rms)
+    sunset[d]   = '%02d:%02d' % (shs,sms)
     madhya[d] = print_time(madhyahnikam_start)
     rahu[d] = '%s--%s' % (print_time(rahukalam_start), print_time(rahukalam_end))
     yama[d] = '%s--%s' % (print_time(yamagandam_start),print_time(yamagandam_end))
     
-    tithi_data_string[d]=get_angam_data_string(tithi_names, 12, jd_sunrise[d],
+    [tithi_sunrise[d],tithi_data_string[d]]=get_angam_data_string(tithi_names, 12, jd_sunrise[d],
       jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
       longitude_sun[d+1], [1,-1])
-    nakshatram_data_string[d]=get_angam_data_string(nakshatra_names, (360.0/27.0),
+    [nakshatram_sunrise [d], nakshatram_data_string[d]]=get_angam_data_string(nakshatra_names, (360.0/27.0),
       jd_sunrise[d], jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], 
       longitude_moon[d+1], longitude_sun[d+1], [1,0])
-    karanam_data_string[d]=get_angam_data_string(karanam_names, 6, jd_sunrise[d],
+    [karanam_sunrise[d],karanam_data_string[d]]=get_angam_data_string(karanam_names, 6, jd_sunrise[d],
       jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
       longitude_sun[d+1], [1,-1])
-    yogam_data_string[d]=get_angam_data_string(yogam_names, (360.0/27.0), jd_sunrise[d],
+    [yogam_sunrise[d],yogam_data_string[d]]=get_angam_data_string(yogam_names, (360.0/27.0), jd_sunrise[d],
       jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
       longitude_sun[d+1], [1,1])
+
+  last_month_change = 1
+  for d in range(1,367):
+    #Assign moon_month for each day
+    if(tithi_sunrise[d]==30):
+      for i in range(last_month_change,d+1):
+        #print '%%Setting moon_month to sun_month_id, for i=%d:%d to %d' %(last_month_change,d-1,sun_month_id[d])
+        moon_month[i] = sun_month_id[d]
+        last_month_change = d+1 
+
+  for i in range(last_month_change,367):
+    moon_month[i]=sun_month_id[last_month_change-1]
+    
+  #for d in range(1,367):
+  #  print '%%#%3d:%s (sunrise tithi=%d) {%s}' % (d,moon_month[d],tithi_sunrise[d],tithi_data_string[d])
 
   for d in range(1,367):
     jd = jd_start-1+d
     [y,m,dt,t] = swisseph.revjul(jd)
     weekday = (weekday_start -1 + d)%7 
+
+    #Festival details
+    if tithi_sunrise[d]==11 or tithi_sunrise[d]==12:
+      #check for shukla ekadashi
+      if (tithi_sunrise[d]==11 and tithi_sunrise[d+1]==11) or (tithi_sunrise[d]==10 and tithi_sunrise[d+1]==12):
+        festivals[d+1]=shukla_ekadashi_names[moon_month[d]]
+      elif (tithi_sunrise[d]==11 and tithi_sunrise[d+1]!=11): 
+        festivals[d]=shukla_ekadashi_names[moon_month[d]]
+
+ 
 
     #Layout calendar in LATeX format
     if dt==1:
