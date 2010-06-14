@@ -67,7 +67,7 @@ def get_last_dhanur_transit (jd_start,latitude,longitude):
   
 def print_end_time (end_time, day_night_length, sunrise_time):
   if end_time/24.0>day_night_length:
-    end_time_str = '\\textsf{अहोरात्रम्}'
+    end_time_str = ahoratram
   else:
     te=deci2sexa(sunrise_time+end_time)
     if te[0]>=24:
@@ -112,7 +112,7 @@ def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw,
       angam_str[i] = ''
       angam_end_str[i] = ''
       
-    if (angam_end_str[i] == '\\textsf{अहोरात्रम्}' and i!=0):
+    if (angam_end_str[i] == ahoratram and i!=0):
       #needs correction, owing to the fact that we compute longitude every 24h,
       #rather than at next sunrise the second/third angam cannot be 'all day'!
       #It's ending will reflect in tomorrow's calendar
@@ -125,8 +125,10 @@ def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw,
     if angam_str[i] != '': 
       if i==2:
         angam_data_string = angam_data_string+'\\\\'
-      angam_data_string = '%s\\mbox{\\textsf{%s} {\\tiny \\RIGHTarrow} %s}' \
-        % (angam_data_string,angam_str[i],angam_end_str[i])
+      if (angam_end_str[i] == ahoratram):
+        angam_data_string = '%s\\mbox{%s {\\tiny \\RIGHTarrow} %s}'           % (angam_data_string,angam_str[i],angam_end_str[i])
+      else:
+        angam_data_string = '%s\\mbox{%s {\\tiny \\RIGHTarrow} \\textsf{%s}}' % (angam_data_string,angam_str[i],angam_end_str[i])
     
   return [angam[0],angam_data_string]
 
@@ -339,16 +341,16 @@ def main():
   
       #Begin tabular
       print '\\begin{tabular}{|c|c|c|c|c|c|c|}'
-      print '\multicolumn{7}{c}{\Large \\bfseries %s %s}\\\\[3mm]' % (month[m],y)
+      print '\multicolumn{7}{c}{\Large \\bfseries \sffamily %s %s}\\\\[3mm]' % (month[m],y)
       print '\hline'
-      print '\\textbf{SUN} & \\textbf{MON} & \\textbf{TUE} & \\textbf{WED} & \\textbf{THU} & \\textbf{FRI} & \\textbf{SAT} \\\\ \hline'
+      print '\\textbf{\\textsf{SUN}} & \\textbf{\\textsf{MON}} & \\textbf{\\textsf{TUE}} & \\textbf{\\textsf{WED}} & \\textbf{\\textsf{THU}} & \\textbf{\\textsf{FRI}} & \\textbf{\\textsf{SAT}} \\\\ \hline'
       #print '\\textbf{भानु} & \\textbf{इन्दु} & \\textbf{भौम} & \\textbf{बुध} & \\textbf{गुरु} & \\textbf{भृगु} & \\textbf{स्थिर} \\\\ \hline'
   
       #Blanks for previous weekdays
       for i in range(0,weekday):
         print "{}  &"
 
-    print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\tnyk{%s}{%s}{%s}{%s}}{\\textsf{राहु}~%s~~\\textsf{यम}~%s} ' % (daycol[weekday],
+    print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\tnyk{%s}{%s}{%s}{%s}}{\\rahuyama{%s}{%s}} ' % (daycol[weekday],
       dt,month_data[d],sunrise[d],sunset[d],madhya[d],tithi_data_string[d],nakshatram_data_string[d],
       yogam_data_string[d],karanam_data_string[d],rahu[d],yama[d])
   

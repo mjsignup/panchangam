@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+ahoratram = 'अहोरात्रम्'
+
 nakshatra_names={1:'अश्विनी',
 2:'अपभरणी',
 3:'कृत्तिका',

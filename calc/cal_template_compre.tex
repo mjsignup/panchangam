@@ -20,8 +20,9 @@
 
 
 \defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
-\setmainfont[BoldFont=ScalaSans-BoldLF]{Scala Sans LF}
-\setsansfont{Sanskrit 2003:script=deva}
+\setmainfont{Sanskrit 2003:script=deva}
+\setromanfont{Sanskrit 2003:script=deva}
+\setsansfont[BoldFont=ScalaSans-BoldLF]{Scala Sans LF}
 
 %%%%%%% Numbers and counters %%%%%%%
 \newcount\num
@@ -51,17 +52,20 @@
 
 %%%%%%%% Calendar display stuff %%%%%%%%%%%
 \newcommand{\sunmonth}[3]{%
-\footnotesize\textsf{#1~\devanumber{#2}}\\
+\footnotesize{#1~\devanumber{#2}}\\
 \mbox{\scriptsize #3}
 }
 \newcommand{\sundata}[3]{%
-\mbox{{\sun\tiny\UParrow} {\scriptsize #1} {\sun\tiny\DOWNarrow} {\scriptsize #2} \tiny{\mbox{(\textsf{स} #3)}}}
+\mbox{{\sun\tiny\UParrow} {\scriptsize \textsf{#1}} {\sun\tiny\DOWNarrow} {\scriptsize \textsf{#2}} \tiny{\mbox{(स \textsf{#3})}}}
 }
 \newcommand{\tnyk}[4]{
 \mbox{#1}\\
 \mbox{#2}\\
-\mbox{\textsf{योगं:}~#3}\\
-\textsf{करणं:}~#4\\}
+\mbox{योगं:~#3}\\
+करणं:~#4\\}
+\newcommand{\rahuyama}[2]{%
+{राहु~\textsf{#1}~~यम~\textsf{#2}}
+}
 \newcommand{\caldata}[5]{%
 \begin{minipage}[t]{4.85cm}
 \begin{minipage}[t]{3.65cm}
@@ -81,11 +85,6 @@
 
 \addtolength{\headsep}{-3ex}
 \pagestyle{empty}
-
-
-\newcommand{\shukla}{शुक्ल}
-\newcommand{\krishna}{कृष्ण}
-
 
 \begin{document}
 \rmfamily
