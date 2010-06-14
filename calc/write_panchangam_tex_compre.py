@@ -322,13 +322,23 @@ def main():
     #Assign moon_month for each day
     if(tithi_sunrise[d]==1):
       for i in range(last_month_change,d):
-        #print '%%Setting moon_month to sun_month_id, for i=%d:%d to %d' %(last_month_change,d-1,sun_month_id[d])
+        #print '%%#Setting moon_month to sun_month_id, for i=%d:%d to %d' %(last_month_change,d-1,sun_month_id[d])
         if (sun_month_id[d]==last_moon_month):
           moon_month[i] = sun_month_id[d]%12 + 0.5
         else:
           moon_month[i] = sun_month_id[d]
       last_month_change = d 
       last_moon_month = sun_month_id[d]
+    elif(tithi_sunrise[d]==2 and tithi_sunrise[d-1]==30):
+      #prathama tithi was never seen @ sunrise
+      for i in range(last_month_change,d):
+        #print '%%@Setting moon_month to sun_month_id, for i=%d:%d to %d (last month = %d)' %(last_month_change,d-1,sun_month_id[d],last_moon_month)
+        if (sun_month_id[d-1]==last_moon_month):
+          moon_month[i] = sun_month_id[d-1]%12 + 0.5
+        else:
+          moon_month[i] = sun_month_id[d-1]
+      last_month_change = d 
+      last_moon_month = sun_month_id[d-1]
 
   for i in range(last_month_change,367):
     moon_month[i]=sun_month_id[last_month_change-1]+1
