@@ -4,6 +4,10 @@
 ahoratram = 'अहोरात्रम्'
 adhika = 'अधिक'
 ekadashi = 'एकादशी'
+sarva = 'सर्व'
+smartha = 'स्मार्थ'
+vaishnava = 'वैष्णव'
+pradosham = 'प्रदोषम्'
 
 nakshatra_names={1:'अश्विनी',
 2:'अपभरणी',
@@ -267,5 +271,3 @@ krishna_ekadashi_names={1:'पापविमोचिनी',
 11:'त्रिस्पृश',
 12:'विजया',
 13:'परमा'}
-
-
