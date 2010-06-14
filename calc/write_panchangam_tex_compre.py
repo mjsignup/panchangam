@@ -78,6 +78,24 @@ def print_end_time (end_time, day_night_length, sunrise_time):
     end_time_str = '%02d:%02d%s' % (te[0],te[1],suff)
   return end_time_str
 
+def get_ekadashi_name(paksha,month):
+  if paksha=='shukla':
+    if month==int(month):
+      return '%s~%s' % (shukla_ekadashi_names[month],ekadashi)
+    else:
+      return '%s~%s' % (shukla_ekadashi_names[13],ekadashi)
+  elif paksha=='krishna':
+    if month==int(month):
+      return '%s~%s' % (krishna_ekadashi_names[month],ekadashi)
+    else:
+      return '%s~%s' % (krishna_ekadashi_names[13],ekadashi)
+
+def get_chandra_masa(month,chandra_masa_names):
+  if month==int(month):
+    return chandra_masa_names[month]
+  else:
+    return '%s~(%s)' % (chandra_masa_names[int(month)+1],adhika) 
+
 def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw, 
   t_sunrise, longitude_moon, longitude_sun, longitude_moon_tmrw, 
   longitude_sun_tmrw, w):
@@ -201,7 +219,7 @@ def main():
   madhya=[None]*368
   rahu=[None]*368
   yama=[None]*368
-  festivals=[None]*368
+  festivals=['']*368
   
   weekday_start=swisseph.day_of_week(jd)+1
   #swisseph has Mon = 0, non-intuitively!
@@ -266,8 +284,7 @@ def main():
       sun_month_day = sun_month_day + 1
       sun_month_end_time = ''
     
-    month_data[d] = '\\sunmonth{%s}{%d}{%s}' % (sun_month[d],sun_month_day,
-      sun_month_end_time)
+    month_data[d] = '\\sunmonth{%s}{%d}{%s}' % (sun_month[d],sun_month_day,sun_month_end_time)
   
     #Sunrise/sunset and related stuff (like rahu, yama)
     [rhs, rms, rss] = deci2sexa(t_sunrise)  #rise hour sun, rise minute sun, rise sec sun
@@ -300,19 +317,26 @@ def main():
       longitude_sun[d+1], [1,1])
 
   last_month_change = 1
+  last_moon_month = None
   for d in range(1,367):
     #Assign moon_month for each day
-    if(tithi_sunrise[d]==30):
-      for i in range(last_month_change,d+1):
-        #print '%%Setting moon_month to sun_month_id, for i=%d:%d to %d' %(last_month_change,d-1,sun_month_id[d])
-        moon_month[i] = sun_month_id[d]
-        last_month_change = d+1 
+    if(tithi_sunrise[d]==1):
+      for i in range(last_month_change,d):
+        print '%%Setting moon_month to sun_month_id, for i=%d:%d to %d' %(last_month_change,d-1,sun_month_id[d])
+        if (sun_month_id[d]==last_moon_month):
+          moon_month[i] = sun_month_id[d]%12 + 0.5
+        else:
+          moon_month[i] = sun_month_id[d]
+      last_month_change = d 
+      last_moon_month = sun_month_id[d]
 
   for i in range(last_month_change,367):
-    moon_month[i]=sun_month_id[last_month_change-1]
+    moon_month[i]=sun_month_id[last_month_change-1]+1
     
-  #for d in range(1,367):
-  #  print '%%#%3d:%s (sunrise tithi=%d) {%s}' % (d,moon_month[d],tithi_sunrise[d],tithi_data_string[d])
+  for d in range(1,367):
+    jd = jd_start-1+d
+    [y,m,dt,t] = swisseph.revjul(jd)
+    print '%%#%02d-%02d-%4d: %3d:%s (sunrise tithi=%d) {%s}' % (dt,m,y,d,moon_month[d],tithi_sunrise[d],tithi_data_string[d])
 
   for d in range(1,367):
     jd = jd_start-1+d
@@ -320,12 +344,19 @@ def main():
     weekday = (weekday_start -1 + d)%7 
 
     #Festival details
-    if tithi_sunrise[d]==11 or tithi_sunrise[d]==12:
+    if tithi_sunrise[d]==11 or tithi_sunrise[d]==12: #One of two consecutive tithis must appear @ sunrise!
       #check for shukla ekadashi
       if (tithi_sunrise[d]==11 and tithi_sunrise[d+1]==11) or (tithi_sunrise[d]==10 and tithi_sunrise[d+1]==12):
-        festivals[d+1]=shukla_ekadashi_names[moon_month[d]]
+        festivals[d+1]=get_ekadashi_name(paksha='shukla',month=moon_month[d])
       elif (tithi_sunrise[d]==11 and tithi_sunrise[d+1]!=11): 
-        festivals[d]=shukla_ekadashi_names[moon_month[d]]
+        festivals[d]=get_ekadashi_name(paksha='shukla',month=moon_month[d])
+
+    if tithi_sunrise[d]==26 or tithi_sunrise[d]==27:
+      #check for krishna ekadashi
+      if (tithi_sunrise[d]==26 and tithi_sunrise[d+1]==27) or (tithi_sunrise[d]==26 and tithi_sunrise[d+1]==27):
+        festivals[d+1]=get_ekadashi_name(paksha='krishna',month=moon_month[d])
+      elif (tithi_sunrise[d]==26 and tithi_sunrise[d+1]!=26): 
+        festivals[d]=get_ekadashi_name(paksha='krishna',month=moon_month[d])
 
  
 
@@ -350,9 +381,9 @@ def main():
       for i in range(0,weekday):
         print "{}  &"
 
-    print '\caldata{\\textcolor{%s}{%s}}{%s}{\\sundata{%s}{%s}{%s}}{\\tnyk{%s}{%s}{%s}{%s}}{\\rahuyama{%s}{%s}} ' % (daycol[weekday],
-      dt,month_data[d],sunrise[d],sunset[d],madhya[d],tithi_data_string[d],nakshatram_data_string[d],
-      yogam_data_string[d],karanam_data_string[d],rahu[d],yama[d])
+    print '\caldata{\\textcolor{%s}{%s}}{%s{%s}}{\\sundata{%s}{%s}{%s}}{\\tnyk{%s}{%s}{%s}{%s}}{\\rahuyama{%s}{%s}}{%s} ' % (daycol[weekday],
+      dt,month_data[d],get_chandra_masa(moon_month[d],chandra_masa_names),sunrise[d],sunset[d],madhya[d],tithi_data_string[d],nakshatram_data_string[d],
+      yogam_data_string[d],karanam_data_string[d],rahu[d],yama[d],festivals[d])
   
     if weekday==6:
       print "\\\\ \hline"

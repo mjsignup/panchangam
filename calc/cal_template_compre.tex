@@ -51,8 +51,8 @@
 }
 
 %%%%%%%% Calendar display stuff %%%%%%%%%%%
-\newcommand{\sunmonth}[3]{%
-\footnotesize{#1~\devanumber{#2}}\\
+\newcommand{\sunmonth}[4]{%
+\mbox{\footnotesize{#1~\devanumber{#2}~/~#4}}\\
 \mbox{\scriptsize #3}
 }
 \newcommand{\sundata}[3]{%
@@ -66,7 +66,7 @@
 \newcommand{\rahuyama}[2]{%
 {राहु~\textsf{#1}~~यम~\textsf{#2}}
 }
-\newcommand{\caldata}[5]{%
+\newcommand{\caldata}[6]{%
 \begin{minipage}[t]{4.85cm}
 \begin{minipage}[t]{3.65cm}
 #2\\
@@ -76,6 +76,7 @@
 \scriptsize
 \mbox{#5}\\
 #4\\
+#6\\
 \end{minipage}\begin{minipage}[c]{1.2cm}
 \vspace{1ex}
 \hfill \mbox{{\font\x="Warnock Pro" at 40 pt\x #1}\hspace{-2mm}}

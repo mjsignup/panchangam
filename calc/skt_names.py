@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 ahoratram = 'अहोरात्रम्'
+adhika = 'अधिक'
+ekadashi = 'एकादशी'
 
 nakshatra_names={1:'अश्विनी',
 2:'अपभरणी',
