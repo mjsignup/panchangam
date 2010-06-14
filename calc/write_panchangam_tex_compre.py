@@ -322,7 +322,7 @@ def main():
     #Assign moon_month for each day
     if(tithi_sunrise[d]==1):
       for i in range(last_month_change,d):
-        print '%%Setting moon_month to sun_month_id, for i=%d:%d to %d' %(last_month_change,d-1,sun_month_id[d])
+        #print '%%Setting moon_month to sun_month_id, for i=%d:%d to %d' %(last_month_change,d-1,sun_month_id[d])
         if (sun_month_id[d]==last_moon_month):
           moon_month[i] = sun_month_id[d]%12 + 0.5
         else:
@@ -333,10 +333,10 @@ def main():
   for i in range(last_month_change,367):
     moon_month[i]=sun_month_id[last_month_change-1]+1
     
-  for d in range(1,367):
-    jd = jd_start-1+d
-    [y,m,dt,t] = swisseph.revjul(jd)
-    print '%%#%02d-%02d-%4d: %3d:%s (sunrise tithi=%d) {%s}' % (dt,m,y,d,moon_month[d],tithi_sunrise[d],tithi_data_string[d])
+  #for d in range(1,367):
+    #jd = jd_start-1+d
+    #[y,m,dt,t] = swisseph.revjul(jd)
+    #print '%%#%02d-%02d-%4d: %3d:%s (sunrise tithi=%d) {%s}' % (dt,m,y,d,moon_month[d],tithi_sunrise[d],tithi_data_string[d])
 
   for d in range(1,367):
     jd = jd_start-1+d
@@ -346,19 +346,44 @@ def main():
     #Festival details
     if tithi_sunrise[d]==11 or tithi_sunrise[d]==12: #One of two consecutive tithis must appear @ sunrise!
       #check for shukla ekadashi
-      if (tithi_sunrise[d]==11 and tithi_sunrise[d+1]==11) or (tithi_sunrise[d]==10 and tithi_sunrise[d+1]==12):
-        festivals[d+1]=get_ekadashi_name(paksha='shukla',month=moon_month[d])
+      if (tithi_sunrise[d]==11 and tithi_sunrise[d+1]==11): 
+        festivals[d+1]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])#moon_month[d] or [d+1]?
       elif (tithi_sunrise[d]==11 and tithi_sunrise[d+1]!=11): 
         festivals[d]=get_ekadashi_name(paksha='shukla',month=moon_month[d])
-
-    if tithi_sunrise[d]==26 or tithi_sunrise[d]==27:
-      #check for krishna ekadashi
-      if (tithi_sunrise[d]==26 and tithi_sunrise[d+1]==27) or (tithi_sunrise[d]==26 and tithi_sunrise[d+1]==27):
-        festivals[d+1]=get_ekadashi_name(paksha='krishna',month=moon_month[d])
-      elif (tithi_sunrise[d]==26 and tithi_sunrise[d+1]!=26): 
-        festivals[d]=get_ekadashi_name(paksha='krishna',month=moon_month[d])
+        #Check dashami end time to decide for whether this is sarva/smartha
+      elif (tithi_sunrise[d-1]!=11 and tithi_sunrise[d]==12):
+        festivals[d]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
 
  
+    if tithi_sunrise[d]==26 or tithi_sunrise[d]==27: #One of two consecutive tithis must appear @ sunrise!
+      #check for krishna ekadashi
+      if (tithi_sunrise[d]==26 and tithi_sunrise[d+1]==26): 
+        festivals[d+1]=sarva+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])#moon_month[d] or [d+1]?
+      elif (tithi_sunrise[d]==26 and tithi_sunrise[d+1]!=26): 
+        festivals[d]=get_ekadashi_name(paksha='krishna',month=moon_month[d])
+        #Check dashami end time to decide for whether this is sarva/smartha
+      elif (tithi_sunrise[d-1]!=26 and tithi_sunrise[d]==27):
+        festivals[d]=sarva+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
+
+    if tithi_sunrise[d]==12 or tithi_sunrise[d]==13:
+      ldiff_set=(swisseph.calc_ut(jd_sunset[d],swisseph.MOON)[0]-swisseph.calc_ut(jd_sunset[d],swisseph.SUN)[0])%360
+      ldiff_set_tmrw=(swisseph.calc_ut(jd_sunset[d+1],swisseph.MOON)[0]-swisseph.calc_ut(jd_sunset[d+1],swisseph.SUN)[0])%360
+      tithi_sunset = int(1+math.floor(ldiff_set/12.0))
+      tithi_sunset_tmrw = int(1+math.floor(ldiff_set_tmrw/12.0))
+      if tithi_sunset==13 and tithi_sunset_tmrw!=13:
+        festivals[d]=pradosham
+      elif tithi_sunset_tmrw==13:
+        festivals[d+1]=pradosham
+
+    if tithi_sunrise[d]==27 or tithi_sunrise[d]==28:
+      ldiff_set=(swisseph.calc_ut(jd_sunset[d],swisseph.MOON)[0]-swisseph.calc_ut(jd_sunset[d],swisseph.SUN)[0])%360
+      ldiff_set_tmrw=(swisseph.calc_ut(jd_sunset[d+1],swisseph.MOON)[0]-swisseph.calc_ut(jd_sunset[d+1],swisseph.SUN)[0])%360
+      tithi_sunset = int(1+math.floor(ldiff_set/12.0))
+      tithi_sunset_tmrw = int(1+math.floor(ldiff_set_tmrw/12.0))
+      if tithi_sunset==28 and tithi_sunset_tmrw!=28:
+        festivals[d]=pradosham
+      elif tithi_sunset_tmrw==28:
+        festivals[d+1]=pradosham
 
     #Layout calendar in LATeX format
     if dt==1:
