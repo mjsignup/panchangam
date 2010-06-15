@@ -395,6 +395,20 @@ def main():
       elif tithi_sunset_tmrw==28:
         festivals[d+1]=pradosham
 
+    if tithi_sunrise[d]==18 or tithi_sunrise[d]==19:
+      ldiff_moonrise=(swisseph.calc_ut(jd_moonrise[d],swisseph.MOON)[0]-swisseph.calc_ut(jd_moonrise[d],swisseph.SUN)[0])%360
+      ldiff_moonrise_tmrw=(swisseph.calc_ut(jd_moonrise[d+1],swisseph.MOON)[0]-swisseph.calc_ut(jd_moonrise[d+1],swisseph.SUN)[0])%360
+      tithi_moonrise = int(1+math.floor(ldiff_moonrise/12.0))
+      tithi_moonrise_tmrw = int(1+math.floor(ldiff_moonrise_tmrw/12.0))
+      if tithi_moonrise==19 and tithi_moonrise_tmrw!=19:
+        festivals[d]=chaturthi
+        if moon_month[d]==5:#shravana krishna chaturthi
+          festivals[d]=maha+festivals[d]
+      elif tithi_moonrise_tmrw==19:
+        festivals[d+1]=chaturthi
+        if moon_month[d]==5: #moon_month[d]=moon_month[d+1], so checking for d is enough
+          festivals[d+1]=maha+festivals[d+1]
+
     #Layout calendar in LATeX format
     if dt==1:
       if m>1:
