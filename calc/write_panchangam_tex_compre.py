@@ -316,6 +316,7 @@ def main():
       jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
       longitude_sun[d+1], [1,1])
 
+  #ASSIGN MOON MONTHS
   last_month_change = 1
   last_moon_month = None
   for d in range(1,367):
@@ -348,12 +349,19 @@ def main():
     #[y,m,dt,t] = swisseph.revjul(jd)
     #print '%%#%02d-%02d-%4d: %3d:%s (sunrise tithi=%d) {%s}' % (dt,m,y,d,moon_month[d],tithi_sunrise[d],tithi_data_string[d])
 
+
+  #PRINT CALENDAR
+
   for d in range(1,367):
     jd = jd_start-1+d
     [y,m,dt,t] = swisseph.revjul(jd)
     weekday = (weekday_start -1 + d)%7 
 
-    #Festival details
+    ##################
+    #Festival details#
+    ##################
+
+    #EKADASHI Vratam
     if tithi_sunrise[d]==11 or tithi_sunrise[d]==12: #One of two consecutive tithis must appear @ sunrise!
       #check for shukla ekadashi
       if (tithi_sunrise[d]==11 and tithi_sunrise[d+1]==11): 
@@ -375,6 +383,7 @@ def main():
       elif (tithi_sunrise[d-1]!=26 and tithi_sunrise[d]==27):
         festivals[d]=sarva+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
 
+    #PRADOSHA Vratam
     if tithi_sunrise[d]==12 or tithi_sunrise[d]==13:
       ldiff_set=(swisseph.calc_ut(jd_sunset[d],swisseph.MOON)[0]-swisseph.calc_ut(jd_sunset[d],swisseph.SUN)[0])%360
       ldiff_set_tmrw=(swisseph.calc_ut(jd_sunset[d+1],swisseph.MOON)[0]-swisseph.calc_ut(jd_sunset[d+1],swisseph.SUN)[0])%360
@@ -395,6 +404,7 @@ def main():
       elif tithi_sunset_tmrw==28:
         festivals[d+1]=pradosham
 
+    #SANKATAHARA chaturthi
     if tithi_sunrise[d]==18 or tithi_sunrise[d]==19:
       ldiff_moonrise_yest=(swisseph.calc_ut(jd_moonrise[d-1],swisseph.MOON)[0]-swisseph.calc_ut(jd_moonrise[d-1],swisseph.SUN)[0])%360
       ldiff_moonrise=(swisseph.calc_ut(jd_moonrise[d],swisseph.MOON)[0]-swisseph.calc_ut(jd_moonrise[d],swisseph.SUN)[0])%360
@@ -412,6 +422,28 @@ def main():
           festivals[d+1]=chaturthi 
           if moon_month[d]==5: #moon_month[d] and[d+1] are same, so checking [d] is enough
             festivals[d+1]=maha+festivals[d+1]
+
+    #SHASHTHI Vratam
+    if tithi_sunrise[d]==5 or tithi_sunrise[d]==6:
+      if tithi_sunrise[d]==6 or (tithi_sunrise[d]==5 and tithi_sunrise[d+1]==7):
+        if tithi_sunrise[d-1]!=6:#otherwise yesterday would have already been assigned
+          festivals[d]=shashthi 
+          if moon_month[d]==8:#kArtika krishna shashthi
+            festivals[d]=skanda+festivals[d]
+      elif tithi_sunrise[d+1]==6:
+          festivals[d+1]=shashthi 
+          if moon_month[d]==8: #moon_month[d] and[d+1] are same, so checking [d] is enough
+            festivals[d+1]=skanda+festivals[d+1]
+
+    #DEEPAVALI
+    if moon_month[d]==7:
+      if tithi_sunrise[d]==28 or tithi_sunrise[d]==29:
+        if tithi_sunrise[d]==29 or (tithi_sunrise[d]==28 and tithi_sunrise[d+1]==30):
+          if tithi_sunrise[d-1]!=29:#otherwise yesterday would have already been assigned
+            festivals[d]=dipavali
+        elif tithi_sunrise[d+1]==29:
+            festivals[d+1]=dipavali
+    
 
     #Layout calendar in LATeX format
     if dt==1:
