@@ -224,7 +224,7 @@ def main():
   weekday_start=swisseph.day_of_week(jd)+1
   #swisseph has Mon = 0, non-intuitively!
   
-  for d in range(0,367):
+  for d in range(-1,367):
     jd = jd_start-1+d
     [y,m,dt,t] = swisseph.revjul(jd)
     weekday = (weekday_start -1 + d)%7 
@@ -250,7 +250,7 @@ def main():
 
     sun_month_rise[d+1] = masa_names[int(1+math.floor(((longitude_sun[d+1])%360)/30.0))]
 
-    if(d==0):
+    if(d<=0):
       continue
 
     t_sunrise=(jd_sunrise[d]-jd)*24.0+tz_off;
