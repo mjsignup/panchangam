@@ -10,6 +10,9 @@ vaishnava = 'वैष्णव'
 pradosham = 'प्रदोष-व्रतम्'
 chaturthi = 'सङ्कटहर-चतुर्थी'
 maha = 'महा'
+skanda = 'स्कन्द~'
+shashthi = 'षष्ठी-व्रतम्'
+dipavali = 'दीपावली'
 
 nakshatra_names={1:'अश्विनी',
 2:'अपभरणी',
