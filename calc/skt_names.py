@@ -10,9 +10,14 @@ vaishnava = 'वैष्णव'
 pradosham = 'प्रदोष-व्रतम्'
 chaturthi = 'सङ्कटहर-चतुर्थी'
 maha = 'महा'
+
+navaratri_start = 'नवरात्रि-आरम्भम्'
+durgashtami = 'दुर्गाष्टमी'
+mahanavami = 'महानवमी/सरस्वती-पूजा'
+vijayadashami = 'विजयदशमी'
+dipavali = 'दीपावली'
 skanda = 'स्कन्द~'
 shashthi = 'षष्ठी-व्रतम्'
-dipavali = 'दीपावली'
 
 nakshatra_names={1:'अश्विनी',
 2:'अपभरणी',

@@ -443,6 +443,31 @@ def main():
             festivals[d]=dipavali
         elif tithi_sunrise[d+1]==29:
             festivals[d+1]=dipavali
+
+    #NAVARATRI
+    if moon_month[d]==7 and moon_month[d-1]==6:
+      festivals[d]=navaratri_start
+    if moon_month[d]==7:
+      if tithi_sunrise[d]==7 or tithi_sunrise[d]==8:
+        if tithi_sunrise[d]==8 or (tithi_sunrise[d]==7 and tithi_sunrise[d+1]==9):
+          if tithi_sunrise[d-1]!=8:#otherwise yesterday would have already been assigned
+            festivals[d]=durgashtami
+        elif tithi_sunrise[d+1]==8:
+            festivals[d+1]=durgashtami
+    if moon_month[d]==7:
+      if tithi_sunrise[d]==8 or tithi_sunrise[d]==9:
+        if tithi_sunrise[d]==9 or (tithi_sunrise[d]==8 and tithi_sunrise[d+1]==10):
+          if tithi_sunrise[d-1]!=9:#otherwise yesterday would have already been assigned
+            festivals[d]=mahanavami
+        elif tithi_sunrise[d+1]==9:
+            festivals[d+1]=mahanavami
+    if moon_month[d]==7:
+      if tithi_sunrise[d]==9 or tithi_sunrise[d]==10:
+        if tithi_sunrise[d]==10 or (tithi_sunrise[d]==9 and tithi_sunrise[d+1]==11):
+          if tithi_sunrise[d-1]!=10:#otherwise yesterday would have already been assigned
+            festivals[d]=vijayadashami
+        elif tithi_sunrise[d+1]==10:
+            festivals[d+1]=vijayadashami
     
 
     #Layout calendar in LATeX format
