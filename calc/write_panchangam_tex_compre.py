@@ -285,6 +285,11 @@ def main():
       sun_month_end_time = ''
     
     month_data[d] = '\\sunmonth{%s}{%d}{%s}' % (sun_month[d],sun_month_day,sun_month_end_time)
+
+    #KARADAYAN NOMBU -- easy to check here
+    if sun_month_end_time !='': #month ends today
+      if (sun_month[d]==masa_names[12] and sun_month_day==1) or (sun_month[d]==masa_names[11] and sun_month_day!=1):
+        knombu_date = d
   
     #Sunrise/sunset and related stuff (like rahu, yama)
     [rhs, rms, rss] = deci2sexa(t_sunrise)  #rise hour sun, rise minute sun, rise sec sun
@@ -468,9 +473,61 @@ def main():
             festivals[d]=vijayadashami
         elif tithi_sunrise[d+1]==10:
             festivals[d+1]=vijayadashami
-    
+ 
+    #YAJUR UPAKARMA
+    if moon_month[d]==5:
+      if tithi_sunrise[d]==14 or tithi_sunrise[d]==15:
+        if tithi_sunrise[d]==15 or (tithi_sunrise[d]==14 and tithi_sunrise[d+1]==16):
+          if tithi_sunrise[d-1]!=15:#otherwise yesterday would have already been assigned
+            vv_day=d-((weekday-5)%7)
+            print '%%%d:%s' % (vv_day,festivals[vv_day])
+            if festivals[vv_day]!='':
+              festivals[vv_day]+='\\\\'
+            festivals[vv_day]+=varalakshmi_vratam
+            print '%%%d:%s' % (vv_day,festivals[vv_day])
+            festivals[d]=yajur_upakarma
+            festivals[d+1]=gayatri_japam
+          elif tithi_sunrise[d+1]==15:
+            print '%%%d:%s' % (vv_day,festivals[vv_day])
+            vv_day=d+1-((weekday-5)%7)
+            if festivals[vv_day]!='':
+              festivals[vv_day]+='\\\\'
+            festivals[vv_day]+=varalakshmi_vratam
+            print '%%%d:%s' % (vv_day,festivals[vv_day])
+            festivals[d+1]=yajur_upakarma
+            festivals[d+2]=gayatri_japam
+      
+    #PONGAL/AYANAM
+    if sun_month[d]==masa_names[10] and sun_month[d-1]==masa_names[9]:
+      if festivals[d]!='':
+        festivals[d]+='\\\\'
+      festivals[d]+=uttarayanam
 
-    #Layout calendar in LATeX format
+    if sun_month[d]==masa_names[4] and sun_month[d-1]==masa_names[3]:
+      if festivals[d]!='':
+        festivals[d]+='\\\\'
+      festivals[d]+=dakshinayanam
+
+  #Add saved festivals
+  #KARADAYAN_NOMBU
+  if festivals[knombu_date]!='':
+    festivals[knombu_date]+='\\\\';
+  festivals[knombu_date]+=karadayan_nombu
+
+  ######----- FESTIVAL ADDITIONS COMPLETE -----#####
+
+
+
+  #Layout calendar in LATeX format
+  #We use a separate loop here, because of festivals like varalakshmi
+  #vratam, for which we backtrack to the previous friday from yajur
+  #upakarma and change the list of festivals!
+
+  for d in range(1,367):
+    jd = jd_start-1+d
+    [y,m,dt,t] = swisseph.revjul(jd)
+    weekday = (weekday_start -1 + d)%7 
+
     if dt==1:
       if m>1:
         if weekday!=0: #Space till Sunday

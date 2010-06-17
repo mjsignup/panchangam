@@ -19,6 +19,14 @@ dipavali = 'दीपावली'
 skanda = 'स्कन्द~'
 shashthi = 'षष्ठी-व्रतम्'
 
+varalakshmi_vratam = 'वरलक्ष्मी-व्रतम्'
+yajur_upakarma = 'यजुर्वेद-उपाकर्म'
+gayatri_japam = 'गायत्री  जपम्'
+uttarayanam = 'मकर  सङ्क्रान्ति/उत्तरायण-पुण्यकालम्'
+dakshinayanam = 'दक्षिणायन-पुण्यकालम्'
+karadayan_nombu = 'कारडयान्-नोम्बु'
+
+
 nakshatra_names={1:'अश्विनी',
 2:'अपभरणी',
 3:'कृत्तिका',
