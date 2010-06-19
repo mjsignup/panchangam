@@ -7,6 +7,7 @@ from datetime import *
 import pytz
 from pytz import timezone
 from skt_names import *
+from festival_rules import *
 
 # FUNCTION DEFINITIONS
 
