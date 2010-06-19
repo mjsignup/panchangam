@@ -103,6 +103,7 @@ def get_festival_day_tithi_purvaviddha(festival_tithi,tithi_sunrise,d):
         return d
     elif tithi_sunrise[d+1]==festival_tithi:
         return d+1
+  return None
 
 def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw, 
   t_sunrise, longitude_moon, longitude_sun, longitude_moon_tmrw, 
@@ -450,56 +451,36 @@ def main():
 
     #DEEPAVALI
     if moon_month[d]==7:
-      if tithi_sunrise[d]==28 or tithi_sunrise[d]==29:
-        if tithi_sunrise[d]==29 or (tithi_sunrise[d]==28 and tithi_sunrise[d+1]==30):
-          if tithi_sunrise[d-1]!=29:#otherwise yesterday would have already been assigned
-            festivals[d]=dipavali
-        elif tithi_sunrise[d+1]==29:
-            festivals[d+1]=dipavali
+      fday=get_festival_day_tithi_purvaviddha(29,tithi_sunrise,d)
+      if fday is not None:
+        festivals[fday]=dipavali
 
     #CHITRA POURNAMI
     if sun_month[d]==1:
-      if tithi_sunrise[d]==14 or tithi_sunrise[d]==15:
-        if tithi_sunrise[d]==15 or (tithi_sunrise[d]==14 and tithi_sunrise[d+1]==16):
-          if tithi_sunrise[d-1]!=15:#otherwise yesterday would have already been assigned
-            festivals[d]=chitra_purnima
-        elif tithi_sunrise[d+1]==15:
-            festivals[d+1]=chitra_purnima
+      fday=get_festival_day_tithi_purvaviddha(15,tithi_sunrise,d)
+      if fday is not None:
+        festivals[fday]=chitra_purnima
 
     #AKSHYA TRITIYA
     if moon_month[d]==2:
-      if tithi_sunrise[d]==2 or tithi_sunrise[d]==3:
-        if tithi_sunrise[d]==3 or (tithi_sunrise[d]==2 and tithi_sunrise[d+1]==4):
-          if tithi_sunrise[d-1]!=3:#otherwise yesterday would have already been assigned
-            festivals[d]=akshaya_tritiya
-        elif tithi_sunrise[d+1]==3:
-            festivals[d+1]=akshaya_tritiya
+      fday=get_festival_day_tithi_purvaviddha(3,tithi_sunrise,d)
+      if fday is not None:
+        festivals[fday]=akshaya_tritiya
 
     #NAVARATRI
     if moon_month[d]==7 and moon_month[d-1]==6:
       festivals[d]=navaratri_start
     if moon_month[d]==7:
-      if tithi_sunrise[d]==7 or tithi_sunrise[d]==8:
-        if tithi_sunrise[d]==8 or (tithi_sunrise[d]==7 and tithi_sunrise[d+1]==9):
-          if tithi_sunrise[d-1]!=8:#otherwise yesterday would have already been assigned
-            festivals[d]=durgashtami
-        elif tithi_sunrise[d+1]==8:
-            festivals[d+1]=durgashtami
-    if moon_month[d]==7:
-      if tithi_sunrise[d]==8 or tithi_sunrise[d]==9:
-        if tithi_sunrise[d]==9 or (tithi_sunrise[d]==8 and tithi_sunrise[d+1]==10):
-          if tithi_sunrise[d-1]!=9:#otherwise yesterday would have already been assigned
-            festivals[d]=mahanavami
-        elif tithi_sunrise[d+1]==9:
-            festivals[d+1]=mahanavami
-    if moon_month[d]==7:
-      if tithi_sunrise[d]==9 or tithi_sunrise[d]==10:
-        if tithi_sunrise[d]==10 or (tithi_sunrise[d]==9 and tithi_sunrise[d+1]==11):
-          if tithi_sunrise[d-1]!=10:#otherwise yesterday would have already been assigned
-            festivals[d]=vijayadashami
-        elif tithi_sunrise[d+1]==10:
-            festivals[d+1]=vijayadashami
- 
+      fday=get_festival_day_tithi_purvaviddha(8,tithi_sunrise,d)
+      if fday is not None:
+        festivals[fday]=durgashtami
+      fday=get_festival_day_tithi_purvaviddha(9,tithi_sunrise,d)
+      if fday is not None:
+        festivals[fday]=mahanavami
+      fday=get_festival_day_tithi_purvaviddha(10,tithi_sunrise,d)
+      if fday is not None:
+        festivals[fday]=vijayadashami
+
     #YAJUR UPAKARMA
     if moon_month[d]==5:
       if tithi_sunrise[d]==14 or tithi_sunrise[d]==15:
@@ -522,6 +503,18 @@ def main():
             print '%%%d:%s' % (vv_day,festivals[vv_day])
             festivals[d+1]=yajur_upakarma
             festivals[d+2]=gayatri_japam
+
+    #YAJUR UPAKARMA
+    #if moon_month[d]==5:
+    #  fday=get_festival_day_tithi_purvaviddha(15,tithi_sunrise,d)
+    #  if fday is not None:
+    #    festivals[fday]=yajur_upakarma
+    #    festivals[fday+1]=gayatri_japam
+    #    vv_day=fday-((weekday-5)%7)
+    #    if festivals[vv_day]!='':
+    #      festivals[vv_day]+='\\\\'
+    #    festivals[vv_day]+=varalakshmi_vratam
+    #    print '%%%d:%s' % (vv_day,festivals[vv_day])
       
     #PONGAL/AYANAM
     if sun_month[d]==10 and sun_month[d-1]==9:
