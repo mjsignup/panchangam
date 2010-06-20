@@ -229,6 +229,7 @@ def main():
   madhya=[None]*368
   rahu=[None]*368
   yama=[None]*368
+  festival_day_list={}
   festivals=['']*368
   
   weekday_start=swisseph.day_of_week(jd)+1
@@ -299,7 +300,7 @@ def main():
     #KARADAYAN NOMBU -- easy to check here
     if sun_month_end_time !='': #month ends today
       if (sun_month[d]==12 and sun_month_day==1) or (sun_month[d]==11 and sun_month_day!=1):
-        knombu_date = d
+        festival_day_list[karadayan_nombu] = d
   
     #Sunrise/sunset and related stuff (like rahu, yama)
     [rhs, rms, rss] = deci2sexa(t_sunrise)  #rise hour sun, rise minute sun, rise sec sun
@@ -450,37 +451,31 @@ def main():
           if moon_month[d]==8: #moon_month[d] and[d+1] are same, so checking [d] is enough
             festivals[d+1]=skanda+festivals[d+1]
 
-    #DEEPAVALI
-    if moon_month[d]==7:
-      fday=get_festival_day_tithi_purvaviddha(29,tithi_sunrise,d)
-      if fday is not None:
-        festivals[fday]=dipavali
+    for x in iter(purvaviddha_rules.keys()):
+      rule=purvaviddha_rules[x]
+      if rule[0]=='moon_month':
+        if moon_month[d]==rule[1]:
+          if rule[2]=='tithi':
+            fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
+          elif rule[2]=='nakshatram':
+            fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
+          if fday is not None:
+            festival_day_list[x]=fday
+      elif rule[0]=='sun_month':
+        if sun_month[d]==rule[1]:
+          if rule[2]=='tithi':
+            fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
+          elif rule[2]=='nakshatram':
+            fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
+          if fday is not None:
+            festival_day_list[x]=fday
+      else:
+        print 'Error; unknown string in rule: %s' % (rule[0])    
+        return
 
-    #CHITRA POURNAMI
-    if sun_month[d]==1:
-      fday=get_festival_day_tithi_purvaviddha(15,tithi_sunrise,d)
-      if fday is not None:
-        festivals[fday]=chitra_purnima
-
-    #AKSHYA TRITIYA
-    if moon_month[d]==2:
-      fday=get_festival_day_tithi_purvaviddha(3,tithi_sunrise,d)
-      if fday is not None:
-        festivals[fday]=akshaya_tritiya
-
-    #NAVARATRI
+    #NAVARATRI START
     if moon_month[d]==7 and moon_month[d-1]==6:
       festivals[d]=navaratri_start
-    if moon_month[d]==7:
-      fday=get_festival_day_tithi_purvaviddha(8,tithi_sunrise,d)
-      if fday is not None:
-        festivals[fday]=durgashtami
-      fday=get_festival_day_tithi_purvaviddha(9,tithi_sunrise,d)
-      if fday is not None:
-        festivals[fday]=mahanavami
-      fday=get_festival_day_tithi_purvaviddha(10,tithi_sunrise,d)
-      if fday is not None:
-        festivals[fday]=vijayadashami
 
     #YAJUR UPAKARMA
     if moon_month[d]==5:
@@ -530,9 +525,10 @@ def main():
 
   #Add saved festivals
   #KARADAYAN_NOMBU
-  if festivals[knombu_date]!='':
-    festivals[knombu_date]+='\\\\';
-  festivals[knombu_date]+=karadayan_nombu
+  for x in iter(festival_day_list.keys()):
+    if festivals[festival_day_list[x]]!='':
+      festivals[festival_day_list[x]]+='\\\\';
+    festivals[festival_day_list[x]]+=x;
 
   ######----- FESTIVAL ADDITIONS COMPLETE -----#####
 
