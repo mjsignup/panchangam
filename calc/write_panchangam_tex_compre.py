@@ -195,6 +195,7 @@ def main():
   samvatsara_id = (year - 1568)%60 + 1; #distance from prabhava
   samvatsara_names = '%s–%s' % (year_names[samvatsara_id], 
     year_names[(samvatsara_id%60)+1])
+  new_yr=mesha_sankranti+'~('+year_names[(samvatsara_id%60)+1]+'-'+samvatsara+')'
   
   print '\\mbox{}'
   print '{\\font\\x="Warnock Pro" at 60 pt\\x %d\\\\[0.3cm]}' % year
@@ -377,6 +378,8 @@ def main():
     #Festival details#
     ##################
 
+    ###--- MONTHLY VRATAMS ---###
+
     #EKADASHI Vratam
     if tithi_sunrise[d]==11 or tithi_sunrise[d]==12: #One of two consecutive tithis must appear @ sunrise!
       #check for shukla ekadashi
@@ -451,6 +454,9 @@ def main():
           if moon_month[d]==8: #moon_month[d] and[d+1] are same, so checking [d] is enough
             festivals[d+1]=skanda+festivals[d+1]
 
+
+    ###--- OTHER (MAJOR) FESTIVALS ---###
+
     for x in iter(purvaviddha_rules.keys()):
       rule=purvaviddha_rules[x]
       if rule[0]=='moon_month':
@@ -466,7 +472,7 @@ def main():
           if rule[2]=='tithi':
             fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
           elif rule[2]=='nakshatram':
-            fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
+            fday = get_festival_day_tithi_purvaviddha(rule[3],nakshatram_sunrise,d)
           if fday is not None:
             festival_day_list[x]=fday
       else:
@@ -475,55 +481,25 @@ def main():
 
     #NAVARATRI START
     if moon_month[d]==7 and moon_month[d-1]==6:
-      festivals[d]=navaratri_start
+      festival_day_list[navaratri_start]=d
 
-    #YAJUR UPAKARMA
-    if moon_month[d]==5:
-      if tithi_sunrise[d]==14 or tithi_sunrise[d]==15:
-        if tithi_sunrise[d]==15 or (tithi_sunrise[d]==14 and tithi_sunrise[d+1]==16):
-          if tithi_sunrise[d-1]!=15:#otherwise yesterday would have already been assigned
-            vv_day=d-((weekday-5)%7)
-            print '%%%d:%s' % (vv_day,festivals[vv_day])
-            if festivals[vv_day]!='':
-              festivals[vv_day]+='\\\\'
-            festivals[vv_day]+=varalakshmi_vratam
-            print '%%%d:%s' % (vv_day,festivals[vv_day])
-            festivals[d]=yajur_upakarma
-            festivals[d+1]=gayatri_japam
-          elif tithi_sunrise[d+1]==15:
-            print '%%%d:%s' % (vv_day,festivals[vv_day])
-            vv_day=d+1-((weekday-5)%7)
-            if festivals[vv_day]!='':
-              festivals[vv_day]+='\\\\'
-            festivals[vv_day]+=varalakshmi_vratam
-            print '%%%d:%s' % (vv_day,festivals[vv_day])
-            festivals[d+1]=yajur_upakarma
-            festivals[d+2]=gayatri_japam
-
-    #YAJUR UPAKARMA
-    #if moon_month[d]==5:
-    #  fday=get_festival_day_tithi_purvaviddha(15,tithi_sunrise,d)
-    #  if fday is not None:
-    #    festivals[fday]=yajur_upakarma
-    #    festivals[fday+1]=gayatri_japam
-    #    vv_day=fday-((weekday-5)%7)
-    #    if festivals[vv_day]!='':
-    #      festivals[vv_day]+='\\\\'
-    #    festivals[vv_day]+=varalakshmi_vratam
-    #    print '%%%d:%s' % (vv_day,festivals[vv_day])
-      
     #PONGAL/AYANAM
     if sun_month[d]==10 and sun_month[d-1]==9:
-      if festivals[d]!='':
-        festivals[d]+='\\\\'
-      festivals[d]+=uttarayanam
+      festival_day_list[uttarayanam]=d
 
     if sun_month[d]==4 and sun_month[d-1]==3:
-      if festivals[d]!='':
-        festivals[d]+='\\\\'
-      festivals[d]+=dakshinayanam
+      festival_day_list[dakshinayanam]=d
+
+    if sun_month[d]==1 and sun_month[d-1]==12:
+      festival_day_list[new_yr]=d
+
+    if moon_month[d]==1 and moon_month[d-1]!=1:
+      festival_day_list[yugadi]=d
+
 
   #Add saved festivals
+  festival_day_list[gayatri_japam]=festival_day_list[yajur_upakarma]+1
+  festival_day_list[varalakshmi_vratam]=festival_day_list[yajur_upakarma]-((weekday_start-1+festival_day_list[yajur_upakarma]-5)%7)
   #KARADAYAN_NOMBU
   for x in iter(festival_day_list.keys()):
     if festivals[festival_day_list[x]]!='':
