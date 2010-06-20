@@ -301,7 +301,7 @@ def main():
     #KARADAYAN NOMBU -- easy to check here
     if sun_month_end_time !='': #month ends today
       if (sun_month[d]==12 and sun_month_day==1) or (sun_month[d]==11 and sun_month_day!=1):
-        festival_day_list[karadayan_nombu] = d
+        festival_day_list[karadayan_nombu] = [d]
   
     #Sunrise/sunset and related stuff (like rahu, yama)
     [rhs, rms, rss] = deci2sexa(t_sunrise)  #rise hour sun, rise minute sun, rise sec sun
@@ -464,9 +464,15 @@ def main():
           if rule[2]=='tithi':
             fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
           elif rule[2]=='nakshatram':
-            fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
+            fday = get_festival_day_tithi_purvaviddha(rule[3],nakshatram_sunrise,d)
           if fday is not None:
-            festival_day_list[x]=fday
+            if festival_day_list.has_key(x):
+              if festival_day_list[x][0]!=fday:
+                #Second occurrence of a festival within a Gregorian calendar year
+                festival_day_list[x]=[festival_day_list[x][0],fday]
+            else:
+              festival_day_list[x]=[fday]
+
       elif rule[0]=='sun_month':
         if sun_month[d]==rule[1]:
           if rule[2]=='tithi':
@@ -474,37 +480,43 @@ def main():
           elif rule[2]=='nakshatram':
             fday = get_festival_day_tithi_purvaviddha(rule[3],nakshatram_sunrise,d)
           if fday is not None:
-            festival_day_list[x]=fday
+            if festival_day_list.has_key(x):
+              if festival_day_list[x][0]!=fday:
+                #Second occurrence of a festival within a Gregorian calendar year
+                festival_day_list[x]=[festival_day_list[x][0],fday]
+            else:
+              festival_day_list[x]=[fday]
       else:
         print 'Error; unknown string in rule: %s' % (rule[0])    
         return
 
     #NAVARATRI START
     if moon_month[d]==7 and moon_month[d-1]==6:
-      festival_day_list[navaratri_start]=d
+      festival_day_list[navaratri_start]=[d]
 
     #PONGAL/AYANAM
     if sun_month[d]==10 and sun_month[d-1]==9:
-      festival_day_list[uttarayanam]=d
+      festival_day_list[uttarayanam]=[d]
 
     if sun_month[d]==4 and sun_month[d-1]==3:
-      festival_day_list[dakshinayanam]=d
+      festival_day_list[dakshinayanam]=[d]
 
     if sun_month[d]==1 and sun_month[d-1]==12:
-      festival_day_list[new_yr]=d
+      festival_day_list[new_yr]=[d]
 
     if moon_month[d]==1 and moon_month[d-1]!=1:
-      festival_day_list[yugadi]=d
+      festival_day_list[yugadi]=[d]
 
 
   #Add saved festivals
-  festival_day_list[gayatri_japam]=festival_day_list[yajur_upakarma]+1
-  festival_day_list[varalakshmi_vratam]=festival_day_list[yajur_upakarma]-((weekday_start-1+festival_day_list[yajur_upakarma]-5)%7)
+  festival_day_list[gayatri_japam]=[festival_day_list[yajur_upakarma][0]+1]
+  festival_day_list[varalakshmi_vratam]=[festival_day_list[yajur_upakarma][0]-((weekday_start-1+festival_day_list[yajur_upakarma][0]-5)%7)]
   #KARADAYAN_NOMBU
   for x in iter(festival_day_list.keys()):
-    if festivals[festival_day_list[x]]!='':
-      festivals[festival_day_list[x]]+='\\\\';
-    festivals[festival_day_list[x]]+=x;
+    for j in range(0,len(festival_day_list[x])):
+      if festivals[festival_day_list[x][j]]!='':
+        festivals[festival_day_list[x][j]]+='\\\\';
+      festivals[festival_day_list[x][j]]+=x;
 
   ######----- FESTIVAL ADDITIONS COMPLETE -----#####
 
