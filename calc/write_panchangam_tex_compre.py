@@ -168,6 +168,8 @@ rahukalam_octets = [8,2,7,5,6,4,3]
 daycol = {0:'blue',1:'blue',2:'blue',3:'blue',4:'blue',5:'blue',6:'blue'}
 
 month = {1:'JANUARY', 2:'FEBRUARY', 3:'MARCH', 4:'APRIL', 5:'MAY', 6:'JUNE', 7:'JULY', 8:'AUGUST', 9:'SEPTEMBER', 10:'OCTOBER', 11: 'NOVEMBER', 12:'DECEMBER'}
+MON = {1:'January', 2:'February', 3:'March', 4:'April', 5:'May', 6:'June', 7:'July', 8:'August', 9:'September', 10:'October', 11: 'November', 12:'December'}
+WDAY = {0:'Sun',1:'Mon',2:'Tue',3:'Wed',4:'Thu',5:'Fri',6:'Sat'}
 
 #MAIN CODE
 def main():
@@ -520,6 +522,43 @@ def main():
 
   ######----- FESTIVAL ADDITIONS COMPLETE -----#####
 
+  ###--- PRINT LIST OF FESTIVALS (Page 2) ---###
+  print '\\newpage'
+  print '\\centerline {\\LARGE \\textsf{List of Festivals}}\\'
+  print '\\begin{center}'
+  print '\\begin{minipage}[t]{0.3\\linewidth}'
+  print '\\begin{center}'
+  print '\\begin{tabular}{>{\\sffamily}r>{\\sffamily}r>{\\sffamily}cp{6cm}}'
+
+  mlast=1
+  for d in range(1,367):
+    jd = jd_start-1+d
+    [y,m,dt,t] = swisseph.revjul(jd)
+    weekday = (weekday_start -1 + d)%7 
+   
+    if festivals[d]!='':
+      if m!=mlast:
+        mlast=m
+        #print '\\hline\\\\'
+        print '\\\\'
+        if m==5 or m==9:
+          print '\\end{tabular}'
+          print '\\end{center}'
+          print '\\end{minipage}\hspace{1cm}%'
+          print '\\begin{minipage}[t]{0.3\\linewidth}'
+          print '\\begin{center}'
+          print '\\begin{tabular}{>{\\sffamily}r>{\\sffamily}l>{\\sffamily}cp{6cm}}'
+          
+      print '%s & %s & %s & {\\raggedright %s} \\\\' % (MON[m],dt,WDAY[weekday],festivals[d])
+
+    if m==12 and dt==31:
+      break
+
+  print '\\end{tabular}'
+  print '\\end{center}'
+  print '\\end{minipage}'
+  print '\\end{center}'
+  print '\\clearpage'
 
 
   #Layout calendar in LATeX format
