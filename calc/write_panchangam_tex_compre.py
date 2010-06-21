@@ -91,6 +91,10 @@ def get_ekadashi_name(paksha,month):
     else:
       return '%s~%s' % (krishna_ekadashi_names[13],ekadashi)
 
+def get_tithi(jd):
+  ldiff=(swisseph.calc_ut(jd,swisseph.MOON)[0]-swisseph.calc_ut(jd,swisseph.SUN)[0])%360
+  return int(1+math.floor(ldiff / 12.0))
+
 def get_chandra_masa(month,chandra_masa_names):
   if month==int(month):
     return chandra_masa_names[month]
@@ -388,8 +392,13 @@ def main():
       if (tithi_sunrise[d]==11 and tithi_sunrise[d+1]==11): 
         festivals[d+1]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])#moon_month[d] or [d+1]?
       elif (tithi_sunrise[d]==11 and tithi_sunrise[d+1]!=11): 
-        festivals[d]=get_ekadashi_name(paksha='shukla',month=moon_month[d])
         #Check dashami end time to decide for whether this is sarva/smartha
+        tithi_arunodayam = get_tithi(jd_sunrise[d]-(1/15.0))
+        if tithi_arunodayam==10:
+          festivals[d]=smartha+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
+          festivals[d+1]=vaishnava+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
+        else:
+          festivals[d]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
       elif (tithi_sunrise[d-1]!=11 and tithi_sunrise[d]==12):
         festivals[d]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
 
@@ -399,8 +408,13 @@ def main():
       if (tithi_sunrise[d]==26 and tithi_sunrise[d+1]==26): 
         festivals[d+1]=sarva+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])#moon_month[d] or [d+1]?
       elif (tithi_sunrise[d]==26 and tithi_sunrise[d+1]!=26): 
-        festivals[d]=get_ekadashi_name(paksha='krishna',month=moon_month[d])
         #Check dashami end time to decide for whether this is sarva/smartha
+        tithi_arunodayam = get_tithi(jd_sunrise[d]-(1/15.0))
+        if tithi_arunodayam==25:
+          festivals[d]=smartha+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
+          festivals[d+1]=vaishnava+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
+        else:
+          festivals[d]=sarva+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
       elif (tithi_sunrise[d-1]!=26 and tithi_sunrise[d]==27):
         festivals[d]=sarva+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
 
