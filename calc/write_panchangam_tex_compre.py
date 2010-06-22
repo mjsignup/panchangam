@@ -393,7 +393,7 @@ def main():
         festivals[d+1]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])#moon_month[d] or [d+1]?
       elif (tithi_sunrise[d]==11 and tithi_sunrise[d+1]!=11): 
         #Check dashami end time to decide for whether this is sarva/smartha
-        tithi_arunodayam = get_tithi(jd_sunrise[d]-(1/15.0))
+        tithi_arunodayam = get_tithi(jd_sunrise[d]-(1/15.0)*(jd_sunrise[d]-jd_sunrise[d-1])) #Two muhurtams is 1/15 of day-length
         if tithi_arunodayam==10:
           festivals[d]=smartha+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
           festivals[d+1]=vaishnava+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
@@ -409,7 +409,7 @@ def main():
         festivals[d+1]=sarva+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])#moon_month[d] or [d+1]?
       elif (tithi_sunrise[d]==26 and tithi_sunrise[d+1]!=26): 
         #Check dashami end time to decide for whether this is sarva/smartha
-        tithi_arunodayam = get_tithi(jd_sunrise[d]-(1/15.0))
+        tithi_arunodayam = get_tithi(jd_sunrise[d]-(1/15.0)*(jd_sunrise[d]-jd_sunrise[d-1])) #Two muhurtams is 1/15 of day-length
         if tithi_arunodayam==25:
           festivals[d]=smartha+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
           festivals[d+1]=vaishnava+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
@@ -522,6 +522,32 @@ def main():
 
     if moon_month[d]==1 and moon_month[d-1]!=1:
       festival_day_list[yugadi]=[d]
+
+    #SHRIRAMANAVAMI
+    if moon_month[d]==1:
+      if tithi_sunrise[d]==8 or tithi_sunrise[d]==9:
+        t_madhyahna_1_start = get_tithi(jd_sunrise[d]+(jd_sunset[d]-jd_sunrise[d])*(2.0/5.0))
+        t_madhyahna_1_end   = get_tithi(jd_sunrise[d]+(jd_sunset[d]-jd_sunrise[d])*(3.0/5.0))
+        t_madhyahna_2_start = get_tithi(jd_sunrise[d+1]+(jd_sunset[d+1]-jd_sunrise[d+1])*(2.0/5.0))
+        t_madhyahna_2_end   = get_tithi(jd_sunrise[d+1]+(jd_sunset[d+1]-jd_sunrise[d+1])*(3.0/5.0))
+        if t_madhyahna_1_start==9 or t_madhyahna_1_end==9:
+          if t_madhyahna_2_start==9 or t_madhyahna_2_end==9:
+            festival_day_list[ramanavami]=[d+1]
+          else:
+            festival_day_list[ramanavami]=[d]
+
+ 
+    #JANMASHTAMI
+    if moon_month[d]==5:
+      if tithi_sunrise[d]==22 or tithi_sunrise[d]==23:
+        t_nishita_1_start = get_tithi(jd_sunset[d]+(jd_sunrise[d+1]-jd_sunset[d])*(7.0/15.0))
+        t_nishita_1_end = get_tithi(jd_sunset[d]+(jd_sunrise[d+1]-jd_sunset[d])*(8.0/15.0))
+        t_madhyaratri_1_start = get_tithi(jd_sunset[d]+(jd_sunrise[d+1]-jd_sunset[d])*(2.0/5.0))
+        t_madhyaratri_1_end = get_tithi(jd_sunset[d]+(jd_sunrise[d+1]-jd_sunset[d])*(3.0/5.0))
+        t_nishita_2_start = get_tithi(jd_sunset[d+1]+(jd_sunrise[d+2]-jd_sunset[d+1])*(7.0/15.0))
+        t_nishita_2_end = get_tithi(jd_sunset[d+1]+(jd_sunrise[d+2]-jd_sunset[d+1])*(8.0/15.0))
+        t_madhyaratri_2_start = get_tithi(jd_sunset[d+1]+(jd_sunrise[d+2]-jd_sunset[d+1])*(2.0/5.0))
+        t_madhyaratri_2_end = get_tithi(jd_sunset[d+1]+(jd_sunrise[d+2]-jd_sunset[d+1])*(3.0/5.0))
 
 
   #Add saved festivals
