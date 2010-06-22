@@ -481,7 +481,6 @@ def main():
             fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
           elif rule[2]=='nakshatram':
             fday = get_festival_day_tithi_purvaviddha(rule[3],nakshatram_sunrise,d)
-            print '%%',rule,fday
           if fday is not None:
             if festival_day_list.has_key(x):
               if festival_day_list[x][0]!=fday:
@@ -489,7 +488,6 @@ def main():
                 festival_day_list[x]=[festival_day_list[x][0],fday]
             else:
               festival_day_list[x]=[fday]
-
       elif rule[0]=='sun_month':
         if sun_month[d]==rule[1]:
           if rule[2]=='tithi':
@@ -556,7 +554,7 @@ def main():
             festival_day_list[janmashtami]=[d]
 
     #SHIVARATRI
-    if moon_month[d]==12:
+    if moon_month[d]==11:
       if tithi_sunrise[d]==28 or tithi_sunrise[d]==29:
         t_11 = get_tithi(jd_sunset[d]+(jd_sunrise[d+1]-jd_sunset[d])*(7.0/15.0))#nishita1 start
         t_12 = get_tithi(jd_sunset[d]+(jd_sunrise[d+1]-jd_sunset[d])*(8.0/15.0))#nishita1 end
