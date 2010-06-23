@@ -105,8 +105,10 @@ def get_festival_day_tithi_purvaviddha(festival_tithi,tithi_sunrise,d):
   if tithi_sunrise[d]==(festival_tithi-1) or tithi_sunrise[d]==festival_tithi:
     if tithi_sunrise[d]==festival_tithi or (tithi_sunrise[d]==(festival_tithi-1) and tithi_sunrise[d+1]==(festival_tithi+1)):
       if tithi_sunrise[d-1]!=festival_tithi:#otherwise yesterday would have already been assigned
+        #Return d-1 if tithi changes within say 2hrs
         return d
     elif tithi_sunrise[d+1]==festival_tithi:
+        #Return d if tithi changes within say 2hrs
         return d+1
   return None
 
@@ -424,7 +426,7 @@ def main():
       ldiff_set_tmrw=(swisseph.calc_ut(jd_sunset[d+1],swisseph.MOON)[0]-swisseph.calc_ut(jd_sunset[d+1],swisseph.SUN)[0])%360
       tithi_sunset = int(1+math.floor(ldiff_set/12.0))
       tithi_sunset_tmrw = int(1+math.floor(ldiff_set_tmrw/12.0))
-      if tithi_sunset==13 and tithi_sunset_tmrw!=13:
+      if tithi_sunset<=13 and tithi_sunset_tmrw!=13:
         festivals[d]=pradosham
       elif tithi_sunset_tmrw==13:
         festivals[d+1]=pradosham
@@ -434,7 +436,7 @@ def main():
       ldiff_set_tmrw=(swisseph.calc_ut(jd_sunset[d+1],swisseph.MOON)[0]-swisseph.calc_ut(jd_sunset[d+1],swisseph.SUN)[0])%360
       tithi_sunset = int(1+math.floor(ldiff_set/12.0))
       tithi_sunset_tmrw = int(1+math.floor(ldiff_set_tmrw/12.0))
-      if tithi_sunset==28 and tithi_sunset_tmrw!=28:
+      if tithi_sunset<=28 and tithi_sunset_tmrw!=28:
         festivals[d]=pradosham
       elif tithi_sunset_tmrw==28:
         festivals[d+1]=pradosham
