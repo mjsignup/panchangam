@@ -623,7 +623,7 @@ def main():
 
   ###--- PRINT LIST OF FESTIVALS (Page 2) ---###
   print '\\newpage'
-  print '\\centerline {\\LARGE \\textsf{\\textbf{List of Festivals}}}\\mbox{}\\\\[2cm]'
+  print '\\centerline {\\LARGE {{%s}}}\\mbox{}\\\\[2cm]' % list_of_festivals
   print '\\begin{center}'
   print '\\begin{minipage}[t]{0.3\\linewidth}'
   print '\\begin{center}'
