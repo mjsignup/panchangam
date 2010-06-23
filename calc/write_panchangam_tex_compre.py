@@ -105,15 +105,35 @@ def get_chandra_masa(month,chandra_masa_names):
   else:
     return '%s~(%s)' % (chandra_masa_names[int(month)+1],adhika) 
 
-def get_festival_day_purvaviddha(festival_angam,angam_sunrise,d,jd,angam_type):
+def get_festival_day_purvaviddha(festival_angam,angam_sunrise,d,jd_sunrise,angam_type):
+  t_cutoff=0.0/24.0
+  
   if angam_sunrise[d]==(festival_angam-1) or angam_sunrise[d]==festival_angam:
     if angam_sunrise[d]==festival_angam or (angam_sunrise[d]==(festival_angam-1) and angam_sunrise[d+1]==(festival_angam+1)):
       if angam_sunrise[d-1]!=festival_angam:#otherwise yesterday would have already been assigned
-        #Return d-1 if angam changes within say 2hrs
-        return d
+        #Return d-1 if angam changes within say 2hrs, else d
+        if angam_type=='tithi':
+          if get_tithi(jd_sunrise+t_cutoff)!=angam_sunrise[d]:
+            return d-1
+          else:
+            return d
+        elif angam_type=='nakshatram':
+          if get_nakshatram(jd_sunrise+t_cutoff)!=angam_sunrise[d]:
+            return d-1
+          else:
+            return d
     elif angam_sunrise[d+1]==festival_angam:
-        #Return d if angam changes within say 2hrs
-        return d+1
+      #Return d if angam changes within say 2hrs, else d-1
+      if angam_type=='tithi':
+        if get_tithi(jd_sunrise+1+t_cutoff)!=angam_sunrise[d+1]:
+          return d
+        else:
+          return d+1
+      elif angam_type=='nakshatram':
+        if get_nakshatram(jd_sunrise+1+t_cutoff)!=angam_sunrise[d+1]:
+          return d
+        else:
+          return d+1
   return None
 
 def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw, 
