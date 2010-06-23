@@ -95,20 +95,24 @@ def get_tithi(jd):
   ldiff=(swisseph.calc_ut(jd,swisseph.MOON)[0]-swisseph.calc_ut(jd,swisseph.SUN)[0])%360
   return int(1+math.floor(ldiff / 12.0))
 
+def get_nakshatram(jd):
+  lmoon=(swisseph.calc_ut(jd,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd))%360
+  return int(1+math.floor(lmoon / (360.0/27.0)))
+
 def get_chandra_masa(month,chandra_masa_names):
   if month==int(month):
     return chandra_masa_names[month]
   else:
     return '%s~(%s)' % (chandra_masa_names[int(month)+1],adhika) 
 
-def get_festival_day_tithi_purvaviddha(festival_tithi,tithi_sunrise,d):
-  if tithi_sunrise[d]==(festival_tithi-1) or tithi_sunrise[d]==festival_tithi:
-    if tithi_sunrise[d]==festival_tithi or (tithi_sunrise[d]==(festival_tithi-1) and tithi_sunrise[d+1]==(festival_tithi+1)):
-      if tithi_sunrise[d-1]!=festival_tithi:#otherwise yesterday would have already been assigned
-        #Return d-1 if tithi changes within say 2hrs
+def get_festival_day_purvaviddha(festival_angam,angam_sunrise,d):
+  if angam_sunrise[d]==(festival_angam-1) or angam_sunrise[d]==festival_angam:
+    if angam_sunrise[d]==festival_angam or (angam_sunrise[d]==(festival_angam-1) and angam_sunrise[d+1]==(festival_angam+1)):
+      if angam_sunrise[d-1]!=festival_angam:#otherwise yesterday would have already been assigned
+        #Return d-1 if angam changes within say 2hrs
         return d
-    elif tithi_sunrise[d+1]==festival_tithi:
-        #Return d if tithi changes within say 2hrs
+    elif angam_sunrise[d+1]==festival_angam:
+        #Return d if angam changes within say 2hrs
         return d+1
   return None
 
@@ -480,9 +484,9 @@ def main():
       if rule[0]=='moon_month':
         if moon_month[d]==rule[1]:
           if rule[2]=='tithi':
-            fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
+            fday = get_festival_day_purvaviddha(rule[3],tithi_sunrise,d)
           elif rule[2]=='nakshatram':
-            fday = get_festival_day_tithi_purvaviddha(rule[3],nakshatram_sunrise,d)
+            fday = get_festival_day_purvaviddha(rule[3],nakshatram_sunrise,d)
           if fday is not None:
             if festival_day_list.has_key(x):
               if festival_day_list[x][0]!=fday:
@@ -493,9 +497,9 @@ def main():
       elif rule[0]=='sun_month':
         if sun_month[d]==rule[1]:
           if rule[2]=='tithi':
-            fday = get_festival_day_tithi_purvaviddha(rule[3],tithi_sunrise,d)
+            fday = get_festival_day_purvaviddha(rule[3],tithi_sunrise,d)
           elif rule[2]=='nakshatram':
-            fday = get_festival_day_tithi_purvaviddha(rule[3],nakshatram_sunrise,d)
+            fday = get_festival_day_purvaviddha(rule[3],nakshatram_sunrise,d)
           if fday is not None:
             if festival_day_list.has_key(x):
               if festival_day_list[x][0]!=fday:
