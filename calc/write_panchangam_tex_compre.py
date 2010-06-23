@@ -105,8 +105,8 @@ def get_chandra_masa(month,chandra_masa_names):
   else:
     return '%s~(%s)' % (chandra_masa_names[int(month)+1],adhika) 
 
-def get_festival_day_purvaviddha(festival_angam,angam_sunrise,d,jd_sunrise,get_angam_func):
-  t_cutoff=0.0/24.0
+def get_festival_day_purvaviddha(festival_angam,angam_sunrise,d,jd_sunrise,jd_sunrise_tmrw,get_angam_func,min_t):
+  t_cutoff=(jd_sunrise_tmrw-jd_sunrise)*min_t/60.0 #at least 4 nazhis
   
   if angam_sunrise[d]==(festival_angam-1) or angam_sunrise[d]==festival_angam:
     if angam_sunrise[d]==festival_angam or (angam_sunrise[d]==(festival_angam-1) and angam_sunrise[d+1]==(festival_angam+1)):
@@ -118,7 +118,7 @@ def get_festival_day_purvaviddha(festival_angam,angam_sunrise,d,jd_sunrise,get_a
           return d
     elif angam_sunrise[d+1]==festival_angam:
       #Return d if angam changes within say 2hrs, else d-1
-      if get_angam_func(jd_sunrise+1+t_cutoff)!=angam_sunrise[d+1]:
+      if get_angam_func(jd_sunrise_tmrw+t_cutoff)!=angam_sunrise[d+1]:
         return d
       else:
         return d+1
@@ -405,16 +405,32 @@ def main():
       #check for shukla ekadashi
       if (tithi_sunrise[d]==11 and tithi_sunrise[d+1]==11): 
         festivals[d+1]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])#moon_month[d] or [d+1]?
+        if moon_month[d+1]==4:
+          festivals[d+1]+='\\\\'+chaturmasya_start
+        if moon_month[d+1]==8:
+          festivals[d+1]+='\\\\'+chaturmasya_end
       elif (tithi_sunrise[d]==11 and tithi_sunrise[d+1]!=11): 
         #Check dashami end time to decide for whether this is sarva/smartha
         tithi_arunodayam = get_tithi(jd_sunrise[d]-(1/15.0)*(jd_sunrise[d]-jd_sunrise[d-1])) #Two muhurtams is 1/15 of day-length
         if tithi_arunodayam==10:
           festivals[d]=smartha+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
           festivals[d+1]=vaishnava+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
+          if moon_month[d]==4:
+            festivals[d]+='\\\\'+chaturmasya_start
+          if moon_month[d]==8:
+            festivals[d]+='\\\\'+chaturmasya_end
         else:
           festivals[d]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
+          if moon_month[d]==4:
+            festivals[d]+='\\\\'+chaturmasya_start
+          if moon_month[d]==8:
+            festivals[d]+='\\\\'+chaturmasya_end
       elif (tithi_sunrise[d-1]!=11 and tithi_sunrise[d]==12):
         festivals[d]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
+        if moon_month[d]==4:
+          festivals[d]+='\\\\'+chaturmasya_start
+        if moon_month[d]==8:
+          festivals[d]+='\\\\'+chaturmasya_end
 
  
     if tithi_sunrise[d]==26 or tithi_sunrise[d]==27: #One of two consecutive tithis must appear @ sunrise!
@@ -492,9 +508,9 @@ def main():
       if rule[0]=='moon_month':
         if moon_month[d]==rule[1]:
           if rule[2]=='tithi':
-            fday = get_festival_day_purvaviddha(rule[3],tithi_sunrise,d,jd_sunrise[d],get_tithi)
+            fday = get_festival_day_purvaviddha(rule[3],tithi_sunrise,d,jd_sunrise[d],jd_sunrise[d+1],get_tithi,rule[4])
           elif rule[2]=='nakshatram':
-            fday = get_festival_day_purvaviddha(rule[3],nakshatram_sunrise,d,jd_sunrise[d],get_nakshatram)
+            fday = get_festival_day_purvaviddha(rule[3],nakshatram_sunrise,d,jd_sunrise[d],jd_sunrise[d+1],get_nakshatram,rule[4])
           if fday is not None:
             if festival_day_list.has_key(x):
               if festival_day_list[x][0]!=fday:
@@ -505,9 +521,9 @@ def main():
       elif rule[0]=='sun_month':
         if sun_month[d]==rule[1]:
           if rule[2]=='tithi':
-            fday = get_festival_day_purvaviddha(rule[3],tithi_sunrise,d,jd_sunrise[d],get_tithi)
+            fday = get_festival_day_purvaviddha(rule[3],tithi_sunrise,d,jd_sunrise[d],jd_sunrise[d+1],get_tithi,rule[4])
           elif rule[2]=='nakshatram':
-            fday = get_festival_day_purvaviddha(rule[3],nakshatram_sunrise,d,jd_sunrise[d],get_nakshatram)
+            fday = get_festival_day_purvaviddha(rule[3],nakshatram_sunrise,d,jd_sunrise[d],jd_sunrise[d+1],get_nakshatram,rule[4])
           if fday is not None:
             if festival_day_list.has_key(x):
               if festival_day_list[x][0]!=fday:
