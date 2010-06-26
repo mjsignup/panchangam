@@ -45,6 +45,9 @@ mahalaya_amavasya = 'महालय-अमावस्या'
 uma_maheshvara_vratam = 'उमा-महेश्वर व्रतम्'
 yugadi = 'युगादि'
 
+chandra_grahanam = 'चन्द्र-ग्रहणम्'
+surya_grahanam = 'सूर्य-ग्रहणम्'
+
 list_of_festivals = 'मासान्तर-विशेषाः'
 chaturmasya_start='चातुर्मासस्य आरम्भः'
 chaturmasya_end='चातुर्मासस्य समापनम्'

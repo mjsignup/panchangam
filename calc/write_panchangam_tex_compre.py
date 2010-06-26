@@ -40,6 +40,16 @@ def print_time (d):
   [h,m,s]=deci2sexa(d)
   return '%02d:%02d' % (h,m)
 
+def print_time2 (d):
+  #if h>=24, writes +1
+  [h,m,s]=deci2sexa(d)
+  if h>=24:
+    h-=24
+    suff='(+1)'
+  else:
+    suff = '\\hspace{2ex}'
+  return '%02d:%02d%s' % (h,m,suff)
+
 def get_last_dhanur_transit (jd_start,latitude,longitude):
   swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
   for d in range(-25,0):
@@ -619,6 +629,42 @@ def main():
         festivals[festival_day_list[x][j]]+='\\\\';
       festivals[festival_day_list[x][j]]+=x;
 
+
+
+  ###--- ECLIPSES ---###
+  swisseph.set_topo(lon=longitude,lat=latitude,alt=0.0) #Set location
+  jd = jd_start
+  while 1:
+    next_ecl_lun=swisseph.lun_eclipse_when(jd)
+    jd=next_ecl_lun[1][0]
+    jd_ecl_start=next_ecl_lun[1][2]
+    jd_ecl_end=next_ecl_lun[1][3]
+    [ecl_y,ecl_m,ecl_d,ecl_t]=swisseph.revjul(jd)
+    if ecl_y!=start_year:
+      break
+    else:
+      fday=int(math.floor(jd)-math.floor(jd_start)+1)
+      if (jd<jd_sunrise[fday]):
+        fday-=1
+      jd_moonrise_ecl_day=swisseph.rise_trans(jd_start=jd_sunrise[fday],body=swisseph.MOON,
+        lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
+      jd_moonset_ecl_day=swisseph.rise_trans(jd_start=jd_moonrise_ecl_day,body=swisseph.MOON,
+        lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
+      #print '%%', (jd_ecl_start), (jd_ecl_end), (jd_moonrise_ecl_day), (jd_moonset_ecl_day)
+      #print '%%', swisseph.revjul(jd_ecl_start), swisseph.revjul(jd_ecl_end), swisseph.revjul(jd_moonrise_ecl_day), swisseph.revjul(jd_moonset_ecl_day)
+      ecl_start = (swisseph.revjul(next_ecl_lun[1][2])[3]+tz_off)
+      ecl_end   = (swisseph.revjul(next_ecl_lun[1][3])[3]+tz_off)
+      if jd_ecl_start==0.0 or jd_ecl_end==0.0 or jd_ecl_end<jd_moonrise_ecl_day or jd_ecl_start>jd_moonset_ecl_day:
+        jd=jd+20 #Move towards the next eclipse... at least the next full moon (>=25 days away)
+        continue
+      if ecl_end < ecl_start:
+        ecl_end+=24
+      lun_ecl_str = chandra_grahanam+'~\\textsf{'+print_time2(ecl_start)+'}{\\tiny\\RIGHTarrow}\\textsf{'+print_time2(ecl_end)+'}'
+      if festivals[fday]!='':
+        festivals[fday]+='\\\\'
+      festivals[fday]+=lun_ecl_str
+    jd=jd+20
+      
   ######----- FESTIVAL ADDITIONS COMPLETE -----#####
 
   ###--- PRINT LIST OF FESTIVALS (Page 2) ---###
