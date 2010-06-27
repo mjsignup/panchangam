@@ -47,7 +47,7 @@ def print_time2 (d):
     h-=24
     suff='(+1)'
   else:
-    suff = '\\hspace{2ex}'
+    suff = ''
   return '%02d:%02d%s' % (h,m,suff)
 
 def get_last_dhanur_transit (jd_start,latitude,longitude):
