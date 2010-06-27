@@ -685,7 +685,7 @@ def main():
         jd=jd+20 #Move towards the next eclipse... at least the next new moon (>=25 days away)
         continue
       if ecl_sol_end < ecl_sol_start:
-        ecl_end+=24
+        ecl_sol_end+=24
       sol_ecl_str = surya_grahanam+'~\\textsf{'+print_time2(ecl_sol_start)+'}{\\RIGHTarrow}\\textsf{'+print_time2(ecl_sol_end)+'}'
       if festivals[fday]!='':
         festivals[fday]+='\\\\'
