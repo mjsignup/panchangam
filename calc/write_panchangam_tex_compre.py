@@ -396,7 +396,6 @@ def main():
     #[y,m,dt,t] = swisseph.revjul(jd)
     #print '%%#%02d-%02d-%4d: %3d:%s (sunrise tithi=%d) {%s}' % (dt,m,y,d,moon_month[d],tithi_sunrise[d],tithi_data_string[d])
 
-
   #PRINT CALENDAR
 
   for d in range(1,367):
@@ -441,7 +440,6 @@ def main():
           festivals[d]+='\\\\'+chaturmasya_start
         if moon_month[d]==8:
           festivals[d]+='\\\\'+chaturmasya_end
-
  
     if tithi_sunrise[d]==26 or tithi_sunrise[d]==27: #One of two consecutive tithis must appear @ sunrise!
       #check for krishna ekadashi
@@ -510,7 +508,6 @@ def main():
           if moon_month[d]==8: #moon_month[d] and[d+1] are same, so checking [d] is enough
             festivals[d+1]=skanda+festivals[d+1]
 
-
     ###--- OTHER (MAJOR) FESTIVALS ---###
 
     for x in iter(purvaviddha_rules.keys()):
@@ -574,7 +571,6 @@ def main():
             festival_day_list[ramanavami]=[d+1]
           else:
             festival_day_list[ramanavami]=[d]
-
  
     #JANMASHTAMI
     if moon_month[d]==5:
@@ -632,13 +628,14 @@ def main():
 
 
   ###--- ECLIPSES ---###
+  ###--- LUNAR ECLIPSES ---###
   swisseph.set_topo(lon=longitude,lat=latitude,alt=0.0) #Set location
   jd = jd_start
   while 1:
     next_ecl_lun=swisseph.lun_eclipse_when(jd)
     jd=next_ecl_lun[1][0]
-    jd_ecl_start=next_ecl_lun[1][2]
-    jd_ecl_end=next_ecl_lun[1][3]
+    jd_ecl_lun_start=next_ecl_lun[1][2]
+    jd_ecl_lun_end=next_ecl_lun[1][3]
     [ecl_y,ecl_m,ecl_d,ecl_t]=swisseph.revjul(jd)
     if ecl_y!=start_year:
       break
@@ -650,22 +647,51 @@ def main():
         lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
       jd_moonset_ecl_day=swisseph.rise_trans(jd_start=jd_moonrise_ecl_day,body=swisseph.MOON,
         lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
-      #print '%%', (jd_ecl_start), (jd_ecl_end), (jd_moonrise_ecl_day), (jd_moonset_ecl_day)
+      #print '%%', (jd_ecl_lun_start), (jd_ecl_lun_end), (jd_moonrise_ecl_day), (jd_moonset_ecl_day)
       #print '%%', swisseph.revjul(jd_ecl_start), swisseph.revjul(jd_ecl_end), swisseph.revjul(jd_moonrise_ecl_day), swisseph.revjul(jd_moonset_ecl_day)
-      ecl_start = (swisseph.revjul(next_ecl_lun[1][2])[3]+tz_off)
-      ecl_end   = (swisseph.revjul(next_ecl_lun[1][3])[3]+tz_off)
-      if jd_ecl_start==0.0 or jd_ecl_end==0.0 or jd_ecl_end<jd_moonrise_ecl_day or jd_ecl_start>jd_moonset_ecl_day:
+      ecl_lun_start = (swisseph.revjul(jd_ecl_lun_start)[3]+tz_off)
+      ecl_lun_end   = (swisseph.revjul(jd_ecl_lun_end)[3]+tz_off)
+      if jd_ecl_lun_start==0.0 or jd_ecl_lun_end==0.0 or jd_ecl_lun_end<jd_moonrise_ecl_day or jd_ecl_lun_start>jd_moonset_ecl_day:
         jd=jd+20 #Move towards the next eclipse... at least the next full moon (>=25 days away)
         continue
-      if ecl_end < ecl_start:
-        ecl_end+=24
-      lun_ecl_str = chandra_grahanam+'~\\textsf{'+print_time2(ecl_start)+'}{\\tiny\\RIGHTarrow}\\textsf{'+print_time2(ecl_end)+'}'
+      if ecl_lun_end < ecl_lun_start:
+        ecl_lun_end+=24
+      lun_ecl_str = chandra_grahanam+'~\\textsf{'+print_time2(ecl_lun_start)+'}{\\RIGHTarrow}\\textsf{'+print_time2(ecl_lun_end)+'}'
       if festivals[fday]!='':
         festivals[fday]+='\\\\'
       festivals[fday]+=lun_ecl_str
     jd=jd+20
       
-  ######----- FESTIVAL ADDITIONS COMPLETE -----#####
+  ###--- SOLAR ECLIPSES ---###
+  swisseph.set_topo(lon=longitude,lat=latitude,alt=0.0) #Set location
+  jd = jd_start
+  while 1:
+    next_ecl_sol=swisseph.sol_eclipse_when_loc(julday=jd,lon=longitude,lat=latitude)
+    jd=next_ecl_sol[1][0]
+    jd_ecl_start=next_ecl_sol[1][1]
+    jd_ecl_end=next_ecl_sol[1][4]
+    [ecl_y,ecl_m,ecl_d,ecl_t]=swisseph.revjul(jd)
+    if ecl_y!=start_year:
+      break
+    else:
+      fday=int(math.floor(jd)-math.floor(jd_start)+1)
+      if (jd<jd_sunrise[fday]):
+        fday-=1
+      #print '%%', (jd_ecl_start), (jd_ecl_end), (jd_moonrise_ecl_day), (jd_moonset_ecl_day)
+      #print '%%', swisseph.revjul(jd_ecl_start), swisseph.revjul(jd_ecl_end), swisseph.revjul(jd_moonrise_ecl_day), swisseph.revjul(jd_moonset_ecl_day)
+      ecl_start = (swisseph.revjul(jd_ecl_start)[3]+tz_off)
+      ecl_end   = (swisseph.revjul(jd_ecl_end)[3]+tz_off)
+      if jd_ecl_start==0.0 or jd_ecl_end==0.0:# or jd_ecl_end<jd_sunrise[fday] or jd_ecl_start>jd_sunset[fday]:
+        jd=jd+20 #Move towards the next eclipse... at least the next new moon (>=25 days away)
+        continue
+      if ecl_end < ecl_start:
+        ecl_end+=24
+      sol_ecl_str = surya_grahanam+'~\\textsf{'+print_time2(ecl_start)+'}{\\RIGHTarrow}\\textsf{'+print_time2(ecl_end)+'}'
+      if festivals[fday]!='':
+        festivals[fday]+='\\\\'
+      festivals[fday]+=sol_ecl_str
+    jd=jd+20
+  ###--- FESTIVAL ADDITIONS COMPLETE ---###
 
   ###--- PRINT LIST OF FESTIVALS (Page 2) ---###
   print '\\newpage'
