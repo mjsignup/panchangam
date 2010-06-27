@@ -295,8 +295,8 @@ def main():
     if(d<=0):
       continue
 
-    t_sunrise=(jd_sunrise[d]-jd)*24.0+tz_off;
-    t_sunset=(jd_sunset[d]-jd)*24.0+tz_off;
+    t_sunrise=(jd_sunrise[d]-jd)*24.0+tz_off
+    t_sunset=(jd_sunset[d]-jd)*24.0+tz_off
 
   
     #Solar month calculations
@@ -622,8 +622,8 @@ def main():
   for x in iter(festival_day_list.keys()):
     for j in range(0,len(festival_day_list[x])):
       if festivals[festival_day_list[x][j]]!='':
-        festivals[festival_day_list[x][j]]+='\\\\';
-      festivals[festival_day_list[x][j]]+=x;
+        festivals[festival_day_list[x][j]]+='\\\\'
+      festivals[festival_day_list[x][j]]+=x
 
 
 
@@ -633,25 +633,27 @@ def main():
   jd = jd_start
   while 1:
     next_ecl_lun=swisseph.lun_eclipse_when(jd)
-    jd=next_ecl_lun[1][0]
-    jd_ecl_lun_start=next_ecl_lun[1][2]
-    jd_ecl_lun_end=next_ecl_lun[1][3]
-    [ecl_y,ecl_m,ecl_d,ecl_t]=swisseph.revjul(jd)
+    jd=next_ecl_lun[1][0]+(tz_off/24.0)
+    jd_ecl_lun_start=next_ecl_lun[1][2]+(tz_off/24.0)
+    jd_ecl_lun_end=next_ecl_lun[1][3]+(tz_off/24.0)
+    ecl_y=swisseph.revjul(jd-1)[0]# -1 is to not miss an eclipse that occurs after sunset on 31-Dec!
     if ecl_y!=start_year:
       break
     else:
+      ecl_lun_start = swisseph.revjul(jd_ecl_lun_start)[3]
+      ecl_lun_end   = swisseph.revjul(jd_ecl_lun_end)[3]
       fday=int(math.floor(jd)-math.floor(jd_start)+1)
       if (jd<jd_sunrise[fday]):
         fday-=1
+        ecl_lun_start+=24
+        ecl_lun_end+=24
       jd_moonrise_ecl_day=swisseph.rise_trans(jd_start=jd_sunrise[fday],body=swisseph.MOON,
-        lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
+        lon=longitude,lat=latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]+(tz_off/24.0)
       jd_moonset_ecl_day=swisseph.rise_trans(jd_start=jd_moonrise_ecl_day,body=swisseph.MOON,
-        lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
+        lon=longitude,lat=latitude,rsmi=swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]+(tz_off/24.0)
       #print '%%', (jd_ecl_lun_start), (jd_ecl_lun_end), (jd_moonrise_ecl_day), (jd_moonset_ecl_day)
-      #print '%%', swisseph.revjul(jd_ecl_start), swisseph.revjul(jd_ecl_end), swisseph.revjul(jd_moonrise_ecl_day), swisseph.revjul(jd_moonset_ecl_day)
-      ecl_lun_start = (swisseph.revjul(jd_ecl_lun_start)[3]+tz_off)
-      ecl_lun_end   = (swisseph.revjul(jd_ecl_lun_end)[3]+tz_off)
-      if jd_ecl_lun_start==0.0 or jd_ecl_lun_end==0.0 or jd_ecl_lun_end<jd_moonrise_ecl_day or jd_ecl_lun_start>jd_moonset_ecl_day:
+      #print '%%', swisseph.revjul(jd_ecl_lun_start), swisseph.revjul(jd_ecl_lun_end), swisseph.revjul(jd_moonrise_ecl_day), swisseph.revjul(jd_moonset_ecl_day)
+      if (jd_ecl_lun_start-(tz_off/24.0))==0.0 or (jd_ecl_lun_end-(tz_off/24.0))==0.0 or jd_ecl_lun_end<jd_moonrise_ecl_day or jd_ecl_lun_start>jd_moonset_ecl_day:
         jd=jd+20 #Move towards the next eclipse... at least the next full moon (>=25 days away)
         continue
       if ecl_lun_end < ecl_lun_start:
@@ -667,21 +669,23 @@ def main():
   jd = jd_start
   while 1:
     next_ecl_sol=swisseph.sol_eclipse_when_loc(julday=jd,lon=longitude,lat=latitude)
-    jd=next_ecl_sol[1][0]
-    jd_ecl_sol_start=next_ecl_sol[1][1]
-    jd_ecl_sol_end=next_ecl_sol[1][4]
-    [ecl_y,ecl_m,ecl_d,ecl_t]=swisseph.revjul(jd)
+    jd=next_ecl_sol[1][0]+(tz_off/24.0)
+    jd_ecl_sol_start=next_ecl_sol[1][1]+(tz_off/24.0)
+    jd_ecl_sol_end=next_ecl_sol[1][4]+(tz_off/24.0)
+    ecl_y=swisseph.revjul(jd-1)[0]# -1 is to not miss an eclipse that occurs after sunset on 31-Dec!
     if ecl_y!=start_year:
       break
     else:
+      #print '%%', fday, (jd_ecl_sol_start), (jd_ecl_sol_end), (jd_sunrise[fday])
+      #print '%%', swisseph.revjul(jd_ecl_sol_start), swisseph.revjul(jd_ecl_sol_end), swisseph.revjul(jd_sunrise[fday])
       fday=int(math.floor(jd)-math.floor(jd_start)+1)
-      #if (jd<jd_sunrise[fday]):
-      #  fday-=1
-      #print '%%', (jd_ecl_start), (jd_ecl_end), (jd_moonrise_ecl_day), (jd_moonset_ecl_day)
-      #print '%%', swisseph.revjul(jd_ecl_start), swisseph.revjul(jd_ecl_end), swisseph.revjul(jd_moonrise_ecl_day), swisseph.revjul(jd_moonset_ecl_day)
-      ecl_sol_start = (swisseph.revjul(jd_ecl_sol_start)[3]+tz_off)
-      ecl_sol_end   = (swisseph.revjul(jd_ecl_sol_end)[3]+tz_off)
-      if jd_ecl_sol_start==0.0 or jd_ecl_sol_end==0.0:# or jd_ecl_end<jd_sunrise[fday] or jd_ecl_start>jd_sunset[fday]:
+      if (jd<jd_sunrise[fday]):
+        fday-=1
+      #print '%%', fday, (jd_ecl_sol_start), (jd_ecl_sol_end), (jd_sunrise[fday])
+      #print '%%', swisseph.revjul(jd_ecl_sol_start), swisseph.revjul(jd_ecl_sol_end), swisseph.revjul(jd_sunrise[fday])
+      ecl_sol_start = swisseph.revjul(jd_ecl_sol_start)[3]
+      ecl_sol_end   = swisseph.revjul(jd_ecl_sol_end)[3]
+      if (jd_ecl_sol_start-(tz_off/24.0))==0.0 or (jd_ecl_sol_end-(tz_off/24.0))==0.0:# or jd_ecl_end<jd_sunrise[fday] or jd_ecl_start>jd_sunset[fday]:
         jd=jd+20 #Move towards the next eclipse... at least the next new moon (>=25 days away)
         continue
       if ecl_sol_end < ecl_sol_start:
