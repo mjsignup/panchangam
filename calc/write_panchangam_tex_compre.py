@@ -134,6 +134,12 @@ def get_festival_day_purvaviddha(festival_angam,angam_sunrise,d,jd_sunrise,jd_su
         return d+1
   return None
 
+def get_angam_float(jd, arc_len, w):
+  lmoon=(swisseph.calc_ut(jd,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd))%360
+  lsun=(swisseph.calc_ut(jd,swisseph.SUN)[0]-swisseph.get_ayanamsa(jd))%360
+  ldiff=(lmoon*w[0]+lsun*w[1])%360
+  return (ldiff/arc_len)
+
 def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw, 
   t_sunrise, longitude_moon, longitude_sun, longitude_moon_tmrw, 
   longitude_sun_tmrw, w):
@@ -265,7 +271,11 @@ def main():
   
   weekday_start=swisseph.day_of_week(jd)+1
   #swisseph has Mon = 0, non-intuitively!
-  
+
+  ##################################################
+  #Compute all parameters -- latitude/longitude etc#
+  ##################################################
+
   for d in range(-1,367):
     jd = jd_start-1+d
     [y,m,dt,t] = swisseph.revjul(jd)
@@ -395,6 +405,14 @@ def main():
     #jd = jd_start-1+d
     #[y,m,dt,t] = swisseph.revjul(jd)
     #print '%%#%02d-%02d-%4d: %3d:%s (sunrise tithi=%d) {%s}' % (dt,m,y,d,moon_month[d],tithi_sunrise[d],tithi_data_string[d])
+
+  log_file=open('cal_log_%4d.txt' % year,'w')
+  for d in range(1,367):
+    jd = jd_start-1+d
+    [y,m,dt,t] = swisseph.revjul(jd)
+    log_data = '%02d-%02d-%4d\t[%3d]\tsun_rashi=%8.3f\ttithi=%8.3f\tsun_month=%2d\tmoon_month=%4.1f\n' % (dt,m,y,d,(longitude_sun_set[d]%360)/30.0,get_angam_float(jd_sunrise[d],12.0,[1,-1]),sun_month[d],moon_month[d])
+    log_file.write(log_data)
+
 
   #PRINT CALENDAR
 

@@ -1,0 +1,366 @@
+01-01-1983	[  1]	sun_rashi=   8.563	tithi=  16.847	sun_month= 9	moon_month=10.0
+02-01-1983	[  2]	sun_rashi=   8.597	tithi=  18.015	sun_month= 9	moon_month=10.0
+03-01-1983	[  3]	sun_rashi=   8.631	tithi=  19.157	sun_month= 9	moon_month=10.0
+04-01-1983	[  4]	sun_rashi=   8.665	tithi=  20.266	sun_month= 9	moon_month=10.0
+05-01-1983	[  5]	sun_rashi=   8.699	tithi=  21.339	sun_month= 9	moon_month=10.0
+06-01-1983	[  6]	sun_rashi=   8.733	tithi=  22.376	sun_month= 9	moon_month=10.0
+07-01-1983	[  7]	sun_rashi=   8.767	tithi=  23.378	sun_month= 9	moon_month=10.0
+08-01-1983	[  8]	sun_rashi=   8.801	tithi=  24.351	sun_month= 9	moon_month=10.0
+09-01-1983	[  9]	sun_rashi=   8.835	tithi=  25.300	sun_month= 9	moon_month=10.0
+10-01-1983	[ 10]	sun_rashi=   8.869	tithi=  26.230	sun_month= 9	moon_month=10.0
+11-01-1983	[ 11]	sun_rashi=   8.903	tithi=  27.145	sun_month= 9	moon_month=10.0
+12-01-1983	[ 12]	sun_rashi=   8.937	tithi=  28.051	sun_month= 9	moon_month=10.0
+13-01-1983	[ 13]	sun_rashi=   8.971	tithi=  28.951	sun_month= 9	moon_month=10.0
+14-01-1983	[ 14]	sun_rashi=   9.005	tithi=  29.849	sun_month=10	moon_month=10.0
+15-01-1983	[ 15]	sun_rashi=   9.039	tithi=   0.748	sun_month=10	moon_month=11.0
+16-01-1983	[ 16]	sun_rashi=   9.073	tithi=   1.650	sun_month=10	moon_month=11.0
+17-01-1983	[ 17]	sun_rashi=   9.107	tithi=   2.558	sun_month=10	moon_month=11.0
+18-01-1983	[ 18]	sun_rashi=   9.141	tithi=   3.475	sun_month=10	moon_month=11.0
+19-01-1983	[ 19]	sun_rashi=   9.175	tithi=   4.405	sun_month=10	moon_month=11.0
+20-01-1983	[ 20]	sun_rashi=   9.209	tithi=   5.352	sun_month=10	moon_month=11.0
+21-01-1983	[ 21]	sun_rashi=   9.243	tithi=   6.320	sun_month=10	moon_month=11.0
+22-01-1983	[ 22]	sun_rashi=   9.277	tithi=   7.313	sun_month=10	moon_month=11.0
+23-01-1983	[ 23]	sun_rashi=   9.311	tithi=   8.336	sun_month=10	moon_month=11.0
+24-01-1983	[ 24]	sun_rashi=   9.344	tithi=   9.393	sun_month=10	moon_month=11.0
+25-01-1983	[ 25]	sun_rashi=   9.378	tithi=  10.486	sun_month=10	moon_month=11.0
+26-01-1983	[ 26]	sun_rashi=   9.412	tithi=  11.612	sun_month=10	moon_month=11.0
+27-01-1983	[ 27]	sun_rashi=   9.446	tithi=  12.769	sun_month=10	moon_month=11.0
+28-01-1983	[ 28]	sun_rashi=   9.480	tithi=  13.946	sun_month=10	moon_month=11.0
+29-01-1983	[ 29]	sun_rashi=   9.514	tithi=  15.132	sun_month=10	moon_month=11.0
+30-01-1983	[ 30]	sun_rashi=   9.548	tithi=  16.313	sun_month=10	moon_month=11.0
+31-01-1983	[ 31]	sun_rashi=   9.582	tithi=  17.474	sun_month=10	moon_month=11.0
+01-02-1983	[ 32]	sun_rashi=   9.615	tithi=  18.604	sun_month=10	moon_month=11.0
+02-02-1983	[ 33]	sun_rashi=   9.649	tithi=  19.696	sun_month=10	moon_month=11.0
+03-02-1983	[ 34]	sun_rashi=   9.683	tithi=  20.747	sun_month=10	moon_month=11.0
+04-02-1983	[ 35]	sun_rashi=   9.717	tithi=  21.758	sun_month=10	moon_month=11.0
+05-02-1983	[ 36]	sun_rashi=   9.751	tithi=  22.734	sun_month=10	moon_month=11.0
+06-02-1983	[ 37]	sun_rashi=   9.784	tithi=  23.680	sun_month=10	moon_month=11.0
+07-02-1983	[ 38]	sun_rashi=   9.818	tithi=  24.604	sun_month=10	moon_month=11.0
+08-02-1983	[ 39]	sun_rashi=   9.852	tithi=  25.512	sun_month=10	moon_month=11.0
+09-02-1983	[ 40]	sun_rashi=   9.886	tithi=  26.412	sun_month=10	moon_month=11.0
+10-02-1983	[ 41]	sun_rashi=   9.920	tithi=  27.308	sun_month=10	moon_month=11.0
+11-02-1983	[ 42]	sun_rashi=   9.953	tithi=  28.205	sun_month=10	moon_month=11.0
+12-02-1983	[ 43]	sun_rashi=   9.987	tithi=  29.109	sun_month=10	moon_month=11.0
+13-02-1983	[ 44]	sun_rashi=  10.021	tithi=   0.020	sun_month=11	moon_month=11.5
+14-02-1983	[ 45]	sun_rashi=  10.054	tithi=   0.942	sun_month=11	moon_month=12.0
+15-02-1983	[ 46]	sun_rashi=  10.088	tithi=   1.876	sun_month=11	moon_month=12.0
+16-02-1983	[ 47]	sun_rashi=  10.122	tithi=   2.823	sun_month=11	moon_month=12.0
+17-02-1983	[ 48]	sun_rashi=  10.155	tithi=   3.786	sun_month=11	moon_month=12.0
+18-02-1983	[ 49]	sun_rashi=  10.189	tithi=   4.765	sun_month=11	moon_month=12.0
+19-02-1983	[ 50]	sun_rashi=  10.223	tithi=   5.763	sun_month=11	moon_month=12.0
+20-02-1983	[ 51]	sun_rashi=  10.256	tithi=   6.783	sun_month=11	moon_month=12.0
+21-02-1983	[ 52]	sun_rashi=  10.290	tithi=   7.828	sun_month=11	moon_month=12.0
+22-02-1983	[ 53]	sun_rashi=  10.324	tithi=   8.901	sun_month=11	moon_month=12.0
+23-02-1983	[ 54]	sun_rashi=  10.357	tithi=  10.002	sun_month=11	moon_month=12.0
+24-02-1983	[ 55]	sun_rashi=  10.391	tithi=  11.131	sun_month=11	moon_month=12.0
+25-02-1983	[ 56]	sun_rashi=  10.424	tithi=  12.281	sun_month=11	moon_month=12.0
+26-02-1983	[ 57]	sun_rashi=  10.458	tithi=  13.446	sun_month=11	moon_month=12.0
+27-02-1983	[ 58]	sun_rashi=  10.491	tithi=  14.612	sun_month=11	moon_month=12.0
+28-02-1983	[ 59]	sun_rashi=  10.525	tithi=  15.768	sun_month=11	moon_month=12.0
+01-03-1983	[ 60]	sun_rashi=  10.558	tithi=  16.900	sun_month=11	moon_month=12.0
+02-03-1983	[ 61]	sun_rashi=  10.592	tithi=  18.000	sun_month=11	moon_month=12.0
+03-03-1983	[ 62]	sun_rashi=  10.625	tithi=  19.061	sun_month=11	moon_month=12.0
+04-03-1983	[ 63]	sun_rashi=  10.658	tithi=  20.082	sun_month=11	moon_month=12.0
+05-03-1983	[ 64]	sun_rashi=  10.692	tithi=  21.067	sun_month=11	moon_month=12.0
+06-03-1983	[ 65]	sun_rashi=  10.725	tithi=  22.019	sun_month=11	moon_month=12.0
+07-03-1983	[ 66]	sun_rashi=  10.758	tithi=  22.947	sun_month=11	moon_month=12.0
+08-03-1983	[ 67]	sun_rashi=  10.792	tithi=  23.857	sun_month=11	moon_month=12.0
+09-03-1983	[ 68]	sun_rashi=  10.825	tithi=  24.757	sun_month=11	moon_month=12.0
+10-03-1983	[ 69]	sun_rashi=  10.858	tithi=  25.655	sun_month=11	moon_month=12.0
+11-03-1983	[ 70]	sun_rashi=  10.892	tithi=  26.556	sun_month=11	moon_month=12.0
+12-03-1983	[ 71]	sun_rashi=  10.925	tithi=  27.466	sun_month=11	moon_month=12.0
+13-03-1983	[ 72]	sun_rashi=  10.958	tithi=  28.390	sun_month=11	moon_month=12.0
+14-03-1983	[ 73]	sun_rashi=  10.992	tithi=  29.328	sun_month=11	moon_month=12.0
+15-03-1983	[ 74]	sun_rashi=  11.025	tithi=   0.283	sun_month=12	moon_month= 1.0
+16-03-1983	[ 75]	sun_rashi=  11.058	tithi=   1.256	sun_month=12	moon_month= 1.0
+17-03-1983	[ 76]	sun_rashi=  11.091	tithi=   2.244	sun_month=12	moon_month= 1.0
+18-03-1983	[ 77]	sun_rashi=  11.124	tithi=   3.248	sun_month=12	moon_month= 1.0
+19-03-1983	[ 78]	sun_rashi=  11.158	tithi=   4.268	sun_month=12	moon_month= 1.0
+20-03-1983	[ 79]	sun_rashi=  11.191	tithi=   5.303	sun_month=12	moon_month= 1.0
+21-03-1983	[ 80]	sun_rashi=  11.224	tithi=   6.355	sun_month=12	moon_month= 1.0
+22-03-1983	[ 81]	sun_rashi=  11.257	tithi=   7.424	sun_month=12	moon_month= 1.0
+23-03-1983	[ 82]	sun_rashi=  11.290	tithi=   8.510	sun_month=12	moon_month= 1.0
+24-03-1983	[ 83]	sun_rashi=  11.323	tithi=   9.615	sun_month=12	moon_month= 1.0
+25-03-1983	[ 84]	sun_rashi=  11.356	tithi=  10.735	sun_month=12	moon_month= 1.0
+26-03-1983	[ 85]	sun_rashi=  11.389	tithi=  11.866	sun_month=12	moon_month= 1.0
+27-03-1983	[ 86]	sun_rashi=  11.422	tithi=  13.000	sun_month=12	moon_month= 1.0
+28-03-1983	[ 87]	sun_rashi=  11.455	tithi=  14.128	sun_month=12	moon_month= 1.0
+29-03-1983	[ 88]	sun_rashi=  11.488	tithi=  15.239	sun_month=12	moon_month= 1.0
+30-03-1983	[ 89]	sun_rashi=  11.521	tithi=  16.325	sun_month=12	moon_month= 1.0
+31-03-1983	[ 90]	sun_rashi=  11.554	tithi=  17.381	sun_month=12	moon_month= 1.0
+01-04-1983	[ 91]	sun_rashi=  11.587	tithi=  18.402	sun_month=12	moon_month= 1.0
+02-04-1983	[ 92]	sun_rashi=  11.620	tithi=  19.390	sun_month=12	moon_month= 1.0
+03-04-1983	[ 93]	sun_rashi=  11.652	tithi=  20.347	sun_month=12	moon_month= 1.0
+04-04-1983	[ 94]	sun_rashi=  11.685	tithi=  21.280	sun_month=12	moon_month= 1.0
+05-04-1983	[ 95]	sun_rashi=  11.718	tithi=  22.195	sun_month=12	moon_month= 1.0
+06-04-1983	[ 96]	sun_rashi=  11.751	tithi=  23.099	sun_month=12	moon_month= 1.0
+07-04-1983	[ 97]	sun_rashi=  11.784	tithi=  24.001	sun_month=12	moon_month= 1.0
+08-04-1983	[ 98]	sun_rashi=  11.817	tithi=  24.908	sun_month=12	moon_month= 1.0
+09-04-1983	[ 99]	sun_rashi=  11.849	tithi=  25.825	sun_month=12	moon_month= 1.0
+10-04-1983	[100]	sun_rashi=  11.882	tithi=  26.758	sun_month=12	moon_month= 1.0
+11-04-1983	[101]	sun_rashi=  11.915	tithi=  27.711	sun_month=12	moon_month= 1.0
+12-04-1983	[102]	sun_rashi=  11.947	tithi=  28.687	sun_month=12	moon_month= 1.0
+13-04-1983	[103]	sun_rashi=  11.980	tithi=  29.684	sun_month=12	moon_month= 1.0
+14-04-1983	[104]	sun_rashi=   0.013	tithi=   0.703	sun_month= 1	moon_month= 1.5
+15-04-1983	[105]	sun_rashi=   0.046	tithi=   1.740	sun_month= 1	moon_month= 1.5
+16-04-1983	[106]	sun_rashi=   0.078	tithi=   2.793	sun_month= 1	moon_month= 1.5
+17-04-1983	[107]	sun_rashi=   0.111	tithi=   3.858	sun_month= 1	moon_month= 1.5
+18-04-1983	[108]	sun_rashi=   0.143	tithi=   4.934	sun_month= 1	moon_month= 1.5
+19-04-1983	[109]	sun_rashi=   0.176	tithi=   6.018	sun_month= 1	moon_month= 1.5
+20-04-1983	[110]	sun_rashi=   0.208	tithi=   7.110	sun_month= 1	moon_month= 1.5
+21-04-1983	[111]	sun_rashi=   0.241	tithi=   8.207	sun_month= 1	moon_month= 1.5
+22-04-1983	[112]	sun_rashi=   0.274	tithi=   9.308	sun_month= 1	moon_month= 1.5
+23-04-1983	[113]	sun_rashi=   0.306	tithi=  10.410	sun_month= 1	moon_month= 1.5
+24-04-1983	[114]	sun_rashi=   0.339	tithi=  11.509	sun_month= 1	moon_month= 1.5
+25-04-1983	[115]	sun_rashi=   0.371	tithi=  12.599	sun_month= 1	moon_month= 1.5
+26-04-1983	[116]	sun_rashi=   0.403	tithi=  13.676	sun_month= 1	moon_month= 1.5
+27-04-1983	[117]	sun_rashi=   0.436	tithi=  14.733	sun_month= 1	moon_month= 1.5
+28-04-1983	[118]	sun_rashi=   0.468	tithi=  15.765	sun_month= 1	moon_month= 1.5
+29-04-1983	[119]	sun_rashi=   0.501	tithi=  16.771	sun_month= 1	moon_month= 1.5
+30-04-1983	[120]	sun_rashi=   0.533	tithi=  17.751	sun_month= 1	moon_month= 1.5
+01-05-1983	[121]	sun_rashi=   0.565	tithi=  18.706	sun_month= 1	moon_month= 1.5
+02-05-1983	[122]	sun_rashi=   0.598	tithi=  19.639	sun_month= 1	moon_month= 1.5
+03-05-1983	[123]	sun_rashi=   0.630	tithi=  20.557	sun_month= 1	moon_month= 1.5
+04-05-1983	[124]	sun_rashi=   0.662	tithi=  21.465	sun_month= 1	moon_month= 1.5
+05-05-1983	[125]	sun_rashi=   0.695	tithi=  22.371	sun_month= 1	moon_month= 1.5
+06-05-1983	[126]	sun_rashi=   0.727	tithi=  23.281	sun_month= 1	moon_month= 1.5
+07-05-1983	[127]	sun_rashi=   0.759	tithi=  24.202	sun_month= 1	moon_month= 1.5
+08-05-1983	[128]	sun_rashi=   0.791	tithi=  25.141	sun_month= 1	moon_month= 1.5
+09-05-1983	[129]	sun_rashi=   0.824	tithi=  26.102	sun_month= 1	moon_month= 1.5
+10-05-1983	[130]	sun_rashi=   0.856	tithi=  27.090	sun_month= 1	moon_month= 1.5
+11-05-1983	[131]	sun_rashi=   0.888	tithi=  28.106	sun_month= 1	moon_month= 1.5
+12-05-1983	[132]	sun_rashi=   0.920	tithi=  29.149	sun_month= 1	moon_month= 1.5
+13-05-1983	[133]	sun_rashi=   0.953	tithi=   0.217	sun_month= 1	moon_month= 2.0
+14-05-1983	[134]	sun_rashi=   0.985	tithi=   1.305	sun_month= 1	moon_month= 2.0
+15-05-1983	[135]	sun_rashi=   1.017	tithi=   2.408	sun_month= 2	moon_month= 2.0
+16-05-1983	[136]	sun_rashi=   1.049	tithi=   3.520	sun_month= 2	moon_month= 2.0
+17-05-1983	[137]	sun_rashi=   1.081	tithi=   4.635	sun_month= 2	moon_month= 2.0
+18-05-1983	[138]	sun_rashi=   1.113	tithi=   5.748	sun_month= 2	moon_month= 2.0
+19-05-1983	[139]	sun_rashi=   1.145	tithi=   6.855	sun_month= 2	moon_month= 2.0
+20-05-1983	[140]	sun_rashi=   1.178	tithi=   7.954	sun_month= 2	moon_month= 2.0
+21-05-1983	[141]	sun_rashi=   1.210	tithi=   9.041	sun_month= 2	moon_month= 2.0
+22-05-1983	[142]	sun_rashi=   1.242	tithi=  10.114	sun_month= 2	moon_month= 2.0
+23-05-1983	[143]	sun_rashi=   1.274	tithi=  11.173	sun_month= 2	moon_month= 2.0
+24-05-1983	[144]	sun_rashi=   1.306	tithi=  12.214	sun_month= 2	moon_month= 2.0
+25-05-1983	[145]	sun_rashi=   1.338	tithi=  13.236	sun_month= 2	moon_month= 2.0
+26-05-1983	[146]	sun_rashi=   1.370	tithi=  14.238	sun_month= 2	moon_month= 2.0
+27-05-1983	[147]	sun_rashi=   1.402	tithi=  15.220	sun_month= 2	moon_month= 2.0
+28-05-1983	[148]	sun_rashi=   1.434	tithi=  16.182	sun_month= 2	moon_month= 2.0
+29-05-1983	[149]	sun_rashi=   1.466	tithi=  17.125	sun_month= 2	moon_month= 2.0
+30-05-1983	[150]	sun_rashi=   1.498	tithi=  18.053	sun_month= 2	moon_month= 2.0
+31-05-1983	[151]	sun_rashi=   1.530	tithi=  18.970	sun_month= 2	moon_month= 2.0
+01-06-1983	[152]	sun_rashi=   1.562	tithi=  19.878	sun_month= 2	moon_month= 2.0
+02-06-1983	[153]	sun_rashi=   1.594	tithi=  20.786	sun_month= 2	moon_month= 2.0
+03-06-1983	[154]	sun_rashi=   1.626	tithi=  21.697	sun_month= 2	moon_month= 2.0
+04-06-1983	[155]	sun_rashi=   1.657	tithi=  22.619	sun_month= 2	moon_month= 2.0
+05-06-1983	[156]	sun_rashi=   1.689	tithi=  23.559	sun_month= 2	moon_month= 2.0
+06-06-1983	[157]	sun_rashi=   1.721	tithi=  24.521	sun_month= 2	moon_month= 2.0
+07-06-1983	[158]	sun_rashi=   1.753	tithi=  25.512	sun_month= 2	moon_month= 2.0
+08-06-1983	[159]	sun_rashi=   1.785	tithi=  26.534	sun_month= 2	moon_month= 2.0
+09-06-1983	[160]	sun_rashi=   1.817	tithi=  27.590	sun_month= 2	moon_month= 2.0
+10-06-1983	[161]	sun_rashi=   1.849	tithi=  28.677	sun_month= 2	moon_month= 2.0
+11-06-1983	[162]	sun_rashi=   1.881	tithi=  29.793	sun_month= 2	moon_month= 2.0
+12-06-1983	[163]	sun_rashi=   1.913	tithi=   0.929	sun_month= 2	moon_month= 3.0
+13-06-1983	[164]	sun_rashi=   1.945	tithi=   2.077	sun_month= 2	moon_month= 3.0
+14-06-1983	[165]	sun_rashi=   1.976	tithi=   3.229	sun_month= 2	moon_month= 3.0
+15-06-1983	[166]	sun_rashi=   2.008	tithi=   4.373	sun_month= 3	moon_month= 3.0
+16-06-1983	[167]	sun_rashi=   2.040	tithi=   5.504	sun_month= 3	moon_month= 3.0
+17-06-1983	[168]	sun_rashi=   2.072	tithi=   6.614	sun_month= 3	moon_month= 3.0
+18-06-1983	[169]	sun_rashi=   2.104	tithi=   7.700	sun_month= 3	moon_month= 3.0
+19-06-1983	[170]	sun_rashi=   2.136	tithi=   8.762	sun_month= 3	moon_month= 3.0
+20-06-1983	[171]	sun_rashi=   2.167	tithi=   9.800	sun_month= 3	moon_month= 3.0
+21-06-1983	[172]	sun_rashi=   2.199	tithi=  10.814	sun_month= 3	moon_month= 3.0
+22-06-1983	[173]	sun_rashi=   2.231	tithi=  11.807	sun_month= 3	moon_month= 3.0
+23-06-1983	[174]	sun_rashi=   2.263	tithi=  12.780	sun_month= 3	moon_month= 3.0
+24-06-1983	[175]	sun_rashi=   2.295	tithi=  13.737	sun_month= 3	moon_month= 3.0
+25-06-1983	[176]	sun_rashi=   2.326	tithi=  14.679	sun_month= 3	moon_month= 3.0
+26-06-1983	[177]	sun_rashi=   2.358	tithi=  15.608	sun_month= 3	moon_month= 3.0
+27-06-1983	[178]	sun_rashi=   2.390	tithi=  16.527	sun_month= 3	moon_month= 3.0
+28-06-1983	[179]	sun_rashi=   2.422	tithi=  17.438	sun_month= 3	moon_month= 3.0
+29-06-1983	[180]	sun_rashi=   2.453	tithi=  18.346	sun_month= 3	moon_month= 3.0
+30-06-1983	[181]	sun_rashi=   2.485	tithi=  19.254	sun_month= 3	moon_month= 3.0
+01-07-1983	[182]	sun_rashi=   2.517	tithi=  20.167	sun_month= 3	moon_month= 3.0
+02-07-1983	[183]	sun_rashi=   2.549	tithi=  21.089	sun_month= 3	moon_month= 3.0
+03-07-1983	[184]	sun_rashi=   2.581	tithi=  22.027	sun_month= 3	moon_month= 3.0
+04-07-1983	[185]	sun_rashi=   2.612	tithi=  22.986	sun_month= 3	moon_month= 3.0
+05-07-1983	[186]	sun_rashi=   2.644	tithi=  23.973	sun_month= 3	moon_month= 3.0
+06-07-1983	[187]	sun_rashi=   2.676	tithi=  24.991	sun_month= 3	moon_month= 3.0
+07-07-1983	[188]	sun_rashi=   2.708	tithi=  26.046	sun_month= 3	moon_month= 3.0
+08-07-1983	[189]	sun_rashi=   2.739	tithi=  27.136	sun_month= 3	moon_month= 3.0
+09-07-1983	[190]	sun_rashi=   2.771	tithi=  28.262	sun_month= 3	moon_month= 3.0
+10-07-1983	[191]	sun_rashi=   2.803	tithi=  29.416	sun_month= 3	moon_month= 3.0
+11-07-1983	[192]	sun_rashi=   2.835	tithi=   0.589	sun_month= 3	moon_month= 4.0
+12-07-1983	[193]	sun_rashi=   2.867	tithi=   1.770	sun_month= 3	moon_month= 4.0
+13-07-1983	[194]	sun_rashi=   2.898	tithi=   2.945	sun_month= 3	moon_month= 4.0
+14-07-1983	[195]	sun_rashi=   2.930	tithi=   4.102	sun_month= 3	moon_month= 4.0
+15-07-1983	[196]	sun_rashi=   2.962	tithi=   5.232	sun_month= 3	moon_month= 4.0
+16-07-1983	[197]	sun_rashi=   2.994	tithi=   6.329	sun_month= 3	moon_month= 4.0
+17-07-1983	[198]	sun_rashi=   3.026	tithi=   7.392	sun_month= 4	moon_month= 4.0
+18-07-1983	[199]	sun_rashi=   3.057	tithi=   8.421	sun_month= 4	moon_month= 4.0
+19-07-1983	[200]	sun_rashi=   3.089	tithi=   9.421	sun_month= 4	moon_month= 4.0
+20-07-1983	[201]	sun_rashi=   3.121	tithi=  10.395	sun_month= 4	moon_month= 4.0
+21-07-1983	[202]	sun_rashi=   3.153	tithi=  11.347	sun_month= 4	moon_month= 4.0
+22-07-1983	[203]	sun_rashi=   3.185	tithi=  12.284	sun_month= 4	moon_month= 4.0
+23-07-1983	[204]	sun_rashi=   3.216	tithi=  13.209	sun_month= 4	moon_month= 4.0
+24-07-1983	[205]	sun_rashi=   3.248	tithi=  14.125	sun_month= 4	moon_month= 4.0
+25-07-1983	[206]	sun_rashi=   3.280	tithi=  15.036	sun_month= 4	moon_month= 4.0
+26-07-1983	[207]	sun_rashi=   3.312	tithi=  15.944	sun_month= 4	moon_month= 4.0
+27-07-1983	[208]	sun_rashi=   3.344	tithi=  16.852	sun_month= 4	moon_month= 4.0
+28-07-1983	[209]	sun_rashi=   3.376	tithi=  17.762	sun_month= 4	moon_month= 4.0
+29-07-1983	[210]	sun_rashi=   3.407	tithi=  18.679	sun_month= 4	moon_month= 4.0
+30-07-1983	[211]	sun_rashi=   3.439	tithi=  19.604	sun_month= 4	moon_month= 4.0
+31-07-1983	[212]	sun_rashi=   3.471	tithi=  20.543	sun_month= 4	moon_month= 4.0
+01-08-1983	[213]	sun_rashi=   3.503	tithi=  21.500	sun_month= 4	moon_month= 4.0
+02-08-1983	[214]	sun_rashi=   3.535	tithi=  22.481	sun_month= 4	moon_month= 4.0
+03-08-1983	[215]	sun_rashi=   3.567	tithi=  23.491	sun_month= 4	moon_month= 4.0
+04-08-1983	[216]	sun_rashi=   3.599	tithi=  24.535	sun_month= 4	moon_month= 4.0
+05-08-1983	[217]	sun_rashi=   3.631	tithi=  25.616	sun_month= 4	moon_month= 4.0
+06-08-1983	[218]	sun_rashi=   3.663	tithi=  26.734	sun_month= 4	moon_month= 4.0
+07-08-1983	[219]	sun_rashi=   3.695	tithi=  27.886	sun_month= 4	moon_month= 4.0
+08-08-1983	[220]	sun_rashi=   3.726	tithi=  29.064	sun_month= 4	moon_month= 4.0
+09-08-1983	[221]	sun_rashi=   3.758	tithi=   0.256	sun_month= 4	moon_month= 5.0
+10-08-1983	[222]	sun_rashi=   3.790	tithi=   1.447	sun_month= 4	moon_month= 5.0
+11-08-1983	[223]	sun_rashi=   3.822	tithi=   2.623	sun_month= 4	moon_month= 5.0
+12-08-1983	[224]	sun_rashi=   3.854	tithi=   3.771	sun_month= 4	moon_month= 5.0
+13-08-1983	[225]	sun_rashi=   3.886	tithi=   4.882	sun_month= 4	moon_month= 5.0
+14-08-1983	[226]	sun_rashi=   3.918	tithi=   5.953	sun_month= 4	moon_month= 5.0
+15-08-1983	[227]	sun_rashi=   3.950	tithi=   6.984	sun_month= 4	moon_month= 5.0
+16-08-1983	[228]	sun_rashi=   3.982	tithi=   7.980	sun_month= 4	moon_month= 5.0
+17-08-1983	[229]	sun_rashi=   4.014	tithi=   8.946	sun_month= 5	moon_month= 5.0
+18-08-1983	[230]	sun_rashi=   4.046	tithi=   9.888	sun_month= 5	moon_month= 5.0
+19-08-1983	[231]	sun_rashi=   4.078	tithi=  10.814	sun_month= 5	moon_month= 5.0
+20-08-1983	[232]	sun_rashi=   4.111	tithi=  11.728	sun_month= 5	moon_month= 5.0
+21-08-1983	[233]	sun_rashi=   4.143	tithi=  12.636	sun_month= 5	moon_month= 5.0
+22-08-1983	[234]	sun_rashi=   4.175	tithi=  13.542	sun_month= 5	moon_month= 5.0
+23-08-1983	[235]	sun_rashi=   4.207	tithi=  14.449	sun_month= 5	moon_month= 5.0
+24-08-1983	[236]	sun_rashi=   4.239	tithi=  15.361	sun_month= 5	moon_month= 5.0
+25-08-1983	[237]	sun_rashi=   4.271	tithi=  16.278	sun_month= 5	moon_month= 5.0
+26-08-1983	[238]	sun_rashi=   4.303	tithi=  17.203	sun_month= 5	moon_month= 5.0
+27-08-1983	[239]	sun_rashi=   4.335	tithi=  18.137	sun_month= 5	moon_month= 5.0
+28-08-1983	[240]	sun_rashi=   4.367	tithi=  19.084	sun_month= 5	moon_month= 5.0
+29-08-1983	[241]	sun_rashi=   4.400	tithi=  20.047	sun_month= 5	moon_month= 5.0
+30-08-1983	[242]	sun_rashi=   4.432	tithi=  21.029	sun_month= 5	moon_month= 5.0
+31-08-1983	[243]	sun_rashi=   4.464	tithi=  22.034	sun_month= 5	moon_month= 5.0
+01-09-1983	[244]	sun_rashi=   4.496	tithi=  23.068	sun_month= 5	moon_month= 5.0
+02-09-1983	[245]	sun_rashi=   4.528	tithi=  24.135	sun_month= 5	moon_month= 5.0
+03-09-1983	[246]	sun_rashi=   4.561	tithi=  25.235	sun_month= 5	moon_month= 5.0
+04-09-1983	[247]	sun_rashi=   4.593	tithi=  26.369	sun_month= 5	moon_month= 5.0
+05-09-1983	[248]	sun_rashi=   4.625	tithi=  27.530	sun_month= 5	moon_month= 5.0
+06-09-1983	[249]	sun_rashi=   4.658	tithi=  28.711	sun_month= 5	moon_month= 5.0
+07-09-1983	[250]	sun_rashi=   4.690	tithi=  29.896	sun_month= 5	moon_month= 5.0
+08-09-1983	[251]	sun_rashi=   4.722	tithi=   1.072	sun_month= 5	moon_month= 6.0
+09-09-1983	[252]	sun_rashi=   4.755	tithi=   2.225	sun_month= 5	moon_month= 6.0
+10-09-1983	[253]	sun_rashi=   4.787	tithi=   3.343	sun_month= 5	moon_month= 6.0
+11-09-1983	[254]	sun_rashi=   4.820	tithi=   4.421	sun_month= 5	moon_month= 6.0
+12-09-1983	[255]	sun_rashi=   4.852	tithi=   5.459	sun_month= 5	moon_month= 6.0
+13-09-1983	[256]	sun_rashi=   4.884	tithi=   6.458	sun_month= 5	moon_month= 6.0
+14-09-1983	[257]	sun_rashi=   4.917	tithi=   7.424	sun_month= 5	moon_month= 6.0
+15-09-1983	[258]	sun_rashi=   4.949	tithi=   8.364	sun_month= 5	moon_month= 6.0
+16-09-1983	[259]	sun_rashi=   4.982	tithi=   9.286	sun_month= 5	moon_month= 6.0
+17-09-1983	[260]	sun_rashi=   5.014	tithi=  10.196	sun_month= 6	moon_month= 6.0
+18-09-1983	[261]	sun_rashi=   5.047	tithi=  11.101	sun_month= 6	moon_month= 6.0
+19-09-1983	[262]	sun_rashi=   5.079	tithi=  12.006	sun_month= 6	moon_month= 6.0
+20-09-1983	[263]	sun_rashi=   5.112	tithi=  12.916	sun_month= 6	moon_month= 6.0
+21-09-1983	[264]	sun_rashi=   5.144	tithi=  13.834	sun_month= 6	moon_month= 6.0
+22-09-1983	[265]	sun_rashi=   5.177	tithi=  14.762	sun_month= 6	moon_month= 6.0
+23-09-1983	[266]	sun_rashi=   5.209	tithi=  15.701	sun_month= 6	moon_month= 6.0
+24-09-1983	[267]	sun_rashi=   5.242	tithi=  16.652	sun_month= 6	moon_month= 6.0
+25-09-1983	[268]	sun_rashi=   5.275	tithi=  17.616	sun_month= 6	moon_month= 6.0
+26-09-1983	[269]	sun_rashi=   5.307	tithi=  18.595	sun_month= 6	moon_month= 6.0
+27-09-1983	[270]	sun_rashi=   5.340	tithi=  19.590	sun_month= 6	moon_month= 6.0
+28-09-1983	[271]	sun_rashi=   5.373	tithi=  20.603	sun_month= 6	moon_month= 6.0
+29-09-1983	[272]	sun_rashi=   5.405	tithi=  21.637	sun_month= 6	moon_month= 6.0
+30-09-1983	[273]	sun_rashi=   5.438	tithi=  22.696	sun_month= 6	moon_month= 6.0
+01-10-1983	[274]	sun_rashi=   5.471	tithi=  23.780	sun_month= 6	moon_month= 6.0
+02-10-1983	[275]	sun_rashi=   5.504	tithi=  24.891	sun_month= 6	moon_month= 6.0
+03-10-1983	[276]	sun_rashi=   5.536	tithi=  26.025	sun_month= 6	moon_month= 6.0
+04-10-1983	[277]	sun_rashi=   5.569	tithi=  27.176	sun_month= 6	moon_month= 6.0
+05-10-1983	[278]	sun_rashi=   5.602	tithi=  28.334	sun_month= 6	moon_month= 6.0
+06-10-1983	[279]	sun_rashi=   5.635	tithi=  29.487	sun_month= 6	moon_month= 6.0
+07-10-1983	[280]	sun_rashi=   5.668	tithi=   0.624	sun_month= 6	moon_month= 7.0
+08-10-1983	[281]	sun_rashi=   5.701	tithi=   1.733	sun_month= 6	moon_month= 7.0
+09-10-1983	[282]	sun_rashi=   5.734	tithi=   2.808	sun_month= 6	moon_month= 7.0
+10-10-1983	[283]	sun_rashi=   5.767	tithi=   3.846	sun_month= 6	moon_month= 7.0
+11-10-1983	[284]	sun_rashi=   5.800	tithi=   4.848	sun_month= 6	moon_month= 7.0
+12-10-1983	[285]	sun_rashi=   5.832	tithi=   5.818	sun_month= 6	moon_month= 7.0
+13-10-1983	[286]	sun_rashi=   5.865	tithi=   6.760	sun_month= 6	moon_month= 7.0
+14-10-1983	[287]	sun_rashi=   5.898	tithi=   7.683	sun_month= 6	moon_month= 7.0
+15-10-1983	[288]	sun_rashi=   5.931	tithi=   8.594	sun_month= 6	moon_month= 7.0
+16-10-1983	[289]	sun_rashi=   5.964	tithi=   9.499	sun_month= 6	moon_month= 7.0
+17-10-1983	[290]	sun_rashi=   5.998	tithi=  10.405	sun_month= 6	moon_month= 7.0
+18-10-1983	[291]	sun_rashi=   6.031	tithi=  11.318	sun_month= 7	moon_month= 7.0
+19-10-1983	[292]	sun_rashi=   6.064	tithi=  12.242	sun_month= 7	moon_month= 7.0
+20-10-1983	[293]	sun_rashi=   6.097	tithi=  13.180	sun_month= 7	moon_month= 7.0
+21-10-1983	[294]	sun_rashi=   6.130	tithi=  14.135	sun_month= 7	moon_month= 7.0
+22-10-1983	[295]	sun_rashi=   6.163	tithi=  15.107	sun_month= 7	moon_month= 7.0
+23-10-1983	[296]	sun_rashi=   6.196	tithi=  16.097	sun_month= 7	moon_month= 7.0
+24-10-1983	[297]	sun_rashi=   6.229	tithi=  17.102	sun_month= 7	moon_month= 7.0
+25-10-1983	[298]	sun_rashi=   6.263	tithi=  18.123	sun_month= 7	moon_month= 7.0
+26-10-1983	[299]	sun_rashi=   6.296	tithi=  19.160	sun_month= 7	moon_month= 7.0
+27-10-1983	[300]	sun_rashi=   6.329	tithi=  20.212	sun_month= 7	moon_month= 7.0
+28-10-1983	[301]	sun_rashi=   6.362	tithi=  21.279	sun_month= 7	moon_month= 7.0
+29-10-1983	[302]	sun_rashi=   6.396	tithi=  22.361	sun_month= 7	moon_month= 7.0
+30-10-1983	[303]	sun_rashi=   6.429	tithi=  23.457	sun_month= 7	moon_month= 7.0
+31-10-1983	[304]	sun_rashi=   6.462	tithi=  24.566	sun_month= 7	moon_month= 7.0
+01-11-1983	[305]	sun_rashi=   6.496	tithi=  25.682	sun_month= 7	moon_month= 7.0
+02-11-1983	[306]	sun_rashi=   6.529	tithi=  26.802	sun_month= 7	moon_month= 7.0
+03-11-1983	[307]	sun_rashi=   6.562	tithi=  27.916	sun_month= 7	moon_month= 7.0
+04-11-1983	[308]	sun_rashi=   6.596	tithi=  29.018	sun_month= 7	moon_month= 7.0
+05-11-1983	[309]	sun_rashi=   6.629	tithi=   0.099	sun_month= 7	moon_month= 8.0
+06-11-1983	[310]	sun_rashi=   6.663	tithi=   1.155	sun_month= 7	moon_month= 8.0
+07-11-1983	[311]	sun_rashi=   6.696	tithi=   2.181	sun_month= 7	moon_month= 8.0
+08-11-1983	[312]	sun_rashi=   6.729	tithi=   3.178	sun_month= 7	moon_month= 8.0
+09-11-1983	[313]	sun_rashi=   6.763	tithi=   4.146	sun_month= 7	moon_month= 8.0
+10-11-1983	[314]	sun_rashi=   6.796	tithi=   5.090	sun_month= 7	moon_month= 8.0
+11-11-1983	[315]	sun_rashi=   6.830	tithi=   6.015	sun_month= 7	moon_month= 8.0
+12-11-1983	[316]	sun_rashi=   6.863	tithi=   6.926	sun_month= 7	moon_month= 8.0
+13-11-1983	[317]	sun_rashi=   6.897	tithi=   7.832	sun_month= 7	moon_month= 8.0
+14-11-1983	[318]	sun_rashi=   6.931	tithi=   8.738	sun_month= 7	moon_month= 8.0
+15-11-1983	[319]	sun_rashi=   6.964	tithi=   9.652	sun_month= 7	moon_month= 8.0
+16-11-1983	[320]	sun_rashi=   6.998	tithi=  10.578	sun_month= 7	moon_month= 8.0
+17-11-1983	[321]	sun_rashi=   7.031	tithi=  11.523	sun_month= 8	moon_month= 8.0
+18-11-1983	[322]	sun_rashi=   7.065	tithi=  12.489	sun_month= 8	moon_month= 8.0
+19-11-1983	[323]	sun_rashi=   7.098	tithi=  13.479	sun_month= 8	moon_month= 8.0
+20-11-1983	[324]	sun_rashi=   7.132	tithi=  14.493	sun_month= 8	moon_month= 8.0
+21-11-1983	[325]	sun_rashi=   7.166	tithi=  15.529	sun_month= 8	moon_month= 8.0
+22-11-1983	[326]	sun_rashi=   7.199	tithi=  16.586	sun_month= 8	moon_month= 8.0
+23-11-1983	[327]	sun_rashi=   7.233	tithi=  17.659	sun_month= 8	moon_month= 8.0
+24-11-1983	[328]	sun_rashi=   7.267	tithi=  18.745	sun_month= 8	moon_month= 8.0
+25-11-1983	[329]	sun_rashi=   7.300	tithi=  19.839	sun_month= 8	moon_month= 8.0
+26-11-1983	[330]	sun_rashi=   7.334	tithi=  20.938	sun_month= 8	moon_month= 8.0
+27-11-1983	[331]	sun_rashi=   7.368	tithi=  22.038	sun_month= 8	moon_month= 8.0
+28-11-1983	[332]	sun_rashi=   7.402	tithi=  23.136	sun_month= 8	moon_month= 8.0
+29-11-1983	[333]	sun_rashi=   7.435	tithi=  24.228	sun_month= 8	moon_month= 8.0
+30-11-1983	[334]	sun_rashi=   7.469	tithi=  25.313	sun_month= 8	moon_month= 8.0
+01-12-1983	[335]	sun_rashi=   7.503	tithi=  26.387	sun_month= 8	moon_month= 8.0
+02-12-1983	[336]	sun_rashi=   7.537	tithi=  27.446	sun_month= 8	moon_month= 8.0
+03-12-1983	[337]	sun_rashi=   7.571	tithi=  28.489	sun_month= 8	moon_month= 8.0
+04-12-1983	[338]	sun_rashi=   7.604	tithi=  29.512	sun_month= 8	moon_month= 8.0
+05-12-1983	[339]	sun_rashi=   7.638	tithi=   0.514	sun_month= 8	moon_month= 9.0
+06-12-1983	[340]	sun_rashi=   7.672	tithi=   1.493	sun_month= 8	moon_month= 9.0
+07-12-1983	[341]	sun_rashi=   7.706	tithi=   2.452	sun_month= 8	moon_month= 9.0
+08-12-1983	[342]	sun_rashi=   7.740	tithi=   3.391	sun_month= 8	moon_month= 9.0
+09-12-1983	[343]	sun_rashi=   7.774	tithi=   4.314	sun_month= 8	moon_month= 9.0
+10-12-1983	[344]	sun_rashi=   7.808	tithi=   5.225	sun_month= 8	moon_month= 9.0
+11-12-1983	[345]	sun_rashi=   7.842	tithi=   6.130	sun_month= 8	moon_month= 9.0
+12-12-1983	[346]	sun_rashi=   7.875	tithi=   7.035	sun_month= 8	moon_month= 9.0
+13-12-1983	[347]	sun_rashi=   7.909	tithi=   7.946	sun_month= 8	moon_month= 9.0
+14-12-1983	[348]	sun_rashi=   7.943	tithi=   8.870	sun_month= 8	moon_month= 9.0
+15-12-1983	[349]	sun_rashi=   7.977	tithi=   9.813	sun_month= 8	moon_month= 9.0
+16-12-1983	[350]	sun_rashi=   8.011	tithi=  10.780	sun_month= 9	moon_month= 9.0
+17-12-1983	[351]	sun_rashi=   8.045	tithi=  11.776	sun_month= 9	moon_month= 9.0
+18-12-1983	[352]	sun_rashi=   8.079	tithi=  12.804	sun_month= 9	moon_month= 9.0
+19-12-1983	[353]	sun_rashi=   8.113	tithi=  13.863	sun_month= 9	moon_month= 9.0
+20-12-1983	[354]	sun_rashi=   8.147	tithi=  14.951	sun_month= 9	moon_month= 9.0
+21-12-1983	[355]	sun_rashi=   8.181	tithi=  16.063	sun_month= 9	moon_month= 9.0
+22-12-1983	[356]	sun_rashi=   8.215	tithi=  17.190	sun_month= 9	moon_month= 9.0
+23-12-1983	[357]	sun_rashi=   8.249	tithi=  18.325	sun_month= 9	moon_month= 9.0
+24-12-1983	[358]	sun_rashi=   8.283	tithi=  19.458	sun_month= 9	moon_month= 9.0
+25-12-1983	[359]	sun_rashi=   8.317	tithi=  20.581	sun_month= 9	moon_month= 9.0
+26-12-1983	[360]	sun_rashi=   8.351	tithi=  21.688	sun_month= 9	moon_month= 9.0
+27-12-1983	[361]	sun_rashi=   8.385	tithi=  22.775	sun_month= 9	moon_month= 9.0
+28-12-1983	[362]	sun_rashi=   8.419	tithi=  23.842	sun_month= 9	moon_month= 9.0
+29-12-1983	[363]	sun_rashi=   8.453	tithi=  24.887	sun_month= 9	moon_month= 9.0
+30-12-1983	[364]	sun_rashi=   8.487	tithi=  25.912	sun_month= 9	moon_month= 9.0
+31-12-1983	[365]	sun_rashi=   8.521	tithi=  26.918	sun_month= 9	moon_month= 9.0
+01-01-1984	[366]	sun_rashi=   8.555	tithi=  27.906	sun_month= 9	moon_month= 9.0

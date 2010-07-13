@@ -1,0 +1,366 @@
+01-01-2010	[  1]	sun_rashi=   8.566	tithi=  15.283	sun_month= 9	moon_month=10.0
+02-01-2010	[  2]	sun_rashi=   8.600	tithi=  16.455	sun_month= 9	moon_month=10.0
+03-01-2010	[  3]	sun_rashi=   8.634	tithi=  17.623	sun_month= 9	moon_month=10.0
+04-01-2010	[  4]	sun_rashi=   8.668	tithi=  18.778	sun_month= 9	moon_month=10.0
+05-01-2010	[  5]	sun_rashi=   8.702	tithi=  19.909	sun_month= 9	moon_month=10.0
+06-01-2010	[  6]	sun_rashi=   8.736	tithi=  21.011	sun_month= 9	moon_month=10.0
+07-01-2010	[  7]	sun_rashi=   8.770	tithi=  22.081	sun_month= 9	moon_month=10.0
+08-01-2010	[  8]	sun_rashi=   8.804	tithi=  23.120	sun_month= 9	moon_month=10.0
+09-01-2010	[  9]	sun_rashi=   8.838	tithi=  24.130	sun_month= 9	moon_month=10.0
+10-01-2010	[ 10]	sun_rashi=   8.872	tithi=  25.114	sun_month= 9	moon_month=10.0
+11-01-2010	[ 11]	sun_rashi=   8.906	tithi=  26.076	sun_month= 9	moon_month=10.0
+12-01-2010	[ 12]	sun_rashi=   8.940	tithi=  27.019	sun_month= 9	moon_month=10.0
+13-01-2010	[ 13]	sun_rashi=   8.974	tithi=  27.947	sun_month= 9	moon_month=10.0
+14-01-2010	[ 14]	sun_rashi=   9.008	tithi=  28.863	sun_month=10	moon_month=10.0
+15-01-2010	[ 15]	sun_rashi=   9.042	tithi=  29.771	sun_month=10	moon_month=10.0
+16-01-2010	[ 16]	sun_rashi=   9.076	tithi=   0.672	sun_month=10	moon_month=11.0
+17-01-2010	[ 17]	sun_rashi=   9.110	tithi=   1.571	sun_month=10	moon_month=11.0
+18-01-2010	[ 18]	sun_rashi=   9.144	tithi=   2.469	sun_month=10	moon_month=11.0
+19-01-2010	[ 19]	sun_rashi=   9.178	tithi=   3.371	sun_month=10	moon_month=11.0
+20-01-2010	[ 20]	sun_rashi=   9.212	tithi=   4.280	sun_month=10	moon_month=11.0
+21-01-2010	[ 21]	sun_rashi=   9.245	tithi=   5.201	sun_month=10	moon_month=11.0
+22-01-2010	[ 22]	sun_rashi=   9.279	tithi=   6.140	sun_month=10	moon_month=11.0
+23-01-2010	[ 23]	sun_rashi=   9.313	tithi=   7.101	sun_month=10	moon_month=11.0
+24-01-2010	[ 24]	sun_rashi=   9.347	tithi=   8.090	sun_month=10	moon_month=11.0
+25-01-2010	[ 25]	sun_rashi=   9.381	tithi=   9.112	sun_month=10	moon_month=11.0
+26-01-2010	[ 26]	sun_rashi=   9.415	tithi=  10.171	sun_month=10	moon_month=11.0
+27-01-2010	[ 27]	sun_rashi=   9.449	tithi=  11.268	sun_month=10	moon_month=11.0
+28-01-2010	[ 28]	sun_rashi=   9.483	tithi=  12.400	sun_month=10	moon_month=11.0
+29-01-2010	[ 29]	sun_rashi=   9.517	tithi=  13.562	sun_month=10	moon_month=11.0
+30-01-2010	[ 30]	sun_rashi=   9.550	tithi=  14.743	sun_month=10	moon_month=11.0
+31-01-2010	[ 31]	sun_rashi=   9.584	tithi=  15.931	sun_month=10	moon_month=11.0
+01-02-2010	[ 32]	sun_rashi=   9.618	tithi=  17.111	sun_month=10	moon_month=11.0
+02-02-2010	[ 33]	sun_rashi=   9.652	tithi=  18.270	sun_month=10	moon_month=11.0
+03-02-2010	[ 34]	sun_rashi=   9.686	tithi=  19.398	sun_month=10	moon_month=11.0
+04-02-2010	[ 35]	sun_rashi=   9.720	tithi=  20.488	sun_month=10	moon_month=11.0
+05-02-2010	[ 36]	sun_rashi=   9.753	tithi=  21.540	sun_month=10	moon_month=11.0
+06-02-2010	[ 37]	sun_rashi=   9.787	tithi=  22.553	sun_month=10	moon_month=11.0
+07-02-2010	[ 38]	sun_rashi=   9.821	tithi=  23.533	sun_month=10	moon_month=11.0
+08-02-2010	[ 39]	sun_rashi=   9.855	tithi=  24.486	sun_month=10	moon_month=11.0
+09-02-2010	[ 40]	sun_rashi=   9.889	tithi=  25.416	sun_month=10	moon_month=11.0
+10-02-2010	[ 41]	sun_rashi=   9.922	tithi=  26.331	sun_month=10	moon_month=11.0
+11-02-2010	[ 42]	sun_rashi=   9.956	tithi=  27.236	sun_month=10	moon_month=11.0
+12-02-2010	[ 43]	sun_rashi=   9.990	tithi=  28.135	sun_month=10	moon_month=11.0
+13-02-2010	[ 44]	sun_rashi=  10.023	tithi=  29.033	sun_month=11	moon_month=11.0
+14-02-2010	[ 45]	sun_rashi=  10.057	tithi=  29.932	sun_month=11	moon_month=11.0
+15-02-2010	[ 46]	sun_rashi=  10.091	tithi=   0.836	sun_month=11	moon_month=12.0
+16-02-2010	[ 47]	sun_rashi=  10.125	tithi=   1.747	sun_month=11	moon_month=12.0
+17-02-2010	[ 48]	sun_rashi=  10.158	tithi=   2.668	sun_month=11	moon_month=12.0
+18-02-2010	[ 49]	sun_rashi=  10.192	tithi=   3.600	sun_month=11	moon_month=12.0
+19-02-2010	[ 50]	sun_rashi=  10.225	tithi=   4.547	sun_month=11	moon_month=12.0
+20-02-2010	[ 51]	sun_rashi=  10.259	tithi=   5.512	sun_month=11	moon_month=12.0
+21-02-2010	[ 52]	sun_rashi=  10.293	tithi=   6.499	sun_month=11	moon_month=12.0
+22-02-2010	[ 53]	sun_rashi=  10.326	tithi=   7.512	sun_month=11	moon_month=12.0
+23-02-2010	[ 54]	sun_rashi=  10.360	tithi=   8.555	sun_month=11	moon_month=12.0
+24-02-2010	[ 55]	sun_rashi=  10.393	tithi=   9.631	sun_month=11	moon_month=12.0
+25-02-2010	[ 56]	sun_rashi=  10.427	tithi=  10.741	sun_month=11	moon_month=12.0
+26-02-2010	[ 57]	sun_rashi=  10.460	tithi=  11.881	sun_month=11	moon_month=12.0
+27-02-2010	[ 58]	sun_rashi=  10.494	tithi=  13.047	sun_month=11	moon_month=12.0
+28-02-2010	[ 59]	sun_rashi=  10.527	tithi=  14.227	sun_month=11	moon_month=12.0
+01-03-2010	[ 60]	sun_rashi=  10.561	tithi=  15.408	sun_month=11	moon_month=12.0
+02-03-2010	[ 61]	sun_rashi=  10.594	tithi=  16.577	sun_month=11	moon_month=12.0
+03-03-2010	[ 62]	sun_rashi=  10.628	tithi=  17.719	sun_month=11	moon_month=12.0
+04-03-2010	[ 63]	sun_rashi=  10.661	tithi=  18.826	sun_month=11	moon_month=12.0
+05-03-2010	[ 64]	sun_rashi=  10.694	tithi=  19.893	sun_month=11	moon_month=12.0
+06-03-2010	[ 65]	sun_rashi=  10.728	tithi=  20.919	sun_month=11	moon_month=12.0
+07-03-2010	[ 66]	sun_rashi=  10.761	tithi=  21.906	sun_month=11	moon_month=12.0
+08-03-2010	[ 67]	sun_rashi=  10.795	tithi=  22.862	sun_month=11	moon_month=12.0
+09-03-2010	[ 68]	sun_rashi=  10.828	tithi=  23.792	sun_month=11	moon_month=12.0
+10-03-2010	[ 69]	sun_rashi=  10.861	tithi=  24.704	sun_month=11	moon_month=12.0
+11-03-2010	[ 70]	sun_rashi=  10.895	tithi=  25.606	sun_month=11	moon_month=12.0
+12-03-2010	[ 71]	sun_rashi=  10.928	tithi=  26.503	sun_month=11	moon_month=12.0
+13-03-2010	[ 72]	sun_rashi=  10.961	tithi=  27.402	sun_month=11	moon_month=12.0
+14-03-2010	[ 73]	sun_rashi=  10.994	tithi=  28.307	sun_month=11	moon_month=12.0
+15-03-2010	[ 74]	sun_rashi=  11.028	tithi=  29.221	sun_month=12	moon_month=12.0
+16-03-2010	[ 75]	sun_rashi=  11.061	tithi=   0.146	sun_month=12	moon_month= 1.0
+17-03-2010	[ 76]	sun_rashi=  11.094	tithi=   1.085	sun_month=12	moon_month= 1.0
+18-03-2010	[ 77]	sun_rashi=  11.127	tithi=   2.037	sun_month=12	moon_month= 1.0
+19-03-2010	[ 78]	sun_rashi=  11.160	tithi=   3.004	sun_month=12	moon_month= 1.0
+20-03-2010	[ 79]	sun_rashi=  11.193	tithi=   3.987	sun_month=12	moon_month= 1.0
+21-03-2010	[ 80]	sun_rashi=  11.227	tithi=   4.987	sun_month=12	moon_month= 1.0
+22-03-2010	[ 81]	sun_rashi=  11.260	tithi=   6.006	sun_month=12	moon_month= 1.0
+23-03-2010	[ 82]	sun_rashi=  11.293	tithi=   7.046	sun_month=12	moon_month= 1.0
+24-03-2010	[ 83]	sun_rashi=  11.326	tithi=   8.111	sun_month=12	moon_month= 1.0
+25-03-2010	[ 84]	sun_rashi=  11.359	tithi=   9.200	sun_month=12	moon_month= 1.0
+26-03-2010	[ 85]	sun_rashi=  11.392	tithi=  10.315	sun_month=12	moon_month= 1.0
+27-03-2010	[ 86]	sun_rashi=  11.425	tithi=  11.451	sun_month=12	moon_month= 1.0
+28-03-2010	[ 87]	sun_rashi=  11.458	tithi=  12.604	sun_month=12	moon_month= 1.0
+29-03-2010	[ 88]	sun_rashi=  11.491	tithi=  13.762	sun_month=12	moon_month= 1.0
+30-03-2010	[ 89]	sun_rashi=  11.524	tithi=  14.914	sun_month=12	moon_month= 1.0
+31-03-2010	[ 90]	sun_rashi=  11.557	tithi=  16.049	sun_month=12	moon_month= 1.0
+01-04-2010	[ 91]	sun_rashi=  11.590	tithi=  17.155	sun_month=12	moon_month= 1.0
+02-04-2010	[ 92]	sun_rashi=  11.622	tithi=  18.225	sun_month=12	moon_month= 1.0
+03-04-2010	[ 93]	sun_rashi=  11.655	tithi=  19.258	sun_month=12	moon_month= 1.0
+04-04-2010	[ 94]	sun_rashi=  11.688	tithi=  20.253	sun_month=12	moon_month= 1.0
+05-04-2010	[ 95]	sun_rashi=  11.721	tithi=  21.216	sun_month=12	moon_month= 1.0
+06-04-2010	[ 96]	sun_rashi=  11.754	tithi=  22.152	sun_month=12	moon_month= 1.0
+07-04-2010	[ 97]	sun_rashi=  11.787	tithi=  23.068	sun_month=12	moon_month= 1.0
+08-04-2010	[ 98]	sun_rashi=  11.819	tithi=  23.973	sun_month=12	moon_month= 1.0
+09-04-2010	[ 99]	sun_rashi=  11.852	tithi=  24.874	sun_month=12	moon_month= 1.0
+10-04-2010	[100]	sun_rashi=  11.885	tithi=  25.777	sun_month=12	moon_month= 1.0
+11-04-2010	[101]	sun_rashi=  11.918	tithi=  26.689	sun_month=12	moon_month= 1.0
+12-04-2010	[102]	sun_rashi=  11.950	tithi=  27.613	sun_month=12	moon_month= 1.0
+13-04-2010	[103]	sun_rashi=  11.983	tithi=  28.554	sun_month=12	moon_month= 1.0
+14-04-2010	[104]	sun_rashi=   0.016	tithi=  29.513	sun_month= 1	moon_month= 1.0
+15-04-2010	[105]	sun_rashi=   0.048	tithi=   0.490	sun_month= 1	moon_month= 1.5
+16-04-2010	[106]	sun_rashi=   0.081	tithi=   1.485	sun_month= 1	moon_month= 1.5
+17-04-2010	[107]	sun_rashi=   0.114	tithi=   2.497	sun_month= 1	moon_month= 1.5
+18-04-2010	[108]	sun_rashi=   0.146	tithi=   3.523	sun_month= 1	moon_month= 1.5
+19-04-2010	[109]	sun_rashi=   0.179	tithi=   4.565	sun_month= 1	moon_month= 1.5
+20-04-2010	[110]	sun_rashi=   0.211	tithi=   5.621	sun_month= 1	moon_month= 1.5
+21-04-2010	[111]	sun_rashi=   0.244	tithi=   6.691	sun_month= 1	moon_month= 1.5
+22-04-2010	[112]	sun_rashi=   0.276	tithi=   7.776	sun_month= 1	moon_month= 1.5
+23-04-2010	[113]	sun_rashi=   0.309	tithi=   8.875	sun_month= 1	moon_month= 1.5
+24-04-2010	[114]	sun_rashi=   0.341	tithi=   9.987	sun_month= 1	moon_month= 1.5
+25-04-2010	[115]	sun_rashi=   0.374	tithi=  11.108	sun_month= 1	moon_month= 1.5
+26-04-2010	[116]	sun_rashi=   0.406	tithi=  12.232	sun_month= 1	moon_month= 1.5
+27-04-2010	[117]	sun_rashi=   0.439	tithi=  13.351	sun_month= 1	moon_month= 1.5
+28-04-2010	[118]	sun_rashi=   0.471	tithi=  14.456	sun_month= 1	moon_month= 1.5
+29-04-2010	[119]	sun_rashi=   0.503	tithi=  15.540	sun_month= 1	moon_month= 1.5
+30-04-2010	[120]	sun_rashi=   0.536	tithi=  16.597	sun_month= 1	moon_month= 1.5
+01-05-2010	[121]	sun_rashi=   0.568	tithi=  17.622	sun_month= 1	moon_month= 1.5
+02-05-2010	[122]	sun_rashi=   0.601	tithi=  18.616	sun_month= 1	moon_month= 1.5
+03-05-2010	[123]	sun_rashi=   0.633	tithi=  19.580	sun_month= 1	moon_month= 1.5
+04-05-2010	[124]	sun_rashi=   0.665	tithi=  20.520	sun_month= 1	moon_month= 1.5
+05-05-2010	[125]	sun_rashi=   0.697	tithi=  21.441	sun_month= 1	moon_month= 1.5
+06-05-2010	[126]	sun_rashi=   0.730	tithi=  22.350	sun_month= 1	moon_month= 1.5
+07-05-2010	[127]	sun_rashi=   0.762	tithi=  23.255	sun_month= 1	moon_month= 1.5
+08-05-2010	[128]	sun_rashi=   0.794	tithi=  24.163	sun_month= 1	moon_month= 1.5
+09-05-2010	[129]	sun_rashi=   0.827	tithi=  25.081	sun_month= 1	moon_month= 1.5
+10-05-2010	[130]	sun_rashi=   0.859	tithi=  26.014	sun_month= 1	moon_month= 1.5
+11-05-2010	[131]	sun_rashi=   0.891	tithi=  26.966	sun_month= 1	moon_month= 1.5
+12-05-2010	[132]	sun_rashi=   0.923	tithi=  27.942	sun_month= 1	moon_month= 1.5
+13-05-2010	[133]	sun_rashi=   0.955	tithi=  28.942	sun_month= 1	moon_month= 1.5
+14-05-2010	[134]	sun_rashi=   0.988	tithi=  29.964	sun_month= 1	moon_month= 1.5
+15-05-2010	[135]	sun_rashi=   1.020	tithi=   1.008	sun_month= 2	moon_month= 2.0
+16-05-2010	[136]	sun_rashi=   1.052	tithi=   2.070	sun_month= 2	moon_month= 2.0
+17-05-2010	[137]	sun_rashi=   1.084	tithi=   3.145	sun_month= 2	moon_month= 2.0
+18-05-2010	[138]	sun_rashi=   1.116	tithi=   4.231	sun_month= 2	moon_month= 2.0
+19-05-2010	[139]	sun_rashi=   1.148	tithi=   5.325	sun_month= 2	moon_month= 2.0
+20-05-2010	[140]	sun_rashi=   1.180	tithi=   6.423	sun_month= 2	moon_month= 2.0
+21-05-2010	[141]	sun_rashi=   1.212	tithi=   7.523	sun_month= 2	moon_month= 2.0
+22-05-2010	[142]	sun_rashi=   1.245	tithi=   8.624	sun_month= 2	moon_month= 2.0
+23-05-2010	[143]	sun_rashi=   1.277	tithi=   9.723	sun_month= 2	moon_month= 2.0
+24-05-2010	[144]	sun_rashi=   1.309	tithi=  10.816	sun_month= 2	moon_month= 2.0
+25-05-2010	[145]	sun_rashi=   1.341	tithi=  11.899	sun_month= 2	moon_month= 2.0
+26-05-2010	[146]	sun_rashi=   1.373	tithi=  12.967	sun_month= 2	moon_month= 2.0
+27-05-2010	[147]	sun_rashi=   1.405	tithi=  14.018	sun_month= 2	moon_month= 2.0
+28-05-2010	[148]	sun_rashi=   1.437	tithi=  15.046	sun_month= 2	moon_month= 2.0
+29-05-2010	[149]	sun_rashi=   1.469	tithi=  16.050	sun_month= 2	moon_month= 2.0
+30-05-2010	[150]	sun_rashi=   1.501	tithi=  17.031	sun_month= 2	moon_month= 2.0
+31-05-2010	[151]	sun_rashi=   1.533	tithi=  17.988	sun_month= 2	moon_month= 2.0
+01-06-2010	[152]	sun_rashi=   1.564	tithi=  18.925	sun_month= 2	moon_month= 2.0
+02-06-2010	[153]	sun_rashi=   1.596	tithi=  19.846	sun_month= 2	moon_month= 2.0
+03-06-2010	[154]	sun_rashi=   1.628	tithi=  20.758	sun_month= 2	moon_month= 2.0
+04-06-2010	[155]	sun_rashi=   1.660	tithi=  21.665	sun_month= 2	moon_month= 2.0
+05-06-2010	[156]	sun_rashi=   1.692	tithi=  22.576	sun_month= 2	moon_month= 2.0
+06-06-2010	[157]	sun_rashi=   1.724	tithi=  23.496	sun_month= 2	moon_month= 2.0
+07-06-2010	[158]	sun_rashi=   1.756	tithi=  24.432	sun_month= 2	moon_month= 2.0
+08-06-2010	[159]	sun_rashi=   1.788	tithi=  25.390	sun_month= 2	moon_month= 2.0
+09-06-2010	[160]	sun_rashi=   1.820	tithi=  26.374	sun_month= 2	moon_month= 2.0
+10-06-2010	[161]	sun_rashi=   1.852	tithi=  27.387	sun_month= 2	moon_month= 2.0
+11-06-2010	[162]	sun_rashi=   1.884	tithi=  28.430	sun_month= 2	moon_month= 2.0
+12-06-2010	[163]	sun_rashi=   1.915	tithi=  29.500	sun_month= 2	moon_month= 2.0
+13-06-2010	[164]	sun_rashi=   1.947	tithi=   0.594	sun_month= 2	moon_month= 3.0
+14-06-2010	[165]	sun_rashi=   1.979	tithi=   1.706	sun_month= 2	moon_month= 3.0
+15-06-2010	[166]	sun_rashi=   2.011	tithi=   2.830	sun_month= 3	moon_month= 3.0
+16-06-2010	[167]	sun_rashi=   2.043	tithi=   3.958	sun_month= 3	moon_month= 3.0
+17-06-2010	[168]	sun_rashi=   2.075	tithi=   5.083	sun_month= 3	moon_month= 3.0
+18-06-2010	[169]	sun_rashi=   2.107	tithi=   6.200	sun_month= 3	moon_month= 3.0
+19-06-2010	[170]	sun_rashi=   2.138	tithi=   7.306	sun_month= 3	moon_month= 3.0
+20-06-2010	[171]	sun_rashi=   2.170	tithi=   8.396	sun_month= 3	moon_month= 3.0
+21-06-2010	[172]	sun_rashi=   2.202	tithi=   9.469	sun_month= 3	moon_month= 3.0
+22-06-2010	[173]	sun_rashi=   2.234	tithi=  10.523	sun_month= 3	moon_month= 3.0
+23-06-2010	[174]	sun_rashi=   2.266	tithi=  11.559	sun_month= 3	moon_month= 3.0
+24-06-2010	[175]	sun_rashi=   2.297	tithi=  12.575	sun_month= 3	moon_month= 3.0
+25-06-2010	[176]	sun_rashi=   2.329	tithi=  13.571	sun_month= 3	moon_month= 3.0
+26-06-2010	[177]	sun_rashi=   2.361	tithi=  14.549	sun_month= 3	moon_month= 3.0
+27-06-2010	[178]	sun_rashi=   2.393	tithi=  15.508	sun_month= 3	moon_month= 3.0
+28-06-2010	[179]	sun_rashi=   2.425	tithi=  16.450	sun_month= 3	moon_month= 3.0
+29-06-2010	[180]	sun_rashi=   2.456	tithi=  17.379	sun_month= 3	moon_month= 3.0
+30-06-2010	[181]	sun_rashi=   2.488	tithi=  18.296	sun_month= 3	moon_month= 3.0
+01-07-2010	[182]	sun_rashi=   2.520	tithi=  19.207	sun_month= 3	moon_month= 3.0
+02-07-2010	[183]	sun_rashi=   2.552	tithi=  20.114	sun_month= 3	moon_month= 3.0
+03-07-2010	[184]	sun_rashi=   2.583	tithi=  21.025	sun_month= 3	moon_month= 3.0
+04-07-2010	[185]	sun_rashi=   2.615	tithi=  21.946	sun_month= 3	moon_month= 3.0
+05-07-2010	[186]	sun_rashi=   2.647	tithi=  22.881	sun_month= 3	moon_month= 3.0
+06-07-2010	[187]	sun_rashi=   2.679	tithi=  23.838	sun_month= 3	moon_month= 3.0
+07-07-2010	[188]	sun_rashi=   2.711	tithi=  24.821	sun_month= 3	moon_month= 3.0
+08-07-2010	[189]	sun_rashi=   2.742	tithi=  25.836	sun_month= 3	moon_month= 3.0
+09-07-2010	[190]	sun_rashi=   2.774	tithi=  26.885	sun_month= 3	moon_month= 3.0
+10-07-2010	[191]	sun_rashi=   2.806	tithi=  27.968	sun_month= 3	moon_month= 3.0
+11-07-2010	[192]	sun_rashi=   2.838	tithi=  29.083	sun_month= 3	moon_month= 3.0
+12-07-2010	[193]	sun_rashi=   2.870	tithi=   0.223	sun_month= 3	moon_month= 4.0
+13-07-2010	[194]	sun_rashi=   2.901	tithi=   1.380	sun_month= 3	moon_month= 4.0
+14-07-2010	[195]	sun_rashi=   2.933	tithi=   2.543	sun_month= 3	moon_month= 4.0
+15-07-2010	[196]	sun_rashi=   2.965	tithi=   3.701	sun_month= 3	moon_month= 4.0
+16-07-2010	[197]	sun_rashi=   2.997	tithi=   4.844	sun_month= 3	moon_month= 4.0
+17-07-2010	[198]	sun_rashi=   3.029	tithi=   5.966	sun_month= 4	moon_month= 4.0
+18-07-2010	[199]	sun_rashi=   3.060	tithi=   7.061	sun_month= 4	moon_month= 4.0
+19-07-2010	[200]	sun_rashi=   3.092	tithi=   8.127	sun_month= 4	moon_month= 4.0
+20-07-2010	[201]	sun_rashi=   3.124	tithi=   9.166	sun_month= 4	moon_month= 4.0
+21-07-2010	[202]	sun_rashi=   3.156	tithi=  10.178	sun_month= 4	moon_month= 4.0
+22-07-2010	[203]	sun_rashi=   3.188	tithi=  11.167	sun_month= 4	moon_month= 4.0
+23-07-2010	[204]	sun_rashi=   3.219	tithi=  12.136	sun_month= 4	moon_month= 4.0
+24-07-2010	[205]	sun_rashi=   3.251	tithi=  13.089	sun_month= 4	moon_month= 4.0
+25-07-2010	[206]	sun_rashi=   3.283	tithi=  14.027	sun_month= 4	moon_month= 4.0
+26-07-2010	[207]	sun_rashi=   3.315	tithi=  14.954	sun_month= 4	moon_month= 4.0
+27-07-2010	[208]	sun_rashi=   3.347	tithi=  15.871	sun_month= 4	moon_month= 4.0
+28-07-2010	[209]	sun_rashi=   3.379	tithi=  16.783	sun_month= 4	moon_month= 4.0
+29-07-2010	[210]	sun_rashi=   3.410	tithi=  17.691	sun_month= 4	moon_month= 4.0
+30-07-2010	[211]	sun_rashi=   3.442	tithi=  18.599	sun_month= 4	moon_month= 4.0
+31-07-2010	[212]	sun_rashi=   3.474	tithi=  19.511	sun_month= 4	moon_month= 4.0
+01-08-2010	[213]	sun_rashi=   3.506	tithi=  20.431	sun_month= 4	moon_month= 4.0
+02-08-2010	[214]	sun_rashi=   3.538	tithi=  21.364	sun_month= 4	moon_month= 4.0
+03-08-2010	[215]	sun_rashi=   3.570	tithi=  22.317	sun_month= 4	moon_month= 4.0
+04-08-2010	[216]	sun_rashi=   3.602	tithi=  23.294	sun_month= 4	moon_month= 4.0
+05-08-2010	[217]	sun_rashi=   3.634	tithi=  24.302	sun_month= 4	moon_month= 4.0
+06-08-2010	[218]	sun_rashi=   3.666	tithi=  25.345	sun_month= 4	moon_month= 4.0
+07-08-2010	[219]	sun_rashi=   3.697	tithi=  26.426	sun_month= 4	moon_month= 4.0
+08-08-2010	[220]	sun_rashi=   3.729	tithi=  27.543	sun_month= 4	moon_month= 4.0
+09-08-2010	[221]	sun_rashi=   3.761	tithi=  28.693	sun_month= 4	moon_month= 4.0
+10-08-2010	[222]	sun_rashi=   3.793	tithi=  29.867	sun_month= 4	moon_month= 4.0
+11-08-2010	[223]	sun_rashi=   3.825	tithi=   1.054	sun_month= 4	moon_month= 5.0
+12-08-2010	[224]	sun_rashi=   3.857	tithi=   2.239	sun_month= 4	moon_month= 5.0
+13-08-2010	[225]	sun_rashi=   3.889	tithi=   3.408	sun_month= 4	moon_month= 5.0
+14-08-2010	[226]	sun_rashi=   3.921	tithi=   4.551	sun_month= 4	moon_month= 5.0
+15-08-2010	[227]	sun_rashi=   3.953	tithi=   5.659	sun_month= 4	moon_month= 5.0
+16-08-2010	[228]	sun_rashi=   3.985	tithi=   6.730	sun_month= 4	moon_month= 5.0
+17-08-2010	[229]	sun_rashi=   4.017	tithi=   7.765	sun_month= 5	moon_month= 5.0
+18-08-2010	[230]	sun_rashi=   4.049	tithi=   8.767	sun_month= 5	moon_month= 5.0
+19-08-2010	[231]	sun_rashi=   4.081	tithi=   9.741	sun_month= 5	moon_month= 5.0
+20-08-2010	[232]	sun_rashi=   4.114	tithi=  10.693	sun_month= 5	moon_month= 5.0
+21-08-2010	[233]	sun_rashi=   4.146	tithi=  11.627	sun_month= 5	moon_month= 5.0
+22-08-2010	[234]	sun_rashi=   4.178	tithi=  12.549	sun_month= 5	moon_month= 5.0
+23-08-2010	[235]	sun_rashi=   4.210	tithi=  13.463	sun_month= 5	moon_month= 5.0
+24-08-2010	[236]	sun_rashi=   4.242	tithi=  14.372	sun_month= 5	moon_month= 5.0
+25-08-2010	[237]	sun_rashi=   4.274	tithi=  15.280	sun_month= 5	moon_month= 5.0
+26-08-2010	[238]	sun_rashi=   4.306	tithi=  16.188	sun_month= 5	moon_month= 5.0
+27-08-2010	[239]	sun_rashi=   4.338	tithi=  17.098	sun_month= 5	moon_month= 5.0
+28-08-2010	[240]	sun_rashi=   4.370	tithi=  18.014	sun_month= 5	moon_month= 5.0
+29-08-2010	[241]	sun_rashi=   4.403	tithi=  18.938	sun_month= 5	moon_month= 5.0
+30-08-2010	[242]	sun_rashi=   4.435	tithi=  19.874	sun_month= 5	moon_month= 5.0
+31-08-2010	[243]	sun_rashi=   4.467	tithi=  20.827	sun_month= 5	moon_month= 5.0
+01-09-2010	[244]	sun_rashi=   4.499	tithi=  21.800	sun_month= 5	moon_month= 5.0
+02-09-2010	[245]	sun_rashi=   4.532	tithi=  22.800	sun_month= 5	moon_month= 5.0
+03-09-2010	[246]	sun_rashi=   4.564	tithi=  23.831	sun_month= 5	moon_month= 5.0
+04-09-2010	[247]	sun_rashi=   4.596	tithi=  24.898	sun_month= 5	moon_month= 5.0
+05-09-2010	[248]	sun_rashi=   4.628	tithi=  26.002	sun_month= 5	moon_month= 5.0
+06-09-2010	[249]	sun_rashi=   4.661	tithi=  27.142	sun_month= 5	moon_month= 5.0
+07-09-2010	[250]	sun_rashi=   4.693	tithi=  28.312	sun_month= 5	moon_month= 5.0
+08-09-2010	[251]	sun_rashi=   4.725	tithi=  29.502	sun_month= 5	moon_month= 5.0
+09-09-2010	[252]	sun_rashi=   4.758	tithi=   0.695	sun_month= 5	moon_month= 6.0
+10-09-2010	[253]	sun_rashi=   4.790	tithi=   1.878	sun_month= 5	moon_month= 6.0
+11-09-2010	[254]	sun_rashi=   4.823	tithi=   3.035	sun_month= 5	moon_month= 6.0
+12-09-2010	[255]	sun_rashi=   4.855	tithi=   4.157	sun_month= 5	moon_month= 6.0
+13-09-2010	[256]	sun_rashi=   4.887	tithi=   5.239	sun_month= 5	moon_month= 6.0
+14-09-2010	[257]	sun_rashi=   4.920	tithi=   6.279	sun_month= 5	moon_month= 6.0
+15-09-2010	[258]	sun_rashi=   4.952	tithi=   7.281	sun_month= 5	moon_month= 6.0
+16-09-2010	[259]	sun_rashi=   4.985	tithi=   8.251	sun_month= 5	moon_month= 6.0
+17-09-2010	[260]	sun_rashi=   5.017	tithi=   9.196	sun_month= 6	moon_month= 6.0
+18-09-2010	[261]	sun_rashi=   5.050	tithi=  10.121	sun_month= 6	moon_month= 6.0
+19-09-2010	[262]	sun_rashi=   5.082	tithi=  11.034	sun_month= 6	moon_month= 6.0
+20-09-2010	[263]	sun_rashi=   5.115	tithi=  11.941	sun_month= 6	moon_month= 6.0
+21-09-2010	[264]	sun_rashi=   5.147	tithi=  12.846	sun_month= 6	moon_month= 6.0
+22-09-2010	[265]	sun_rashi=   5.180	tithi=  13.753	sun_month= 6	moon_month= 6.0
+23-09-2010	[266]	sun_rashi=   5.213	tithi=  14.664	sun_month= 6	moon_month= 6.0
+24-09-2010	[267]	sun_rashi=   5.245	tithi=  15.582	sun_month= 6	moon_month= 6.0
+25-09-2010	[268]	sun_rashi=   5.278	tithi=  16.508	sun_month= 6	moon_month= 6.0
+26-09-2010	[269]	sun_rashi=   5.310	tithi=  17.443	sun_month= 6	moon_month= 6.0
+27-09-2010	[270]	sun_rashi=   5.343	tithi=  18.390	sun_month= 6	moon_month= 6.0
+28-09-2010	[271]	sun_rashi=   5.376	tithi=  19.351	sun_month= 6	moon_month= 6.0
+29-09-2010	[272]	sun_rashi=   5.408	tithi=  20.329	sun_month= 6	moon_month= 6.0
+30-09-2010	[273]	sun_rashi=   5.441	tithi=  21.329	sun_month= 6	moon_month= 6.0
+01-10-2010	[274]	sun_rashi=   5.474	tithi=  22.353	sun_month= 6	moon_month= 6.0
+02-10-2010	[275]	sun_rashi=   5.507	tithi=  23.407	sun_month= 6	moon_month= 6.0
+03-10-2010	[276]	sun_rashi=   5.540	tithi=  24.493	sun_month= 6	moon_month= 6.0
+04-10-2010	[277]	sun_rashi=   5.572	tithi=  25.612	sun_month= 6	moon_month= 6.0
+05-10-2010	[278]	sun_rashi=   5.605	tithi=  26.759	sun_month= 6	moon_month= 6.0
+06-10-2010	[279]	sun_rashi=   5.638	tithi=  27.928	sun_month= 6	moon_month= 6.0
+07-10-2010	[280]	sun_rashi=   5.671	tithi=  29.106	sun_month= 6	moon_month= 6.0
+08-10-2010	[281]	sun_rashi=   5.704	tithi=   0.280	sun_month= 6	moon_month= 7.0
+09-10-2010	[282]	sun_rashi=   5.737	tithi=   1.435	sun_month= 6	moon_month= 7.0
+10-10-2010	[283]	sun_rashi=   5.770	tithi=   2.560	sun_month= 6	moon_month= 7.0
+11-10-2010	[284]	sun_rashi=   5.803	tithi=   3.646	sun_month= 6	moon_month= 7.0
+12-10-2010	[285]	sun_rashi=   5.836	tithi=   4.693	sun_month= 6	moon_month= 7.0
+13-10-2010	[286]	sun_rashi=   5.869	tithi=   5.700	sun_month= 6	moon_month= 7.0
+14-10-2010	[287]	sun_rashi=   5.902	tithi=   6.673	sun_month= 6	moon_month= 7.0
+15-10-2010	[288]	sun_rashi=   5.935	tithi=   7.619	sun_month= 6	moon_month= 7.0
+16-10-2010	[289]	sun_rashi=   5.968	tithi=   8.543	sun_month= 6	moon_month= 7.0
+17-10-2010	[290]	sun_rashi=   6.001	tithi=   9.454	sun_month= 7	moon_month= 7.0
+18-10-2010	[291]	sun_rashi=   6.034	tithi=  10.359	sun_month= 7	moon_month= 7.0
+19-10-2010	[292]	sun_rashi=   6.067	tithi=  11.263	sun_month= 7	moon_month= 7.0
+20-10-2010	[293]	sun_rashi=   6.100	tithi=  12.172	sun_month= 7	moon_month= 7.0
+21-10-2010	[294]	sun_rashi=   6.133	tithi=  13.089	sun_month= 7	moon_month= 7.0
+22-10-2010	[295]	sun_rashi=   6.166	tithi=  14.017	sun_month= 7	moon_month= 7.0
+23-10-2010	[296]	sun_rashi=   6.199	tithi=  14.957	sun_month= 7	moon_month= 7.0
+24-10-2010	[297]	sun_rashi=   6.232	tithi=  15.911	sun_month= 7	moon_month= 7.0
+25-10-2010	[298]	sun_rashi=   6.266	tithi=  16.878	sun_month= 7	moon_month= 7.0
+26-10-2010	[299]	sun_rashi=   6.299	tithi=  17.860	sun_month= 7	moon_month= 7.0
+27-10-2010	[300]	sun_rashi=   6.332	tithi=  18.857	sun_month= 7	moon_month= 7.0
+28-10-2010	[301]	sun_rashi=   6.365	tithi=  19.870	sun_month= 7	moon_month= 7.0
+29-10-2010	[302]	sun_rashi=   6.399	tithi=  20.903	sun_month= 7	moon_month= 7.0
+30-10-2010	[303]	sun_rashi=   6.432	tithi=  21.956	sun_month= 7	moon_month= 7.0
+31-10-2010	[304]	sun_rashi=   6.465	tithi=  23.031	sun_month= 7	moon_month= 7.0
+01-11-2010	[305]	sun_rashi=   6.499	tithi=  24.130	sun_month= 7	moon_month= 7.0
+02-11-2010	[306]	sun_rashi=   6.532	tithi=  25.249	sun_month= 7	moon_month= 7.0
+03-11-2010	[307]	sun_rashi=   6.565	tithi=  26.384	sun_month= 7	moon_month= 7.0
+04-11-2010	[308]	sun_rashi=   6.599	tithi=  27.528	sun_month= 7	moon_month= 7.0
+05-11-2010	[309]	sun_rashi=   6.632	tithi=  28.671	sun_month= 7	moon_month= 7.0
+06-11-2010	[310]	sun_rashi=   6.666	tithi=  29.801	sun_month= 7	moon_month= 7.0
+07-11-2010	[311]	sun_rashi=   6.699	tithi=   0.908	sun_month= 7	moon_month= 8.0
+08-11-2010	[312]	sun_rashi=   6.732	tithi=   1.986	sun_month= 7	moon_month= 8.0
+09-11-2010	[313]	sun_rashi=   6.766	tithi=   3.029	sun_month= 7	moon_month= 8.0
+10-11-2010	[314]	sun_rashi=   6.799	tithi=   4.037	sun_month= 7	moon_month= 8.0
+11-11-2010	[315]	sun_rashi=   6.833	tithi=   5.014	sun_month= 7	moon_month= 8.0
+12-11-2010	[316]	sun_rashi=   6.866	tithi=   5.963	sun_month= 7	moon_month= 8.0
+13-11-2010	[317]	sun_rashi=   6.900	tithi=   6.890	sun_month= 7	moon_month= 8.0
+14-11-2010	[318]	sun_rashi=   6.933	tithi=   7.803	sun_month= 7	moon_month= 8.0
+15-11-2010	[319]	sun_rashi=   6.967	tithi=   8.708	sun_month= 7	moon_month= 8.0
+16-11-2010	[320]	sun_rashi=   7.001	tithi=   9.613	sun_month= 8	moon_month= 8.0
+17-11-2010	[321]	sun_rashi=   7.034	tithi=  10.524	sun_month= 8	moon_month= 8.0
+18-11-2010	[322]	sun_rashi=   7.068	tithi=  11.445	sun_month= 8	moon_month= 8.0
+19-11-2010	[323]	sun_rashi=   7.101	tithi=  12.382	sun_month= 8	moon_month= 8.0
+20-11-2010	[324]	sun_rashi=   7.135	tithi=  13.336	sun_month= 8	moon_month= 8.0
+21-11-2010	[325]	sun_rashi=   7.169	tithi=  14.309	sun_month= 8	moon_month= 8.0
+22-11-2010	[326]	sun_rashi=   7.202	tithi=  15.301	sun_month= 8	moon_month= 8.0
+23-11-2010	[327]	sun_rashi=   7.236	tithi=  16.312	sun_month= 8	moon_month= 8.0
+24-11-2010	[328]	sun_rashi=   7.270	tithi=  17.341	sun_month= 8	moon_month= 8.0
+25-11-2010	[329]	sun_rashi=   7.303	tithi=  18.385	sun_month= 8	moon_month= 8.0
+26-11-2010	[330]	sun_rashi=   7.337	tithi=  19.443	sun_month= 8	moon_month= 8.0
+27-11-2010	[331]	sun_rashi=   7.371	tithi=  20.514	sun_month= 8	moon_month= 8.0
+28-11-2010	[332]	sun_rashi=   7.405	tithi=  21.597	sun_month= 8	moon_month= 8.0
+29-11-2010	[333]	sun_rashi=   7.438	tithi=  22.689	sun_month= 8	moon_month= 8.0
+30-11-2010	[334]	sun_rashi=   7.472	tithi=  23.790	sun_month= 8	moon_month= 8.0
+01-12-2010	[335]	sun_rashi=   7.506	tithi=  24.895	sun_month= 8	moon_month= 8.0
+02-12-2010	[336]	sun_rashi=   7.540	tithi=  26.001	sun_month= 8	moon_month= 8.0
+03-12-2010	[337]	sun_rashi=   7.574	tithi=  27.101	sun_month= 8	moon_month= 8.0
+04-12-2010	[338]	sun_rashi=   7.607	tithi=  28.191	sun_month= 8	moon_month= 8.0
+05-12-2010	[339]	sun_rashi=   7.641	tithi=  29.263	sun_month= 8	moon_month= 8.0
+06-12-2010	[340]	sun_rashi=   7.675	tithi=   0.313	sun_month= 8	moon_month= 9.0
+07-12-2010	[341]	sun_rashi=   7.709	tithi=   1.339	sun_month= 8	moon_month= 9.0
+08-12-2010	[342]	sun_rashi=   7.743	tithi=   2.337	sun_month= 8	moon_month= 9.0
+09-12-2010	[343]	sun_rashi=   7.777	tithi=   3.309	sun_month= 8	moon_month= 9.0
+10-12-2010	[344]	sun_rashi=   7.811	tithi=   4.257	sun_month= 8	moon_month= 9.0
+11-12-2010	[345]	sun_rashi=   7.844	tithi=   5.186	sun_month= 8	moon_month= 9.0
+12-12-2010	[346]	sun_rashi=   7.878	tithi=   6.100	sun_month= 8	moon_month= 9.0
+13-12-2010	[347]	sun_rashi=   7.912	tithi=   7.007	sun_month= 8	moon_month= 9.0
+14-12-2010	[348]	sun_rashi=   7.946	tithi=   7.912	sun_month= 8	moon_month= 9.0
+15-12-2010	[349]	sun_rashi=   7.980	tithi=   8.821	sun_month= 8	moon_month= 9.0
+16-12-2010	[350]	sun_rashi=   8.014	tithi=   9.743	sun_month= 9	moon_month= 9.0
+17-12-2010	[351]	sun_rashi=   8.048	tithi=  10.682	sun_month= 9	moon_month= 9.0
+18-12-2010	[352]	sun_rashi=   8.082	tithi=  11.642	sun_month= 9	moon_month= 9.0
+19-12-2010	[353]	sun_rashi=   8.116	tithi=  12.628	sun_month= 9	moon_month= 9.0
+20-12-2010	[354]	sun_rashi=   8.150	tithi=  13.641	sun_month= 9	moon_month= 9.0
+21-12-2010	[355]	sun_rashi=   8.184	tithi=  14.680	sun_month= 9	moon_month= 9.0
+22-12-2010	[356]	sun_rashi=   8.218	tithi=  15.744	sun_month= 9	moon_month= 9.0
+23-12-2010	[357]	sun_rashi=   8.251	tithi=  16.827	sun_month= 9	moon_month= 9.0
+24-12-2010	[358]	sun_rashi=   8.285	tithi=  17.925	sun_month= 9	moon_month= 9.0
+25-12-2010	[359]	sun_rashi=   8.319	tithi=  19.032	sun_month= 9	moon_month= 9.0
+26-12-2010	[360]	sun_rashi=   8.353	tithi=  20.141	sun_month= 9	moon_month= 9.0
+27-12-2010	[361]	sun_rashi=   8.387	tithi=  21.249	sun_month= 9	moon_month= 9.0
+28-12-2010	[362]	sun_rashi=   8.421	tithi=  22.349	sun_month= 9	moon_month= 9.0
+29-12-2010	[363]	sun_rashi=   8.455	tithi=  23.440	sun_month= 9	moon_month= 9.0
+30-12-2010	[364]	sun_rashi=   8.489	tithi=  24.518	sun_month= 9	moon_month= 9.0
+31-12-2010	[365]	sun_rashi=   8.523	tithi=  25.583	sun_month= 9	moon_month= 9.0
+01-01-2011	[366]	sun_rashi=   8.557	tithi=  26.631	sun_month= 9	moon_month= 9.0
