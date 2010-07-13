@@ -1,0 +1,3 @@
+1. 10-Nov-2007 - wrong moon month?
+2. Jan 1983 - wrong moon month?
+3. Streamline moon month calc
