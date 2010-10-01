@@ -7,7 +7,10 @@ from datetime import *
 import pytz
 from pytz import timezone
 from skt_names import *
+#from roman_names import *
 from festival_rules import *
+from icalendar import Calendar
+from icalendar import Event
 
 # FUNCTION DEFINITIONS
 
@@ -722,6 +725,8 @@ def main():
   ###--- FESTIVAL ADDITIONS COMPLETE ---###
 
   ###--- PRINT LIST OF FESTIVALS (Page 2) ---###
+  #cal = Calendar()
+
   print '\\newpage'
   print '\\centerline {\\LARGE {{%s}}}\\mbox{}\\\\[2cm]' % list_of_festivals
   print '\\begin{center}'
@@ -750,6 +755,12 @@ def main():
           
       print '%s & %s & %s & {\\raggedright %s} \\\\' % (MON[m],dt,WDAY[weekday],festivals[d])
 
+      #event = Event()
+      #event.add('summary',festivals[d])
+      #event.add('dtstart',datetime(y,m,dt))
+      #event.add('dtend',datetime(y,m,dt))
+      #cal.add_component(event)
+
     if m==12 and dt==31:
       break
 
@@ -759,6 +770,10 @@ def main():
   print '\\end{center}'
   print '\\clearpage'
 
+  #cal_fname = '%s-%4d.ics' %(city_name,start_year)
+  #cal_file = open(cal_fname,'w')
+  #cal_file.write(cal.as_string())
+  #cal_file.close()
 
   #Layout calendar in LATeX format
   #We use a separate loop here, because of festivals like varalakshmi

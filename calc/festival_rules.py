@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from skt_names import *
+#from roman_names import *
 
 #type of month | month number | type of angam (tithi|nakshatram) | angam number | min_t cut off for considering prev day (without sunrise_angam) as festival date
 purvaviddha_rules={akshaya_tritiya:['moon_month',2,'tithi',3,0],
