@@ -6,9 +6,8 @@ import swisseph
 from datetime import *
 import pytz
 from pytz import timezone
-from skt_names import *
-#from roman_names import *
-from festival_rules import *
+from init_names import *
+from deva_names import *
 from icalendar import Calendar
 from icalendar import Event
 
@@ -79,9 +78,9 @@ def get_last_dhanur_transit (jd_start,latitude,longitude):
       else:
         return jd
   
-def print_end_time (end_time, day_night_length, sunrise_time):
+def print_end_time (end_time, day_night_length, sunrise_time, script):
   if end_time/24.0>day_night_length:
-    end_time_str = ahoratram
+    end_time_str = ahoratram[script]
   else:
     te=deci2sexa(sunrise_time+end_time)
     if te[0]>=24:
@@ -92,17 +91,17 @@ def print_end_time (end_time, day_night_length, sunrise_time):
     end_time_str = '%02d:%02d%s' % (te[0],te[1],suff)
   return end_time_str
 
-def get_ekadashi_name(paksha,month):
+def get_ekadashi_name(paksha,month,script):
   if paksha=='shukla':
     if month==int(month):
-      return '%s~%s' % (shukla_ekadashi_names[month],ekadashi)
+      return '%s~%s' % (shukla_ekadashi_names[script][month],ekadashi[script])
     else:
-      return '%s~%s' % (shukla_ekadashi_names[13],ekadashi)
+      return '%s~%s' % (shukla_ekadashi_names[script][13],ekadashi[script])
   elif paksha=='krishna':
     if month==int(month):
-      return '%s~%s' % (krishna_ekadashi_names[month],ekadashi)
+      return '%s~%s' % (krishna_ekadashi_names[script][month],ekadashi[script])
     else:
-      return '%s~%s' % (krishna_ekadashi_names[13],ekadashi)
+      return '%s~%s' % (krishna_ekadashi_names[script][13],ekadashi[script])
 
 def get_tithi(jd):
   ldiff=(swisseph.calc_ut(jd,swisseph.MOON)[0]-swisseph.calc_ut(jd,swisseph.SUN)[0])%360
@@ -112,11 +111,11 @@ def get_nakshatram(jd):
   lmoon=(swisseph.calc_ut(jd,swisseph.MOON)[0]-swisseph.get_ayanamsa(jd))%360
   return int(1+math.floor(lmoon / (360.0/27.0)))
 
-def get_chandra_masa(month,chandra_masa_names):
+def get_chandra_masa(month,chandra_masa_names,script):
   if month==int(month):
-    return chandra_masa_names[month]
+    return chandra_masa_names[script][month]
   else:
-    return '%s~(%s)' % (chandra_masa_names[int(month)+1],adhika) 
+    return '%s~(%s)' % (chandra_masa_names[script][int(month)+1],adhika[script]) 
 
 def get_festival_day_purvaviddha(festival_angam,angam_sunrise,d,jd_sunrise,jd_sunrise_tmrw,get_angam_func,min_t):
   t_cutoff=(jd_sunrise_tmrw-jd_sunrise)*min_t/60.0 #at least 4 nazhis
@@ -145,7 +144,7 @@ def get_angam_float(jd, arc_len, w):
 
 def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw, 
   t_sunrise, longitude_moon, longitude_sun, longitude_moon_tmrw, 
-  longitude_sun_tmrw, w):
+  longitude_sun_tmrw, w, script):
 
   daily_motion_moon = (longitude_moon_tmrw-longitude_moon)%360
   daily_motion_sun = (longitude_sun_tmrw-longitude_sun)%360
@@ -172,12 +171,12 @@ def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw,
         longitude_sun*w[1])%360)%arc_len)
       angam_end[i] = angam_remaining[i]/(daily_motion_moon*w[0]+
         daily_motion_sun*w[1])*24.0
-      angam_end_str[i] = print_end_time(angam_end[i],jd_sunrise_tmrw-jd_sunrise,t_sunrise)
+      angam_end_str[i] = print_end_time(angam_end[i],jd_sunrise_tmrw-jd_sunrise,t_sunrise,script)
     else:
       angam_str[i] = ''
       angam_end_str[i] = ''
       
-    if (angam_end_str[i] == ahoratram and i!=0):
+    if (angam_end_str[i] == ahoratram[script] and i!=0):
       #needs correction, owing to the fact that we compute longitude every 24h,
       #rather than at next sunrise the second/third angam cannot be 'all day'!
       #It's ending will reflect in tomorrow's calendar
@@ -190,7 +189,7 @@ def get_angam_data_string(angam_names, arc_len, jd_sunrise, jd_sunrise_tmrw,
     if angam_str[i] != '': 
       if i==2:
         angam_data_string = angam_data_string+'\\\\'
-      if (angam_end_str[i] == ahoratram):
+      if (angam_end_str[i] == ahoratram[script]):
         angam_data_string = '%s\\mbox{%s {\\tiny \\RIGHTarrow} %s}'           % (angam_data_string,angam_str[i],angam_end_str[i])
       else:
         angam_data_string = '%s\\mbox{%s {\\tiny \\RIGHTarrow} \\textsf{%s}}' % (angam_data_string,angam_str[i],angam_end_str[i])
@@ -219,6 +218,11 @@ def main():
   year = start_year
   jd=swisseph.julday(year,1,1,0)
   jd_start=jd
+
+  if len(sys.argv)==7:
+    script = sys.argv[6]
+  else:
+    script = 'deva' #Default script is devanagari
   
   swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
   
@@ -232,9 +236,9 @@ def main():
     print template_lines[i][:-1]
   
   samvatsara_id = (year - 1568)%60 + 1; #distance from prabhava
-  samvatsara_names = '%s–%s' % (year_names[samvatsara_id], 
-    year_names[(samvatsara_id%60)+1])
-  new_yr=mesha_sankranti+'~('+year_names[(samvatsara_id%60)+1]+'-'+samvatsara+')'
+  samvatsara_names = '%s–%s' % (year_names[script][samvatsara_id], 
+    year_names[script][(samvatsara_id%60)+1])
+  new_yr=mesha_sankranti[script]+'~('+year_names[script][(samvatsara_id%60)+1]+'-'+samvatsara[script]+')'
   
   print '\\mbox{}'
   print '{\\font\\x="Warnock Pro" at 60 pt\\x %d\\\\[0.3cm]}' % year
@@ -322,29 +326,29 @@ def main():
 
       if sun_month[d]!=sun_month_rise[d+1]:
         month_start_after_set=1
-        [_m,sun_month_end_time] = get_angam_data_string(masa_names, 30, jd_sunrise[d],
+        [_m,sun_month_end_time] = get_angam_data_string(masa_names[script], 30, jd_sunrise[d],
           jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
-          longitude_sun[d+1], [0,1])
+          longitude_sun[d+1], [0,1], script)
  
     elif sun_month_rise[d]!=sun_month[d]:
       #mAsa pirappu!
       #sun moves into next rAsi before sunset -- check rules!
       sun_month_day = 1
 
-      [_m,sun_month_end_time] = get_angam_data_string(masa_names, 30, jd_sunrise[d],
+      [_m,sun_month_end_time] = get_angam_data_string(masa_names[script], 30, jd_sunrise[d],
       jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
-      longitude_sun[d+1], [0,1])
+      longitude_sun[d+1], [0,1], script)
     
     else:
       sun_month_day = sun_month_day + 1
       sun_month_end_time = ''
     
-    month_data[d] = '\\sunmonth{%s}{%d}{%s}' % (masa_names[sun_month[d]],sun_month_day,sun_month_end_time)
+    month_data[d] = '\\sunmonth{%s}{%d}{%s}' % (masa_names[script][sun_month[d]],sun_month_day,sun_month_end_time)
 
     #KARADAYAN NOMBU -- easy to check here
     if sun_month_end_time !='': #month ends today
       if (sun_month[d]==12 and sun_month_day==1) or (sun_month[d]==11 and sun_month_day!=1):
-        festival_day_list[karadayan_nombu] = [d]
+        festival_day_list[karadayan_nombu[script]] = [d]
   
     #Sunrise/sunset and related stuff (like rahu, yama)
     [rhs, rms, rss] = deci2sexa(t_sunrise)  #rise hour sun, rise minute sun, rise sec sun
@@ -363,18 +367,18 @@ def main():
     rahu[d] = '%s--%s' % (print_time(rahukalam_start), print_time(rahukalam_end))
     yama[d] = '%s--%s' % (print_time(yamagandam_start),print_time(yamagandam_end))
     
-    [tithi_sunrise[d],tithi_data_string[d]]=get_angam_data_string(tithi_names, 12, jd_sunrise[d],
+    [tithi_sunrise[d],tithi_data_string[d]]=get_angam_data_string(tithi_names[script], 12, jd_sunrise[d],
       jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
-      longitude_sun[d+1], [1,-1])
-    [nakshatram_sunrise[d], nakshatram_data_string[d]]=get_angam_data_string(nakshatra_names, (360.0/27.0),
+      longitude_sun[d+1], [1,-1], script)
+    [nakshatram_sunrise[d], nakshatram_data_string[d]]=get_angam_data_string(nakshatra_names[script], (360.0/27.0),
       jd_sunrise[d], jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], 
-      longitude_moon[d+1], longitude_sun[d+1], [1,0])
-    [karanam_sunrise[d],karanam_data_string[d]]=get_angam_data_string(karanam_names, 6, jd_sunrise[d],
+      longitude_moon[d+1], longitude_sun[d+1], [1,0], script)
+    [karanam_sunrise[d],karanam_data_string[d]]=get_angam_data_string(karanam_names[script], 6, jd_sunrise[d],
       jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
-      longitude_sun[d+1], [1,-1])
-    [yogam_sunrise[d],yogam_data_string[d]]=get_angam_data_string(yogam_names, (360.0/27.0), jd_sunrise[d],
+      longitude_sun[d+1], [1,-1], script)
+    [yogam_sunrise[d],yogam_data_string[d]]=get_angam_data_string(yogam_names[script], (360.0/27.0), jd_sunrise[d],
       jd_sunrise[d+1], t_sunrise, longitude_moon[d], longitude_sun[d], longitude_moon[d+1],
-      longitude_sun[d+1], [1,1])
+      longitude_sun[d+1], [1,1], script)
 
   #ASSIGN MOON MONTHS
   last_month_change = 1
@@ -432,50 +436,50 @@ def main():
 
     #EKADASHI Vratam
     if tithi_sunrise[d]==11 or tithi_sunrise[d]==12: #One of two consecutive tithis must appear @ sunrise!
-      #check for shukla ekadashi
+      #check for shukla ekadashi[script]
       if (tithi_sunrise[d]==11 and tithi_sunrise[d+1]==11): 
-        festivals[d+1]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])#moon_month[d] or [d+1]?
+        festivals[d+1]=sarva[script]+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d],script=script)#moon_month[d] or [d+1]?
         if moon_month[d+1]==4:
-          festivals[d+1]+='\\\\'+chaturmasya_start
+          festivals[d+1]+='\\\\'+chaturmasya_start[script]
         if moon_month[d+1]==8:
-          festivals[d+1]+='\\\\'+chaturmasya_end
+          festivals[d+1]+='\\\\'+chaturmasya_end[script]
       elif (tithi_sunrise[d]==11 and tithi_sunrise[d+1]!=11): 
-        #Check dashami end time to decide for whether this is sarva/smartha
+        #Check dashami end time to decide for whether this is sarva[script]/smartha[script]
         tithi_arunodayam = get_tithi(jd_sunrise[d]-(1/15.0)*(jd_sunrise[d]-jd_sunrise[d-1])) #Two muhurtams is 1/15 of day-length
         if tithi_arunodayam==10:
-          festivals[d]=smartha+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
-          festivals[d+1]=vaishnava+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
+          festivals[d]=smartha[script]+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d],script=script)
+          festivals[d+1]=vaishnava[script]+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d],script=script)
           if moon_month[d]==4:
-            festivals[d]+='\\\\'+chaturmasya_start
+            festivals[d]+='\\\\'+chaturmasya_start[script]
           if moon_month[d]==8:
-            festivals[d]+='\\\\'+chaturmasya_end
+            festivals[d]+='\\\\'+chaturmasya_end[script]
         else:
-          festivals[d]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
+          festivals[d]=sarva[script]+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d],script=script)
           if moon_month[d]==4:
-            festivals[d]+='\\\\'+chaturmasya_start
+            festivals[d]+='\\\\'+chaturmasya_start[script]
           if moon_month[d]==8:
-            festivals[d]+='\\\\'+chaturmasya_end
+            festivals[d]+='\\\\'+chaturmasya_end[script]
       elif (tithi_sunrise[d-1]!=11 and tithi_sunrise[d]==12):
-        festivals[d]=sarva+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d])
+        festivals[d]=sarva[script]+'~'+get_ekadashi_name(paksha='shukla',month=moon_month[d],script=script)
         if moon_month[d]==4:
-          festivals[d]+='\\\\'+chaturmasya_start
+          festivals[d]+='\\\\'+chaturmasya_start[script]
         if moon_month[d]==8:
-          festivals[d]+='\\\\'+chaturmasya_end
+          festivals[d]+='\\\\'+chaturmasya_end[script]
  
     if tithi_sunrise[d]==26 or tithi_sunrise[d]==27: #One of two consecutive tithis must appear @ sunrise!
-      #check for krishna ekadashi
+      #check for krishna ekadashi[script]
       if (tithi_sunrise[d]==26 and tithi_sunrise[d+1]==26): 
-        festivals[d+1]=sarva+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])#moon_month[d] or [d+1]?
+        festivals[d+1]=sarva[script]+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d],script=script)#moon_month[d] or [d+1]?
       elif (tithi_sunrise[d]==26 and tithi_sunrise[d+1]!=26): 
-        #Check dashami end time to decide for whether this is sarva/smartha
+        #Check dashami end time to decide for whether this is sarva[script]/smartha[script]
         tithi_arunodayam = get_tithi(jd_sunrise[d]-(1/15.0)*(jd_sunrise[d]-jd_sunrise[d-1])) #Two muhurtams is 1/15 of day-length
         if tithi_arunodayam==25:
-          festivals[d]=smartha+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
-          festivals[d+1]=vaishnava+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
+          festivals[d]=smartha[script]+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d],script=script)
+          festivals[d+1]=vaishnava[script]+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d],script=script)
         else:
-          festivals[d]=sarva+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
+          festivals[d]=sarva[script]+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d],script=script)
       elif (tithi_sunrise[d-1]!=26 and tithi_sunrise[d]==27):
-        festivals[d]=sarva+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d])
+        festivals[d]=sarva[script]+'~'+get_ekadashi_name(paksha='krishna',month=moon_month[d],script=script)
 
     #PRADOSHA Vratam
     if tithi_sunrise[d]==12 or tithi_sunrise[d]==13:
@@ -484,9 +488,9 @@ def main():
       tithi_sunset = int(1+math.floor(ldiff_set/12.0))
       tithi_sunset_tmrw = int(1+math.floor(ldiff_set_tmrw/12.0))
       if tithi_sunset<=13 and tithi_sunset_tmrw!=13:
-        festivals[d]=pradosham
+        festivals[d]=pradosham[script]
       elif tithi_sunset_tmrw==13:
-        festivals[d+1]=pradosham
+        festivals[d+1]=pradosham[script]
 
     if tithi_sunrise[d]==27 or tithi_sunrise[d]==28:
       ldiff_set=(swisseph.calc_ut(jd_sunset[d],swisseph.MOON)[0]-swisseph.calc_ut(jd_sunset[d],swisseph.SUN)[0])%360
@@ -494,11 +498,11 @@ def main():
       tithi_sunset = int(1+math.floor(ldiff_set/12.0))
       tithi_sunset_tmrw = int(1+math.floor(ldiff_set_tmrw/12.0))
       if tithi_sunset<=28 and tithi_sunset_tmrw!=28:
-        festivals[d]=pradosham
+        festivals[d]=pradosham[script]
       elif tithi_sunset_tmrw==28:
-        festivals[d+1]=pradosham
+        festivals[d+1]=pradosham[script]
 
-    #SANKATAHARA chaturthi
+    #SANKATAHARA chaturthi[script]
     if tithi_sunrise[d]==18 or tithi_sunrise[d]==19:
       ldiff_moonrise_yest=(swisseph.calc_ut(jd_moonrise[d-1],swisseph.MOON)[0]-swisseph.calc_ut(jd_moonrise[d-1],swisseph.SUN)[0])%360
       ldiff_moonrise=(swisseph.calc_ut(jd_moonrise[d],swisseph.MOON)[0]-swisseph.calc_ut(jd_moonrise[d],swisseph.SUN)[0])%360
@@ -509,27 +513,49 @@ def main():
 
       if tithi_moonrise==19:
         if tithi_moonrise_yest!=19:#otherwise yesterday would have already been assigned
-          festivals[d]=chaturthi 
-          if moon_month[d]==5:#shravana krishna chaturthi
-            festivals[d]=maha+festivals[d]
+          festivals[d]=chaturthi[script] 
+          if moon_month[d]==5:#shravana krishna chaturthi[script]
+            festivals[d]=maha[script]+festivals[d]
       elif tithi_moonrise_tmrw==19:
-          festivals[d+1]=chaturthi 
+          festivals[d+1]=chaturthi[script] 
           if moon_month[d]==5: #moon_month[d] and[d+1] are same, so checking [d] is enough
-            festivals[d+1]=maha+festivals[d+1]
+            festivals[d+1]=maha[script]+festivals[d+1]
 
     #SHASHTHI Vratam
     if tithi_sunrise[d]==5 or tithi_sunrise[d]==6:
       if tithi_sunrise[d]==6 or (tithi_sunrise[d]==5 and tithi_sunrise[d+1]==7):
         if tithi_sunrise[d-1]!=6:#otherwise yesterday would have already been assigned
-          festivals[d]=shashthi 
-          if moon_month[d]==8:#kArtika krishna shashthi
-            festivals[d]=skanda+festivals[d]
+          festivals[d]=shashthi[script] 
+          if moon_month[d]==8:#kArtika krishna shashthi[script]
+            festivals[d]=skanda[script]+festivals[d]
       elif tithi_sunrise[d+1]==6:
-          festivals[d+1]=shashthi 
+          festivals[d+1]=shashthi[script] 
           if moon_month[d]==8: #moon_month[d] and[d+1] are same, so checking [d] is enough
-            festivals[d+1]=skanda+festivals[d+1]
+            festivals[d+1]=skanda[script]+festivals[d+1]
 
     ###--- OTHER (MAJOR) FESTIVALS ---###
+    #type of month | month number | type of angam (tithi|nakshatram) | angam number | min_t cut off for considering prev day (without sunrise_angam) as festival date
+    purvaviddha_rules={akshaya_tritiya[script]:['moon_month',2,'tithi',3,0],
+    chitra_purnima[script]:['sun_month',1,'tithi',15,0],
+    durgashtami[script]:['moon_month',7,'tithi',8,0],
+    mahanavami[script]:['moon_month',7,'tithi',9,0],
+    vijayadashami[script]:['moon_month',7,'tithi',10,0],
+    dipavali[script]:['moon_month',7,'tithi',29,0],
+    shankara_jayanti[script]:['moon_month',2,'tithi',5,0],
+    yajur_upakarma[script]:['moon_month',5,'tithi',15,0],
+    rg_upakarma[script]:['moon_month',5,'nakshatram',22,0],
+    sama_upakarma[script]:['sun_month',5,'nakshatram',13,0],
+    rishi_panchami[script]:['moon_month',6,'tithi',5,0],
+    ananta_chaturdashi[script]:['moon_month',6,'tithi',14,0],
+    mahalaya_paksham[script]:['moon_month',6,'tithi',16,0],
+    hanumat_jayanti[script]:['sun_month',9,'tithi',30,0],
+    ardra_darshanam[script]:['sun_month',9,'nakshatram',6,0],
+    ratha_saptami[script]:['sun_month',10,'tithi',7,0],
+    goda_jayanti[script]:['sun_month',4,'nakshatram',11,0],
+    adi_krittika[script]:['sun_month',4,'nakshatram',3,0],
+    phalguni_uttaram[script]:['sun_month',12,'nakshatram',12,4],
+    mahalaya_amavasya[script]:['moon_month',6,'tithi',30,0],
+    uma_maheshvara_vratam[script]:['moon_month',6,'tithi',15,0]}
 
     for x in iter(purvaviddha_rules.keys()):
       rule=purvaviddha_rules[x]
@@ -565,20 +591,20 @@ def main():
 
     #NAVARATRI START
     if moon_month[d]==7 and moon_month[d-1]==6:
-      festival_day_list[navaratri_start]=[d]
+      festival_day_list[navaratri_start[script]]=[d]
 
     #PONGAL/AYANAM
     if sun_month[d]==10 and sun_month[d-1]==9:
-      festival_day_list[uttarayanam]=[d]
+      festival_day_list[uttarayanam[script]]=[d]
 
     if sun_month[d]==4 and sun_month[d-1]==3:
-      festival_day_list[dakshinayanam]=[d]
+      festival_day_list[dakshinayanam[script]]=[d]
 
     if sun_month[d]==1 and sun_month[d-1]==12:
       festival_day_list[new_yr]=[d]
 
     if moon_month[d]==1 and moon_month[d-1]!=1:
-      festival_day_list[yugadi]=[d]
+      festival_day_list[yugadi[script]]=[d]
 
     #SHRIRAMANAVAMI
     if moon_month[d]==1:
@@ -589,9 +615,9 @@ def main():
         t_22 = get_tithi(jd_sunrise[d+1]+(jd_sunset[d+1]-jd_sunrise[d+1])*(3.0/5.0))#madhyahna2 end
         if t_11==9 or t_12==9:
           if t_21==9 or t_22==9:
-            festival_day_list[ramanavami]=[d+1]
+            festival_day_list[ramanavami[script]]=[d+1]
           else:
-            festival_day_list[ramanavami]=[d]
+            festival_day_list[ramanavami[script]]=[d]
  
     #JANMASHTAMI
     if moon_month[d]==5:
@@ -606,9 +632,9 @@ def main():
         #t_22 = get_tithi(jd_sunset[d+1]+(jd_sunrise[d+2]-jd_sunset[d+1])*(3.0/5.0))#madhyaratri2 end
         if t_11==23 or t_12==23:
           if t_21==23 or t_22==23:
-            festival_day_list[janmashtami]=[d+1]
+            festival_day_list[janmashtami[script]]=[d+1]
           else:
-            festival_day_list[janmashtami]=[d]
+            festival_day_list[janmashtami[script]]=[d]
 
     #SHIVARATRI
     if moon_month[d]==11:
@@ -619,9 +645,9 @@ def main():
         t_22 = get_tithi(jd_sunset[d+1]+(jd_sunrise[d+2]-jd_sunset[d+1])*(8.0/15.0))#nishita2 end
         if t_11==29 or t_12==29:
           if t_21==29 or t_22==29:
-            festival_day_list[shivaratri]=[d+1]
+            festival_day_list[shivaratri[script]]=[d+1]
           else:
-            festival_day_list[shivaratri]=[d]
+            festival_day_list[shivaratri[script]]=[d]
 
     #VINAYAKA CHATURTHI
     if moon_month[d]==6:
@@ -632,13 +658,13 @@ def main():
         t_22 = get_tithi(jd_sunrise[d+1]+(jd_sunset[d+1]-jd_sunrise[d+1])*(3.0/5.0))#madhyahna2 end
         if t_11==4 or t_12==4:
           if t_21==4 or t_22==4:
-            festival_day_list[vchaturthi]=[d+1]
+            festival_day_list[vchaturthi[script]]=[d+1]
           else:
-            festival_day_list[vchaturthi]=[d]
+            festival_day_list[vchaturthi[script]]=[d]
 
   #Add saved festivals
-  festival_day_list[gayatri_japam]=[festival_day_list[yajur_upakarma][0]+1]
-  festival_day_list[varalakshmi_vratam]=[festival_day_list[yajur_upakarma][0]-((weekday_start-1+festival_day_list[yajur_upakarma][0]-5)%7)]
+  festival_day_list[gayatri_japam[script]]=[festival_day_list[yajur_upakarma[script]][0]+1]
+  festival_day_list[varalakshmi_vratam[script]]=[festival_day_list[yajur_upakarma[script]][0]-((weekday_start-1+festival_day_list[yajur_upakarma[script]][0]-5)%7)]
   #KARADAYAN_NOMBU
   for x in iter(festival_day_list.keys()):
     for j in range(0,len(festival_day_list[x])):
@@ -685,7 +711,7 @@ def main():
       if jd_ecl_lun_end<jd_moonrise_ecl_day or jd_ecl_lun_start>jd_moonset_ecl_day:
         jd=jd+20 #Move towards the next eclipse... at least the next full moon (>=25 days away)
         continue
-      lun_ecl_str = chandra_grahanam+'~\\textsf{'+print_time2(ecl_lun_start)+'}{\\RIGHTarrow}\\textsf{'+print_time2(ecl_lun_end)+'}'
+      lun_ecl_str = chandra_grahanam[script]+'~\\textsf{'+print_time2(ecl_lun_start)+'}{\\RIGHTarrow}\\textsf{'+print_time2(ecl_lun_end)+'}'
       if festivals[fday]!='':
         festivals[fday]+='\\\\'
       festivals[fday]+=lun_ecl_str
@@ -717,7 +743,7 @@ def main():
         continue
       if ecl_sol_end < ecl_sol_start:
         ecl_sol_end+=24
-      sol_ecl_str = surya_grahanam+'~\\textsf{'+print_time2(ecl_sol_start)+'}{\\RIGHTarrow}\\textsf{'+print_time2(ecl_sol_end)+'}'
+      sol_ecl_str = surya_grahanam[script]+'~\\textsf{'+print_time2(ecl_sol_start)+'}{\\RIGHTarrow}\\textsf{'+print_time2(ecl_sol_end)+'}'
       if festivals[fday]!='':
         festivals[fday]+='\\\\'
       festivals[fday]+=sol_ecl_str
@@ -728,7 +754,7 @@ def main():
   #cal = Calendar()
 
   print '\\newpage'
-  print '\\centerline {\\LARGE {{%s}}}\\mbox{}\\\\[2cm]' % list_of_festivals
+  print '\\centerline {\\LARGE {{%s}}}\\mbox{}\\\\[2cm]' % list_of_festivals[script]
   print '\\begin{center}'
   print '\\begin{minipage}[t]{0.3\\linewidth}'
   print '\\begin{center}'
@@ -806,7 +832,7 @@ def main():
         print "{}  &"
 
     print '\caldata{\\textcolor{%s}{%s}}{%s{%s}}{\\sundata{%s}{%s}{%s}}{\\tnyk{%s}{%s}{%s}{%s}}{\\rahuyama{%s}{%s}}{%s} ' % (daycol[weekday],
-      dt,month_data[d],get_chandra_masa(moon_month[d],chandra_masa_names),sunrise[d],sunset[d],madhya[d],tithi_data_string[d],nakshatram_data_string[d],
+      dt,month_data[d],get_chandra_masa(moon_month[d],chandra_masa_names,script),sunrise[d],sunset[d],madhya[d],tithi_data_string[d],nakshatram_data_string[d],
       yogam_data_string[d],karanam_data_string[d],rahu[d],yama[d],festivals[d])
   
     if weekday==6:
