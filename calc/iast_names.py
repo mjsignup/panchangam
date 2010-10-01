@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+from init_names import *
 
 ahoratram ['iast']= 'ahorātram'
 adhika ['iast']= 'adhika'
