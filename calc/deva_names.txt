@@ -1,62 +1,60 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 
-ahoratram = 'अहोरात्रम्'
-adhika = 'अधिक'
-samvatsara = 'संवत्सरः'
-ekadashi = 'एकादशी'
-sarva = 'सर्व'
-smartha = 'स्मार्थ'
-vaishnava = 'वैष्णव'
-pradosham = 'प्रदोष-व्रतम्'
-chaturthi = 'सङ्कटहर-चतुर्थी'
-maha = 'महा'
-arambham = 'आरम्भः'
-navaratri_start = 'नवरात्रि-'+arambham
-durgashtami = 'दुर्गाष्टमी'
-mahanavami = 'महानवमी/सरस्वती-पूजा'
-vijayadashami = 'विजयदशमी'
-dipavali = 'दीपावली'
-skanda = 'स्कन्द~'
-shashthi = 'षष्ठी-व्रतम्'
+ahoratram['deva']= 'अहोरात्रम्'
+adhika['deva']= 'अधिक'
+samvatsara['deva']= 'संवत्सरः'
+ekadashi['deva']= 'एकादशी'
+sarva['deva']= 'सर्व'
+smartha['deva']= 'स्मार्थ'
+vaishnava['deva']= 'वैष्णव'
+pradosham['deva']= 'प्रदोष-व्रतम्'
+chaturthi['deva']= 'सङ्कटहर-चतुर्थी'
+maha['deva']= 'महा'
+arambham['deva']= 'आरम्भः'
+navaratri_start['deva']= 'नवरात्रि-'+arambham['deva']
+durgashtami['deva']= 'दुर्गाष्टमी'
+mahanavami['deva']= 'महानवमी/सरस्वती-पूजा'
+vijayadashami['deva']= 'विजयदशमी'
+dipavali['deva']= 'दीपावली'
+skanda['deva']= 'स्कन्द~'
+shashthi['deva']= 'षष्ठी-व्रतम्'
 
-vchaturthi = 'श्रीविनायक-चतुर्थी'
-ananta_chaturdashi = 'अनन्त-चतुर्दशी'
-rishi_panchami = 'ऋषि-पञ्चमी  व्रतम्'
-ramanavami = 'श्रीरामनवमी'
-shivaratri = 'महाशिवरात्रिः'
-janmashtami = 'श्रीकृष्णजन्माष्टमी'
-chitra_purnima = 'चित्रा~पूर्णिमा, गजेन्द्र-मोक्षः'
-varalakshmi_vratam = 'वरलक्ष्मी-व्रतम्'
-yajur_upakarma = 'यजुर्वेद-उपाकर्म'
-rg_upakarma = 'ऋग्वेद-उपाकर्म'
-sama_upakarma = 'सामवेद-उपाकर्म'
-gayatri_japam = 'गायत्री  जपम्'
-uttarayanam = 'मकर~सङ्क्रान्ति/उत्तरायण-पुण्यकालम्'
-dakshinayanam = 'दक्षिणायन-पुण्यकालम्'
-mesha_sankranti = 'मेष~सङ्क्रान्ति'
-karadayan_nombu = 'कारडयान्-नोम्बु'
-akshaya_tritiya = 'अक्षय तृतीया'
-shankara_jayanti = 'शङ्कर-जयन्ती'
-mahalaya_paksham = 'महालय-पक्ष आरम्भः'
-hanumat_jayanti = 'श्री हनूमत् जयन्ती'
-ardra_darshanam = 'आर्द्रा दर्शनम्'
-ratha_saptami = 'रथ-सप्तमी'
-goda_jayanti = 'श्री गोदा जयन्ती'
-adi_krittika = 'आषाढ कृत्तिका'
-phalguni_uttaram = 'फल्गुनी उत्तरम्'
-mahalaya_amavasya = 'महालय-अमावस्या'
-uma_maheshvara_vratam = 'उमा-महेश्वर व्रतम्'
-yugadi = 'युगादि'
+vchaturthi['deva']= 'श्रीविनायक-चतुर्थी'
+ananta_chaturdashi['deva']= 'अनन्त-चतुर्दशी'
+rishi_panchami['deva']= 'ऋषि-पञ्चमी  व्रतम्'
+ramanavami['deva']= 'श्रीरामनवमी'
+shivaratri['deva']= 'महाशिवरात्रिः'
+janmashtami['deva']= 'श्रीकृष्णजन्माष्टमी'
+chitra_purnima['deva']= 'चित्रा~पूर्णिमा, गजेन्द्र-मोक्षः'
+varalakshmi_vratam['deva']= 'वरलक्ष्मी-व्रतम्'
+yajur_upakarma['deva']= 'यजुर्वेद-उपाकर्म'
+rg_upakarma['deva']= 'ऋग्वेद-उपाकर्म'
+sama_upakarma['deva']= 'सामवेद-उपाकर्म'
+gayatri_japam['deva']= 'गायत्री  जपम्'
+uttarayanam['deva']= 'मकर~सङ्क्रान्ति/उत्तरायण-पुण्यकालम्'
+dakshinayanam['deva']= 'दक्षिणायन-पुण्यकालम्'
+mesha_sankranti['deva']= 'मेष~सङ्क्रान्ति'
+karadayan_nombu['deva']= 'कारडयान्-नोम्बु'
+akshaya_tritiya['deva']= 'अक्षय तृतीया'
+shankara_jayanti['deva']= 'शङ्कर-जयन्ती'
+mahalaya_paksham['deva']= 'महालय-पक्ष आरम्भः'
+hanumat_jayanti['deva']= 'श्री हनूमत् जयन्ती'
+ardra_darshanam['deva']= 'आर्द्रा दर्शनम्'
+ratha_saptami['deva']= 'रथ-सप्तमी'
+goda_jayanti['deva']= 'श्री गोदा जयन्ती'
+adi_krittika['deva']= 'आषाढ कृत्तिका'
+phalguni_uttaram['deva']= 'फल्गुनी उत्तरम्'
+mahalaya_amavasya['deva']= 'महालय-अमावस्या'
+uma_maheshvara_vratam['deva']= 'उमा-महेश्वर व्रतम्'
+yugadi['deva']= 'युगादि'
 
-chandra_grahanam = 'चन्द्र-ग्रहणम्'
-surya_grahanam = 'सूर्य-ग्रहणम्'
+chandra_grahanam['deva']= 'चन्द्र-ग्रहणम्'
+surya_grahanam['deva']= 'सूर्य-ग्रहणम्'
 
-list_of_festivals = 'मासान्तर-विशेषाः'
-chaturmasya_start='चातुर्मासस्य आरम्भः'
-chaturmasya_end='चातुर्मासस्य समापनम्'
+list_of_festivals['deva']= 'मासान्तर-विशेषाः'
+chaturmasya_start['deva']='चातुर्मासस्य आरम्भः'
+chaturmasya_end['deva']='चातुर्मासस्य समापनम्'
 
-nakshatra_names={1:'अश्विनी',
+nakshatra_names['deva']={1:'अश्विनी',
 2:'अपभरणी',
 3:'कृत्तिका',
 4:'रोहिणी',
@@ -84,7 +82,7 @@ nakshatra_names={1:'अश्विनी',
 26:'उत्तरप्रोष्ठपदा',
 27:'रेवती'}
 
-masa_names={1:'मेष',
+masa_names['deva']={1:'मेष',
 2:'वृषभ',
 3:'मिथुन',
 4:'कर्कटक',
@@ -97,7 +95,7 @@ masa_names={1:'मेष',
 11:'कुम्भ',
 12:'मीन'}
 
-chandra_masa_names={1:'चैत्र',
+chandra_masa_names['deva']={1:'चैत्र',
 2:'वैशाख',
 3:'ज्यैष्ठ',
 4:'आषाढ',
@@ -110,7 +108,7 @@ chandra_masa_names={1:'चैत्र',
 11:'माघ',
 12:'फाल्गुन'}
 
-tithi_names={1:'शुक्ल~प्रथमा',
+tithi_names['deva']={1:'शुक्ल~प्रथमा',
 2:'शुक्ल~द्वितीया',
 3:'शुक्ल~तृतीया',
 4:'शुक्ल~चतुर्थी',
@@ -141,7 +139,7 @@ tithi_names={1:'शुक्ल~प्रथमा',
 29:'कृष्ण~चतुर्दशी',
 30:'\\newmoon~अमावस्या'}
 
-year_names={1:'प्रभव',
+year_names['deva']={1:'प्रभव',
 2:'विभव',
 3:'शुक्ल',
 4:'प्रमोद',
@@ -202,7 +200,7 @@ year_names={1:'प्रभव',
 59:'क्रोधन',
 60:'अक्षय'}
 
-karanam_names={1:'किंस्तुघ्न',
+karanam_names['deva']={1:'किंस्तुघ्न',
 2:'बव',
 3:'बालव',
 4:'कौलव',
@@ -263,7 +261,7 @@ karanam_names={1:'किंस्तुघ्न',
 59:'चतुष्पाद',
 60:'नागव'}
 
-yogam_names={1:'विष्कुम्भ',
+yogam_names['deva']={1:'विष्कुम्भ',
 2:'प्रीति',
 3:'आयुष्मान्',
 4:'सौभाग्य',
@@ -291,7 +289,7 @@ yogam_names={1:'विष्कुम्भ',
 26:'ऐन्द्र',
 27:'वैधृति'}
 
-shukla_ekadashi_names={1:'कामद',
+shukla_ekadashi_names['deva']={1:'कामद',
 2:'मोहिनी',
 3:'पाण्डव निर्जल',
 4:'पद्म/देवशयनी',
@@ -305,7 +303,7 @@ shukla_ekadashi_names={1:'कामद',
 12:'अमलकी',
 13:'पद्मिनी'}
 
-krishna_ekadashi_names={1:'पापविमोचिनी',
+krishna_ekadashi_names['deva']={1:'पापविमोचिनी',
 2:'वरुथिनी',
 3:'अपरा',
 4:'योगिनी',

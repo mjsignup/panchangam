@@ -7,7 +7,6 @@ from datetime import *
 import pytz
 from pytz import timezone
 from init_names import *
-from deva_names import *
 from icalendar import Calendar
 from icalendar import Event
 

@@ -1,62 +1,60 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 
-ahoratram = 'Ahoratram'
-adhika = 'Adhika'
-samvatsara = 'Samvatsara'
-ekadashi = 'Ekadashi'
-sarva = 'Sarva'
-smartha = 'Smartha'
-vaishnava = 'Vaishnava'
-pradosham = 'Pradosha-Vratam'
-chaturthi = 'Sankatahara-Chaturthi'
-maha = 'Maha'
-arambham = 'Arambha'
-navaratri_start = 'Navaratri-'+arambham
-durgashtami = 'Durgashtami'
-mahanavami = 'Mahanavami/Sarasvati-Puja'
-vijayadashami = 'Vijayadashami'
-dipavali = 'Dipavali'
-skanda = 'Skanda '
-shashthi = 'Shashthi-Vratam'
+ahoratram['en'] = 'Ahoratram'
+adhika['en'] = 'Adhika'
+samvatsara['en'] = 'Samvatsara'
+ekadashi['en'] = 'Ekadashi'
+sarva['en'] = 'Sarva'
+smartha['en'] = 'Smartha'
+vaishnava['en'] = 'Vaishnava'
+pradosham['en'] = 'Pradosha-Vratam'
+chaturthi['en'] = 'Sankatahara-Chaturthi'
+maha['en'] = 'Maha'
+arambham['en'] = 'Arambha'
+navaratri_start['en'] = 'Navaratri-'+arambham['en']
+durgashtami['en'] = 'Durgashtami'
+mahanavami['en'] = 'Mahanavami/Sarasvati-Puja'
+vijayadashami['en'] = 'Vijayadashami'
+dipavali['en'] = 'Dipavali'
+skanda['en'] = 'Skanda '
+shashthi['en'] = 'Shashthi-Vratam'
 
-vchaturthi = 'Shrivinayaka-Chaturthi'
-ananta_chaturdashi = 'Ananta-Chaturdashi'
-rishi_panchami = 'Rishi-Panchami  vratam'
-ramanavami = 'Shriramanavami'
-shivaratri = 'Mahashivaratri'
-janmashtami = 'Shrikrishnajanmashtami'
-chitra_purnima = 'Chitra Purnima, Gajendra-Moksha'
-varalakshmi_vratam = 'Varalakshmi-Vratam'
-yajur_upakarma = 'Yajurveda-Upakarma'
-rg_upakarma = 'Rigveda-Upakarma'
-sama_upakarma = 'Samaveda-Upakarma'
-gayatri_japam = 'Gayatri  japam'
-uttarayanam = 'Makara Sankranti/Uttarayana-Punyakalam'
-dakshinayanam = 'Dakshinayana-Punyakalam'
-mesha_sankranti = 'Mesha Sankranti'
-karadayan_nombu = 'Karadayan-Nombu'
-akshaya_tritiya = 'Akshaya Tritiya'
-shankara_jayanti = 'Shankara-Jayanti'
-mahalaya_paksham = 'Mahalaya-Paksha Arambha'
-hanumat_jayanti = 'Shri Hanumat Jayanti'
-ardra_darshanam = 'Ardra Darshanam'
-ratha_saptami = 'Ratha-Saptami'
-goda_jayanti = 'Shri Goda Jayanti'
-adi_krittika = 'Ashadha Krittika'
-phalguni_uttaram = 'Phalguni Uttaram'
-mahalaya_amavasya = 'Mahalaya-Amavasya'
-uma_maheshvara_vratam = 'Uma-Maheshvara Vratam'
-yugadi = 'Yugadi'
+vchaturthi['en'] = 'Shrivinayaka-Chaturthi'
+ananta_chaturdashi['en'] = 'Ananta-Chaturdashi'
+rishi_panchami['en'] = 'Rishi-Panchami  vratam'
+ramanavami['en'] = 'Shriramanavami'
+shivaratri['en'] = 'Mahashivaratri'
+janmashtami['en'] = 'Shrikrishnajanmashtami'
+chitra_purnima['en'] = 'Chitra Purnima, Gajendra-Moksha'
+varalakshmi_vratam['en'] = 'Varalakshmi-Vratam'
+yajur_upakarma['en'] = 'Yajurveda-Upakarma'
+rg_upakarma['en'] = 'Rigveda-Upakarma'
+sama_upakarma['en'] = 'Samaveda-Upakarma'
+gayatri_japam['en'] = 'Gayatri  japam'
+uttarayanam['en'] = 'Makara Sankranti/Uttarayana-Punyakalam'
+dakshinayanam['en'] = 'Dakshinayana-Punyakalam'
+mesha_sankranti['en'] = 'Mesha Sankranti'
+karadayan_nombu['en'] = 'Karadayan-Nombu'
+akshaya_tritiya['en'] = 'Akshaya Tritiya'
+shankara_jayanti['en'] = 'Shankara-Jayanti'
+mahalaya_paksham['en'] = 'Mahalaya-Paksha Arambha'
+hanumat_jayanti['en'] = 'Shri Hanumat Jayanti'
+ardra_darshanam['en'] = 'Ardra Darshanam'
+ratha_saptami['en'] = 'Ratha-Saptami'
+goda_jayanti['en'] = 'Shri Goda Jayanti'
+adi_krittika['en'] = 'Ashadha Krittika'
+phalguni_uttaram['en'] = 'Phalguni Uttaram'
+mahalaya_amavasya['en'] = 'Mahalaya-Amavasya'
+uma_maheshvara_vratam['en'] = 'Uma-Maheshvara Vratam'
+yugadi['en'] = 'Yugadi'
 
-chandra_grahanam = 'Chandra-Grahanam'
-surya_grahanam = 'Surya-Grahanam'
+chandra_grahanam['en'] = 'Chandra-Grahanam'
+surya_grahanam['en'] = 'Surya-Grahanam'
 
-list_of_festivals = 'Masantara-Vishesha'
-chaturmasya_start='Chaturmasasya Arambha'
-chaturmasya_end='Chaturmasasya Samapanam'
+list_of_festivals['en'] = 'Masantara-Vishesha'
+chaturmasya_start['en'] ='Chaturmasasya Arambha'
+chaturmasya_end['en'] ='Chaturmasasya Samapanam'
 
-nakshatra_names={1:'Ashvini',
+nakshatra_names['en'] ={1:'Ashvini',
 2:'Apabharani',
 3:'Krittika',
 4:'Rohini',
@@ -84,7 +82,7 @@ nakshatra_names={1:'Ashvini',
 26:'Uttaraproshthapada',
 27:'Revati'}
 
-masa_names={1:'Mesha',
+masa_names['en'] ={1:'Mesha',
 2:'Vrishabha',
 3:'Mithuna',
 4:'Karkataka',
@@ -97,7 +95,7 @@ masa_names={1:'Mesha',
 11:'Kumbha',
 12:'Mina'}
 
-chandra_masa_names={1:'Chaitra',
+chandra_masa_names['en'] ={1:'Chaitra',
 2:'Vaishakha',
 3:'Jyaishtha',
 4:'Ashadha',
@@ -110,7 +108,7 @@ chandra_masa_names={1:'Chaitra',
 11:'Magha',
 12:'Phalguna'}
 
-tithi_names={1:'Shukla Prathama',
+tithi_names['en'] ={1:'Shukla Prathama',
 2:'Shukla Dvitiya',
 3:'Shukla Tritiya',
 4:'Shukla Chaturthi',
@@ -141,7 +139,7 @@ tithi_names={1:'Shukla Prathama',
 29:'Krishna Chaturdashi',
 30:'\\newmoon Amavasya'}
 
-year_names={1:'Prabhava',
+year_names['en'] ={1:'Prabhava',
 2:'Vibhava',
 3:'Shukla',
 4:'Pramoda',
@@ -202,7 +200,7 @@ year_names={1:'Prabhava',
 59:'Krodhana',
 60:'Akshaya'}
 
-karanam_names={1:'Kimstughna',
+karanam_names['en'] ={1:'Kimstughna',
 2:'Bava',
 3:'Balava',
 4:'Kaulava',
@@ -263,7 +261,7 @@ karanam_names={1:'Kimstughna',
 59:'Chatushpada',
 60:'Nagava'}
 
-yogam_names={1:'Vishkumbha',
+yogam_names['en'] ={1:'Vishkumbha',
 2:'Priti',
 3:'Ayushman',
 4:'Saubhagya',
@@ -291,7 +289,7 @@ yogam_names={1:'Vishkumbha',
 26:'Aindra',
 27:'Vaidhriti'}
 
-shukla_ekadashi_names={1:'Kamada',
+shukla_ekadashi_names['en'] ={1:'Kamada',
 2:'Mohini',
 3:'Pandava Nirjala',
 4:'Padma/Devashayani',
@@ -305,7 +303,7 @@ shukla_ekadashi_names={1:'Kamada',
 12:'Amalaki',
 13:'Padmini'}
 
-krishna_ekadashi_names={1:'Papavimochini',
+krishna_ekadashi_names['en'] ={1:'Papavimochini',
 2:'Varuthini',
 3:'Apara',
 4:'Yogini',
