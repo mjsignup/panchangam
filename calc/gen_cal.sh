@@ -30,8 +30,8 @@ rm cal-$y-$city_name.log
 echo done
 
 mkdir -p data
-mv cal-* data/
+mv cal-$y-$city_name.* data/
 
 mkdir -p pdf
-mv data/*.pdf pdf/
+mv data/cal-$y-$city_name.pdf pdf/
 
