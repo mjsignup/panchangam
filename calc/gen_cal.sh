@@ -12,7 +12,7 @@ then
   echo "Usage: $0 <city name> <lat> <lon> <tz name> [year]"
   exit 1
 else
-	y=2010
+	y=`date +%Y`
 fi
 
 city_name=$1
