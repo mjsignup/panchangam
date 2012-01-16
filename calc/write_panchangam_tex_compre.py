@@ -240,9 +240,9 @@ def main():
   new_yr=mesha_sankranti[script]+'~('+year_names[script][(samvatsara_id%60)+1]+'-'+samvatsara[script]+')'
   
   print '\\mbox{}'
-  print '{\\font\\x="Warnock Pro" at 60 pt\\x %d\\\\[0.3cm]}' % year
+  print '{\\font\\x="Candara" at 60 pt\\x %d\\\\[0.5cm]}' % year
   print '\\mbox{\\font\\x="Sanskrit 2003:script=deva" at 48 pt\\x %s}\\\\[0.5cm]' % samvatsara_names
-  print '{\\font\\x="Warnock Pro" at 48 pt\\x \\uppercase{%s}\\\\[0.3cm]}' % city_name
+  print '{\\font\\x="Candara" at 48 pt\\x \\uppercase{%s}\\\\[0.5cm]}' % city_name
   print '\hrule'
 
 
