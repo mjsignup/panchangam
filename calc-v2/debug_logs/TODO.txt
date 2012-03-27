@@ -1,0 +1,6 @@
+1. 10-Nov-2007 - wrong moon month?
+2. Jan 1983 - wrong moon month?
+3. Streamline moon month calc
+4. Check Sun Month festivals -- 1st/2nd occurrence??
+5. Nov 3 2010 Pradosham??? (Zurich) - no trayodashi at any sunset
+
