@@ -1,0 +1,366 @@
+01-01-2007	[  1]	sun_rashi=   8.558	tithi=  12.317	sun_month= 9	moon_month=10.0
+02-01-2007	[  2]	sun_rashi=   8.592	tithi=  13.388	sun_month= 9	moon_month=10.0
+03-01-2007	[  3]	sun_rashi=   8.626	tithi=  14.442	sun_month= 9	moon_month=10.0
+04-01-2007	[  4]	sun_rashi=   8.660	tithi=  15.474	sun_month= 9	moon_month=10.0
+05-01-2007	[  5]	sun_rashi=   8.694	tithi=  16.481	sun_month= 9	moon_month=10.0
+06-01-2007	[  6]	sun_rashi=   8.728	tithi=  17.461	sun_month= 9	moon_month=10.0
+07-01-2007	[  7]	sun_rashi=   8.762	tithi=  18.415	sun_month= 9	moon_month=10.0
+08-01-2007	[  8]	sun_rashi=   8.796	tithi=  19.347	sun_month= 9	moon_month=10.0
+09-01-2007	[  9]	sun_rashi=   8.830	tithi=  20.262	sun_month= 9	moon_month=10.0
+10-01-2007	[ 10]	sun_rashi=   8.864	tithi=  21.165	sun_month= 9	moon_month=10.0
+11-01-2007	[ 11]	sun_rashi=   8.898	tithi=  22.063	sun_month= 9	moon_month=10.0
+12-01-2007	[ 12]	sun_rashi=   8.932	tithi=  22.965	sun_month= 9	moon_month=10.0
+13-01-2007	[ 13]	sun_rashi=   8.966	tithi=  23.877	sun_month= 9	moon_month=10.0
+14-01-2007	[ 14]	sun_rashi=   9.000	tithi=  24.808	sun_month= 9	moon_month=10.0
+15-01-2007	[ 15]	sun_rashi=   9.034	tithi=  25.762	sun_month=10	moon_month=10.0
+16-01-2007	[ 16]	sun_rashi=   9.068	tithi=  26.744	sun_month=10	moon_month=10.0
+17-01-2007	[ 17]	sun_rashi=   9.102	tithi=  27.757	sun_month=10	moon_month=10.0
+18-01-2007	[ 18]	sun_rashi=   9.136	tithi=  28.799	sun_month=10	moon_month=10.0
+19-01-2007	[ 19]	sun_rashi=   9.170	tithi=  29.869	sun_month=10	moon_month=10.0
+20-01-2007	[ 20]	sun_rashi=   9.204	tithi=   0.961	sun_month=10	moon_month=11.0
+21-01-2007	[ 21]	sun_rashi=   9.238	tithi=   2.067	sun_month=10	moon_month=11.0
+22-01-2007	[ 22]	sun_rashi=   9.272	tithi=   3.180	sun_month=10	moon_month=11.0
+23-01-2007	[ 23]	sun_rashi=   9.305	tithi=   4.294	sun_month=10	moon_month=11.0
+24-01-2007	[ 24]	sun_rashi=   9.339	tithi=   5.404	sun_month=10	moon_month=11.0
+25-01-2007	[ 25]	sun_rashi=   9.373	tithi=   6.505	sun_month=10	moon_month=11.0
+26-01-2007	[ 26]	sun_rashi=   9.407	tithi=   7.594	sun_month=10	moon_month=11.0
+27-01-2007	[ 27]	sun_rashi=   9.441	tithi=   8.672	sun_month=10	moon_month=11.0
+28-01-2007	[ 28]	sun_rashi=   9.475	tithi=   9.736	sun_month=10	moon_month=11.0
+29-01-2007	[ 29]	sun_rashi=   9.509	tithi=  10.785	sun_month=10	moon_month=11.0
+30-01-2007	[ 30]	sun_rashi=   9.543	tithi=  11.819	sun_month=10	moon_month=11.0
+31-01-2007	[ 31]	sun_rashi=   9.577	tithi=  12.835	sun_month=10	moon_month=11.0
+01-02-2007	[ 32]	sun_rashi=   9.610	tithi=  13.834	sun_month=10	moon_month=11.0
+02-02-2007	[ 33]	sun_rashi=   9.644	tithi=  14.812	sun_month=10	moon_month=11.0
+03-02-2007	[ 34]	sun_rashi=   9.678	tithi=  15.772	sun_month=10	moon_month=11.0
+04-02-2007	[ 35]	sun_rashi=   9.712	tithi=  16.713	sun_month=10	moon_month=11.0
+05-02-2007	[ 36]	sun_rashi=   9.746	tithi=  17.637	sun_month=10	moon_month=11.0
+06-02-2007	[ 37]	sun_rashi=   9.779	tithi=  18.548	sun_month=10	moon_month=11.0
+07-02-2007	[ 38]	sun_rashi=   9.813	tithi=  19.450	sun_month=10	moon_month=11.0
+08-02-2007	[ 39]	sun_rashi=   9.847	tithi=  20.349	sun_month=10	moon_month=11.0
+09-02-2007	[ 40]	sun_rashi=   9.881	tithi=  21.251	sun_month=10	moon_month=11.0
+10-02-2007	[ 41]	sun_rashi=   9.914	tithi=  22.163	sun_month=10	moon_month=11.0
+11-02-2007	[ 42]	sun_rashi=   9.948	tithi=  23.091	sun_month=10	moon_month=11.0
+12-02-2007	[ 43]	sun_rashi=   9.982	tithi=  24.042	sun_month=10	moon_month=11.0
+13-02-2007	[ 44]	sun_rashi=  10.016	tithi=  25.023	sun_month=11	moon_month=11.0
+14-02-2007	[ 45]	sun_rashi=  10.049	tithi=  26.036	sun_month=11	moon_month=11.0
+15-02-2007	[ 46]	sun_rashi=  10.083	tithi=  27.085	sun_month=11	moon_month=11.0
+16-02-2007	[ 47]	sun_rashi=  10.117	tithi=  28.168	sun_month=11	moon_month=11.0
+17-02-2007	[ 48]	sun_rashi=  10.150	tithi=  29.282	sun_month=11	moon_month=11.0
+18-02-2007	[ 49]	sun_rashi=  10.184	tithi=   0.418	sun_month=11	moon_month=12.0
+19-02-2007	[ 50]	sun_rashi=  10.218	tithi=   1.568	sun_month=11	moon_month=12.0
+20-02-2007	[ 51]	sun_rashi=  10.251	tithi=   2.721	sun_month=11	moon_month=12.0
+21-02-2007	[ 52]	sun_rashi=  10.285	tithi=   3.867	sun_month=11	moon_month=12.0
+22-02-2007	[ 53]	sun_rashi=  10.319	tithi=   4.997	sun_month=11	moon_month=12.0
+23-02-2007	[ 54]	sun_rashi=  10.352	tithi=   6.106	sun_month=11	moon_month=12.0
+24-02-2007	[ 55]	sun_rashi=  10.386	tithi=   7.191	sun_month=11	moon_month=12.0
+25-02-2007	[ 56]	sun_rashi=  10.419	tithi=   8.249	sun_month=11	moon_month=12.0
+26-02-2007	[ 57]	sun_rashi=  10.453	tithi=   9.283	sun_month=11	moon_month=12.0
+27-02-2007	[ 58]	sun_rashi=  10.486	tithi=  10.293	sun_month=11	moon_month=12.0
+28-02-2007	[ 59]	sun_rashi=  10.520	tithi=  11.281	sun_month=11	moon_month=12.0
+01-03-2007	[ 60]	sun_rashi=  10.553	tithi=  12.250	sun_month=11	moon_month=12.0
+02-03-2007	[ 61]	sun_rashi=  10.587	tithi=  13.201	sun_month=11	moon_month=12.0
+03-03-2007	[ 62]	sun_rashi=  10.620	tithi=  14.138	sun_month=11	moon_month=12.0
+04-03-2007	[ 63]	sun_rashi=  10.653	tithi=  15.062	sun_month=11	moon_month=12.0
+05-03-2007	[ 64]	sun_rashi=  10.687	tithi=  15.976	sun_month=11	moon_month=12.0
+06-03-2007	[ 65]	sun_rashi=  10.720	tithi=  16.882	sun_month=11	moon_month=12.0
+07-03-2007	[ 66]	sun_rashi=  10.754	tithi=  17.783	sun_month=11	moon_month=12.0
+08-03-2007	[ 67]	sun_rashi=  10.787	tithi=  18.684	sun_month=11	moon_month=12.0
+09-03-2007	[ 68]	sun_rashi=  10.820	tithi=  19.589	sun_month=11	moon_month=12.0
+10-03-2007	[ 69]	sun_rashi=  10.854	tithi=  20.502	sun_month=11	moon_month=12.0
+11-03-2007	[ 70]	sun_rashi=  10.887	tithi=  21.429	sun_month=11	moon_month=12.0
+12-03-2007	[ 71]	sun_rashi=  10.920	tithi=  22.377	sun_month=11	moon_month=12.0
+13-03-2007	[ 72]	sun_rashi=  10.953	tithi=  23.351	sun_month=11	moon_month=12.0
+14-03-2007	[ 73]	sun_rashi=  10.987	tithi=  24.356	sun_month=11	moon_month=12.0
+15-03-2007	[ 74]	sun_rashi=  11.020	tithi=  25.397	sun_month=12	moon_month=12.0
+16-03-2007	[ 75]	sun_rashi=  11.053	tithi=  26.475	sun_month=12	moon_month=12.0
+17-03-2007	[ 76]	sun_rashi=  11.086	tithi=  27.590	sun_month=12	moon_month=12.0
+18-03-2007	[ 77]	sun_rashi=  11.119	tithi=  28.735	sun_month=12	moon_month=12.0
+19-03-2007	[ 78]	sun_rashi=  11.153	tithi=  29.904	sun_month=12	moon_month=12.0
+20-03-2007	[ 79]	sun_rashi=  11.186	tithi=   1.084	sun_month=12	moon_month= 1.0
+21-03-2007	[ 80]	sun_rashi=  11.219	tithi=   2.262	sun_month=12	moon_month= 1.0
+22-03-2007	[ 81]	sun_rashi=  11.252	tithi=   3.424	sun_month=12	moon_month= 1.0
+23-03-2007	[ 82]	sun_rashi=  11.285	tithi=   4.562	sun_month=12	moon_month= 1.0
+24-03-2007	[ 83]	sun_rashi=  11.318	tithi=   5.668	sun_month=12	moon_month= 1.0
+25-03-2007	[ 84]	sun_rashi=  11.351	tithi=   6.738	sun_month=12	moon_month= 1.0
+26-03-2007	[ 85]	sun_rashi=  11.384	tithi=   7.773	sun_month=12	moon_month= 1.0
+27-03-2007	[ 86]	sun_rashi=  11.417	tithi=   8.776	sun_month=12	moon_month= 1.0
+28-03-2007	[ 87]	sun_rashi=  11.450	tithi=   9.751	sun_month=12	moon_month= 1.0
+29-03-2007	[ 88]	sun_rashi=  11.483	tithi=  10.703	sun_month=12	moon_month= 1.0
+30-03-2007	[ 89]	sun_rashi=  11.516	tithi=  11.637	sun_month=12	moon_month= 1.0
+31-03-2007	[ 90]	sun_rashi=  11.549	tithi=  12.557	sun_month=12	moon_month= 1.0
+01-04-2007	[ 91]	sun_rashi=  11.582	tithi=  13.468	sun_month=12	moon_month= 1.0
+02-04-2007	[ 92]	sun_rashi=  11.615	tithi=  14.373	sun_month=12	moon_month= 1.0
+03-04-2007	[ 93]	sun_rashi=  11.648	tithi=  15.276	sun_month=12	moon_month= 1.0
+04-04-2007	[ 94]	sun_rashi=  11.681	tithi=  16.179	sun_month=12	moon_month= 1.0
+05-04-2007	[ 95]	sun_rashi=  11.713	tithi=  17.085	sun_month=12	moon_month= 1.0
+06-04-2007	[ 96]	sun_rashi=  11.746	tithi=  17.996	sun_month=12	moon_month= 1.0
+07-04-2007	[ 97]	sun_rashi=  11.779	tithi=  18.917	sun_month=12	moon_month= 1.0
+08-04-2007	[ 98]	sun_rashi=  11.812	tithi=  19.850	sun_month=12	moon_month= 1.0
+09-04-2007	[ 99]	sun_rashi=  11.844	tithi=  20.800	sun_month=12	moon_month= 1.0
+10-04-2007	[100]	sun_rashi=  11.877	tithi=  21.772	sun_month=12	moon_month= 1.0
+11-04-2007	[101]	sun_rashi=  11.910	tithi=  22.771	sun_month=12	moon_month= 1.0
+12-04-2007	[102]	sun_rashi=  11.943	tithi=  23.800	sun_month=12	moon_month= 1.0
+13-04-2007	[103]	sun_rashi=  11.975	tithi=  24.864	sun_month=12	moon_month= 1.0
+14-04-2007	[104]	sun_rashi=   0.008	tithi=  25.965	sun_month= 1	moon_month= 1.0
+15-04-2007	[105]	sun_rashi=   0.041	tithi=  27.099	sun_month= 1	moon_month= 1.0
+16-04-2007	[106]	sun_rashi=   0.073	tithi=  28.263	sun_month= 1	moon_month= 1.0
+17-04-2007	[107]	sun_rashi=   0.106	tithi=  29.447	sun_month= 1	moon_month= 1.0
+18-04-2007	[108]	sun_rashi=   0.139	tithi=   0.636	sun_month= 1	moon_month= 2.0
+19-04-2007	[109]	sun_rashi=   0.171	tithi=   1.817	sun_month= 1	moon_month= 2.0
+20-04-2007	[110]	sun_rashi=   0.204	tithi=   2.976	sun_month= 1	moon_month= 2.0
+21-04-2007	[111]	sun_rashi=   0.236	tithi=   4.102	sun_month= 1	moon_month= 2.0
+22-04-2007	[112]	sun_rashi=   0.269	tithi=   5.189	sun_month= 1	moon_month= 2.0
+23-04-2007	[113]	sun_rashi=   0.301	tithi=   6.236	sun_month= 1	moon_month= 2.0
+24-04-2007	[114]	sun_rashi=   0.334	tithi=   7.244	sun_month= 1	moon_month= 2.0
+25-04-2007	[115]	sun_rashi=   0.366	tithi=   8.219	sun_month= 1	moon_month= 2.0
+26-04-2007	[116]	sun_rashi=   0.399	tithi=   9.167	sun_month= 1	moon_month= 2.0
+27-04-2007	[117]	sun_rashi=   0.431	tithi=  10.094	sun_month= 1	moon_month= 2.0
+28-04-2007	[118]	sun_rashi=   0.464	tithi=  11.007	sun_month= 1	moon_month= 2.0
+29-04-2007	[119]	sun_rashi=   0.496	tithi=  11.912	sun_month= 1	moon_month= 2.0
+30-04-2007	[120]	sun_rashi=   0.528	tithi=  12.814	sun_month= 1	moon_month= 2.0
+01-05-2007	[121]	sun_rashi=   0.561	tithi=  13.718	sun_month= 1	moon_month= 2.0
+02-05-2007	[122]	sun_rashi=   0.593	tithi=  14.626	sun_month= 1	moon_month= 2.0
+03-05-2007	[123]	sun_rashi=   0.625	tithi=  15.541	sun_month= 1	moon_month= 2.0
+04-05-2007	[124]	sun_rashi=   0.658	tithi=  16.465	sun_month= 1	moon_month= 2.0
+05-05-2007	[125]	sun_rashi=   0.690	tithi=  17.400	sun_month= 1	moon_month= 2.0
+06-05-2007	[126]	sun_rashi=   0.722	tithi=  18.348	sun_month= 1	moon_month= 2.0
+07-05-2007	[127]	sun_rashi=   0.755	tithi=  19.311	sun_month= 1	moon_month= 2.0
+08-05-2007	[128]	sun_rashi=   0.787	tithi=  20.291	sun_month= 1	moon_month= 2.0
+09-05-2007	[129]	sun_rashi=   0.819	tithi=  21.292	sun_month= 1	moon_month= 2.0
+10-05-2007	[130]	sun_rashi=   0.851	tithi=  22.318	sun_month= 1	moon_month= 2.0
+11-05-2007	[131]	sun_rashi=   0.883	tithi=  23.372	sun_month= 1	moon_month= 2.0
+12-05-2007	[132]	sun_rashi=   0.916	tithi=  24.457	sun_month= 1	moon_month= 2.0
+13-05-2007	[133]	sun_rashi=   0.948	tithi=  25.572	sun_month= 1	moon_month= 2.0
+14-05-2007	[134]	sun_rashi=   0.980	tithi=  26.716	sun_month= 1	moon_month= 2.0
+15-05-2007	[135]	sun_rashi=   1.012	tithi=  27.881	sun_month= 2	moon_month= 2.0
+16-05-2007	[136]	sun_rashi=   1.044	tithi=  29.058	sun_month= 2	moon_month= 2.0
+17-05-2007	[137]	sun_rashi=   1.077	tithi=   0.233	sun_month= 2	moon_month= 3.0
+18-05-2007	[138]	sun_rashi=   1.109	tithi=   1.393	sun_month= 2	moon_month= 3.0
+19-05-2007	[139]	sun_rashi=   1.141	tithi=   2.525	sun_month= 2	moon_month= 3.0
+20-05-2007	[140]	sun_rashi=   1.173	tithi=   3.621	sun_month= 2	moon_month= 3.0
+21-05-2007	[141]	sun_rashi=   1.205	tithi=   4.676	sun_month= 2	moon_month= 3.0
+22-05-2007	[142]	sun_rashi=   1.237	tithi=   5.693	sun_month= 2	moon_month= 3.0
+23-05-2007	[143]	sun_rashi=   1.269	tithi=   6.673	sun_month= 2	moon_month= 3.0
+24-05-2007	[144]	sun_rashi=   1.301	tithi=   7.624	sun_month= 2	moon_month= 3.0
+25-05-2007	[145]	sun_rashi=   1.333	tithi=   8.553	sun_month= 2	moon_month= 3.0
+26-05-2007	[146]	sun_rashi=   1.365	tithi=   9.466	sun_month= 2	moon_month= 3.0
+27-05-2007	[147]	sun_rashi=   1.397	tithi=  10.371	sun_month= 2	moon_month= 3.0
+28-05-2007	[148]	sun_rashi=   1.429	tithi=  11.275	sun_month= 2	moon_month= 3.0
+29-05-2007	[149]	sun_rashi=   1.461	tithi=  12.182	sun_month= 2	moon_month= 3.0
+30-05-2007	[150]	sun_rashi=   1.493	tithi=  13.098	sun_month= 2	moon_month= 3.0
+31-05-2007	[151]	sun_rashi=   1.525	tithi=  14.026	sun_month= 2	moon_month= 3.0
+01-06-2007	[152]	sun_rashi=   1.557	tithi=  14.966	sun_month= 2	moon_month= 3.0
+02-06-2007	[153]	sun_rashi=   1.589	tithi=  15.921	sun_month= 2	moon_month= 3.0
+03-06-2007	[154]	sun_rashi=   1.621	tithi=  16.891	sun_month= 2	moon_month= 3.0
+04-06-2007	[155]	sun_rashi=   1.653	tithi=  17.876	sun_month= 2	moon_month= 3.0
+05-06-2007	[156]	sun_rashi=   1.685	tithi=  18.877	sun_month= 2	moon_month= 3.0
+06-06-2007	[157]	sun_rashi=   1.717	tithi=  19.895	sun_month= 2	moon_month= 3.0
+07-06-2007	[158]	sun_rashi=   1.749	tithi=  20.931	sun_month= 2	moon_month= 3.0
+08-06-2007	[159]	sun_rashi=   1.781	tithi=  21.986	sun_month= 2	moon_month= 3.0
+09-06-2007	[160]	sun_rashi=   1.812	tithi=  23.064	sun_month= 2	moon_month= 3.0
+10-06-2007	[161]	sun_rashi=   1.844	tithi=  24.164	sun_month= 2	moon_month= 3.0
+11-06-2007	[162]	sun_rashi=   1.876	tithi=  25.285	sun_month= 2	moon_month= 3.0
+12-06-2007	[163]	sun_rashi=   1.908	tithi=  26.424	sun_month= 2	moon_month= 3.0
+13-06-2007	[164]	sun_rashi=   1.940	tithi=  27.572	sun_month= 2	moon_month= 3.0
+14-06-2007	[165]	sun_rashi=   1.972	tithi=  28.721	sun_month= 2	moon_month= 3.0
+15-06-2007	[166]	sun_rashi=   2.004	tithi=  29.859	sun_month= 3	moon_month= 3.0
+16-06-2007	[167]	sun_rashi=   2.035	tithi=   0.976	sun_month= 3	moon_month= 3.5
+17-06-2007	[168]	sun_rashi=   2.067	tithi=   2.063	sun_month= 3	moon_month= 3.5
+18-06-2007	[169]	sun_rashi=   2.099	tithi=   3.116	sun_month= 3	moon_month= 3.5
+19-06-2007	[170]	sun_rashi=   2.131	tithi=   4.133	sun_month= 3	moon_month= 3.5
+20-06-2007	[171]	sun_rashi=   2.163	tithi=   5.116	sun_month= 3	moon_month= 3.5
+21-06-2007	[172]	sun_rashi=   2.195	tithi=   6.070	sun_month= 3	moon_month= 3.5
+22-06-2007	[173]	sun_rashi=   2.226	tithi=   7.002	sun_month= 3	moon_month= 3.5
+23-06-2007	[174]	sun_rashi=   2.258	tithi=   7.918	sun_month= 3	moon_month= 3.5
+24-06-2007	[175]	sun_rashi=   2.290	tithi=   8.826	sun_month= 3	moon_month= 3.5
+25-06-2007	[176]	sun_rashi=   2.322	tithi=   9.734	sun_month= 3	moon_month= 3.5
+26-06-2007	[177]	sun_rashi=   2.354	tithi=  10.646	sun_month= 3	moon_month= 3.5
+27-06-2007	[178]	sun_rashi=   2.385	tithi=  11.570	sun_month= 3	moon_month= 3.5
+28-06-2007	[179]	sun_rashi=   2.417	tithi=  12.509	sun_month= 3	moon_month= 3.5
+29-06-2007	[180]	sun_rashi=   2.449	tithi=  13.465	sun_month= 3	moon_month= 3.5
+30-06-2007	[181]	sun_rashi=   2.481	tithi=  14.441	sun_month= 3	moon_month= 3.5
+01-07-2007	[182]	sun_rashi=   2.513	tithi=  15.436	sun_month= 3	moon_month= 3.5
+02-07-2007	[183]	sun_rashi=   2.544	tithi=  16.450	sun_month= 3	moon_month= 3.5
+03-07-2007	[184]	sun_rashi=   2.576	tithi=  17.480	sun_month= 3	moon_month= 3.5
+04-07-2007	[185]	sun_rashi=   2.608	tithi=  18.526	sun_month= 3	moon_month= 3.5
+05-07-2007	[186]	sun_rashi=   2.640	tithi=  19.586	sun_month= 3	moon_month= 3.5
+06-07-2007	[187]	sun_rashi=   2.671	tithi=  20.658	sun_month= 3	moon_month= 3.5
+07-07-2007	[188]	sun_rashi=   2.703	tithi=  21.744	sun_month= 3	moon_month= 3.5
+08-07-2007	[189]	sun_rashi=   2.735	tithi=  22.840	sun_month= 3	moon_month= 3.5
+09-07-2007	[190]	sun_rashi=   2.767	tithi=  23.947	sun_month= 3	moon_month= 3.5
+10-07-2007	[191]	sun_rashi=   2.799	tithi=  25.061	sun_month= 3	moon_month= 3.5
+11-07-2007	[192]	sun_rashi=   2.830	tithi=  26.177	sun_month= 3	moon_month= 3.5
+12-07-2007	[193]	sun_rashi=   2.862	tithi=  27.290	sun_month= 3	moon_month= 3.5
+13-07-2007	[194]	sun_rashi=   2.894	tithi=  28.393	sun_month= 3	moon_month= 3.5
+14-07-2007	[195]	sun_rashi=   2.926	tithi=  29.478	sun_month= 3	moon_month= 3.5
+15-07-2007	[196]	sun_rashi=   2.958	tithi=   0.540	sun_month= 3	moon_month= 4.0
+16-07-2007	[197]	sun_rashi=   2.989	tithi=   1.575	sun_month= 3	moon_month= 4.0
+17-07-2007	[198]	sun_rashi=   3.021	tithi=   2.580	sun_month= 4	moon_month= 4.0
+18-07-2007	[199]	sun_rashi=   3.053	tithi=   3.557	sun_month= 4	moon_month= 4.0
+19-07-2007	[200]	sun_rashi=   3.085	tithi=   4.510	sun_month= 4	moon_month= 4.0
+20-07-2007	[201]	sun_rashi=   3.117	tithi=   5.442	sun_month= 4	moon_month= 4.0
+21-07-2007	[202]	sun_rashi=   3.148	tithi=   6.359	sun_month= 4	moon_month= 4.0
+22-07-2007	[203]	sun_rashi=   3.180	tithi=   7.269	sun_month= 4	moon_month= 4.0
+23-07-2007	[204]	sun_rashi=   3.212	tithi=   8.178	sun_month= 4	moon_month= 4.0
+24-07-2007	[205]	sun_rashi=   3.244	tithi=   9.093	sun_month= 4	moon_month= 4.0
+25-07-2007	[206]	sun_rashi=   3.276	tithi=  10.021	sun_month= 4	moon_month= 4.0
+26-07-2007	[207]	sun_rashi=   3.307	tithi=  10.966	sun_month= 4	moon_month= 4.0
+27-07-2007	[208]	sun_rashi=   3.339	tithi=  11.934	sun_month= 4	moon_month= 4.0
+28-07-2007	[209]	sun_rashi=   3.371	tithi=  12.925	sun_month= 4	moon_month= 4.0
+29-07-2007	[210]	sun_rashi=   3.403	tithi=  13.942	sun_month= 4	moon_month= 4.0
+30-07-2007	[211]	sun_rashi=   3.435	tithi=  14.983	sun_month= 4	moon_month= 4.0
+31-07-2007	[212]	sun_rashi=   3.467	tithi=  16.046	sun_month= 4	moon_month= 4.0
+01-08-2007	[213]	sun_rashi=   3.499	tithi=  17.126	sun_month= 4	moon_month= 4.0
+02-08-2007	[214]	sun_rashi=   3.530	tithi=  18.220	sun_month= 4	moon_month= 4.0
+03-08-2007	[215]	sun_rashi=   3.562	tithi=  19.323	sun_month= 4	moon_month= 4.0
+04-08-2007	[216]	sun_rashi=   3.594	tithi=  20.430	sun_month= 4	moon_month= 4.0
+05-08-2007	[217]	sun_rashi=   3.626	tithi=  21.538	sun_month= 4	moon_month= 4.0
+06-08-2007	[218]	sun_rashi=   3.658	tithi=  22.643	sun_month= 4	moon_month= 4.0
+07-08-2007	[219]	sun_rashi=   3.690	tithi=  23.743	sun_month= 4	moon_month= 4.0
+08-08-2007	[220]	sun_rashi=   3.722	tithi=  24.834	sun_month= 4	moon_month= 4.0
+09-08-2007	[221]	sun_rashi=   3.754	tithi=  25.913	sun_month= 4	moon_month= 4.0
+10-08-2007	[222]	sun_rashi=   3.786	tithi=  26.978	sun_month= 4	moon_month= 4.0
+11-08-2007	[223]	sun_rashi=   3.818	tithi=  28.025	sun_month= 4	moon_month= 4.0
+12-08-2007	[224]	sun_rashi=   3.850	tithi=  29.053	sun_month= 4	moon_month= 4.0
+13-08-2007	[225]	sun_rashi=   3.882	tithi=   0.059	sun_month= 4	moon_month= 5.0
+14-08-2007	[226]	sun_rashi=   3.914	tithi=   1.042	sun_month= 4	moon_month= 5.0
+15-08-2007	[227]	sun_rashi=   3.946	tithi=   2.005	sun_month= 4	moon_month= 5.0
+16-08-2007	[228]	sun_rashi=   3.978	tithi=   2.948	sun_month= 4	moon_month= 5.0
+17-08-2007	[229]	sun_rashi=   4.010	tithi=   3.875	sun_month= 5	moon_month= 5.0
+18-08-2007	[230]	sun_rashi=   4.042	tithi=   4.790	sun_month= 5	moon_month= 5.0
+19-08-2007	[231]	sun_rashi=   4.074	tithi=   5.699	sun_month= 5	moon_month= 5.0
+20-08-2007	[232]	sun_rashi=   4.106	tithi=   6.608	sun_month= 5	moon_month= 5.0
+21-08-2007	[233]	sun_rashi=   4.138	tithi=   7.522	sun_month= 5	moon_month= 5.0
+22-08-2007	[234]	sun_rashi=   4.170	tithi=   8.448	sun_month= 5	moon_month= 5.0
+23-08-2007	[235]	sun_rashi=   4.202	tithi=   9.393	sun_month= 5	moon_month= 5.0
+24-08-2007	[236]	sun_rashi=   4.234	tithi=  10.361	sun_month= 5	moon_month= 5.0
+25-08-2007	[237]	sun_rashi=   4.266	tithi=  11.359	sun_month= 5	moon_month= 5.0
+26-08-2007	[238]	sun_rashi=   4.299	tithi=  12.386	sun_month= 5	moon_month= 5.0
+27-08-2007	[239]	sun_rashi=   4.331	tithi=  13.446	sun_month= 5	moon_month= 5.0
+28-08-2007	[240]	sun_rashi=   4.363	tithi=  14.534	sun_month= 5	moon_month= 5.0
+29-08-2007	[241]	sun_rashi=   4.395	tithi=  15.647	sun_month= 5	moon_month= 5.0
+30-08-2007	[242]	sun_rashi=   4.427	tithi=  16.777	sun_month= 5	moon_month= 5.0
+31-08-2007	[243]	sun_rashi=   4.459	tithi=  17.916	sun_month= 5	moon_month= 5.0
+01-09-2007	[244]	sun_rashi=   4.492	tithi=  19.056	sun_month= 5	moon_month= 5.0
+02-09-2007	[245]	sun_rashi=   4.524	tithi=  20.188	sun_month= 5	moon_month= 5.0
+03-09-2007	[246]	sun_rashi=   4.556	tithi=  21.307	sun_month= 5	moon_month= 5.0
+04-09-2007	[247]	sun_rashi=   4.588	tithi=  22.407	sun_month= 5	moon_month= 5.0
+05-09-2007	[248]	sun_rashi=   4.621	tithi=  23.485	sun_month= 5	moon_month= 5.0
+06-09-2007	[249]	sun_rashi=   4.653	tithi=  24.542	sun_month= 5	moon_month= 5.0
+07-09-2007	[250]	sun_rashi=   4.685	tithi=  25.576	sun_month= 5	moon_month= 5.0
+08-09-2007	[251]	sun_rashi=   4.718	tithi=  26.590	sun_month= 5	moon_month= 5.0
+09-09-2007	[252]	sun_rashi=   4.750	tithi=  27.583	sun_month= 5	moon_month= 5.0
+10-09-2007	[253]	sun_rashi=   4.782	tithi=  28.558	sun_month= 5	moon_month= 5.0
+11-09-2007	[254]	sun_rashi=   4.815	tithi=  29.517	sun_month= 5	moon_month= 5.0
+12-09-2007	[255]	sun_rashi=   4.847	tithi=   0.460	sun_month= 5	moon_month= 6.0
+13-09-2007	[256]	sun_rashi=   4.880	tithi=   1.389	sun_month= 5	moon_month= 6.0
+14-09-2007	[257]	sun_rashi=   4.912	tithi=   2.308	sun_month= 5	moon_month= 6.0
+15-09-2007	[258]	sun_rashi=   4.945	tithi=   3.218	sun_month= 5	moon_month= 6.0
+16-09-2007	[259]	sun_rashi=   4.977	tithi=   4.124	sun_month= 5	moon_month= 6.0
+17-09-2007	[260]	sun_rashi=   5.010	tithi=   5.031	sun_month= 6	moon_month= 6.0
+18-09-2007	[261]	sun_rashi=   5.042	tithi=   5.942	sun_month= 6	moon_month= 6.0
+19-09-2007	[262]	sun_rashi=   5.075	tithi=   6.864	sun_month= 6	moon_month= 6.0
+20-09-2007	[263]	sun_rashi=   5.107	tithi=   7.803	sun_month= 6	moon_month= 6.0
+21-09-2007	[264]	sun_rashi=   5.140	tithi=   8.765	sun_month= 6	moon_month= 6.0
+22-09-2007	[265]	sun_rashi=   5.172	tithi=   9.757	sun_month= 6	moon_month= 6.0
+23-09-2007	[266]	sun_rashi=   5.205	tithi=  10.782	sun_month= 6	moon_month= 6.0
+24-09-2007	[267]	sun_rashi=   5.237	tithi=  11.843	sun_month= 6	moon_month= 6.0
+25-09-2007	[268]	sun_rashi=   5.270	tithi=  12.942	sun_month= 6	moon_month= 6.0
+26-09-2007	[269]	sun_rashi=   5.303	tithi=  14.073	sun_month= 6	moon_month= 6.0
+27-09-2007	[270]	sun_rashi=   5.335	tithi=  15.230	sun_month= 6	moon_month= 6.0
+28-09-2007	[271]	sun_rashi=   5.368	tithi=  16.401	sun_month= 6	moon_month= 6.0
+29-09-2007	[272]	sun_rashi=   5.401	tithi=  17.575	sun_month= 6	moon_month= 6.0
+30-09-2007	[273]	sun_rashi=   5.433	tithi=  18.739	sun_month= 6	moon_month= 6.0
+01-10-2007	[274]	sun_rashi=   5.466	tithi=  19.881	sun_month= 6	moon_month= 6.0
+02-10-2007	[275]	sun_rashi=   5.499	tithi=  20.995	sun_month= 6	moon_month= 6.0
+03-10-2007	[276]	sun_rashi=   5.532	tithi=  22.076	sun_month= 6	moon_month= 6.0
+04-10-2007	[277]	sun_rashi=   5.565	tithi=  23.125	sun_month= 6	moon_month= 6.0
+05-10-2007	[278]	sun_rashi=   5.597	tithi=  24.143	sun_month= 6	moon_month= 6.0
+06-10-2007	[279]	sun_rashi=   5.630	tithi=  25.134	sun_month= 6	moon_month= 6.0
+07-10-2007	[280]	sun_rashi=   5.663	tithi=  26.102	sun_month= 6	moon_month= 6.0
+08-10-2007	[281]	sun_rashi=   5.696	tithi=  27.052	sun_month= 6	moon_month= 6.0
+09-10-2007	[282]	sun_rashi=   5.729	tithi=  27.988	sun_month= 6	moon_month= 6.0
+10-10-2007	[283]	sun_rashi=   5.762	tithi=  28.912	sun_month= 6	moon_month= 6.0
+11-10-2007	[284]	sun_rashi=   5.795	tithi=  29.828	sun_month= 6	moon_month= 6.0
+12-10-2007	[285]	sun_rashi=   5.828	tithi=   0.738	sun_month= 6	moon_month= 7.0
+13-10-2007	[286]	sun_rashi=   5.861	tithi=   1.644	sun_month= 6	moon_month= 7.0
+14-10-2007	[287]	sun_rashi=   5.894	tithi=   2.549	sun_month= 6	moon_month= 7.0
+15-10-2007	[288]	sun_rashi=   5.927	tithi=   3.455	sun_month= 6	moon_month= 7.0
+16-10-2007	[289]	sun_rashi=   5.960	tithi=   4.366	sun_month= 6	moon_month= 7.0
+17-10-2007	[290]	sun_rashi=   5.993	tithi=   5.286	sun_month= 6	moon_month= 7.0
+18-10-2007	[291]	sun_rashi=   6.026	tithi=   6.220	sun_month= 7	moon_month= 7.0
+19-10-2007	[292]	sun_rashi=   6.059	tithi=   7.175	sun_month= 7	moon_month= 7.0
+20-10-2007	[293]	sun_rashi=   6.092	tithi=   8.156	sun_month= 7	moon_month= 7.0
+21-10-2007	[294]	sun_rashi=   6.125	tithi=   9.169	sun_month= 7	moon_month= 7.0
+22-10-2007	[295]	sun_rashi=   6.158	tithi=  10.219	sun_month= 7	moon_month= 7.0
+23-10-2007	[296]	sun_rashi=   6.191	tithi=  11.308	sun_month= 7	moon_month= 7.0
+24-10-2007	[297]	sun_rashi=   6.225	tithi=  12.437	sun_month= 7	moon_month= 7.0
+25-10-2007	[298]	sun_rashi=   6.258	tithi=  13.599	sun_month= 7	moon_month= 7.0
+26-10-2007	[299]	sun_rashi=   6.291	tithi=  14.785	sun_month= 7	moon_month= 7.0
+27-10-2007	[300]	sun_rashi=   6.324	tithi=  15.980	sun_month= 7	moon_month= 7.0
+28-10-2007	[301]	sun_rashi=   6.357	tithi=  17.168	sun_month= 7	moon_month= 7.0
+29-10-2007	[302]	sun_rashi=   6.391	tithi=  18.335	sun_month= 7	moon_month= 7.0
+30-10-2007	[303]	sun_rashi=   6.424	tithi=  19.469	sun_month= 7	moon_month= 7.0
+31-10-2007	[304]	sun_rashi=   6.457	tithi=  20.565	sun_month= 7	moon_month= 7.0
+01-11-2007	[305]	sun_rashi=   6.491	tithi=  21.619	sun_month= 7	moon_month= 7.0
+02-11-2007	[306]	sun_rashi=   6.524	tithi=  22.636	sun_month= 7	moon_month= 7.0
+03-11-2007	[307]	sun_rashi=   6.557	tithi=  23.619	sun_month= 7	moon_month= 7.0
+04-11-2007	[308]	sun_rashi=   6.591	tithi=  24.576	sun_month= 7	moon_month= 7.0
+05-11-2007	[309]	sun_rashi=   6.624	tithi=  25.511	sun_month= 7	moon_month= 7.0
+06-11-2007	[310]	sun_rashi=   6.658	tithi=  26.432	sun_month= 7	moon_month= 7.0
+07-11-2007	[311]	sun_rashi=   6.691	tithi=  27.344	sun_month= 7	moon_month= 7.0
+08-11-2007	[312]	sun_rashi=   6.724	tithi=  28.250	sun_month= 7	moon_month= 7.0
+09-11-2007	[313]	sun_rashi=   6.758	tithi=  29.154	sun_month= 7	moon_month= 7.0
+10-11-2007	[314]	sun_rashi=   6.791	tithi=   0.059	sun_month= 7	moon_month= 7.5
+11-11-2007	[315]	sun_rashi=   6.825	tithi=   0.965	sun_month= 7	moon_month= 8.0
+12-11-2007	[316]	sun_rashi=   6.858	tithi=   1.876	sun_month= 7	moon_month= 8.0
+13-11-2007	[317]	sun_rashi=   6.892	tithi=   2.793	sun_month= 7	moon_month= 8.0
+14-11-2007	[318]	sun_rashi=   6.926	tithi=   3.719	sun_month= 7	moon_month= 8.0
+15-11-2007	[319]	sun_rashi=   6.959	tithi=   4.657	sun_month= 7	moon_month= 8.0
+16-11-2007	[320]	sun_rashi=   6.993	tithi=   5.611	sun_month= 7	moon_month= 8.0
+17-11-2007	[321]	sun_rashi=   7.026	tithi=   6.587	sun_month= 8	moon_month= 8.0
+18-11-2007	[322]	sun_rashi=   7.060	tithi=   7.590	sun_month= 8	moon_month= 8.0
+19-11-2007	[323]	sun_rashi=   7.094	tithi=   8.625	sun_month= 8	moon_month= 8.0
+20-11-2007	[324]	sun_rashi=   7.127	tithi=   9.696	sun_month= 8	moon_month= 8.0
+21-11-2007	[325]	sun_rashi=   7.161	tithi=  10.806	sun_month= 8	moon_month= 8.0
+22-11-2007	[326]	sun_rashi=   7.195	tithi=  11.951	sun_month= 8	moon_month= 8.0
+23-11-2007	[327]	sun_rashi=   7.228	tithi=  13.125	sun_month= 8	moon_month= 8.0
+24-11-2007	[328]	sun_rashi=   7.262	tithi=  14.315	sun_month= 8	moon_month= 8.0
+25-11-2007	[329]	sun_rashi=   7.296	tithi=  15.506	sun_month= 8	moon_month= 8.0
+26-11-2007	[330]	sun_rashi=   7.329	tithi=  16.682	sun_month= 8	moon_month= 8.0
+27-11-2007	[331]	sun_rashi=   7.363	tithi=  17.830	sun_month= 8	moon_month= 8.0
+28-11-2007	[332]	sun_rashi=   7.397	tithi=  18.939	sun_month= 8	moon_month= 8.0
+29-11-2007	[333]	sun_rashi=   7.430	tithi=  20.006	sun_month= 8	moon_month= 8.0
+30-11-2007	[334]	sun_rashi=   7.464	tithi=  21.032	sun_month= 8	moon_month= 8.0
+01-12-2007	[335]	sun_rashi=   7.498	tithi=  22.020	sun_month= 8	moon_month= 8.0
+02-12-2007	[336]	sun_rashi=   7.532	tithi=  22.977	sun_month= 8	moon_month= 8.0
+03-12-2007	[337]	sun_rashi=   7.566	tithi=  23.910	sun_month= 8	moon_month= 8.0
+04-12-2007	[338]	sun_rashi=   7.599	tithi=  24.826	sun_month= 8	moon_month= 8.0
+05-12-2007	[339]	sun_rashi=   7.633	tithi=  25.732	sun_month= 8	moon_month= 8.0
+06-12-2007	[340]	sun_rashi=   7.667	tithi=  26.634	sun_month= 8	moon_month= 8.0
+07-12-2007	[341]	sun_rashi=   7.701	tithi=  27.536	sun_month= 8	moon_month= 8.0
+08-12-2007	[342]	sun_rashi=   7.735	tithi=  28.442	sun_month= 8	moon_month= 8.0
+09-12-2007	[343]	sun_rashi=   7.769	tithi=  29.355	sun_month= 8	moon_month= 8.0
+10-12-2007	[344]	sun_rashi=   7.803	tithi=   0.276	sun_month= 8	moon_month= 9.0
+11-12-2007	[345]	sun_rashi=   7.837	tithi=   1.207	sun_month= 8	moon_month= 9.0
+12-12-2007	[346]	sun_rashi=   7.870	tithi=   2.148	sun_month= 8	moon_month= 9.0
+13-12-2007	[347]	sun_rashi=   7.904	tithi=   3.101	sun_month= 8	moon_month= 9.0
+14-12-2007	[348]	sun_rashi=   7.938	tithi=   4.069	sun_month= 8	moon_month= 9.0
+15-12-2007	[349]	sun_rashi=   7.972	tithi=   5.054	sun_month= 8	moon_month= 9.0
+16-12-2007	[350]	sun_rashi=   8.006	tithi=   6.060	sun_month= 9	moon_month= 9.0
+17-12-2007	[351]	sun_rashi=   8.040	tithi=   7.090	sun_month= 9	moon_month= 9.0
+18-12-2007	[352]	sun_rashi=   8.074	tithi=   8.149	sun_month= 9	moon_month= 9.0
+19-12-2007	[353]	sun_rashi=   8.108	tithi=   9.237	sun_month= 9	moon_month= 9.0
+20-12-2007	[354]	sun_rashi=   8.142	tithi=  10.355	sun_month= 9	moon_month= 9.0
+21-12-2007	[355]	sun_rashi=   8.176	tithi=  11.499	sun_month= 9	moon_month= 9.0
+22-12-2007	[356]	sun_rashi=   8.210	tithi=  12.660	sun_month= 9	moon_month= 9.0
+23-12-2007	[357]	sun_rashi=   8.244	tithi=  13.827	sun_month= 9	moon_month= 9.0
+24-12-2007	[358]	sun_rashi=   8.278	tithi=  14.986	sun_month= 9	moon_month= 9.0
+25-12-2007	[359]	sun_rashi=   8.312	tithi=  16.125	sun_month= 9	moon_month= 9.0
+26-12-2007	[360]	sun_rashi=   8.346	tithi=  17.234	sun_month= 9	moon_month= 9.0
+27-12-2007	[361]	sun_rashi=   8.380	tithi=  18.306	sun_month= 9	moon_month= 9.0
+28-12-2007	[362]	sun_rashi=   8.414	tithi=  19.339	sun_month= 9	moon_month= 9.0
+29-12-2007	[363]	sun_rashi=   8.448	tithi=  20.335	sun_month= 9	moon_month= 9.0
+30-12-2007	[364]	sun_rashi=   8.481	tithi=  21.299	sun_month= 9	moon_month= 9.0
+31-12-2007	[365]	sun_rashi=   8.515	tithi=  22.237	sun_month= 9	moon_month= 9.0
+01-01-2008	[366]	sun_rashi=   8.549	tithi=  23.156	sun_month= 9	moon_month= 9.0

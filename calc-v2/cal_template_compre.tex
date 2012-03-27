@@ -1,0 +1,99 @@
+\documentclass[a3paper,12pt,landscape]{article}
+\usepackage[sort&compress,square,numbers]{natbib}
+
+\usepackage[xetex]{graphicx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[normalsections]{savetrees}
+\usepackage{euler}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{bbding}
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+%\usepackage[bookmarks, colorlinks, breaklinks, pdftitle={Karthik Raman - vita},pdfauthor={Karthik Raman}]{hyperref} 
+\usepackage[dvipsnames]{xcolor} 
+\usepackage{wasysym} 
+%\hypersetup{linkcolor=Sepia,citecolor=blue,filecolor=black,urlcolor=Blue} 
+
+
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+\setmainfont{Sanskrit 2003:script=deva}
+\setromanfont{Sanskrit 2003:script=deva}
+%\setsansfont[BoldFont=ScalaSans-BoldLF]{Scala Sans LF}
+\setsansfont[BoldFont={Ubuntu Bold}]{Ubuntu}
+%%%%%%% Numbers and counters %%%%%%%
+\newcount\num
+\newcount\tempone \newcount\temptwo
+\newcommand{\devanumber}[1]{%
+\num=#1\devanumberrecurse}
+
+\newcommand{\devanumberrecurse}{%
+{\tempone=\num
+%  \showthe\tempone\ %
+\ifnum\num > 0 
+	\divide \num by 10%
+	\temptwo=\num \multiply\temptwo by -10%
+	\devanumberrecurse%
+% 	\\stage 2\ %
+% 	\showthe\temptwo\ %
+% 	temp1=\number\tempone\ %
+% 	num=\number\num\ %
+	\advance\tempone by \temptwo%
+	\devadigit
+\fi
+}}
+
+\newcommand{\devadigit}{%
+\ifcase\tempone०\or१\or२\or३\or४\or५\or६\or७\or८\or९\fi%\number\tempone%
+}
+
+%%%%%%%% Calendar display stuff %%%%%%%%%%%
+\newcommand{\sunmonth}[4]{%
+\mbox{\footnotesize{#1~\devanumber{#2}~/~#4}}\\
+\mbox{\scriptsize #3}
+}
+\newcommand{\sundata}[3]{%
+\mbox{{\sun\tiny\UParrow} {\scriptsize \textsf{#1}} {\sun\tiny\DOWNarrow} {\scriptsize \textsf{#2}} \tiny{\mbox{(स \textsf{#3})}}}
+}
+\newcommand{\tnyk}[4]{
+\mbox{#1}\\
+\mbox{#2}\\
+\mbox{योगं:~#3}\\
+करणं:~#4\\}
+\newcommand{\rahuyama}[2]{%
+{राहु~\textsf{#1}~~यम~\textsf{#2}}
+}
+\newcommand{\caldata}[6]{%
+\begin{minipage}[t]{4.85cm}
+\begin{minipage}[t]{3.65cm}
+#2\\
+%\mbox{}\\
+%\SunshineOpenCircled
+#3\\
+\scriptsize
+\mbox{#5}\\
+#4\\
+\textcolor{RoyalBlue}{#6}\\
+\end{minipage}\begin{minipage}[c]{1.2cm}
+\vspace{1ex}
+\hfill \mbox{{\font\x="Ubuntu" at 36 pt\x #1}\hspace{-2mm}}
+\end{minipage}
+\end{minipage}
+}
+
+\addtolength{\headsep}{-3ex}
+\pagestyle{empty}
+
+\begin{document}
+\rmfamily
+\pagestyle{empty}
+\begin{center}
+\mbox{}\\[2.5in]
+\hrule\mbox{}
+\mbox{}\\[1ex]
+\input{FILENAME}
+\end{center}
+\end{document}
