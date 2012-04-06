@@ -18,6 +18,7 @@ dipavali['deva']= 'दीपावली'
 skanda['deva']= 'स्कन्द~'
 shashthi['deva']= 'षष्ठी-व्रतम्'
 
+koodaravalli['deva']='कूडारवल्ली'
 vchaturthi['deva']= 'श्रीविनायक-चतुर्थी'
 ananta_chaturdashi['deva']= 'अनन्त-चतुर्दशी'
 rishi_panchami['deva']= 'ऋषि-पञ्चमी  व्रतम्'

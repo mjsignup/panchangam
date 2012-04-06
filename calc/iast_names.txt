@@ -18,6 +18,7 @@ dipavali['iast'] = 'dīpāvalī'
 skanda['iast'] = 'skanda~'
 shashthi['iast'] = 'ṣaṣṭhī-vratam'
 
+koodaravalli['iast'] = 'kūdāravallī'
 vchaturthi['iast'] = 'śrīvināyaka-caturthī'
 ananta_chaturdashi['iast'] = 'ananta-caturdaśī'
 rishi_panchami['iast'] = 'ṛṣi-pañcamī  vratam'

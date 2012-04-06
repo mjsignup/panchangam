@@ -20,6 +20,7 @@ dipavali = {}
 skanda = {}
 shashthi = {}
 
+koodaravalli = {}
 vchaturthi = {}
 ananta_chaturdashi = {}
 rishi_panchami = {}
@@ -85,6 +86,7 @@ dipavali['deva']= 'दीपावली'
 skanda['deva']= 'स्कन्द~'
 shashthi['deva']= 'षष्ठी-व्रतम्'
 
+koodaravalli['deva']='कूडारवल्ली'
 vchaturthi['deva']= 'श्रीविनायक-चतुर्थी'
 ananta_chaturdashi['deva']= 'अनन्त-चतुर्दशी'
 rishi_panchami['deva']= 'ऋषि-पञ्चमी  व्रतम्'
@@ -403,6 +405,7 @@ dipavali['iast'] = 'dīpāvalī'
 skanda['iast'] = 'skanda~'
 shashthi['iast'] = 'ṣaṣṭhī-vratam'
 
+koodaravalli['iast'] = 'kūdāravallī'
 vchaturthi['iast'] = 'śrīvināyaka-caturthī'
 ananta_chaturdashi['iast'] = 'ananta-caturdaśī'
 rishi_panchami['iast'] = 'ṛṣi-pañcamī  vratam'
@@ -721,6 +724,7 @@ dipavali['en'] = 'Dipavali'
 skanda['en'] = 'Skanda '
 shashthi['en'] = 'Shashthi-Vratam'
 
+koodaravalli['en'] = 'Kudaravalli'
 vchaturthi['en'] = 'Shrivinayaka-Chaturthi'
 ananta_chaturdashi['en'] = 'Ananta-Chaturdashi'
 rishi_panchami['en'] = 'Rishi-Panchami  vratam'
@@ -1039,6 +1043,7 @@ dipavali['telugu']= 'దీపావలీ'
 skanda['telugu']= 'స్కన్ద~'
 shashthi['telugu']= 'షష్ఠీ-వ్రతమ్'
 
+koodaravalli['telugu'] = 'కూదారవల్లీ'
 vchaturthi['telugu']= 'శ్రీవినాయక-చతుర్థీ'
 ananta_chaturdashi['telugu']= 'అనన్త-చతుర్దశీ'
 rishi_panchami['telugu']= 'ఋషి-పఞ్చమీ  వ్రతమ్'

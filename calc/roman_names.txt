@@ -18,6 +18,7 @@ dipavali['en'] = 'Dipavali'
 skanda['en'] = 'Skanda '
 shashthi['en'] = 'Shashthi-Vratam'
 
+koodaravalli['en'] = 'Kudaravalli'
 vchaturthi['en'] = 'Shrivinayaka-Chaturthi'
 ananta_chaturdashi['en'] = 'Ananta-Chaturdashi'
 rishi_panchami['en'] = 'Rishi-Panchami  vratam'
