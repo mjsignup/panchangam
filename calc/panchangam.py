@@ -9,6 +9,10 @@ from init_names import *
 from icalendar import Calendar
 from icalendar import Event
 
+def compute_zero(func,x0=0):
+  if func(x0)=0:
+    return x0
+
 def print_end_time (end_time, day_night_length, sunrise_time, script):
   if end_time/24.0>day_night_length:
     end_time_str = ahoratram[script]
