@@ -37,9 +37,9 @@ def  main():
    Panchangam.computeSolarEclipses()
    Panchangam.computeLunarEclipses()
 
-   if script == 'en':
+   if script == 'en' or script == 'iast':
      Panchangam.computeIcsCalendar()
-     Panchangam.writeIcsCalendar('cal-%d.ics' % (year))
+     Panchangam.writeIcsCalendar('%s-%d-%s.ics' % (city_name,year,script))
    else: 
      template_file=open('cal_template_compre.tex')
      Panchangam.writeTeX(template_file)
