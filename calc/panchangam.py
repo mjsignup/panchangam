@@ -868,7 +868,8 @@ class panchangam:
 
       event = Event()
       if self.festivals[d] != '':
-        event.add('summary',self.festivals[d])
+        summary_text=unicode(self.festivals[d],"UTF-8")
+        event.add('summary',summary_text)
         event.add('dtstart',datetime(y,m,dt))
         event.add('dtend',datetime(y,m,dt))
         self.ics_calendar.add_component(event)
