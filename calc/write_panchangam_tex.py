@@ -36,11 +36,14 @@ def  main():
    Panchangam.computeFestivals()
    Panchangam.computeSolarEclipses()
    Panchangam.computeLunarEclipses()
-   #Panchangam.computeIcsCalendar()
-   #Panchangam.writeIcsCalendar('cal-%d.ics' % (year))
-   template_file=open('cal_template_compre.tex')
-   Panchangam.writeTeX(template_file)
-   Panchangam.writeDebugLog()
+
+   if script == 'en':
+     Panchangam.computeIcsCalendar()
+     Panchangam.writeIcsCalendar('cal-%d.ics' % (year))
+   else: 
+     template_file=open('cal_template_compre.tex')
+     Panchangam.writeTeX(template_file)
+     Panchangam.writeDebugLog()
 
 if  __name__=='__main__':
    main()

@@ -867,12 +867,11 @@ class panchangam:
       weekday = (self.weekday_start -1 + d)%7 
 
       event = Event()
-      print self.festivals[d]
-      event.add('summary',self.festivals[d])
-      event.add('dtstart',datetime(y,m,dt))
-      event.add('dtend',datetime(y,m,dt))
-
-      self.ics_calendar.add_component(event)
+      if self.festivals[d] != '':
+        event.add('summary',self.festivals[d])
+        event.add('dtstart',datetime(y,m,dt))
+        event.add('dtend',datetime(y,m,dt))
+        self.ics_calendar.add_component(event)
 
       if m==12 and dt==31:
         break
