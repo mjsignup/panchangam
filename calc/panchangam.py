@@ -540,7 +540,7 @@ class panchangam:
       mahalaya_paksham[self.script]:['lunar_month',6,'tithi',16,0],
       hanumat_jayanti[self.script]:['solar_month',9,'tithi',30,0],
       ardra_darshanam[self.script]:['solar_month',9,'nakshatram',6,0],
-      ratha_saptami[self.script]:['solar_month',10,'tithi',7,0],
+      ratha_saptami[self.script]:['lunar_month',11,'tithi',7,0],
       goda_jayanti[self.script]:['solar_month',4,'nakshatram',11,0],
       adi_krittika[self.script]:['solar_month',4,'nakshatram',3,0],
       phalguni_uttaram[self.script]:['solar_month',12,'nakshatram',12,4],
