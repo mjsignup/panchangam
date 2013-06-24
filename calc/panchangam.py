@@ -13,7 +13,45 @@ def compute_zero(func,x0=0):
   if func(x0)==0:
     return x0
 
-def print_end_time (end_time, day_night_length, sunrise_time, script):
+def sexastr2deci(str):
+  if (str[0]=='-'):
+    sgn = -1.0
+    hms = str[1:].split(':')
+  else:
+    sgn = 1.0
+    hms = str.split(':')
+ 
+  decival = 0
+  for i in range(0,len(hms)):
+    decival = decival + float(hms[i])/(60.0**i)
+
+  return decival*sgn
+
+
+def print_lat_lon(latstr,lonstr):
+  if(latstr[0]=='-'):
+    lat_suffix='S'
+  else:
+    lat_suffix='N'
+
+  lat_data=latstr.split(':')
+  while len(lat_data)<3:
+    lat_data.append(0)
+  formatted_string = '%s° %s\' %s\'\' %s' %(lat_data[0],lat_data[1],lat_data[2],lat_suffix)
+  
+  if (lonstr[0]=='-'):
+    lon_suffix='W'
+  else:
+    lon_suffix='E'
+
+  lon_data=lonstr.split(':')
+  while len(lon_data)<3:
+    lat_data.append(0)
+  formatted_string = '%s, %s° %s\' %s\'\' %s' %(formatted_string,lon_data[0],lon_data[1],lon_data[2],lon_suffix)
+
+  return formatted_string
+
+def print_end_time(end_time, day_night_length, sunrise_time, script):
   if end_time/24.0>day_night_length:
     end_time_str = ahoratram[script]
   else:
@@ -132,8 +170,10 @@ class  city:
   def __init__(self,name,latitude,longitude,timezone):
     '''Constructor for city'''
     self.name = name
-    self.latitude = latitude
-    self.longitude = longitude
+    self.latstr = latitude
+    self.lonstr = longitude
+    self.latitude = sexastr2deci(latitude)
+    self.longitude = sexastr2deci(longitude)
     self.timezone = timezone
 
   def getLastDhanurTransit(self, jd_start):
@@ -767,7 +807,8 @@ class panchangam:
     print '\\mbox{}'
     print '{\\font\\x="Candara" at 60 pt\\x %d\\\\[0.5cm]}' % self.year
     print '\\mbox{\\font\\x="Sanskrit 2003:script=deva" at 48 pt\\x %s}\\\\[0.5cm]' % samvatsara_names
-    print '{\\font\\x="Candara" at 48 pt\\x \\uppercase{%s}\\\\[0.5cm]}' % self.city.name
+    print '{\\font\\x="Candara" at 48 pt\\x \\uppercase{%s}\\\\[0.2cm]}' % self.city.name
+    print '{\\font\\x="Candara" at 14 pt\\x {%s}\\\\[0.5cm]}' % print_lat_lon(self.city.latstr, self.city.lonstr)
     print '\hrule'
 
     print '\\newpage'

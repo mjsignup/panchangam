@@ -1,24 +1,11 @@
 #!/usr/bin/python
 import sys
 from panchangam import *
-def sexastr2deci(str):
-  if (str[0]=='-'):
-    sgn = -1.0
-    hms = str[1:].split(':')
-  else:
-    sgn = 1.0
-    hms = str.split(':')
- 
-  decival = 0
-  for i in range(0,len(hms)):
-    decival = decival + float(hms[i])/(60.0**i)
-
-  return decival*sgn
 
 def  main():
    city_name = sys.argv[1]
-   latitude = sexastr2deci(sys.argv[2])
-   longitude = sexastr2deci(sys.argv[3])
+   latitude = sys.argv[2]
+   longitude = sys.argv[3]
    tz = sys.argv[4]
    year = int(sys.argv[5])
    
