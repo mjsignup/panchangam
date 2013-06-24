@@ -16,14 +16,14 @@ def compute_zero(func,x0=0):
 def sexastr2deci(str):
   if (str[0]=='-'):
     sgn = -1.0
-    hms = str[1:].split(':')
+    dms = str[1:].split(':')
   else:
     sgn = 1.0
-    hms = str.split(':')
+    dms = str.split(':')
  
   decival = 0
-  for i in range(0,len(hms)):
-    decival = decival + float(hms[i])/(60.0**i)
+  for i in range(0,len(dms)):
+    decival = decival + float(dms[i])/(60.0**i)
 
   return decival*sgn
 
@@ -37,7 +37,7 @@ def print_lat_lon(latstr,lonstr):
   lat_data=latstr.split(':')
   while len(lat_data)<3:
     lat_data.append(0)
-  formatted_string = '%s° %s\' %s\'\' %s' %(lat_data[0],lat_data[1],lat_data[2],lat_suffix)
+  formatted_string = '%s°%s\'%s\'\'%s' %(lat_data[0],lat_data[1],lat_data[2],lat_suffix)
   
   if (lonstr[0]=='-'):
     lon_suffix='W'
@@ -47,7 +47,7 @@ def print_lat_lon(latstr,lonstr):
   lon_data=lonstr.split(':')
   while len(lon_data)<3:
     lat_data.append(0)
-  formatted_string = '%s, %s° %s\' %s\'\' %s' %(formatted_string,lon_data[0],lon_data[1],lon_data[2],lon_suffix)
+  formatted_string = '%s,%s°%s\'%s\'\'%s' %(formatted_string,lon_data[0],lon_data[1],lon_data[2],lon_suffix)
 
   return formatted_string
 
@@ -374,8 +374,8 @@ class panchangam:
             self.jd_sunrise[d+1], t_sunrise, longitude_moon_sunrise[d], longitude_sun_sunrise[d], 
             longitude_moon_sunrise[d+1], longitude_sun_sunrise[d+1], [0,1], self.script)
       elif self.solar_month_sunrise[d]!=self.solar_month[d]:
-        #mAsa pirappu!
-        #sun moves into next rAsi before sunset -- check rules!
+        #sankrAnti!
+        #sun moves into next rAshi before sunset -- check rules!
         solar_month_day = 1
         [_m,solar_month_end_time] = get_angam_data_string(masa_names[self.script], 30, self.jd_sunrise[d],
           self.jd_sunrise[d+1], t_sunrise, longitude_moon_sunrise[d], longitude_sun_sunrise[d],
@@ -808,7 +808,7 @@ class panchangam:
     print '{\\font\\x="Candara" at 60 pt\\x %d\\\\[0.5cm]}' % self.year
     print '\\mbox{\\font\\x="Sanskrit 2003:script=deva" at 48 pt\\x %s}\\\\[0.5cm]' % samvatsara_names
     print '{\\font\\x="Candara" at 48 pt\\x \\uppercase{%s}\\\\[0.2cm]}' % self.city.name
-    print '{\\font\\x="Candara" at 14 pt\\x {%s}\\\\[0.5cm]}' % print_lat_lon(self.city.latstr, self.city.lonstr)
+    print '{\\font\\x="Candara" at 16 pt\\x {%s}\\\\[0.5cm]}' % print_lat_lon(self.city.latstr, self.city.lonstr)
     print '\hrule'
 
     print '\\newpage'
