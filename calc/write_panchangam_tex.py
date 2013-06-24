@@ -3,10 +3,7 @@ import sys
 from panchangam import *
 
 def  main():
-   city_name = sys.argv[1]
-   latitude = sys.argv[2]
-   longitude = sys.argv[3]
-   tz = sys.argv[4]
+   [city_name,latitude,longitude,tz]=sys.argv[1:5]
    year = int(sys.argv[5])
    
    if len(sys.argv)==7:
