@@ -922,7 +922,7 @@ class panchangam:
     if fname is None:
       fname = '%s-%4d.ics' % (self.city.name,self.year)
     ics_calendar_file = open(fname,'w')
-    ics_calendar_file.write(self.ics_calendar.as_string())
+    ics_calendar_file.write(self.ics_calendar.to_ical())
     ics_calendar_file.close()
 
   def writeDebugLog(self):
