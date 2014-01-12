@@ -907,13 +907,32 @@ class panchangam:
   
       weekday = (self.weekday_start -1 + d)%7 
 
-      event = Event()
+      eventSep = '\\\\'
+
       if self.festivals[d] != '':
         summary_text=unicode(self.festivals[d],"UTF-8")
-        event.add('summary',summary_text)
-        event.add('dtstart',datetime(y,m,dt))
-        event.add('dtend',datetime(y,m,dt))
-        self.ics_calendar.add_component(event)
+        summary_text=summary_text.replace('C','Ch').replace('c','ch')
+        #this will work whether we have one or more events on the same day
+        for stext in summary_text.split(eventSep):
+          if not stext.find('graha') == -1:
+            #It's a grahanam, with a start and end time
+            event = Event()
+            [stext,t1,arrow,t2]=summary_text.split('\\')
+            event.add('summary',stext.replace('~',' ').strip())
+            #we know that t1 is something like 'textsf{14:44}{'
+            #so we know that positions of min and hour
+            event.add('dtstart',datetime(y,m,dt,int(t1[7:9]),int(t1[10:12]),tzinfo=pytz.timezone(self.city.timezone)))
+            event.add('dtend',datetime(y,m,dt,int(t2[7:9]),int(t2[10:12]),tzinfo=pytz.timezone(self.city.timezone)))
+            self.ics_calendar.add_component(event)
+          else:
+            event = Event()
+            event.add('summary',stext.replace('~',' '))
+            event.add('dtstart',datetime(y,m,dt,tzinfo=pytz.timezone(self.city.timezone)))
+            event.add('dtend',datetime(y,m,dt,tzinfo=pytz.timezone(self.city.timezone)))
+            event['X-MICROSOFT-CDO-ALLDAYEVENT'] = 'TRUE'
+            #event.add('dtend',datetime(y,m,dt,tzinfo=pytz.timezone(self.city.timezone))+timedelta(days=1))
+            #though ugly, the above seems the only way to create an all day event
+            self.ics_calendar.add_component(event)
 
       if m==12 and dt==31:
         break
