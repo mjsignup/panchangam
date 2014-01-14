@@ -11,12 +11,15 @@ chaturthi['iast']= 'Saṅkaṭahara-caturthī'
 maha['iast']= 'Mahā'
 arambham['iast']= 'Ārambhaḥ'
 navaratri_start['iast']= 'Navarātri-'+arambham['iast']
+lalitapanchami['iast'] = 'Lalitā pañcamī'
 durgashtami['iast']= 'Durgāṣṭamī'
 mahanavami['iast']= 'Mahānavamī/sarasvatī-pūjā'
 vijayadashami['iast']= 'Vijayadaśamī'
 dipavali['iast']= 'Dīpāvalī'
 skanda['iast']= 'Skanda~'
 shashthi['iast']= 'Ṣaṣṭhī-vratam'
+vaikuntha['iast']='Vaikuṇṭha'
+guruvayupura['iast']='Guruvāyupura'
 
 koodaravalli['iast']='Kūḍāravallī'
 vchaturthi['iast']= 'Śrīvināyaka-caturthī'
@@ -44,7 +47,7 @@ ratha_saptami['iast']= 'Ratha-saptamī'
 goda_jayanti['iast']= 'Śrī godā jayantī'
 adi_krittika['iast']= 'Āṣāḍha kṛttikā'
 phalguni_uttaram['iast']= 'Phalgunī uttaram'
-mahalaya_amavasya['iast']= 'Mahālaya-amāvāsyā'
+mahalaya_amavasya['iast']= 'Mahālaya-amāvasyā'
 uma_maheshvara_vratam['iast']= 'Umā-maheśvara vratam'
 yugadi['iast']= 'Yugādi'
 
@@ -298,7 +301,7 @@ shukla_ekadashi_names['iast']={1:'Kāmada',
 6:'Parivartini',
 7:'Pāśāṅkuśa',
 8:'Uttāna/prabodhinī',
-9:'Vaikuṇṭha',
+9:'Mokṣada',
 10:'Putrada',
 11:'Jayā',
 12:'Amalakī',

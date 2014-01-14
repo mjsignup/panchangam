@@ -574,28 +574,29 @@ class panchangam:
   
       ###--- OTHER (MAJOR) FESTIVALS ---###
       #type of month | month number | type of angam (tithi|nakshatram) | angam number | min_t cut off for considering prev day (without sunrise_angam) as festival date
-      purvaviddha_rules={akshaya_tritiya[self.script]:['lunar_month',2,'tithi',3,0,'sunrise'],
-      chitra_purnima[self.script]:['solar_month',1,'tithi',15,0,'sunrise'],
-      lalitapanchami[self.script]:['lunar_month',7,'tithi',5,0,'sunrise'],
-      durgashtami[self.script]:['lunar_month',7,'tithi',8,0,'sunrise'],
-      mahanavami[self.script]:['lunar_month',7,'tithi',9,0,'sunrise'],
-      vijayadashami[self.script]:['lunar_month',7,'tithi',10,0,'sunrise'],
-      dipavali[self.script]:['lunar_month',7,'tithi',29,0,'sunrise'],
-      shankara_jayanti[self.script]:['lunar_month',2,'tithi',5,0,'sunrise'],
-      yajur_upakarma[self.script]:['lunar_month',5,'tithi',15,0,'sunrise'],
-      rg_upakarma[self.script]:['lunar_month',5,'nakshatram',22,0,'sunrise'],
-      sama_upakarma[self.script]:['solar_month',5,'nakshatram',13,0,'sunrise'],
-      rishi_panchami[self.script]:['lunar_month',6,'tithi',5,0,'sunrise'],
-      ananta_chaturdashi[self.script]:['lunar_month',6,'tithi',14,0,'sunrise'],
-      mahalaya_paksham[self.script]:['lunar_month',6,'tithi',16,0,'sunrise'],
-      hanumat_jayanti[self.script]:['solar_month',9,'tithi',30,0,'sunrise'],
-      ardra_darshanam[self.script]:['solar_month',9,'nakshatram',6,0,'sunrise'],
-      ratha_saptami[self.script]:['lunar_month',11,'tithi',7,0,'sunrise'],
-      goda_jayanti[self.script]:['solar_month',4,'nakshatram',11,0,'sunrise'],
-      adi_krittika[self.script]:['solar_month',4,'nakshatram',3,0,'sunrise'],
-      phalguni_uttaram[self.script]:['solar_month',12,'nakshatram',12,4,'sunrise'],
-      mahalaya_amavasya[self.script]:['lunar_month',6,'tithi',30,0,'sunrise'],
-      uma_maheshvara_vratam[self.script]:['lunar_month',6,'tithi',15,0,'sunrise']}
+      purvaviddha_rules={
+            akshaya_tritiya[self.script]:['lunar_month', 2,'tithi',      3, 0,'sunrise'],
+             chitra_purnima[self.script]:['solar_month', 1,'tithi',     15, 0,'sunrise'],
+             lalitapanchami[self.script]:['lunar_month', 7,'tithi',      5, 0,'sunrise'],
+                durgashtami[self.script]:['lunar_month', 7,'tithi',      8, 0,'sunrise'],
+                 mahanavami[self.script]:['lunar_month', 7,'tithi',      9, 0,'sunrise'],
+              vijayadashami[self.script]:['lunar_month', 7,'tithi',     10, 0,'sunrise'],
+                   dipavali[self.script]:['lunar_month', 7,'tithi',     29, 0,'sunrise'],
+           shankara_jayanti[self.script]:['lunar_month', 2,'tithi',      5, 0,'sunrise'],
+             yajur_upakarma[self.script]:['lunar_month', 5,'tithi',     15, 0,'sunrise'],
+                rg_upakarma[self.script]:['lunar_month', 5,'nakshatram',22, 0,'sunrise'],
+              sama_upakarma[self.script]:['solar_month', 5,'nakshatram',13, 0,'sunrise'],
+             rishi_panchami[self.script]:['lunar_month', 6,'tithi',      5, 0,'sunrise'],
+         ananta_chaturdashi[self.script]:['lunar_month', 6,'tithi',     14, 0,'sunrise'],
+           mahalaya_paksham[self.script]:['lunar_month', 6,'tithi',     16, 0,'sunrise'],
+            hanumat_jayanti[self.script]:['solar_month', 9,'tithi',     30, 0,'sunrise'],
+            ardra_darshanam[self.script]:['solar_month', 9,'nakshatram', 6, 0,'sunrise'],
+              ratha_saptami[self.script]:['lunar_month',11,'tithi',      7, 0,'sunrise'],
+               goda_jayanti[self.script]:['solar_month', 4,'nakshatram',11, 0,'sunrise'],
+               adi_krittika[self.script]:['solar_month', 4,'nakshatram', 3, 0,'sunrise'],
+           phalguni_uttaram[self.script]:['solar_month',12,'nakshatram',12, 4,'sunrise'],
+          mahalaya_amavasya[self.script]:['lunar_month', 6,'tithi'     ,30, 0,'sunrise'],
+      uma_maheshvara_vratam[self.script]:['lunar_month', 6,'tithi'     ,15, 0,'sunrise']}
   
       for x in iter(purvaviddha_rules.keys()):
         rule=purvaviddha_rules[x]
