@@ -385,6 +385,7 @@ krishna_ekadashi_names['deva']={1:'पापविमोचिनी',
 11:'त्रिस्पृश',
 12:'विजया',
 13:'परमा'}
+
 ahoratram['hk'] = 'ahOrAtram'
 adhika['hk'] = 'adhika'
 samvatsara['hk'] = 'saMvatsaraH'
@@ -509,7 +510,7 @@ tithi_names['hk'] = {1:'zukla~prathamA',
 12:'zukla~dvAdazI',
 13:'zukla~trayOdazI',
 14:'zukla~caturdazI',
-15:'\\fullmOOn~pUrNimA',
+15:'paurNamAsI',
 16:'kRSNa~prathamA',
 17:'kRSNa~dvitIyA',
 18:'kRSNa~tRtIyA',
@@ -524,7 +525,7 @@ tithi_names['hk'] = {1:'zukla~prathamA',
 27:'kRSNa~dvAdazI',
 28:'kRSNa~trayOdazI',
 29:'kRSNa~caturdazI',
-30:'\\nEwmOOn~amAvasyA'}
+30:'amAvAsyA'}
 
 year_names['hk'] = {1:'prabhava',
 2:'vibhava',
