@@ -8,6 +8,7 @@ from pytz import timezone
 from init_names import *
 from icalendar import Calendar
 from icalendar import Event
+import sys
 
 def compute_zero(func,x0=0):
   if func(x0)==0:
@@ -279,7 +280,8 @@ class panchangam:
     self.year = year
     self.script = script
 
-    self.jd_start=swisseph.julday(year,1,1,0)
+    self.jd_start = swisseph.julday(year,1,1,0)
+    self.eventSep = '\\\\'
 
     swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
 
@@ -385,6 +387,7 @@ class panchangam:
         solar_month_end_time = ''
       
       self.month_data[d] = '\\sunmonth{%s}{%d}{%s}' % (masa_names[self.script][self.solar_month[d]],solar_month_day,solar_month_end_time)
+      sys.stderr.write(self.month_data[d])
   
       #KARADAYAN NOMBU -- easy to check here
       if solar_month_end_time !='': #month ends today
