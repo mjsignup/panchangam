@@ -11,7 +11,7 @@ then
 elif [[ $# -eq 5 ]]
 then
   y=$5
-  script="deva"
+  script="iast"
 elif [[ $# -gt 6 ]]
 then
   echo "Usage: $0 <city name> <lat> <lon> <tz name> [year] [script]"
@@ -25,6 +25,15 @@ city_name=$1
 lat=$2
 lon=$3
 tz=$4
+
+for x in *_names.txt
+do 
+  if [[ init_names.py -ot $x ]]
+  then
+    echo "Regenerating init_names.py since it is older than $x"
+    ./gen_init_names_py.sh
+  fi
+done
 
 echo -ne "Computing $y ICS calendar for panchangam for $city_name ($lat,$lon) - $tz in $script script... "
 ./write_panchangam_ics.py $city_name $lat $lon $tz $y $script

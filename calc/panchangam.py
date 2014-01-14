@@ -59,15 +59,22 @@ def print_end_time(end_time, day_night_length, sunrise_time, script):
     end_time_str = time(sunrise_time+end_time).toString('\hspace{2ex}')
   return end_time_str
 
-def get_ekadashi_name(paksha,month,script):
+def get_ekadashi_name(paksha,lmonth,smonth,script):
   if paksha=='shukla':
-    if month==int(month):
-      return '%s~%s' % (shukla_ekadashi_names[script][month],ekadashi[script])
+    if smonth==8:
+      pref=guruvayupura[script]+'/'
+    elif smonth==9:
+      pref=vaikuntha[script]+'/'
     else:
-      return '%s~%s' % (shukla_ekadashi_names[script][13],ekadashi[script])
+      pref=''
+
+    if lmonth==int(lmonth):
+      return '%s%s~%s' % (pref,shukla_ekadashi_names[script][lmonth],ekadashi[script])
+    else:
+      return '%s%s~%s' % (pref,shukla_ekadashi_names[script][13],ekadashi[script])
   elif paksha=='krishna':
-    if month==int(month):
-      return '%s~%s' % (krishna_ekadashi_names[script][month],ekadashi[script])
+    if lmonth==int(lmonth):
+      return '%s~%s' % (krishna_ekadashi_names[script][lmonth],ekadashi[script])
     else:
       return '%s~%s' % (krishna_ekadashi_names[script][13],ekadashi[script])
 
@@ -86,7 +93,7 @@ def get_chandra_masa(month,chandra_masa_names,script):
     return '%s~(%s)' % (chandra_masa_names[script][int(month)+1],adhika[script]) 
 
 def get_festival_day_purvaviddha(festival_angam,angam_sunrise,d,jd_sunrise,jd_sunrise_tmrw,get_angam_func,min_t):
-  t_cutoff=(jd_sunrise_tmrw-jd_sunrise)*min_t/60.0 #at least 4 nazhis
+  t_cutoff=(jd_sunrise_tmrw-jd_sunrise)*min_t/60.0 #at least min_t nazhis
   
   if angam_sunrise[d]==(festival_angam-1) or angam_sunrise[d]==festival_angam:
     if angam_sunrise[d]==festival_angam or (angam_sunrise[d]==(festival_angam-1) and angam_sunrise[d+1]==(festival_angam+1)):
@@ -281,7 +288,7 @@ class panchangam:
     self.script = script
 
     self.jd_start = swisseph.julday(year,1,1,0)
-    self.eventSep = '\\\\'
+    self.eventSep = '\\diam '
 
     swisseph.set_sid_mode(swisseph.SIDM_LAHIRI) #Force Lahiri Ayanamsha
 
@@ -470,7 +477,7 @@ class panchangam:
       if self.tithi_sunrise[d]==11 or self.tithi_sunrise[d]==12: #One of two consecutive tithis must appear @ sunrise!
         #check for shukla ekadashi
         if (self.tithi_sunrise[d]==11 and self.tithi_sunrise[d+1]==11): 
-          self.festivals[d+1]=sarva[self.script]+'~'+get_ekadashi_name(paksha='shukla',month=self.lunar_month[d],script=self.script)#lunar_month[d] or [d+1]?
+          self.festivals[d+1]=sarva[self.script]+'~'+get_ekadashi_name(paksha='shukla',lmonth=self.lunar_month[d],smonth=self.solar_month[d],script=self.script)#lunar_month[d] or [d+1]?
           if self.lunar_month[d+1]==4:
             self.festivals[d+1]+=self.eventSep+chaturmasya_start[self.script]
           if self.lunar_month[d+1]==8:
@@ -479,20 +486,20 @@ class panchangam:
           #Check dashami end time to decide for whether this is sarva/smartha
           tithi_arunodayam = get_tithi(self.jd_sunrise[d]-(1/15.0)*(self.jd_sunrise[d]-self.jd_sunrise[d-1])) #Two muhurtams is 1/15 of day-length
           if tithi_arunodayam==10:
-            self.festivals[d]=smartha[self.script]+'~'+get_ekadashi_name(paksha='shukla',month=self.lunar_month[d],script=self.script)
-            self.festivals[d+1]=vaishnava[self.script]+'~'+get_ekadashi_name(paksha='shukla',month=self.lunar_month[d],script=self.script)
+            self.festivals[d]=smartha[self.script]+'~'+get_ekadashi_name(paksha='shukla',lmonth=self.lunar_month[d],smonth=self.solar_month[d],script=self.script)
+            self.festivals[d+1]=vaishnava[self.script]+'~'+get_ekadashi_name(paksha='shukla',lmonth=self.lunar_month[d],smonth=self.solar_month[d],script=self.script)
             if self.lunar_month[d]==4:
               self.festivals[d]+=self.eventSep+chaturmasya_start[self.script]
             if self.lunar_month[d]==8:
               self.festivals[d]+=self.eventSep+chaturmasya_end[self.script]
           else:
-            self.festivals[d]=sarva[self.script]+'~'+get_ekadashi_name(paksha='shukla',month=self.lunar_month[d],script=self.script)
+            self.festivals[d]=sarva[self.script]+'~'+get_ekadashi_name(paksha='shukla',lmonth=self.lunar_month[d],smonth=self.solar_month[d],script=self.script)
             if self.lunar_month[d]==4:
               self.festivals[d]+=self.eventSep+chaturmasya_start[self.script]
             if self.lunar_month[d]==8:
               self.festivals[d]+=self.eventSep+chaturmasya_end[self.script]
         elif (self.tithi_sunrise[d-1]!=11 and self.tithi_sunrise[d]==12):
-          self.festivals[d]=sarva[self.script]+'~'+get_ekadashi_name(paksha='shukla',month=self.lunar_month[d],script=self.script)
+          self.festivals[d]=sarva[self.script]+'~'+get_ekadashi_name(paksha='shukla',lmonth=self.lunar_month[d],smonth=self.solar_month[d],script=self.script)
           if self.lunar_month[d]==4:
             self.festivals[d]+=self.eventSep+chaturmasya_start[self.script]
           if self.lunar_month[d]==8:
@@ -501,17 +508,17 @@ class panchangam:
       if self.tithi_sunrise[d]==26 or self.tithi_sunrise[d]==27: #One of two consecutive tithis must appear @ sunrise!
         #check for krishna ekadashi
         if (self.tithi_sunrise[d]==26 and self.tithi_sunrise[d+1]==26): 
-          self.festivals[d+1]=sarva[self.script]+'~'+get_ekadashi_name(paksha='krishna',month=self.lunar_month[d],script=self.script)#lunar_month[d] or [d+1]?
+          self.festivals[d+1]=sarva[self.script]+'~'+get_ekadashi_name(paksha='krishna',lmonth=self.lunar_month[d],smonth=self.solar_month[d],script=self.script)#lunar_month[d] or [d+1]?
         elif (self.tithi_sunrise[d]==26 and self.tithi_sunrise[d+1]!=26): 
           #Check dashami end time to decide for whether this is sarva/smartha
           tithi_arunodayam = get_tithi(self.jd_sunrise[d]-(1/15.0)*(self.jd_sunrise[d]-self.jd_sunrise[d-1])) #Two muhurtams is 1/15 of day-length
           if tithi_arunodayam==25:
-            self.festivals[d]=smartha[self.script]+'~'+get_ekadashi_name(paksha='krishna',month=self.lunar_month[d],script=self.script)
-            self.festivals[d+1]=vaishnava[self.script]+'~'+get_ekadashi_name(paksha='krishna',month=self.lunar_month[d],script=self.script)
+            self.festivals[d]=smartha[self.script]+'~'+get_ekadashi_name(paksha='krishna',lmonth=self.lunar_month[d],smonth=self.solar_month[d],script=self.script)
+            self.festivals[d+1]=vaishnava[self.script]+'~'+get_ekadashi_name(paksha='krishna',lmonth=self.lunar_month[d],smonth=self.solar_month[d],script=self.script)
           else:
-            self.festivals[d]=sarva[self.script]+'~'+get_ekadashi_name(paksha='krishna',month=self.lunar_month[d],script=self.script)
+            self.festivals[d]=sarva[self.script]+'~'+get_ekadashi_name(paksha='krishna',lmonth=self.lunar_month[d],smonth=self.solar_month[d],script=self.script)
         elif (self.tithi_sunrise[d-1]!=26 and self.tithi_sunrise[d]==27):
-          self.festivals[d]=sarva[self.script]+'~'+get_ekadashi_name(paksha='krishna',month=self.lunar_month[d],script=self.script)
+          self.festivals[d]=sarva[self.script]+'~'+get_ekadashi_name(paksha='krishna',lmonth=self.lunar_month[d],smonth=self.solar_month[d],script=self.script)
   
       #PRADOSHA Vratam
       if self.tithi_sunrise[d]==12 or self.tithi_sunrise[d]==13:
@@ -567,27 +574,28 @@ class panchangam:
   
       ###--- OTHER (MAJOR) FESTIVALS ---###
       #type of month | month number | type of angam (tithi|nakshatram) | angam number | min_t cut off for considering prev day (without sunrise_angam) as festival date
-      purvaviddha_rules={akshaya_tritiya[self.script]:['lunar_month',2,'tithi',3,0],
-      chitra_purnima[self.script]:['solar_month',1,'tithi',15,0],
-      durgashtami[self.script]:['lunar_month',7,'tithi',8,0],
-      mahanavami[self.script]:['lunar_month',7,'tithi',9,0],
-      vijayadashami[self.script]:['lunar_month',7,'tithi',10,0],
-      dipavali[self.script]:['lunar_month',7,'tithi',29,0],
-      shankara_jayanti[self.script]:['lunar_month',2,'tithi',5,0],
-      yajur_upakarma[self.script]:['lunar_month',5,'tithi',15,0],
-      rg_upakarma[self.script]:['lunar_month',5,'nakshatram',22,0],
-      sama_upakarma[self.script]:['solar_month',5,'nakshatram',13,0],
-      rishi_panchami[self.script]:['lunar_month',6,'tithi',5,0],
-      ananta_chaturdashi[self.script]:['lunar_month',6,'tithi',14,0],
-      mahalaya_paksham[self.script]:['lunar_month',6,'tithi',16,0],
-      hanumat_jayanti[self.script]:['solar_month',9,'tithi',30,0],
-      ardra_darshanam[self.script]:['solar_month',9,'nakshatram',6,0],
-      ratha_saptami[self.script]:['lunar_month',11,'tithi',7,0],
-      goda_jayanti[self.script]:['solar_month',4,'nakshatram',11,0],
-      adi_krittika[self.script]:['solar_month',4,'nakshatram',3,0],
-      phalguni_uttaram[self.script]:['solar_month',12,'nakshatram',12,4],
-      mahalaya_amavasya[self.script]:['lunar_month',6,'tithi',30,0],
-      uma_maheshvara_vratam[self.script]:['lunar_month',6,'tithi',15,0]}
+      purvaviddha_rules={akshaya_tritiya[self.script]:['lunar_month',2,'tithi',3,0,'sunrise'],
+      chitra_purnima[self.script]:['solar_month',1,'tithi',15,0,'sunrise'],
+      lalitapanchami[self.script]:['lunar_month',7,'tithi',5,0,'sunrise'],
+      durgashtami[self.script]:['lunar_month',7,'tithi',8,0,'sunrise'],
+      mahanavami[self.script]:['lunar_month',7,'tithi',9,0,'sunrise'],
+      vijayadashami[self.script]:['lunar_month',7,'tithi',10,0,'sunrise'],
+      dipavali[self.script]:['lunar_month',7,'tithi',29,0,'sunrise'],
+      shankara_jayanti[self.script]:['lunar_month',2,'tithi',5,0,'sunrise'],
+      yajur_upakarma[self.script]:['lunar_month',5,'tithi',15,0,'sunrise'],
+      rg_upakarma[self.script]:['lunar_month',5,'nakshatram',22,0,'sunrise'],
+      sama_upakarma[self.script]:['solar_month',5,'nakshatram',13,0,'sunrise'],
+      rishi_panchami[self.script]:['lunar_month',6,'tithi',5,0,'sunrise'],
+      ananta_chaturdashi[self.script]:['lunar_month',6,'tithi',14,0,'sunrise'],
+      mahalaya_paksham[self.script]:['lunar_month',6,'tithi',16,0,'sunrise'],
+      hanumat_jayanti[self.script]:['solar_month',9,'tithi',30,0,'sunrise'],
+      ardra_darshanam[self.script]:['solar_month',9,'nakshatram',6,0,'sunrise'],
+      ratha_saptami[self.script]:['lunar_month',11,'tithi',7,0,'sunrise'],
+      goda_jayanti[self.script]:['solar_month',4,'nakshatram',11,0,'sunrise'],
+      adi_krittika[self.script]:['solar_month',4,'nakshatram',3,0,'sunrise'],
+      phalguni_uttaram[self.script]:['solar_month',12,'nakshatram',12,4,'sunrise'],
+      mahalaya_amavasya[self.script]:['lunar_month',6,'tithi',30,0,'sunrise'],
+      uma_maheshvara_vratam[self.script]:['lunar_month',6,'tithi',15,0,'sunrise']}
   
       for x in iter(purvaviddha_rules.keys()):
         rule=purvaviddha_rules[x]
@@ -839,7 +847,7 @@ class panchangam:
             print '\\begin{center}'
             print '\\begin{tabular}{>{\\sffamily}r>{\\sffamily}l>{\\sffamily}cp{6cm}}'
           
-        print '%s & %s & %s & {\\raggedright %s} \\\\' % (MON[m],dt,WDAY[weekday],self.festivals[d])
+        print '%s & %s & %s & {\\raggedright %s} \\\\' % (MON[m],dt,WDAY[weekday],self.festivals[d].replace(self.eventSep,'\\\\'))
  
       if m==12 and dt==31:
         break
