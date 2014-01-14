@@ -13,12 +13,15 @@ chaturthi = {}
 maha = {}
 arambham = {}
 navaratri_start = {}
+lalitapanchami = {}
 durgashtami = {}
 mahanavami = {}
 vijayadashami = {}
 dipavali = {}
 skanda = {}
 shashthi = {}
+vaikuntha = {}
+guruvayupura = {}
 
 koodaravalli = {}
 vchaturthi = {}

@@ -11,12 +11,15 @@ chaturthi['deva']= 'सङ्कटहर-चतुर्थी'
 maha['deva']= 'महा'
 arambham['deva']= 'आरम्भः'
 navaratri_start['deva']= 'नवरात्रि-'+arambham['deva']
+lalitapanchami['deva'] = 'ललिता पञ्चमी'
 durgashtami['deva']= 'दुर्गाष्टमी'
 mahanavami['deva']= 'महानवमी/सरस्वती-पूजा'
 vijayadashami['deva']= 'विजयदशमी'
 dipavali['deva']= 'दीपावली'
 skanda['deva']= 'स्कन्द~'
 shashthi['deva']= 'षष्ठी-व्रतम्'
+vaikuntha['deva']='वैकुण्ठ'
+guruvayupura['deva']='गुरुवायुपुर'
 
 koodaravalli['deva']='कूडारवल्ली'
 vchaturthi['deva']= 'श्रीविनायक-चतुर्थी'
@@ -298,7 +301,7 @@ shukla_ekadashi_names['deva']={1:'कामद',
 6:'परिवर्तिनि',
 7:'पाशाङ्कुश',
 8:'उत्तान/प्रबोधिनी',
-9:'वैकुण्ठ',
+9:'मोक्षद',
 10:'पुत्रद',
 11:'जया',
 12:'अमलकी',
