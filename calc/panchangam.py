@@ -472,9 +472,9 @@ class panchangam:
         if (self.tithi_sunrise[d]==11 and self.tithi_sunrise[d+1]==11): 
           self.festivals[d+1]=sarva[self.script]+'~'+get_ekadashi_name(paksha='shukla',month=self.lunar_month[d],script=self.script)#lunar_month[d] or [d+1]?
           if self.lunar_month[d+1]==4:
-            self.festivals[d+1]+='\\\\'+chaturmasya_start[self.script]
+            self.festivals[d+1]+=self.eventSep+chaturmasya_start[self.script]
           if self.lunar_month[d+1]==8:
-            self.festivals[d+1]+='\\\\'+chaturmasya_end[self.script]
+            self.festivals[d+1]+=self.eventSep+chaturmasya_end[self.script]
         elif (self.tithi_sunrise[d]==11 and self.tithi_sunrise[d+1]!=11): 
           #Check dashami end time to decide for whether this is sarva/smartha
           tithi_arunodayam = get_tithi(self.jd_sunrise[d]-(1/15.0)*(self.jd_sunrise[d]-self.jd_sunrise[d-1])) #Two muhurtams is 1/15 of day-length
@@ -482,21 +482,21 @@ class panchangam:
             self.festivals[d]=smartha[self.script]+'~'+get_ekadashi_name(paksha='shukla',month=self.lunar_month[d],script=self.script)
             self.festivals[d+1]=vaishnava[self.script]+'~'+get_ekadashi_name(paksha='shukla',month=self.lunar_month[d],script=self.script)
             if self.lunar_month[d]==4:
-              self.festivals[d]+='\\\\'+chaturmasya_start[self.script]
+              self.festivals[d]+=self.eventSep+chaturmasya_start[self.script]
             if self.lunar_month[d]==8:
-              self.festivals[d]+='\\\\'+chaturmasya_end[self.script]
+              self.festivals[d]+=self.eventSep+chaturmasya_end[self.script]
           else:
             self.festivals[d]=sarva[self.script]+'~'+get_ekadashi_name(paksha='shukla',month=self.lunar_month[d],script=self.script)
             if self.lunar_month[d]==4:
-              self.festivals[d]+='\\\\'+chaturmasya_start[self.script]
+              self.festivals[d]+=self.eventSep+chaturmasya_start[self.script]
             if self.lunar_month[d]==8:
-              self.festivals[d]+='\\\\'+chaturmasya_end[self.script]
+              self.festivals[d]+=self.eventSep+chaturmasya_end[self.script]
         elif (self.tithi_sunrise[d-1]!=11 and self.tithi_sunrise[d]==12):
           self.festivals[d]=sarva[self.script]+'~'+get_ekadashi_name(paksha='shukla',month=self.lunar_month[d],script=self.script)
           if self.lunar_month[d]==4:
-            self.festivals[d]+='\\\\'+chaturmasya_start[self.script]
+            self.festivals[d]+=self.eventSep+chaturmasya_start[self.script]
           if self.lunar_month[d]==8:
-            self.festivals[d]+='\\\\'+chaturmasya_end[self.script]
+            self.festivals[d]+=self.eventSep+chaturmasya_end[self.script]
    
       if self.tithi_sunrise[d]==26 or self.tithi_sunrise[d]==27: #One of two consecutive tithis must appear @ sunrise!
         #check for krishna ekadashi
@@ -704,7 +704,7 @@ class panchangam:
     for x in iter(self.festival_day_list.keys()):
       for j in range(0,len(self.festival_day_list[x])):
         if self.festivals[self.festival_day_list[x][j]]!='':
-          self.festivals[self.festival_day_list[x][j]]+='\\\\'
+          self.festivals[self.festival_day_list[x][j]]+=self.eventSep
         self.festivals[self.festival_day_list[x][j]]+=x
   
   def computeSolarEclipses(self):
@@ -740,7 +740,7 @@ class panchangam:
           eclipse_solar_end+=24
         solar_eclipse_str = surya_grahanam[self.script]+'~\\textsf{'+time(eclipse_solar_start).toString()+'}{\\RIGHTarrow}\\textsf{'+time(eclipse_solar_end).toString()+'}'
         if self.festivals[fday]!='':
-          self.festivals[fday]+='\\\\'
+          self.festivals[fday]+=self.eventSep
         self.festivals[fday]+=solar_eclipse_str
       jd=jd+20
 
@@ -787,7 +787,7 @@ class panchangam:
           continue
         lunar_eclipse_str = chandra_grahanam[self.script]+'~\\textsf{'+time(eclipse_lunar_start).toString()+'}{\\RIGHTarrow}\\textsf{'+time(eclipse_lunar_end).toString()+'}'
         if self.festivals[fday]!='':
-          self.festivals[fday]+='\\\\'
+          self.festivals[fday]+=self.eventSep
         self.festivals[fday]+=lunar_eclipse_str
       jd=jd+20
 
@@ -909,13 +909,11 @@ class panchangam:
   
       weekday = (self.weekday_start -1 + d)%7 
 
-      eventSep = '\\\\'
-
       if self.festivals[d] != '':
         summary_text=unicode(self.festivals[d],"UTF-8")
         summary_text=summary_text.replace('C','Ch').replace('c','ch')
         #this will work whether we have one or more events on the same day
-        for stext in summary_text.split(eventSep):
+        for stext in summary_text.split(self.eventSep):
           if not stext.find('graha') == -1:
             #It's a grahanam, with a start and end time
             event = Event()
