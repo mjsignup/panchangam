@@ -387,7 +387,6 @@ class panchangam:
         solar_month_end_time = ''
       
       self.month_data[d] = '\\sunmonth{%s}{%d}{%s}' % (masa_names[self.script][self.solar_month[d]],solar_month_day,solar_month_end_time)
-      sys.stderr.write(self.month_data[d])
   
       #KARADAYAN NOMBU -- easy to check here
       if solar_month_end_time !='': #month ends today
