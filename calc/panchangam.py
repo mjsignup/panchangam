@@ -92,7 +92,7 @@ def get_chandra_masa(month,chandra_masa_names,script):
   else:
     return '%s~(%s)' % (chandra_masa_names[script][int(month)+1],adhika[script]) 
 
-def get_festival_day_purvaviddha(festival_angam,angam_sunrise,d,jd_sunrise,jd_sunrise_tmrw,get_angam_func,min_t):
+def get_festival_day(festival_angam,angam_sunrise,d,jd_sunrise,jd_sunrise_tmrw,get_angam_func,min_t,kala,priority):
   t_cutoff=(jd_sunrise_tmrw-jd_sunrise)*min_t/60.0 #at least min_t nazhis
   
   if angam_sunrise[d]==(festival_angam-1) or angam_sunrise[d]==festival_angam:
@@ -574,38 +574,42 @@ class panchangam:
   
       ###--- OTHER (MAJOR) FESTIVALS ---###
       #type of month | month number | type of angam (tithi|nakshatram) | angam number | min_t cut off for considering prev day (without sunrise_angam) as festival date
-      purvaviddha_rules={
-            akshaya_tritiya[self.script]:['lunar_month', 2,'tithi',      3, 0,'sunrise'],
-             chitra_purnima[self.script]:['solar_month', 1,'tithi',     15, 0,'sunrise'],
-             lalitapanchami[self.script]:['lunar_month', 7,'tithi',      5, 0,'sunrise'],
-                durgashtami[self.script]:['lunar_month', 7,'tithi',      8, 0,'sunrise'],
-                 mahanavami[self.script]:['lunar_month', 7,'tithi',      9, 0,'sunrise'],
-              vijayadashami[self.script]:['lunar_month', 7,'tithi',     10, 0,'sunrise'],
-                   dipavali[self.script]:['lunar_month', 7,'tithi',     29, 0,'sunrise'],
-           shankara_jayanti[self.script]:['lunar_month', 2,'tithi',      5, 0,'sunrise'],
-             yajur_upakarma[self.script]:['lunar_month', 5,'tithi',     15, 0,'sunrise'],
-                rg_upakarma[self.script]:['lunar_month', 5,'nakshatram',22, 0,'sunrise'],
-              sama_upakarma[self.script]:['solar_month', 5,'nakshatram',13, 0,'sunrise'],
-             rishi_panchami[self.script]:['lunar_month', 6,'tithi',      5, 0,'sunrise'],
-         ananta_chaturdashi[self.script]:['lunar_month', 6,'tithi',     14, 0,'sunrise'],
-           mahalaya_paksham[self.script]:['lunar_month', 6,'tithi',     16, 0,'sunrise'],
-            hanumat_jayanti[self.script]:['solar_month', 9,'tithi',     30, 0,'sunrise'],
-            ardra_darshanam[self.script]:['solar_month', 9,'nakshatram', 6, 0,'sunrise'],
-              ratha_saptami[self.script]:['lunar_month',11,'tithi',      7, 0,'sunrise'],
-               goda_jayanti[self.script]:['solar_month', 4,'nakshatram',11, 0,'sunrise'],
-               adi_krittika[self.script]:['solar_month', 4,'nakshatram', 3, 0,'sunrise'],
-           phalguni_uttaram[self.script]:['solar_month',12,'nakshatram',12, 4,'sunrise'],
-          mahalaya_amavasya[self.script]:['lunar_month', 6,'tithi'     ,30, 0,'sunrise'],
-      uma_maheshvara_vratam[self.script]:['lunar_month', 6,'tithi'     ,15, 0,'sunrise']}
+      festival_rules={
+            akshaya_tritiya[self.script]:['lunar_month', 2,'tithi',      3, 0,'sunrise','purvaviddha'],
+             chitra_purnima[self.script]:['solar_month', 1,'tithi',     15, 0,'sunrise','purvaviddha'],
+             lalitapanchami[self.script]:['lunar_month', 7,'tithi',      5, 0,'sunrise','purvaviddha'],
+                durgashtami[self.script]:['lunar_month', 7,'tithi',      8, 0,'sunrise','purvaviddha'],
+                 mahanavami[self.script]:['lunar_month', 7,'tithi',      9, 0,'sunrise','purvaviddha'],
+              vijayadashami[self.script]:['lunar_month', 7,'tithi',     10, 0,'sunrise','purvaviddha'],
+                   dipavali[self.script]:['lunar_month', 7,'tithi',     29, 0,'sunrise','purvaviddha'],
+           shankara_jayanti[self.script]:['lunar_month', 2,'tithi',      5, 0,'sunrise','purvaviddha'],
+             yajur_upakarma[self.script]:['lunar_month', 5,'tithi',     15, 0,'sunrise','purvaviddha'],
+                rg_upakarma[self.script]:['lunar_month', 5,'nakshatram',22, 0,'sunrise','purvaviddha'],
+              sama_upakarma[self.script]:['solar_month', 5,'nakshatram',13, 0,'sunrise','purvaviddha'],
+             rishi_panchami[self.script]:['lunar_month', 6,'tithi',      5, 0,'sunrise','purvaviddha'],
+         ananta_chaturdashi[self.script]:['lunar_month', 6,'tithi',     14, 0,'sunrise','purvaviddha'],
+           mahalaya_paksham[self.script]:['lunar_month', 6,'tithi',     16, 0,'sunrise','purvaviddha'],
+            hanumat_jayanti[self.script]:['solar_month', 9,'tithi',     30, 0,'sunrise','purvaviddha'],
+            ardra_darshanam[self.script]:['solar_month', 9,'nakshatram', 6, 0,'sunrise','purvaviddha'],
+              ratha_saptami[self.script]:['lunar_month',11,'tithi',      7, 0,'sunrise','purvaviddha'],
+               goda_jayanti[self.script]:['solar_month', 4,'nakshatram',11, 0,'sunrise','purvaviddha'],
+               adi_krittika[self.script]:['solar_month', 4,'nakshatram', 3, 0,'sunrise','purvaviddha'],
+           phalguni_uttaram[self.script]:['solar_month',12,'nakshatram',12, 4,'sunrise','purvaviddha'],
+          mahalaya_amavasya[self.script]:['lunar_month', 6,'tithi'     ,30, 0,'sunrise','purvaviddha'],
+      uma_maheshvara_vratam[self.script]:['lunar_month', 6,'tithi'     ,15, 0,'sunrise','purvaviddha']}
   
-      for x in iter(purvaviddha_rules.keys()):
-        rule=purvaviddha_rules[x]
-        if rule[0]=='lunar_month':
-          if self.lunar_month[d]==rule[1]:
-            if rule[2]=='tithi':
-              fday = get_festival_day_purvaviddha(rule[3],self.tithi_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_tithi,rule[4])
-            elif rule[2]=='nakshatram':
-              fday = get_festival_day_purvaviddha(rule[3],self.nakshatram_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_nakshatram,rule[4])
+      for x in iter(festival_rules.keys()):
+        [month_type, month_num, angam_type, angam_num, t_min, kala, priority]=festival_rules[x]
+        if month_type=='lunar_month':
+          if self.lunar_month[d]==month_num:
+            if angam_type=='tithi':
+              fday = get_festival_day(angam_num,self.tithi_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_tithi,t_min,kala,priority)
+            elif angam_type=='nakshatram':
+              fday = get_festival_day(angam_num,self.nakshatram_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_nakshatram,t_min,kala,priority)
+            else:
+              print 'Error; unknown string in rule: %s' % (angam_type)    
+              return
+
             if fday is not None:
               if self.festival_day_list.has_key(x):
                 if self.festival_day_list[x][0]!=fday:
@@ -613,12 +617,16 @@ class panchangam:
                   self.festival_day_list[x]=[self.festival_day_list[x][0],fday]
               else:
                 self.festival_day_list[x]=[fday]
-        elif rule[0]=='solar_month':
-          if self.solar_month[d]==rule[1]:
-            if rule[2]=='tithi':
-              fday = get_festival_day_purvaviddha(rule[3],self.tithi_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_tithi,rule[4])
-            elif rule[2]=='nakshatram':
-              fday = get_festival_day_purvaviddha(rule[3],self.nakshatram_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_nakshatram,rule[4])
+        elif month_type=='solar_month':
+          if self.solar_month[d]==month_num:
+            if angam_type=='tithi':
+              fday = get_festival_day(angam_num,self.tithi_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_tithi,t_min,kala,priority)
+            elif angam_type=='nakshatram':
+              fday = get_festival_day(angam_num,self.nakshatram_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_nakshatram,t_min,kala,priority)
+            else:
+              print 'Error; unknown string in rule: %s' % (angam_type)    
+              return
+
             if fday is not None:
               if self.festival_day_list.has_key(x):
                 if self.festival_day_list[x][0]!=fday:
@@ -627,7 +635,7 @@ class panchangam:
               else:
                 self.festival_day_list[x]=[fday]
         else:
-          print 'Error; unknown string in rule: %s' % (rule[0])    
+          print 'Error; unknown string in rule: %s' % (month_type)    
           return
   
       #NAVARATRI START
