@@ -11,14 +11,17 @@ chaturthi['telugu']= 'సఙ్కటహర-చతుర్థీ'
 maha['telugu']= 'మహా'
 arambham['telugu']= 'ఆరమ్భః'
 navaratri_start['telugu']= 'నవరాత్రి-'+arambham['telugu']
+lalitapanchami['telugu'] = 'లలితా పఞ్చమీ'
 durgashtami['telugu']= 'దుర్గాష్టమీ'
 mahanavami['telugu']= 'మహానవమీ/సరస్వతీ-పూజా'
 vijayadashami['telugu']= 'విజయదశమీ'
 dipavali['telugu']= 'దీపావలీ'
 skanda['telugu']= 'స్కన్ద~'
 shashthi['telugu']= 'షష్ఠీ-వ్రతమ్'
+vaikuntha['telugu']='వైకుణ్ఠ'
+guruvayupura['telugu']='గురువాయుపుర'
 
-koodaravalli['telugu'] = 'కూదారవల్లీ'
+koodaravalli['telugu']='కూడారవల్లీ'
 vchaturthi['telugu']= 'శ్రీవినాయక-చతుర్థీ'
 ananta_chaturdashi['telugu']= 'అనన్త-చతుర్దశీ'
 rishi_panchami['telugu']= 'ఋషి-పఞ్చమీ  వ్రతమ్'
@@ -123,7 +126,7 @@ tithi_names['telugu']={1:'శుక్ల~ప్రథమా',
 12:'శుక్ల~ద్వాదశీ',
 13:'శుక్ల~త్రయోదశీ',
 14:'శుక్ల~చతుర్దశీ',
-15:'\\fullmoon~పూర్ణిమా',
+15:'పౌర్ణమాసీ',
 16:'కృష్ణ~ప్రథమా',
 17:'కృష్ణ~ద్వితీయా',
 18:'కృష్ణ~తృతీయా',
@@ -138,7 +141,7 @@ tithi_names['telugu']={1:'శుక్ల~ప్రథమా',
 27:'కృష్ణ~ద్వాదశీ',
 28:'కృష్ణ~త్రయోదశీ',
 29:'కృష్ణ~చతుర్దశీ',
-30:'\\newmoon~అమావస్యా'}
+30:'అమావాస్యా'}
 
 year_names['telugu']={1:'ప్రభవ',
 2:'విభవ',
@@ -286,7 +289,7 @@ yogam_names['telugu']={1:'విష్కుమ్భ',
 22:'సాధ్య',
 23:'శుభ',
 24:'శుక్ల',
-25:'బ్రహ్మ',
+25:'బ్రాహ్మ',
 26:'ఐన్ద్ర',
 27:'వైధృతి'}
 
@@ -298,7 +301,7 @@ shukla_ekadashi_names['telugu']={1:'కామద',
 6:'పరివర్తిని',
 7:'పాశాఙ్కుశ',
 8:'ఉత్తాన/ప్రబోధినీ',
-9:'వైకుణ్ఠ',
+9:'మోక్షద',
 10:'పుత్రద',
 11:'జయా',
 12:'అమలకీ',

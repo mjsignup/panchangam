@@ -392,71 +392,74 @@ krishna_ekadashi_names['deva']={1:'पापविमोचिनी',
 12:'विजया',
 13:'परमा'}
 
-ahoratram['hk'] = 'ahOrAtram'
-adhika['hk'] = 'adhika'
-samvatsara['hk'] = 'saMvatsaraH'
-ekadashi['hk'] = 'EkAdazI'
-sarva['hk'] = 'sarva'
-smartha['hk'] = 'smArtha'
-vaishnava['hk'] = 'vaiSNava'
-pradosham['hk'] = 'pradOSa-vratam'
-chaturthi['hk'] = 'saGkaTahara-caturthI'
-maha['hk'] = 'mahA'
-arambham['hk'] = 'ArambhaH'
-navaratri_start['hk'] = 'navarAtri-'+arambham['hk']
-durgashtami['hk'] = 'durgASTamI'
-mahanavami['hk'] = 'mahAnavamI/sarasvatI-pUjA'
-vijayadashami['hk'] = 'vijayadazamI'
-dipavali['hk'] = 'dIpAvalI'
-skanda['hk'] = 'skanda~'
-shashthi['hk'] = 'SaSThI-vratam'
+ahoratram['hk']= 'ahorAtram'
+adhika['hk']= 'adhika'
+samvatsara['hk']= 'saMvatsaraH'
+ekadashi['hk']= 'ekAdazI'
+sarva['hk']= 'sarva'
+smartha['hk']= 'smArtha'
+vaishnava['hk']= 'vaiSNava'
+pradosham['hk']= 'pradoSa-vratam'
+chaturthi['hk']= 'saGkaTahara-caturthI'
+maha['hk']= 'mahA'
+arambham['hk']= 'ArambhaH'
+navaratri_start['hk']= 'navarAtri-'+arambham['hk']
+lalitapanchami['hk'] = 'lalitA paJcamI'
+durgashtami['hk']= 'durgASTamI'
+mahanavami['hk']= 'mahAnavamI/sarasvatI-pUjA'
+vijayadashami['hk']= 'vijayadazamI'
+dipavali['hk']= 'dIpAvalI'
+skanda['hk']= 'skanda~'
+shashthi['hk']= 'SaSThI-vratam'
+vaikuntha['hk']='vaikuNTha'
+guruvayupura['hk']='guruvAyupura'
 
-koodaravalli['hk'] = 'kUDAravallI'
-vchaturthi['hk'] = 'zrIvinAyaka-caturthI'
-ananta_chaturdashi['hk'] = 'ananta-caturdazI'
-rishi_panchami['hk'] = 'RSi-paJcamI vratam'
-ramanavami['hk'] = 'zrIrAmanavamI'
-shivaratri['hk'] = 'mahAzivarAtriH'
-janmashtami['hk'] = 'zrIkRSNajanmASTamI'
-chitra_purnima['hk'] = 'citrA~pUrNimA, gajEndra-mOkSaH'
-varalakshmi_vratam['hk'] = 'varalakSmI-vratam'
-yajur_upakarma['hk'] = 'yajurvEda-upAkarma'
-rg_upakarma['hk'] = 'RgvEda-upAkarma'
-sama_upakarma['hk'] = 'sAmavEda-upAkarma'
-gayatri_japam['hk'] = 'gAyatrI japam'
-uttarayanam['hk'] = 'makara~saGkrAnti/uttarAyaNa-puNyakAlam'
-dakshinayanam['hk'] = 'dakSiNAyana-puNyakAlam'
-mesha_sankranti['hk'] = 'mESa~saGkrAnti'
-karadayan_nombu['hk'] = 'kAraDayAn-nOmbu'
-akshaya_tritiya['hk'] = 'akSaya tRtIyA'
-shankara_jayanti['hk'] = 'zaGkara-jayantI'
-mahalaya_paksham['hk'] = 'mahAlaya-pakSa ArambhaH'
-hanumat_jayanti['hk'] = 'zrI hanUmat jayantI'
-ardra_darshanam['hk'] = 'ArdrA darzanam'
-ratha_saptami['hk'] = 'ratha-saptamI'
-goda_jayanti['hk'] = 'zrI gOdA jayantI'
-adi_krittika['hk'] = 'ASADha kRttikA'
-phalguni_uttaram['hk'] = 'phalgunI uttaram'
-mahalaya_amavasya['hk'] = 'mahAlaya-amAvasyA'
-uma_maheshvara_vratam['hk'] = 'umA-mahEzvara vratam'
-yugadi['hk'] = 'yugAdi'
+koodaravalli['hk']='kUDAravallI'
+vchaturthi['hk']= 'zrIvinAyaka-caturthI'
+ananta_chaturdashi['hk']= 'ananta-caturdazI'
+rishi_panchami['hk']= 'RSi-paJcamI  vratam'
+ramanavami['hk']= 'zrIrAmanavamI'
+shivaratri['hk']= 'mahAzivarAtriH'
+janmashtami['hk']= 'zrIkRSNajanmASTamI'
+chitra_purnima['hk']= 'citrA~pUrNimA, gajendra-mokSaH'
+varalakshmi_vratam['hk']= 'varalakSmI-vratam'
+yajur_upakarma['hk']= 'yajurveda-upAkarma'
+rg_upakarma['hk']= 'Rgveda-upAkarma'
+sama_upakarma['hk']= 'sAmaveda-upAkarma'
+gayatri_japam['hk']= 'gAyatrI  japam'
+uttarayanam['hk']= 'makara~saGkrAnti/uttarAyaNa-puNyakAlam'
+dakshinayanam['hk']= 'dakSiNAyana-puNyakAlam'
+mesha_sankranti['hk']= 'meSa~saGkrAnti'
+karadayan_nombu['hk']= 'kAraDayAn-nombu'
+akshaya_tritiya['hk']= 'akSaya tRtIyA'
+shankara_jayanti['hk']= 'zaGkara-jayantI'
+mahalaya_paksham['hk']= 'mahAlaya-pakSa ArambhaH'
+hanumat_jayanti['hk']= 'zrI hanUmat jayantI'
+ardra_darshanam['hk']= 'ArdrA darzanam'
+ratha_saptami['hk']= 'ratha-saptamI'
+goda_jayanti['hk']= 'zrI godA jayantI'
+adi_krittika['hk']= 'ASADha kRttikA'
+phalguni_uttaram['hk']= 'phalgunI uttaram'
+mahalaya_amavasya['hk']= 'mahAlaya-amAvasyA'
+uma_maheshvara_vratam['hk']= 'umA-mahezvara vratam'
+yugadi['hk']= 'yugAdi'
 
-chandra_grahanam['hk'] = 'candra-grahaNam'
-surya_grahanam['hk'] = 'sUrya-grahaNam'
+chandra_grahanam['hk']= 'candra-grahaNam'
+surya_grahanam['hk']= 'sUrya-grahaNam'
 
-list_of_festivals['hk'] = 'mAsAntara-vizESAH'
-chaturmasya_start['hk'] = 'cAturmAsasya ArambhaH'
-chaturmasya_end['hk'] = 'cAturmAsasya samApanam'
+list_of_festivals['hk']= 'mAsAntara-vizeSAH'
+chaturmasya_start['hk']='cAturmAsasya ArambhaH'
+chaturmasya_end['hk']='cAturmAsasya samApanam'
 
-nakshatra_names['hk'] = {1:'azvinI',
+nakshatra_names['hk']={1:'azvinI',
 2:'apabharaNI',
 3:'kRttikA',
-4:'rOhiNI',
+4:'rohiNI',
 5:'mRgazIrSa',
 6:'ArdrA',
 7:'punarvasU',
 8:'puSya',
-9:'AzrESA',
+9:'AzreSA',
 10:'maghA',
 11:'pUrvaphalgunI',
 12:'uttaraphalgunI',
@@ -465,18 +468,18 @@ nakshatra_names['hk'] = {1:'azvinI',
 15:'svAti',
 16:'vizAkhA',
 17:'anUrAdhA',
-18:'jyESThA',
+18:'jyeSThA',
 19:'mUlA',
 20:'pUrvASADhA',
 21:'uttarASADhA',
 22:'zravaNa',
 23:'zraviSThA',
 24:'zatabhiSak',
-25:'pUrvaprOSThapadA',
-26:'uttaraprOSThapadA',
-27:'rEvatI'}
+25:'pUrvaproSThapadA',
+26:'uttaraproSThapadA',
+27:'revatI'}
 
-masa_names['hk'] = {1:'mESa',
+masa_names['hk']={1:'meSa',
 2:'vRSabha',
 3:'mithuna',
 4:'karkaTaka',
@@ -489,7 +492,7 @@ masa_names['hk'] = {1:'mESa',
 11:'kumbha',
 12:'mIna'}
 
-chandra_masa_names['hk'] = {1:'caitra',
+chandra_masa_names['hk']={1:'caitra',
 2:'vaizAkha',
 3:'jyaiSTha',
 4:'ASADha',
@@ -502,7 +505,7 @@ chandra_masa_names['hk'] = {1:'caitra',
 11:'mAgha',
 12:'phAlguna'}
 
-tithi_names['hk'] = {1:'zukla~prathamA',
+tithi_names['hk']={1:'zukla~prathamA',
 2:'zukla~dvitIyA',
 3:'zukla~tRtIyA',
 4:'zukla~caturthI',
@@ -512,9 +515,9 @@ tithi_names['hk'] = {1:'zukla~prathamA',
 8:'zukla~aSTamI',
 9:'zukla~navamI',
 10:'zukla~dazamI',
-11:'zukla~EkAdazI',
+11:'zukla~ekAdazI',
 12:'zukla~dvAdazI',
-13:'zukla~trayOdazI',
+13:'zukla~trayodazI',
 14:'zukla~caturdazI',
 15:'paurNamAsI',
 16:'kRSNa~prathamA',
@@ -527,16 +530,16 @@ tithi_names['hk'] = {1:'zukla~prathamA',
 23:'kRSNa~aSTamI',
 24:'kRSNa~navamI',
 25:'kRSNa~dazamI',
-26:'kRSNa~EkAdazI',
+26:'kRSNa~ekAdazI',
 27:'kRSNa~dvAdazI',
-28:'kRSNa~trayOdazI',
+28:'kRSNa~trayodazI',
 29:'kRSNa~caturdazI',
 30:'amAvAsyA'}
 
-year_names['hk'] = {1:'prabhava',
+year_names['hk']={1:'prabhava',
 2:'vibhava',
 3:'zukla',
-4:'pramOda',
+4:'pramoda',
 5:'prajApati',
 6:'AGgirasa',
 7:'zrImukha',
@@ -555,7 +558,7 @@ year_names['hk'] = {1:'prabhava',
 20:'vyaya',
 21:'sarvajit',
 22:'sarvadhArI',
-23:'virOdhI',
+23:'virodhI',
 24:'vikRti',
 25:'khara',
 26:'nandana',
@@ -563,21 +566,21 @@ year_names['hk'] = {1:'prabhava',
 28:'jaya',
 29:'manmatha',
 30:'durmukhI',
-31:'hEvilambI',
+31:'hevilambI',
 32:'vilambI',
 33:'vikArI',
 34:'zArvarI',
 35:'plava',
 36:'zubhakRt',
-37:'zObhakRt',
-38:'krOdhI',
+37:'zobhakRt',
+38:'krodhI',
 39:'vizvAvasu',
 40:'parAbhava',
 41:'plavaGga',
 42:'kIlaka',
 43:'saumya',
 44:'sAdhAraNa',
-45:'virOdhikRti',
+45:'virodhikRti',
 46:'paridhAvI',
 47:'pramAdIca',
 48:'Ananda',
@@ -589,12 +592,12 @@ year_names['hk'] = {1:'prabhava',
 54:'raudra',
 55:'durmati',
 56:'dundubhi',
-57:'rudhirOdgArI',
+57:'rudhirodgArI',
 58:'raktAkSI',
-59:'krOdhana',
+59:'krodhana',
 60:'akSaya'}
 
-karanam_names['hk'] = {1:'kiMstughna',
+karanam_names['hk']={1:'kiMstughna',
 2:'bava',
 3:'bAlava',
 4:'kaulava',
@@ -655,11 +658,11 @@ karanam_names['hk'] = {1:'kiMstughna',
 59:'catuSpAda',
 60:'nAgava'}
 
-yogam_names['hk'] = {1:'viSkumbha',
+yogam_names['hk']={1:'viSkumbha',
 2:'prIti',
 3:'AyuSmAn',
 4:'saubhAgya',
-5:'zObhana',
+5:'zobhana',
 6:'atigaNDa',
 7:'sukarmA',
 8:'dhRti',
@@ -679,28 +682,28 @@ yogam_names['hk'] = {1:'viSkumbha',
 22:'sAdhya',
 23:'zubha',
 24:'zukla',
-25:'brahma',
+25:'brAhma',
 26:'aindra',
 27:'vaidhRti'}
 
-shukla_ekadashi_names['hk'] = {1:'kAmada',
-2:'mOhinI',
+shukla_ekadashi_names['hk']={1:'kAmada',
+2:'mohinI',
 3:'pANDava nirjala',
-4:'padma/dEvazayanI',
-5:'putrada/pavitrOpAna',
+4:'padma/devazayanI',
+5:'putrada/pavitropAna',
 6:'parivartini',
 7:'pAzAGkuza',
-8:'uttAna/prabOdhinI',
-9:'vaikuNTha',
+8:'uttAna/prabodhinI',
+9:'mokSada',
 10:'putrada',
 11:'jayA',
 12:'amalakI',
 13:'padminI'}
 
-krishna_ekadashi_names['hk'] = {1:'pApavimOcinI',
+krishna_ekadashi_names['hk']={1:'pApavimocinI',
 2:'varuthinI',
 3:'aparA',
-4:'yOginI',
+4:'yoginI',
 5:'kAmika',
 6:'aja',
 7:'indirA',
@@ -723,12 +726,15 @@ chaturthi['iast']= 'Saṅkaṭahara-caturthī'
 maha['iast']= 'Mahā'
 arambham['iast']= 'Ārambhaḥ'
 navaratri_start['iast']= 'Navarātri-'+arambham['iast']
+lalitapanchami['iast'] = 'Lalitā pañcamī'
 durgashtami['iast']= 'Durgāṣṭamī'
 mahanavami['iast']= 'Mahānavamī/sarasvatī-pūjā'
 vijayadashami['iast']= 'Vijayadaśamī'
 dipavali['iast']= 'Dīpāvalī'
 skanda['iast']= 'Skanda~'
 shashthi['iast']= 'Ṣaṣṭhī-vratam'
+vaikuntha['iast']='Vaikuṇṭha'
+guruvayupura['iast']='Guruvāyupura'
 
 koodaravalli['iast']='Kūḍāravallī'
 vchaturthi['iast']= 'Śrīvināyaka-caturthī'
@@ -756,7 +762,7 @@ ratha_saptami['iast']= 'Ratha-saptamī'
 goda_jayanti['iast']= 'Śrī godā jayantī'
 adi_krittika['iast']= 'Āṣāḍha kṛttikā'
 phalguni_uttaram['iast']= 'Phalgunī uttaram'
-mahalaya_amavasya['iast']= 'Mahālaya-amāvāsyā'
+mahalaya_amavasya['iast']= 'Mahālaya-amāvasyā'
 uma_maheshvara_vratam['iast']= 'Umā-maheśvara vratam'
 yugadi['iast']= 'Yugādi'
 
@@ -1010,7 +1016,7 @@ shukla_ekadashi_names['iast']={1:'Kāmada',
 6:'Parivartini',
 7:'Pāśāṅkuśa',
 8:'Uttāna/prabodhinī',
-9:'Vaikuṇṭha',
+9:'Mokṣada',
 10:'Putrada',
 11:'Jayā',
 12:'Amalakī',
@@ -1361,14 +1367,17 @@ chaturthi['telugu']= 'సఙ్కటహర-చతుర్థీ'
 maha['telugu']= 'మహా'
 arambham['telugu']= 'ఆరమ్భః'
 navaratri_start['telugu']= 'నవరాత్రి-'+arambham['telugu']
+lalitapanchami['telugu'] = 'లలితా పఞ్చమీ'
 durgashtami['telugu']= 'దుర్గాష్టమీ'
 mahanavami['telugu']= 'మహానవమీ/సరస్వతీ-పూజా'
 vijayadashami['telugu']= 'విజయదశమీ'
 dipavali['telugu']= 'దీపావలీ'
 skanda['telugu']= 'స్కన్ద~'
 shashthi['telugu']= 'షష్ఠీ-వ్రతమ్'
+vaikuntha['telugu']='వైకుణ్ఠ'
+guruvayupura['telugu']='గురువాయుపుర'
 
-koodaravalli['telugu'] = 'కూదారవల్లీ'
+koodaravalli['telugu']='కూడారవల్లీ'
 vchaturthi['telugu']= 'శ్రీవినాయక-చతుర్థీ'
 ananta_chaturdashi['telugu']= 'అనన్త-చతుర్దశీ'
 rishi_panchami['telugu']= 'ఋషి-పఞ్చమీ  వ్రతమ్'
@@ -1473,7 +1482,7 @@ tithi_names['telugu']={1:'శుక్ల~ప్రథమా',
 12:'శుక్ల~ద్వాదశీ',
 13:'శుక్ల~త్రయోదశీ',
 14:'శుక్ల~చతుర్దశీ',
-15:'\\fullmoon~పూర్ణిమా',
+15:'పౌర్ణమాసీ',
 16:'కృష్ణ~ప్రథమా',
 17:'కృష్ణ~ద్వితీయా',
 18:'కృష్ణ~తృతీయా',
@@ -1488,7 +1497,7 @@ tithi_names['telugu']={1:'శుక్ల~ప్రథమా',
 27:'కృష్ణ~ద్వాదశీ',
 28:'కృష్ణ~త్రయోదశీ',
 29:'కృష్ణ~చతుర్దశీ',
-30:'\\newmoon~అమావస్యా'}
+30:'అమావాస్యా'}
 
 year_names['telugu']={1:'ప్రభవ',
 2:'విభవ',
@@ -1636,7 +1645,7 @@ yogam_names['telugu']={1:'విష్కుమ్భ',
 22:'సాధ్య',
 23:'శుభ',
 24:'శుక్ల',
-25:'బ్రహ్మ',
+25:'బ్రాహ్మ',
 26:'ఐన్ద్ర',
 27:'వైధృతి'}
 
@@ -1648,7 +1657,7 @@ shukla_ekadashi_names['telugu']={1:'కామద',
 6:'పరివర్తిని',
 7:'పాశాఙ్కుశ',
 8:'ఉత్తాన/ప్రబోధినీ',
-9:'వైకుణ్ఠ',
+9:'మోక్షద',
 10:'పుత్రద',
 11:'జయా',
 12:'అమలకీ',
