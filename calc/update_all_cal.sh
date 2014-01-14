@@ -1,5 +1,5 @@
 #!/bin/bash
-chmod +x write_panchangam_tex.py gen_cal.sh
+chmod +x write_panchangam_*.py *.sh
 
 for x in *_names.txt
 do 

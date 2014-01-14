@@ -28,6 +28,7 @@ tz=$4
 
 echo -ne "Computing $y panchangam for $city_name ($lat,$lon) - $tz in $script script... "
 ./write_panchangam_tex.py $city_name $lat $lon $tz $y $script > cal-$y-$city_name-$script.tex
+mv cal_log* debug_logs/
 echo "done. "
 
 echo -ne "Generating PDF (log --> /tmp/cal-$y-$city_name.texlog)... "
