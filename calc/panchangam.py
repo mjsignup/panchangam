@@ -600,43 +600,23 @@ class panchangam:
   
       for x in iter(festival_rules.keys()):
         [month_type, month_num, angam_type, angam_num, t_min, kala, priority]=festival_rules[x]
-        if month_type=='lunar_month':
-          if self.lunar_month[d]==month_num:
-            if angam_type=='tithi':
-              fday = get_festival_day(angam_num,self.tithi_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_tithi,t_min,kala,priority)
-            elif angam_type=='nakshatram':
-              fday = get_festival_day(angam_num,self.nakshatram_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_nakshatram,t_min,kala,priority)
-            else:
-              print 'Error; unknown string in rule: %s' % (angam_type)    
-              return
+        if (month_type=='lunar_month' and self.lunar_month[d]==month_num) or (month_type=='solar_month' and self.solar_month[d]==month_num):
+          if angam_type=='tithi':
+            fday = get_festival_day(angam_num,self.tithi_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_tithi,t_min,kala,priority)
+          elif angam_type=='nakshatram':
+            fday = get_festival_day(angam_num,self.nakshatram_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_nakshatram,t_min,kala,priority)
+          else:
+            print 'Error; unknown string in rule: %s' % (angam_type)    
+            return
 
-            if fday is not None:
-              if self.festival_day_list.has_key(x):
-                if self.festival_day_list[x][0]!=fday:
-                  #Second occurrence of a festival within a Gregorian calendar year
-                  self.festival_day_list[x]=[self.festival_day_list[x][0],fday]
-              else:
-                self.festival_day_list[x]=[fday]
-        elif month_type=='solar_month':
-          if self.solar_month[d]==month_num:
-            if angam_type=='tithi':
-              fday = get_festival_day(angam_num,self.tithi_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_tithi,t_min,kala,priority)
-            elif angam_type=='nakshatram':
-              fday = get_festival_day(angam_num,self.nakshatram_sunrise,d,self.jd_sunrise[d],self.jd_sunrise[d+1],get_nakshatram,t_min,kala,priority)
+          if fday is not None:
+            print x, fday
+            if self.festival_day_list.has_key(x):
+              if self.festival_day_list[x][0]!=fday:
+                #Second occurrence of a festival within a Gregorian calendar year
+                self.festival_day_list[x]=[self.festival_day_list[x][0],fday]
             else:
-              print 'Error; unknown string in rule: %s' % (angam_type)    
-              return
-
-            if fday is not None:
-              if self.festival_day_list.has_key(x):
-                if self.festival_day_list[x][0]!=fday:
-                  #Second occurrence of a festival within a Gregorian calendar year
-                  self.festival_day_list[x]=[self.festival_day_list[x][0],fday]
-              else:
-                self.festival_day_list[x]=[fday]
-        else:
-          print 'Error; unknown string in rule: %s' % (month_type)    
-          return
+              self.festival_day_list[x]=[fday]
   
       #NAVARATRI START
       if self.lunar_month[d]==7 and self.lunar_month[d-1]==6:
