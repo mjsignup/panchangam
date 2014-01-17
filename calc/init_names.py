@@ -24,6 +24,7 @@ vaikuntha = {}
 guruvayupura = {}
 
 koodaravalli = {}
+varahajayanti = {}
 vchaturthi = {}
 ananta_chaturdashi = {}
 rishi_panchami = {}
@@ -93,6 +94,7 @@ vaikuntha['deva']='वैकुण्ठ'
 guruvayupura['deva']='गुरुवायुपुर'
 
 koodaravalli['deva']='कूडारवल्ली'
+varahajayanti['deva'] = 'वराह जयन्ती'
 vchaturthi['deva']= 'श्रीविनायक-चतुर्थी'
 ananta_chaturdashi['deva']= 'अनन्त-चतुर्दशी'
 rishi_panchami['deva']= 'ऋषि-पञ्चमी  व्रतम्'
@@ -737,6 +739,7 @@ vaikuntha['iast']='Vaikuṇṭha'
 guruvayupura['iast']='Guruvāyupura'
 
 koodaravalli['iast']='Kūḍāravallī'
+varahajayanti['iast']='Varāha~jayantī'
 vchaturthi['iast']= 'Śrīvināyaka-caturthī'
 ananta_chaturdashi['iast']= 'Ananta-caturdaśī'
 rishi_panchami['iast']= 'Ṛṣi-pañcamī  vratam'

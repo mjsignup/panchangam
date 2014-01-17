@@ -22,6 +22,7 @@ vaikuntha['iast']='Vaikuṇṭha'
 guruvayupura['iast']='Guruvāyupura'
 
 koodaravalli['iast']='Kūḍāravallī'
+varahajayanti['iast']='Varāha~jayantī'
 vchaturthi['iast']= 'Śrīvināyaka-caturthī'
 ananta_chaturdashi['iast']= 'Ananta-caturdaśī'
 rishi_panchami['iast']= 'Ṛṣi-pañcamī  vratam'

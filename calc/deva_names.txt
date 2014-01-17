@@ -22,6 +22,7 @@ vaikuntha['deva']='वैकुण्ठ'
 guruvayupura['deva']='गुरुवायुपुर'
 
 koodaravalli['deva']='कूडारवल्ली'
+varahajayanti['deva'] = 'वराह जयन्ती'
 vchaturthi['deva']= 'श्रीविनायक-चतुर्थी'
 ananta_chaturdashi['deva']= 'अनन्त-चतुर्दशी'
 rishi_panchami['deva']= 'ऋषि-पञ्चमी  व्रतम्'
