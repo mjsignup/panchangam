@@ -665,8 +665,8 @@ class panchangam:
              holika_purnima[self.script]:['lunar_month',12,'tithi',     15, 0,'pradosha','purvaviddha'],
       uma_maheshvara_vratam[self.script]:['lunar_month', 6,'tithi'     ,15, 0,'sunrise','purvaviddha']}
       
-      debugFestivals=True 
-      #debugFestivals=False 
+      #debugFestivals=True 
+      debugFestivals=False 
       for x in iter(festival_rules.keys()):
         [month_type, month_num, angam_type, angam_num, t_min, kala, priority]=festival_rules[x]
         if (month_type=='lunar_month' and self.lunar_month[d]==month_num) or (month_type=='solar_month' and self.solar_month[d]==month_num):
@@ -697,18 +697,27 @@ class panchangam:
               angams_yest = get_angams_for_kalas(self.jd_sunrise[d-1],self.jd_sunrise[d],self.jd_sunrise[d+1],self.jd_sunset[d-1],self.jd_sunset[d],get_angam_func,kala)
               if debugFestivals is True:
                 print "%angams yest & today:",angams_yest
-              if angams[2]==angam_num or angams[3]==angam_num:
-                fday=d+1
               if angams[0]==angam_num or angams[1]==angam_num:
-                if angams_yest[0]==angam_num or angams_yest[1]==angam_num:
-                  '''Yesterday would have already been assigned!'''
+                if self.festival_day_list.has_key(x):
+                  #Check if yesterday was assigned already to this purvaviddha festival!
+                  if self.festival_day_list[x].count(d-1)==0:
+                    fday=d
                 else:
                   fday=d
+              elif angams[2]==angam_num or angams[3]==angam_num:
+                fday=d+1
               if fday is None:
                 '''This means that the correct angam did not touch the kalam on either day!'''
                 #sys.stderr.write('Could not assign purvaviddha day for %s! Please check for unusual cases.\n' % x)
                 if angams[2]==angam_num+1 or angams[3]==angam_num+1:
-                  fday=d
+                  #Need to assign a day to the festival here since the angam did not touch kalam on either day
+                  #BUT ONLY IF YESTERDAY WASN'T ALREADY ASSIGNED, THIS BEING PURVAVIDDHA
+                  #Perhaps just need better checking of conditions instead of this fix
+                  if self.festival_day_list.has_key(x):
+                    if self.festival_day_list[x].count(d-1)==0:
+                      fday=d
+                  else:
+                    fday=d
 
           if fday is not None:
             if debugFestivals is True:
@@ -784,6 +793,12 @@ class panchangam:
           continue
         if eclipse_solar_end < eclipse_solar_start:
           eclipse_solar_end+=24
+        sunrise_eclipse_day = swisseph.revjul(self.jd_sunrise[fday])[3]
+        sunset_eclipse_day = swisseph.revjul(self.jd_sunset[fday])[3]
+        if jd_eclipse_solar_start<jd_sunrise_eclipse_day:
+          eclipse_solar_start=sunrise_eclipse_day
+        if jd_eclipse_solar_end>jd_sunset_eclipse_day:
+          eclipse_solar_end=sunset_eclipse_day
         solar_eclipse_str = surya_grahanam[self.script]+'~\\textsf{'+time(eclipse_solar_start).toString()+'}{\\RIGHTarrow}\\textsf{'+time(eclipse_solar_end).toString()+'}'
         if self.festivals[fday]!='':
           self.festivals[fday]+=self.eventSep
@@ -831,6 +846,12 @@ class panchangam:
         if jd_eclipse_lunar_end<jd_moonrise_eclipse_day or jd_eclipse_lunar_start>jd_moonset_eclipse_day:
           jd=jd+20 #Move towards the next eclipse... at least the next full moon (>=25 days away)
           continue
+        moonrise_eclipse_day = swisseph.revjul(jd_moonrise_eclipse_day)[3]
+        moonset_eclipse_day = swisseph.revjul(jd_moonset_eclipse_day)[3]
+        if jd_eclipse_lunar_start<jd_moonrise_eclipse_day:
+          eclipse_lunar_start=moonrise_eclipse_day
+        if jd_eclipse_lunar_end>jd_moonset_eclipse_day:
+          eclipse_lunar_end=moonset_eclipse_day
         lunar_eclipse_str = chandra_grahanam[self.script]+'~\\textsf{'+time(eclipse_lunar_start).toString()+'}{\\RIGHTarrow}\\textsf{'+time(eclipse_lunar_end).toString()+'}'
         if self.festivals[fday]!='':
           self.festivals[fday]+=self.eventSep
