@@ -9,3 +9,4 @@ chmod +x write_panchangam_*.py *.sh
 ./gen_cal.sh London  51:30:00  0:07:00 'Europe/London' 2014
 ./gen_ics.sh London  51:30:00  0:07:00 'Europe/London' 2014 iast
 #./gen_cal.sh Mumbai  18:57:36 72:49:12 'Asia/Calcutta' 2014
+cp ics/*2014*.ics pdf/*-2014* ~/Dropbox/panchangam/

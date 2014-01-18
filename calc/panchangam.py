@@ -96,16 +96,38 @@ def get_chandra_masa(month,chandra_masa_names,script):
 def get_angams_for_kalas(jd_sunrise,jd_sunrise_tmrw,jd_sunrise_datmrw,jd_sunset,jd_sunset_tmrw,get_angam_func,kala_type):
   if kala_type == 'sunrise':
     angams = [get_angam_func(jd_sunrise),get_angam_func(jd_sunrise),get_angam_func(jd_sunrise_tmrw),get_angam_func(jd_sunrise_tmrw)]
+  if kala_type == 'sunset':
+    angams = [get_angam_func(jd_sunset),get_angam_func(jd_sunset),get_angam_func(jd_sunset_tmrw),get_angam_func(jd_sunset_tmrw)]
+  elif kala_type == 'pratah' :
+    angams = [get_angam_func(jd_sunrise+(jd_sunset-jd_sunrise)*(1.0/5.0)),#pratah1 start
+              get_angam_func(jd_sunrise+(jd_sunset-jd_sunrise)*(2.0/5.0)),#pratah1 end 
+              get_angam_func(jd_sunrise_tmrw+(jd_sunset_tmrw-jd_sunrise_tmrw)*(1.0/5.0)),#pratah2 start
+              get_angam_func(jd_sunrise_tmrw+(jd_sunset_tmrw-jd_sunrise_tmrw)*(2.0/5.0))]#pratah2 end
   elif kala_type == 'madhyahna' :
     angams = [get_angam_func(jd_sunrise+(jd_sunset-jd_sunrise)*(2.0/5.0)),#madhyahna1 start
               get_angam_func(jd_sunrise+(jd_sunset-jd_sunrise)*(3.0/5.0)),#madhyahna1 end 
               get_angam_func(jd_sunrise_tmrw+(jd_sunset_tmrw-jd_sunrise_tmrw)*(2.0/5.0)),#madhyahna2 start
               get_angam_func(jd_sunrise_tmrw+(jd_sunset_tmrw-jd_sunrise_tmrw)*(3.0/5.0))]#madhyahna2 end
+  elif kala_type == 'aparahna' :
+    angams = [get_angam_func(jd_sunrise+(jd_sunset-jd_sunrise)*(3.0/5.0)),#aparahna1 start
+              get_angam_func(jd_sunrise+(jd_sunset-jd_sunrise)*(4.0/5.0)),#aparahna1 end 
+              get_angam_func(jd_sunrise_tmrw+(jd_sunset_tmrw-jd_sunrise_tmrw)*(3.0/5.0)),#aparahna2 start
+              get_angam_func(jd_sunrise_tmrw+(jd_sunset_tmrw-jd_sunrise_tmrw)*(4.0/5.0))]#aparahna2 end
+  elif kala_type == 'saydhna' :
+    angams = [get_angam_func(jd_sunrise+(jd_sunset-jd_sunrise)*(4.0/5.0)),#saydhna1 start
+              get_angam_func(jd_sunrise+(jd_sunset-jd_sunrise)*(5.0/5.0)),#saydhna1 end 
+              get_angam_func(jd_sunrise_tmrw+(jd_sunset_tmrw-jd_sunrise_tmrw)*(4.0/5.0)),#saydhna2 start
+              get_angam_func(jd_sunrise_tmrw+(jd_sunset_tmrw-jd_sunrise_tmrw)*(5.0/5.0))]#saydhna2 end
   elif kala_type == 'madhyaratri' :
     angams = [get_angam_func(jd_sunset+(jd_sunrise_tmrw-jd_sunset)*(2.0/5.0)),#madhyaratri1 start
               get_angam_func(jd_sunset+(jd_sunrise_tmrw-jd_sunset)*(3.0/5.0)),#madhyaratri1 end 
               get_angam_func(jd_sunset_tmrw+(jd_sunrise_datmrw-jd_sunset_tmrw)*(2.0/5.0)),#madhyaratri2 start
               get_angam_func(jd_sunset_tmrw+(jd_sunrise_datmrw-jd_sunset_tmrw)*(3.0/5.0))]#madhyaratri2 end
+  elif kala_type == 'pradosha' :
+    angams = [get_angam_func(jd_sunset),#pradosha1 start
+              get_angam_func(jd_sunset+(jd_sunrise_tmrw-jd_sunset)*(1.0/5.0)),#pradosha1 end 
+              get_angam_func(jd_sunset_tmrw),#pradosha2 start
+              get_angam_func(jd_sunset_tmrw+(jd_sunrise_datmrw-jd_sunset_tmrw)*(1.0/5.0))]#pradosha2 end
   elif kala_type == 'nishita' :
     angams = [get_angam_func(jd_sunset+(jd_sunrise_tmrw-jd_sunset)*(7.0/15.0)),#nishita1 start
               get_angam_func(jd_sunset+(jd_sunrise_tmrw-jd_sunset)*(8.0/15.0)),#nishita1 end 
@@ -546,25 +568,21 @@ class panchangam:
   
       #PRADOSHA Vratam
       if self.tithi_sunrise[d]==12 or self.tithi_sunrise[d]==13:
-        ldiff_set=(swisseph.calc_ut(self.jd_sunset[d],swisseph.MOON)[0]-swisseph.calc_ut(self.jd_sunset[d],swisseph.SUN)[0])%360
-        ldiff_set_tmrw=(swisseph.calc_ut(self.jd_sunset[d+1],swisseph.MOON)[0]-swisseph.calc_ut(self.jd_sunset[d+1],swisseph.SUN)[0])%360
-        tithi_sunset = int(1+math.floor(ldiff_set/12.0))
-        tithi_sunset_tmrw = int(1+math.floor(ldiff_set_tmrw/12.0))
+        tithi_sunset = get_tithi(self.jd_sunset[d])
+        tithi_sunset_tmrw = get_tithi(self.jd_sunset[d+1])
         if tithi_sunset<=13 and tithi_sunset_tmrw!=13:
           self.festivals[d]=pradosham[self.script]
         elif tithi_sunset_tmrw==13:
           self.festivals[d+1]=pradosham[self.script]
   
       if self.tithi_sunrise[d]==27 or self.tithi_sunrise[d]==28:
-        ldiff_set=(swisseph.calc_ut(self.jd_sunset[d],swisseph.MOON)[0]-swisseph.calc_ut(self.jd_sunset[d],swisseph.SUN)[0])%360
-        ldiff_set_tmrw=(swisseph.calc_ut(self.jd_sunset[d+1],swisseph.MOON)[0]-swisseph.calc_ut(self.jd_sunset[d+1],swisseph.SUN)[0])%360
-        tithi_sunset = int(1+math.floor(ldiff_set/12.0))
-        tithi_sunset_tmrw = int(1+math.floor(ldiff_set_tmrw/12.0))
+        tithi_sunset = get_tithi(self.jd_sunset[d])
+        tithi_sunset_tmrw = get_tithi(self.jd_sunset[d+1])
         if tithi_sunset<=28 and tithi_sunset_tmrw!=28:
           self.festivals[d]=pradosham[self.script]
         elif tithi_sunset_tmrw==28:
           self.festivals[d+1]=pradosham[self.script]
-  
+
       #SANKATAHARA chaturthi
       if self.tithi_sunrise[d]==18 or self.tithi_sunrise[d]==19:
         ldiff_moonrise_yest=(swisseph.calc_ut(self.jd_moonrise[d-1],swisseph.MOON)[0]-swisseph.calc_ut(self.jd_moonrise[d-1],swisseph.SUN)[0])%360
@@ -623,12 +641,32 @@ class panchangam:
                goda_jayanti[self.script]:['solar_month', 4,'nakshatram',11, 0,'sunrise','purvaviddha'],
                adi_krittika[self.script]:['solar_month', 4,'nakshatram', 3, 0,'sunrise','purvaviddha'],
            phalguni_uttaram[self.script]:['solar_month',12,'nakshatram',12, 4,'sunrise','purvaviddha'],
-          mahalaya_amavasya[self.script]:['lunar_month', 6,'tithi'     ,30, 0,'sunrise','purvaviddha'],
-                 ramanavami[self.script]:['lunar_month', 1,'tithi'     , 9, 0,'madhyahna','purvaviddha'],
+          mahalaya_amavasya[self.script]:['lunar_month', 6,'tithi',     30, 0,'sunrise','purvaviddha'],
+                 ramanavami[self.script]:['lunar_month', 1,'tithi',      9, 0,'madhyahna','purvaviddha'],
+              gauri_tritiya[self.script]:['lunar_month', 1,'tithi',      3, 0,'sunrise','purvaviddha'],
+             matsya_jayanti[self.script]:['lunar_month', 1,'tithi',      3, 0,'aparahna','purvaviddha'],
+        parashurama_jayanti[self.script]:['lunar_month', 2,'tithi',      3, 0,'madhyahna','purvaviddha'],
+              ganga_saptami[self.script]:['lunar_month', 2,'tithi',      7, 0,'madhyahna','purvaviddha'],
+           nrisimha_jayanti[self.script]:['lunar_month', 2,'tithi',     14, 0,'sunset','purvaviddha'],
+              kurma_jayanti[self.script]:['lunar_month', 4,'tithi',     15, 0,'saydhna','purvaviddha'],
+          hayagriva_jayanti[self.script]:['lunar_month', 5,'tithi',     15, 0,'sunrise','purvaviddha'],
+           bahula_chaturthi[self.script]:['lunar_month', 5,'tithi',     19, 0,'saydhna','purvaviddha'],
+                radhashtami[self.script]:['lunar_month', 6,'tithi',      8, 0,'sunrise','purvaviddha'],
+             vamana_jayanti[self.script]:['lunar_month', 6,'tithi',     12, 0,'sunrise','purvaviddha'],
+             buddha_jayanti[self.script]:['lunar_month', 7,'tithi',     15, 0,'sunset','purvaviddha'],
+           govatsa_dvadashi[self.script]:['lunar_month', 7,'tithi',     27, 0,'madhyahna','purvaviddha'],
+                 gopashtami[self.script]:['lunar_month', 8,'tithi',      8, 0,'madhyahna','purvaviddha'],
+              tulasi_vivaha[self.script]:['lunar_month', 8,'tithi',     12, 0,'madhyahna','purvaviddha'],
+         dattatreya_jayanti[self.script]:['lunar_month', 9,'tithi',     15, 0,'pradosha','purvaviddha'],
+               tripurotsava[self.script]:['lunar_month', 8,'tithi',     15, 0,'pradosha','purvaviddha'],
+               maha_kartiki[self.script]:['lunar_month', 8,'nakshatram', 3, 0,'pradosha','purvaviddha'],
+              bhishmashtami[self.script]:['lunar_month',11,'tithi',      8, 0,'madhyahna','purvaviddha'],
+           bhishma_dvadashi[self.script]:['lunar_month',11,'tithi',     12, 0,'sunrise','purvaviddha'],
+             holika_purnima[self.script]:['lunar_month',12,'tithi',     15, 0,'pradosha','purvaviddha'],
       uma_maheshvara_vratam[self.script]:['lunar_month', 6,'tithi'     ,15, 0,'sunrise','purvaviddha']}
       
-      #debugFestivals=True 
-      debugFestivals=False 
+      debugFestivals=True 
+      #debugFestivals=False 
       for x in iter(festival_rules.keys()):
         [month_type, month_num, angam_type, angam_num, t_min, kala, priority]=festival_rules[x]
         if (month_type=='lunar_month' and self.lunar_month[d]==month_num) or (month_type=='solar_month' and self.solar_month[d]==month_num):
@@ -646,8 +684,8 @@ class panchangam:
           if angam_sunrise[d]==angam_num-1 or angam_sunrise[d]==angam_num:
             angams = get_angams_for_kalas(self.jd_sunrise[d],self.jd_sunrise[d+1],self.jd_sunrise[d+2],self.jd_sunset[d],self.jd_sunset[d+1],get_angam_func,kala)
             if debugFestivals is True:
-              print x,': ',festival_rules[x]
-              print "angams today & tmrw:",angams
+              print '%',x,': ',festival_rules[x]
+              print "%angams today & tmrw:",angams
             if priority == 'paraviddha':
               if angams[0]==angam_num or angams[1]==angam_num:
                 fday=d
@@ -658,7 +696,7 @@ class panchangam:
             elif priority == 'purvaviddha':
               angams_yest = get_angams_for_kalas(self.jd_sunrise[d-1],self.jd_sunrise[d],self.jd_sunrise[d+1],self.jd_sunset[d-1],self.jd_sunset[d],get_angam_func,kala)
               if debugFestivals is True:
-                print "angams yest & today:",angams_yest
+                print "%angams yest & today:",angams_yest
               if angams[2]==angam_num or angams[3]==angam_num:
                 fday=d+1
               if angams[0]==angam_num or angams[1]==angam_num:
@@ -674,14 +712,14 @@ class panchangam:
 
           if fday is not None:
             if debugFestivals is True:
-              print d,':', x, fday
+              print '%',d,':', x, fday
             if self.festival_day_list.has_key(x):
               if self.festival_day_list[x][0]!=fday:
                 #Second occurrence of a festival within a Gregorian calendar year
                 self.festival_day_list[x]=[self.festival_day_list[x][0],fday]
             else:
               self.festival_day_list[x]=[fday]
-  
+
       #NAVARATRI START
       if self.lunar_month[d]==7 and self.lunar_month[d-1]==6:
         self.festival_day_list[navaratri_start[self.script]]=[d]
@@ -703,6 +741,9 @@ class panchangam:
         self.festival_day_list[yugadi[self.script]]=[d]
   
     #Add saved festivals
+    if self.festival_day_list[tripurotsava[self.script]]!=self.festival_day_list[maha_kartiki[self.script]]:
+      del self.festival_day_list[maha_kartiki[self.script]]
+
     self.festival_day_list[gayatri_japam[self.script]]=[self.festival_day_list[yajur_upakarma[self.script]][0]+1]
     self.festival_day_list[varalakshmi_vratam[self.script]]=[self.festival_day_list[yajur_upakarma[self.script]][0]-((self.weekday_start-1+self.festival_day_list[yajur_upakarma[self.script]][0]-5)%7)]
   
