@@ -53,6 +53,26 @@ phalguni_uttaram = {}
 mahalaya_amavasya = {}
 uma_maheshvara_vratam = {}
 yugadi = {}
+gauri_tritiya = {}
+matsya_jayanti = {}
+parashurama_jayanti = {}
+ganga_saptami = {}
+nrisimha_jayanti = {}
+kurma_jayanti = {}
+hayagriva_jayanti = {}
+bahula_chaturthi = {}
+radhashtami = {}
+vamana_jayanti = {}
+buddha_jayanti = {}
+govatsa_dvadashi = {}
+gopashtami = {}
+tulasi_vivaha = {}
+tripurotsava = {}
+maha_kartiki = {}
+dattatreya_jayanti = {}
+bhishmashtami = {}
+bhishma_dvadashi = {}
+holika_purnima = {}
 
 chandra_grahanam = {}
 surya_grahanam = {}
@@ -123,6 +143,26 @@ phalguni_uttaram['deva']= 'फल्गुनी उत्तरम्'
 mahalaya_amavasya['deva']= 'महालय-अमावस्या'
 uma_maheshvara_vratam['deva']= 'उमा-महेश्वर व्रतम्'
 yugadi['deva']= 'युगादि'
+gauri_tritiya['deva'] = 'गौरी तृतीया'
+matsya_jayanti['deva'] = 'मत्स्य जयन्ती'
+parashurama_jayanti['deva'] = 'परशुराम जयन्ती'
+ganga_saptami['deva'] = 'गङ्गा सप्तमी'
+nrisimha_jayanti['deva'] = 'नृसिंह जयन्ती'
+kurma_jayanti['deva'] = 'कूर्म जयन्ती'
+hayagriva_jayanti['deva'] = 'हयग्रीव जयन्ती'
+bahula_chaturthi['deva'] = 'बहुला चतुर्थी'
+radhashtami['deva'] = 'राधाष्टमी'
+vamana_jayanti['deva'] = 'वामन जयन्ती'
+buddha_jayanti['deva'] = 'बुद्ध जयन्ती'
+govatsa_dvadashi['deva'] = 'गोवत्स द्वादशी'
+gopashtami['deva'] = 'गोपाष्टमी'
+tulasi_vivaha['deva'] = 'प्रबोधोत्सवः/तुलसी-विवाहः'
+tripurotsava['deva'] = 'त्रिपुरोत्सवः'
+maha_kartiki['deva'] = 'महा-कार्तिकी'
+dattatreya_jayanti['deva'] = 'दत्तात्रेय जयन्ती'
+bhishmashtami['deva'] = 'भीष्माष्टमी'
+bhishma_dvadashi['deva'] = 'भीष्म-द्वादशी'
+holika_purnima['deva'] = 'होलिका पूर्णिमा'
 
 chandra_grahanam['deva']= 'चन्द्र-ग्रहणम्'
 surya_grahanam['deva']= 'सूर्य-ग्रहणम्'
@@ -716,67 +756,87 @@ krishna_ekadashi_names['hk']={1:'pApavimocinI',
 12:'vijayA',
 13:'paramA'}
 
-ahoratram['iast']= 'Ahorātram'
-adhika['iast']= 'Adhika'
-samvatsara['iast']= 'Saṃvatsaraḥ'
-ekadashi['iast']= 'Ekādaśī'
-sarva['iast']= 'Sarva'
-smartha['iast']= 'Smārtha'
-vaishnava['iast']= 'Vaiṣṇava'
-pradosham['iast']= 'Pradoṣa-vratam'
-chaturthi['iast']= 'Saṅkaṭahara-caturthī'
-maha['iast']= 'Mahā'
-arambham['iast']= 'Ārambhaḥ'
-navaratri_start['iast']= 'Navarātri-'+arambham['iast']
-lalitapanchami['iast'] = 'Lalitā pañcamī'
-durgashtami['iast']= 'Durgāṣṭamī'
-mahanavami['iast']= 'Mahānavamī/sarasvatī-pūjā'
-vijayadashami['iast']= 'Vijayadaśamī'
-dipavali['iast']= 'Dīpāvalī'
-skanda['iast']= 'Skanda~'
-shashthi['iast']= 'Ṣaṣṭhī-vratam'
-vaikuntha['iast']='Vaikuṇṭha'
-guruvayupura['iast']='Guruvāyupura'
+ahoratram['iast'] = 'Ahorātram'
+adhika['iast'] = 'Adhika'
+samvatsara['iast'] = 'Saṃvatsaraḥ'
+ekadashi['iast'] = 'Ekādaśī'
+sarva['iast'] = 'Sarva'
+smartha['iast'] = 'Smārtha'
+vaishnava['iast'] = 'Vaiṣṇava'
+pradosham['iast'] = 'Pradoṣa-vratam'
+chaturthi['iast'] = 'Saṅkaṭahara-chaturthī'
+maha['iast'] = 'Mahā'
+arambham['iast'] = 'Ārambhaḥ'
+navaratri_start['iast'] = 'Navarātri-'+arambham['iast']
+lalitapanchami['iast'] = 'Lalitā pañchamī'
+durgashtami['iast'] = 'Durgāṣṭamī'
+mahanavami['iast'] = 'Mahānavamī/sarasvatī-pūjā'
+vijayadashami['iast'] = 'Vijayadaśamī'
+dipavali['iast'] = 'Dīpāvalī'
+skanda['iast'] = 'Skanda~'
+shashthi['iast'] = 'Ṣaṣṭhī-vratam'
+vaikuntha['iast'] = 'Vaikuṇṭha'
+guruvayupura['iast'] = 'Guruvāyupura'
 
-koodaravalli['iast']='Kūḍāravallī'
-varahajayanti['iast']='Varāha~jayantī'
-vchaturthi['iast']= 'Śrīvināyaka-caturthī'
-ananta_chaturdashi['iast']= 'Ananta-caturdaśī'
-rishi_panchami['iast']= 'Ṛṣi-pañcamī  vratam'
-ramanavami['iast']= 'Śrīrāmanavamī'
-shivaratri['iast']= 'Mahāśivarātriḥ'
-janmashtami['iast']= 'Śrīkṛṣṇajanmāṣṭamī'
-chitra_purnima['iast']= 'Citrā~pūrṇimā, gajendra-mokṣaḥ'
-varalakshmi_vratam['iast']= 'Varalakṣmī-vratam'
-yajur_upakarma['iast']= 'Yajurveda-upākarma'
-rg_upakarma['iast']= 'Ṛgveda-upākarma'
-sama_upakarma['iast']= 'Sāmaveda-upākarma'
-gayatri_japam['iast']= 'Gāyatrī  japam'
-uttarayanam['iast']= 'Makara~saṅkrānti/uttarāyaṇa-puṇyakālam'
-dakshinayanam['iast']= 'Dakṣiṇāyana-puṇyakālam'
-mesha_sankranti['iast']= 'Meṣa~saṅkrānti'
-karadayan_nombu['iast']= 'Kāraḍayān-nombu'
-akshaya_tritiya['iast']= 'Akṣaya tṛtīyā'
-shankara_jayanti['iast']= 'Śaṅkara-jayantī'
-mahalaya_paksham['iast']= 'Mahālaya-pakṣa ārambhaḥ'
-hanumat_jayanti['iast']= 'Śrī hanūmat jayantī'
-ardra_darshanam['iast']= 'Ārdrā darśanam'
-ratha_saptami['iast']= 'Ratha-saptamī'
-goda_jayanti['iast']= 'Śrī godā jayantī'
-adi_krittika['iast']= 'Āṣāḍha kṛttikā'
-phalguni_uttaram['iast']= 'Phalgunī uttaram'
-mahalaya_amavasya['iast']= 'Mahālaya-amāvasyā'
-uma_maheshvara_vratam['iast']= 'Umā-maheśvara vratam'
-yugadi['iast']= 'Yugādi'
+koodaravalli['iast'] = 'Kūḍāravallī'
+varahajayanti['iast'] = 'Varāha~jayantī'
+vchaturthi['iast'] = 'Śrīvināyaka-chaturthī'
+ananta_chaturdashi['iast'] = 'Ananta-chaturdaśī'
+rishi_panchami['iast'] = 'Ṛṣi-pañchamī  vratam'
+ramanavami['iast'] = 'Śrīrāmanavamī'
+shivaratri['iast'] = 'Mahāśivarātriḥ'
+janmashtami['iast'] = 'Śrīkṛṣṇajanmāṣṭamī'
+chitra_purnima['iast'] = 'Chitrā pūrṇimā, gajendra-mokṣaḥ'
+varalakshmi_vratam['iast'] = 'Varalakṣmī-vratam'
+yajur_upakarma['iast'] = 'Yajurveda-upākarma'
+rg_upakarma['iast'] = 'Ṛgveda-upākarma'
+sama_upakarma['iast'] = 'Sāmaveda-upākarma'
+gayatri_japam['iast'] = 'Gāyatrī  japam'
+uttarayanam['iast'] = 'Makara saṅkrānti/uttarāyaṇa-puṇyakālam'
+dakshinayanam['iast'] = 'Dakṣiṇāyana-puṇyakālam'
+mesha_sankranti['iast'] = 'Meṣa~saṅkrānti'
+karadayan_nombu['iast'] = 'Kāraḍayān-nombu'
+akshaya_tritiya['iast'] = 'Akṣaya tṛtīyā'
+shankara_jayanti['iast'] = 'Śaṅkara-jayantī'
+mahalaya_paksham['iast'] = 'Mahālaya-pakṣa ārambhaḥ'
+hanumat_jayanti['iast'] = 'Śrī hanūmat jayantī'
+ardra_darshanam['iast'] = 'Ārdrā darśanam'
+ratha_saptami['iast'] = 'Ratha-saptamī'
+goda_jayanti['iast'] = 'Śrī godā jayantī'
+adi_krittika['iast'] = 'Āṣāḍha kṛttikā'
+phalguni_uttaram['iast'] = 'Phalgunī uttaram'
+mahalaya_amavasya['iast'] = 'Mahālaya-amāvasyā'
+uma_maheshvara_vratam['iast'] = 'Umā-maheśvara vratam'
+yugadi['iast'] = 'Yugādi'
+gauri_tritiya['iast'] = 'Gaurī~tṛtīyā'
+matsya_jayanti['iast'] = 'Matsya~jayantī'
+parashurama_jayanti['iast'] = 'Paraśurāma~jayantī'
+ganga_saptami['iast'] = 'Gaṅgā~saptamī'
+nrisimha_jayanti['iast'] = 'Nṛsiṃha~jayantī'
+kurma_jayanti['iast'] = 'Kūrma~jayantī'
+hayagriva_jayanti['iast'] = 'Hayagrīva~jayantī'
+bahula_chaturthi['iast'] = 'Bahulā~chaturthī'
+radhashtami['iast'] = 'Rādhāṣṭamī'
+vamana_jayanti['iast'] = 'Vāmana~jayantī'
+buddha_jayanti['iast'] = 'Buddha~jayantī'
+govatsa_dvadashi['iast'] = 'Govatsa~dvādaśī'
+gopashtami['iast'] = 'Gopāṣṭamī'
+tulasi_vivaha['iast'] = 'Prabodhotsavaḥ/Tulasī-vivāhaḥ'
+tripurotsava['iast'] = 'Tripurotsavaḥ'
+maha_kartiki['iast'] = 'Mahā-kārtikī'
+dattatreya_jayanti['iast'] = 'Dattātreya~jayantī'
+bhishmashtami['iast'] = 'Bhīṣmāṣṭamī'
+bhishma_dvadashi['iast'] = 'Bhīṣma-dvādaśī'
+holika_purnima['iast'] = 'Holikā~pūrṇimā'
 
-chandra_grahanam['iast']= 'Candra-grahaṇam'
-surya_grahanam['iast']= 'Sūrya-grahaṇam'
+chandra_grahanam['iast'] = 'Chandra-grahaṇam'
+surya_grahanam['iast'] = 'Sūrya-grahaṇam'
 
-list_of_festivals['iast']= 'Māsāntara-viśeṣāḥ'
-chaturmasya_start['iast']='Cāturmāsasya ārambhaḥ'
-chaturmasya_end['iast']='Cāturmāsasya samāpanam'
+list_of_festivals['iast'] = 'Māsāntara-viśeṣāḥ'
+chaturmasya_start['iast'] = 'Chāturmāsasya ārambhaḥ'
+chaturmasya_end['iast'] = 'Chāturmāsasya samāpanam'
 
-nakshatra_names['iast']={1:'Aśvinī',
+nakshatra_names['iast'] = {1:'Aśvinī',
 2:'Apabharaṇī',
 3:'Kṛttikā',
 4:'Rohiṇī',
@@ -789,7 +849,7 @@ nakshatra_names['iast']={1:'Aśvinī',
 11:'Pūrvaphalgunī',
 12:'Uttaraphalgunī',
 13:'Hasta',
-14:'Citrā',
+14:'Chitrā',
 15:'Svāti',
 16:'Viśākhā',
 17:'Anūrādhā',
@@ -804,20 +864,20 @@ nakshatra_names['iast']={1:'Aśvinī',
 26:'Uttaraproṣṭhapadā',
 27:'Revatī'}
 
-masa_names['iast']={1:'Meṣa',
+masa_names['iast'] = {1:'Meṣa',
 2:'Vṛṣabha',
 3:'Mithuna',
 4:'Karkaṭaka',
 5:'Siṃha',
 6:'Kanyā',
 7:'Tulā',
-8:'Vṛścika',
+8:'Vṛśchika',
 9:'Dhanuḥ',
 10:'Makara',
 11:'Kumbha',
 12:'Mīna'}
 
-chandra_masa_names['iast']={1:'Caitra',
+chandra_masa_names['iast'] = {1:'Chaitra',
 2:'Vaiśākha',
 3:'Jyaiṣṭha',
 4:'Āṣāḍha',
@@ -830,11 +890,11 @@ chandra_masa_names['iast']={1:'Caitra',
 11:'Māgha',
 12:'Phālguna'}
 
-tithi_names['iast']={1:'Śukla~prathamā',
+tithi_names['iast'] = {1:'Śukla~prathamā',
 2:'Śukla~dvitīyā',
 3:'Śukla~tṛtīyā',
-4:'Śukla~caturthī',
-5:'Śukla~pañcamī',
+4:'Śukla~chaturthī',
+5:'Śukla~pañchamī',
 6:'Śukla~ṣaṣṭhī',
 7:'Śukla~saptamī',
 8:'Śukla~aṣṭamī',
@@ -843,13 +903,13 @@ tithi_names['iast']={1:'Śukla~prathamā',
 11:'Śukla~ekādaśī',
 12:'Śukla~dvādaśī',
 13:'Śukla~trayodaśī',
-14:'Śukla~caturdaśī',
+14:'Śukla~chaturdaśī',
 15:'Paurṇamāsī',
 16:'Kṛṣṇa~prathamā',
 17:'Kṛṣṇa~dvitīyā',
 18:'Kṛṣṇa~tṛtīyā',
-19:'Kṛṣṇa~caturthī',
-20:'Kṛṣṇa~pañcamī',
+19:'Kṛṣṇa~chaturthī',
+20:'Kṛṣṇa~pañchamī',
 21:'Kṛṣṇa~ṣaṣṭhī',
 22:'Kṛṣṇa~saptamī',
 23:'Kṛṣṇa~aṣṭamī',
@@ -858,10 +918,10 @@ tithi_names['iast']={1:'Śukla~prathamā',
 26:'Kṛṣṇa~ekādaśī',
 27:'Kṛṣṇa~dvādaśī',
 28:'Kṛṣṇa~trayodaśī',
-29:'Kṛṣṇa~caturdaśī',
+29:'Kṛṣṇa~chaturdaśī',
 30:'Amāvāsyā'}
 
-year_names['iast']={1:'Prabhava',
+year_names['iast'] = {1:'Prabhava',
 2:'Vibhava',
 3:'Śukla',
 4:'Pramoda',
@@ -876,7 +936,7 @@ year_names['iast']={1:'Prabhava',
 13:'Pramādhi',
 14:'Vikrama',
 15:'Vṛṣa',
-16:'Citrabhānu',
+16:'Chitrabhānu',
 17:'Svabhānu',
 18:'Tāraṇa',
 19:'Pārthiva',
@@ -907,7 +967,7 @@ year_names['iast']={1:'Prabhava',
 44:'Sādhāraṇa',
 45:'Virodhikṛti',
 46:'Paridhāvī',
-47:'Pramādīca',
+47:'Pramādīcha',
 48:'Ānanda',
 49:'Rākṣasa',
 50:'Nala',
@@ -922,7 +982,7 @@ year_names['iast']={1:'Prabhava',
 59:'Krodhana',
 60:'Akṣaya'}
 
-karanam_names['iast']={1:'Kiṃstughna',
+karanam_names['iast'] = {1:'Kiṃstughna',
 2:'Bava',
 3:'Bālava',
 4:'Kaulava',
@@ -980,10 +1040,10 @@ karanam_names['iast']={1:'Kiṃstughna',
 56:'Vaṇija',
 57:'Viṣṭi',
 58:'Śakuni',
-59:'Catuṣpāda',
+59:'Chatuṣpāda',
 60:'Nāgava'}
 
-yogam_names['iast']={1:'Viṣkumbha',
+yogam_names['iast'] = {1:'Viṣkumbha',
 2:'Prīti',
 3:'Āyuṣmān',
 4:'Saubhāgya',
@@ -1011,7 +1071,7 @@ yogam_names['iast']={1:'Viṣkumbha',
 26:'Aindra',
 27:'Vaidhṛti'}
 
-shukla_ekadashi_names['iast']={1:'Kāmada',
+shukla_ekadashi_names['iast'] = {1:'Kāmada',
 2:'Mohinī',
 3:'Pāṇḍava nirjala',
 4:'Padma/devaśayanī',
@@ -1025,7 +1085,7 @@ shukla_ekadashi_names['iast']={1:'Kāmada',
 12:'Amalakī',
 13:'Padminī'}
 
-krishna_ekadashi_names['iast']={1:'Pāpavimocinī',
+krishna_ekadashi_names['iast'] = {1:'Pāpavimochinī',
 2:'Varuthinī',
 3:'Aparā',
 4:'Yoginī',

@@ -1,0 +1,1139 @@
+\documentclass[a3paper,12pt,landscape]{article}
+\usepackage[xetex]{graphicx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{savetrees}
+\usepackage{fontspec}
+\usepackage{xltxtra}
+%\usepackage{url}
+%\usepackage{multicol}
+%\usepackage{ifsym} 
+\usepackage{pxfonts}
+\usepackage{bbding}
+\usepackage{wasysym} 
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+%\usepackage[bookmarks, colorlinks, breaklinks, pdftitle={Karthik Raman - vita},pdfauthor={Karthik Raman}]{hyperref} 
+\usepackage[dvipsnames]{xcolor} 
+%\hypersetup{linkcolor=Sepia,citecolor=blue,filecolor=black,urlcolor=Blue} 
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+\setmainfont{Sanskrit 2003:script=deva}
+\setromanfont{Sanskrit 2003:script=deva}
+\setsansfont[BoldFont={Ubuntu Bold}]{Ubuntu}
+%%%%%%% Numbers and counters %%%%%%%
+\newcount\num
+\newcount\tempone \newcount\temptwo
+\newcommand{\devanumber}[1]{%
+\num=#1\devanumberrecurse}
+
+\newcommand{\devanumberrecurse}{%
+{\tempone=\num
+%  \showthe\tempone\ %
+\ifnum\num > 0 
+	\divide \num by 10%
+	\temptwo=\num \multiply\temptwo by -10%
+	\devanumberrecurse%
+% 	\\stage 2\ %
+% 	\showthe\temptwo\ %
+% 	temp1=\number\tempone\ %
+% 	num=\number\num\ %
+	\advance\tempone by \temptwo%
+	\devadigit
+\fi
+}}
+\newcommand{\diam}{~$\Diamondblack$ }
+\newcommand{\devadigit}{%
+\ifcase\tempone०\or१\or२\or३\or४\or५\or६\or७\or८\or९\fi%\number\tempone%
+}
+
+%%%%%%%% Calendar display stuff %%%%%%%%%%%
+\newcommand{\sunmonth}[4]{%
+\mbox{\footnotesize{#1~\devanumber{#2}~/~#4}}\\
+\mbox{\scriptsize #3}
+}
+\newcommand{\sundata}[3]{%
+\mbox{{\sun\tiny\UParrow} {\scriptsize \textsf{#1}} {\sun\tiny\DOWNarrow} {\scriptsize \textsf{#2}} \tiny{\mbox{(स \textsf{#3})}}}
+}
+\newcommand{\tnyk}[4]{
+\mbox{#1}\\
+\mbox{#2}\\
+\mbox{योगं:~#3}\\
+करणं:~#4\\}
+\newcommand{\rahuyama}[2]{%
+{राहु~\textsf{#1}~~यम~\textsf{#2}}
+}
+\newcommand{\caldata}[6]{%
+\begin{minipage}[t]{4.85cm}
+\begin{minipage}[t]{3.65cm}
+#2\\
+%\mbox{}\\
+%\SunshineOpenCircled
+#3\\
+\scriptsize
+\mbox{#5}\\
+#4\\
+\textcolor{RoyalBlue}{#6}\\
+\end{minipage}\begin{minipage}[c]{1.2cm}
+\vspace{1ex}
+\hfill \mbox{{\font\x="Ubuntu" at 36 pt\x #1}\hspace{-2mm}}
+\end{minipage}
+\end{minipage}
+}
+
+\addtolength{\headsep}{-3ex}
+\pagestyle{empty}
+
+\begin{document}
+\rmfamily
+\pagestyle{empty}
+\begin{center}
+\mbox{}\\[2.5in]
+\hrule\mbox{}
+\mbox{}\\[1ex]
+\mbox{}
+{\font\x="Candara" at 60 pt\x 2014\\[0.5cm]}
+\mbox{\font\x="Sanskrit 2003:script=deva" at 48 pt\x Vijaya–Jaya}\\[0.5cm]
+{\font\x="Candara" at 48 pt\x \uppercase{Chennai}\\[0.2cm]}
+{\font\x="Candara" at 16 pt\x {13°05'24''N,80°16'12''E}\\[0.5cm]}
+\hrule
+\newpage
+\centerline {\LARGE {{Māsāntara-viśeṣāḥ}}}\mbox{}\\[2cm]
+\begin{center}
+\begin{minipage}[t]{0.3\linewidth}
+\begin{center}
+\begin{tabular}{>{\sffamily}r>{\sffamily}r>{\sffamily}cp{6cm}}
+January & 1 & Wed & {\raggedright Śrī hanūmat jayantī} \\
+January & 6 & Mon & {\raggedright Ṣaṣṭhī-vratam} \\
+January & 11 & Sat & {\raggedright Sarva~Vaikuṇṭha/Putrada~Ekādaśī\\Kūḍāravallī} \\
+January & 13 & Mon & {\raggedright Pradoṣa-vratam} \\
+January & 14 & Tue & {\raggedright Makara~saṅkrānti/uttarāyaṇa-puṇyakālam} \\
+January & 19 & Sun & {\raggedright Saṅkaṭahara-caturthī} \\
+January & 27 & Mon & {\raggedright Sarva~Saphala~Ekādaśī} \\
+January & 28 & Tue & {\raggedright Pradoṣa-vratam} \\
+\\
+February & 5 & Wed & {\raggedright Ṣaṣṭhī-vratam} \\
+February & 6 & Thu & {\raggedright Ratha-saptamī} \\
+February & 10 & Mon & {\raggedright Sarva~Jayā~Ekādaśī} \\
+February & 12 & Wed & {\raggedright Pradoṣa-vratam} \\
+February & 18 & Tue & {\raggedright Saṅkaṭahara-caturthī} \\
+February & 25 & Tue & {\raggedright Smārtha~Trispṛśa~Ekādaśī} \\
+February & 26 & Wed & {\raggedright Vaiṣṇava~Trispṛśa~Ekādaśī} \\
+February & 27 & Thu & {\raggedright Pradoṣa-vratam\\Mahāśivarātriḥ} \\
+\\
+March & 6 & Thu & {\raggedright Ṣaṣṭhī-vratam} \\
+March & 12 & Wed & {\raggedright Sarva~Amalakī~Ekādaśī} \\
+March & 14 & Fri & {\raggedright Pradoṣa-vratam\\Kāraḍayān-nombu} \\
+March & 17 & Mon & {\raggedright Phalgunī uttaram} \\
+March & 20 & Thu & {\raggedright Saṅkaṭahara-caturthī} \\
+March & 27 & Thu & {\raggedright Sarva~Vijayā~Ekādaśī} \\
+March & 28 & Fri & {\raggedright Pradoṣa-vratam} \\
+March & 31 & Mon & {\raggedright Yugādi} \\
+\\
+April & 5 & Sat & {\raggedright Ṣaṣṭhī-vratam} \\
+April & 8 & Tue & {\raggedright Śrīrāmanavamī} \\
+April & 11 & Fri & {\raggedright Sarva~Kāmada~Ekādaśī} \\
+April & 12 & Sat & {\raggedright Pradoṣa-vratam} \\
+April & 13 & Sun & {\raggedright Phalgunī uttaram} \\
+April & 14 & Mon & {\raggedright Meṣa~saṅkrānti~(Jaya-Saṃvatsaraḥ)} \\
+April & 15 & Tue & {\raggedright Citrā~pūrṇimā, gajendra-mokṣaḥ} \\
+April & 18 & Fri & {\raggedright Saṅkaṭahara-caturthī} \\
+April & 25 & Fri & {\raggedright Sarva~Pāpavimocinī~Ekādaśī} \\
+April & 26 & Sat & {\raggedright Pradoṣa-vratam} \\
+\\
+\end{tabular}
+\end{center}
+\end{minipage}\hspace{1cm}%
+\begin{minipage}[t]{0.3\linewidth}
+\begin{center}
+\begin{tabular}{>{\sffamily}r>{\sffamily}l>{\sffamily}cp{6cm}}
+May & 2 & Fri & {\raggedright Akṣaya tṛtīyā} \\
+May & 4 & Sun & {\raggedright Śaṅkara-jayantī} \\
+May & 5 & Mon & {\raggedright Ṣaṣṭhī-vratam} \\
+May & 10 & Sat & {\raggedright Sarva~Mohinī~Ekādaśī} \\
+May & 12 & Mon & {\raggedright Pradoṣa-vratam} \\
+May & 14 & Wed & {\raggedright Citrā~pūrṇimā, gajendra-mokṣaḥ} \\
+May & 17 & Sat & {\raggedright Saṅkaṭahara-caturthī} \\
+May & 24 & Sat & {\raggedright Sarva~Varuthinī~Ekādaśī} \\
+May & 26 & Mon & {\raggedright Pradoṣa-vratam} \\
+\\
+June & 4 & Wed & {\raggedright Ṣaṣṭhī-vratam} \\
+June & 9 & Mon & {\raggedright Sarva~Pāṇḍava nirjala~Ekādaśī} \\
+June & 10 & Tue & {\raggedright Pradoṣa-vratam} \\
+June & 23 & Mon & {\raggedright Sarva~Aparā~Ekādaśī} \\
+June & 24 & Tue & {\raggedright Pradoṣa-vratam} \\
+\\
+July & 3 & Thu & {\raggedright Ṣaṣṭhī-vratam} \\
+July & 9 & Wed & {\raggedright Sarva~Padma/devaśayanī~Ekādaśī\\Cāturmāsasya ārambhaḥ} \\
+July & 10 & Thu & {\raggedright Pradoṣa-vratam} \\
+July & 15 & Tue & {\raggedright Saṅkaṭahara-caturthī} \\
+July & 17 & Thu & {\raggedright Dakṣiṇāyana-puṇyakālam} \\
+July & 21 & Mon & {\raggedright Āṣāḍha kṛttikā} \\
+July & 22 & Tue & {\raggedright Sarva~Yoginī~Ekādaśī} \\
+July & 24 & Thu & {\raggedright Pradoṣa-vratam} \\
+July & 30 & Wed & {\raggedright Śrī godā jayantī} \\
+\\
+August & 2 & Sat & {\raggedright Ṣaṣṭhī-vratam} \\
+August & 7 & Thu & {\raggedright Sarva~Putrada/pavitropāna~Ekādaśī} \\
+August & 8 & Fri & {\raggedright Pradoṣa-vratam\\Varalakṣmī-vratam} \\
+August & 10 & Sun & {\raggedright Ṛgveda-upākarma\\Yajurveda-upākarma} \\
+August & 11 & Mon & {\raggedright Gāyatrī  japam} \\
+August & 13 & Wed & {\raggedright MahāSaṅkaṭahara-caturthī} \\
+August & 17 & Sun & {\raggedright Śrīkṛṣṇajanmāṣṭamī} \\
+August & 21 & Thu & {\raggedright Sarva~Kāmika~Ekādaśī} \\
+August & 22 & Fri & {\raggedright Pradoṣa-vratam} \\
+August & 29 & Fri & {\raggedright Sāmaveda-upākarma\\Śrīvināyaka-caturthī} \\
+August & 30 & Sat & {\raggedright Ṛṣi-pañcamī  vratam} \\
+August & 31 & Sun & {\raggedright Ṣaṣṭhī-vratam} \\
+\\
+\end{tabular}
+\end{center}
+\end{minipage}\hspace{1cm}%
+\begin{minipage}[t]{0.3\linewidth}
+\begin{center}
+\begin{tabular}{>{\sffamily}r>{\sffamily}l>{\sffamily}cp{6cm}}
+September & 5 & Fri & {\raggedright Sarva~Parivartini~Ekādaśī} \\
+September & 6 & Sat & {\raggedright Pradoṣa-vratam} \\
+September & 8 & Mon & {\raggedright Ananta-caturdaśī} \\
+September & 9 & Tue & {\raggedright Mahālaya-pakṣa ārambhaḥ\\Umā-maheśvara vratam} \\
+September & 19 & Fri & {\raggedright Sarva~Aja~Ekādaśī} \\
+September & 21 & Sun & {\raggedright Pradoṣa-vratam} \\
+September & 24 & Wed & {\raggedright Mahālaya-amāvasyā} \\
+September & 25 & Thu & {\raggedright Navarātri-Ārambhaḥ} \\
+September & 29 & Mon & {\raggedright Lalitā pañcamī} \\
+September & 30 & Tue & {\raggedright Ṣaṣṭhī-vratam} \\
+\\
+October & 2 & Thu & {\raggedright Durgāṣṭamī} \\
+October & 3 & Fri & {\raggedright Mahānavamī/sarasvatī-pūjā} \\
+October & 4 & Sat & {\raggedright Vijayadaśamī} \\
+October & 5 & Sun & {\raggedright Sarva~Pāśāṅkuśa~Ekādaśī} \\
+October & 6 & Mon & {\raggedright Pradoṣa-vratam} \\
+October & 8 & Wed & {\raggedright Candra-grahaṇam~\textsf{14:44}{\RIGHTarrow}\textsf{18:04}} \\
+October & 11 & Sat & {\raggedright Saṅkaṭahara-caturthī} \\
+October & 19 & Sun & {\raggedright Sarva~Indirā~Ekādaśī} \\
+October & 21 & Tue & {\raggedright Pradoṣa-vratam} \\
+October & 22 & Wed & {\raggedright Dīpāvalī} \\
+October & 29 & Wed & {\raggedright Skanda~Ṣaṣṭhī-vratam} \\
+\\
+November & 3 & Mon & {\raggedright Sarva~Uttāna/prabodhinī~Ekādaśī\\Cāturmāsasya samāpanam} \\
+November & 4 & Tue & {\raggedright Pradoṣa-vratam} \\
+November & 10 & Mon & {\raggedright Saṅkaṭahara-caturthī} \\
+November & 18 & Tue & {\raggedright Sarva~Ramā~Ekādaśī} \\
+November & 20 & Thu & {\raggedright Pradoṣa-vratam} \\
+November & 28 & Fri & {\raggedright Ṣaṣṭhī-vratam} \\
+\\
+December & 2 & Tue & {\raggedright Sarva~Guruvāyupura/Mokṣada~Ekādaśī} \\
+December & 4 & Thu & {\raggedright Pradoṣa-vratam} \\
+December & 9 & Tue & {\raggedright Saṅkaṭahara-caturthī} \\
+December & 18 & Thu & {\raggedright Sarva~Utpanna~Ekādaśī} \\
+December & 19 & Fri & {\raggedright Pradoṣa-vratam} \\
+December & 22 & Mon & {\raggedright Śrī hanūmat jayantī} \\
+December & 27 & Sat & {\raggedright Ṣaṣṭhī-vratam} \\
+\end{tabular}
+\end{center}
+\end{minipage}
+\end{center}
+\clearpage
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily JANUARY 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Dhanuḥ}{17}{}{Mārgaśīrṣa}}{\sundata{06:32}{17:52}{08:48}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{16:42\hspace{2ex}}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{11:07\hspace{2ex}}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{01:48(+1)}}}{\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{06:39\hspace{2ex}}}\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{16:42\hspace{2ex}}}\\\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{02:46(+1)}}}}{\rahuyama{12:12--13:37}{07:57--09:22}}{Śrī hanūmat jayantī} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{Dhanuḥ}{18}{}{Pauṣa}}{\sundata{06:32}{17:53}{08:48}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{12:51\hspace{2ex}}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{08:00\hspace{2ex}}}\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{04:55(+1)}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{21:24\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{12:51\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{22:56\hspace{2ex}}}}}{\rahuyama{13:37--15:02}{06:32--07:57}}{} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Dhanuḥ}{19}{}{Pauṣa}}{\sundata{06:32}{17:53}{08:49}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{09:04\hspace{2ex}}}\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{05:31(+1)}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{02:06(+1)}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{17:09\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{09:04\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{19:17\hspace{2ex}}}\\\mbox{Garaja {\tiny \RIGHTarrow} \textsf{05:31(+1)}}}}{\rahuyama{10:48--12:13}{15:03--16:28}}{} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Dhanuḥ}{20}{}{Pauṣa}}{\sundata{06:33}{17:54}{08:49}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{02:30(+1)}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{23:42\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{13:09\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{16:00\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{02:30(+1)}}}}{\rahuyama{09:23--10:48}{13:38--15:04}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{5}}{\sunmonth{Dhanuḥ}{21}{}{Pauṣa}}{\sundata{06:33}{17:54}{08:49}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{00:04(+1)}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{21:53\hspace{2ex}}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{09:33\hspace{2ex}}}\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{06:28(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{13:13\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{00:04(+1)}}}}{\rahuyama{16:29--17:54}{12:14--13:39}}{} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{Dhanuḥ}{22}{}{Pauṣa}}{\sundata{06:33}{17:55}{08:50}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{22:21\hspace{2ex}}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{20:46\hspace{2ex}}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{04:03(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{11:05\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{22:21\hspace{2ex}}}}}{\rahuyama{07:59--09:24}{10:49--12:14}}{Ṣaṣṭhī-vratam} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{Dhanuḥ}{23}{}{Pauṣa}}{\sundata{06:34}{17:55}{08:50}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{21:25\hspace{2ex}}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{20:25\hspace{2ex}}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{02:15(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{09:44\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{21:25\hspace{2ex}}}}}{\rahuyama{15:05--16:30}{09:24--10:49}}{} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Dhanuḥ}{24}{}{Pauṣa}}{\sundata{06:34}{17:56}{08:50}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{21:16\hspace{2ex}}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{20:50\hspace{2ex}}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{01:03(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{09:11\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{21:16\hspace{2ex}}}}}{\rahuyama{12:15--13:40}{07:59--09:25}}{} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{Dhanuḥ}{25}{}{Pauṣa}}{\sundata{06:34}{17:57}{08:51}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{21:52\hspace{2ex}}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{21:58\hspace{2ex}}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{00:25(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{09:26\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{21:52\hspace{2ex}}}}}{\rahuyama{13:41--15:06}{06:34--08:00}}{} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Dhanuḥ}{26}{}{Pauṣa}}{\sundata{06:35}{17:57}{08:51}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{23:07\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{23:44\hspace{2ex}}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{00:15(+1)}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{10:23\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{23:07\hspace{2ex}}}}}{\rahuyama{10:51--12:16}{15:07--16:32}}{} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Dhanuḥ}{27}{}{Pauṣa}}{\sundata{06:35}{17:58}{08:51}}{\tnyk{\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{00:52(+1)}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{01:58(+1)}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{00:28(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{11:55\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{00:52(+1)}}}}{\rahuyama{09:26--10:51}{13:42--15:07}}{Sarva~Vaikuṇṭha/Putrada~Ekādaśī\diam Kūḍāravallī} 
+\\ \hline
+\caldata{\textcolor{blue}{12}}{\sunmonth{Dhanuḥ}{28}{}{Pauṣa}}{\sundata{06:35}{17:58}{08:52}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{02:59(+1)}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{04:33(+1)}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{00:58(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{13:54\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{02:59(+1)}}}}{\rahuyama{16:33--17:58}{12:17--13:42}}{} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{Dhanuḥ}{29}{}{Pauṣa}}{\sundata{06:35}{17:59}{08:52}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{05:21(+1)}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{01:38(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{16:09\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{05:21(+1)}}}}{\rahuyama{08:01--09:26}{10:52--12:17}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{Makara}{1}{\mbox{Dhanuḥ {\tiny \RIGHTarrow} \textsf{13:08\hspace{2ex}}}}{Pauṣa}}{\sundata{06:35}{17:59}{08:52}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{07:21\hspace{2ex}}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{02:24(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{18:35\hspace{2ex}}}}}{\rahuyama{15:08--16:34}{09:26--10:52}}{Makara~saṅkrānti/uttarāyaṇa-puṇyakālam} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Makara}{2}{}{Pauṣa}}{\sundata{06:36}{18:00}{08:52}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{07:50\hspace{2ex}}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{10:16\hspace{2ex}}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{03:13(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{07:50\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{21:06\hspace{2ex}}}}}{\rahuyama{12:18--13:43}{08:01--09:27}}{} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{Makara}{3}{}{Pauṣa}}{\sundata{06:36}{18:00}{08:53}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{10:22\hspace{2ex}}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{13:13\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{04:01(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{10:22\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{23:37\hspace{2ex}}}}}{\rahuyama{13:44--15:09}{06:36--08:01}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Makara}{4}{}{Pauṣa}}{\sundata{06:36}{18:01}{08:53}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{12:51\hspace{2ex}}}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{16:08\hspace{2ex}}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{04:47(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{12:51\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{02:04(+1)}}}}{\rahuyama{10:53--12:18}{15:10--16:35}}{} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Makara}{5}{}{Pauṣa}}{\sundata{06:36}{18:02}{08:53}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{15:15\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{18:57\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{05:27(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{15:15\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{04:25(+1)}}}}{\rahuyama{09:27--10:53}{13:44--15:10}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{19}}{\sunmonth{Makara}{6}{}{Pauṣa}}{\sundata{06:36}{18:02}{08:53}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{17:30\hspace{2ex}}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{21:36\hspace{2ex}}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{05:58(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{17:30\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{06:34(+1)}}}}{\rahuyama{16:36--18:02}{12:19--13:45}}{Saṅkaṭahara-caturthī} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{Makara}{7}{}{Pauṣa}}{\sundata{06:36}{18:03}{08:53}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{19:30\hspace{2ex}}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{00:01(+1)}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{06:16(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{19:30\hspace{2ex}}}}}{\rahuyama{08:02--09:28}{10:54--12:19}}{} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{Makara}{8}{}{Pauṣa}}{\sundata{06:36}{18:03}{08:54}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{21:07\hspace{2ex}}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{02:03(+1)}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{06:14(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{08:23\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{21:07\hspace{2ex}}}}}{\rahuyama{15:11--16:37}{09:28--10:54}}{} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Makara}{9}{}{Pauṣa}}{\sundata{06:36}{18:04}{08:54}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{22:14\hspace{2ex}}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{03:36(+1)}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{05:48(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{09:46\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{22:14\hspace{2ex}}}}}{\rahuyama{12:20--13:46}{08:02--09:28}}{} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{Makara}{10}{}{Pauṣa}}{\sundata{06:36}{18:04}{08:54}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{22:44\hspace{2ex}}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{04:31(+1)}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{04:51(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{10:36\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{22:44\hspace{2ex}}}}}{\rahuyama{13:46--15:12}{06:36--08:02}}{} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Makara}{11}{}{Pauṣa}}{\sundata{06:36}{18:05}{08:54}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{22:31\hspace{2ex}}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{04:43(+1)}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{03:19(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{10:45\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{22:31\hspace{2ex}}}}}{\rahuyama{10:54--12:20}{15:13--16:39}}{} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Makara}{12}{}{Pauṣa}}{\sundata{06:36}{18:05}{08:54}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{21:31\hspace{2ex}}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{04:10(+1)}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{01:10(+1)}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{10:10\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{21:31\hspace{2ex}}}}}{\rahuyama{09:29--10:55}{13:47--15:13}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{26}}{\sunmonth{Makara}{13}{}{Pauṣa}}{\sundata{06:36}{18:06}{08:54}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{19:46\hspace{2ex}}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{02:51(+1)}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{22:26\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{08:48\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{19:46\hspace{2ex}}}}}{\rahuyama{16:39--18:06}{12:21--13:47}}{} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{Makara}{14}{}{Pauṣa}}{\sundata{06:36}{18:06}{08:54}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{17:19\hspace{2ex}}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{00:52(+1)}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{19:09\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{06:43\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{17:19\hspace{2ex}}}\\\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{03:54(+1)}}}}{\rahuyama{08:02--09:29}{10:55--12:21}}{Sarva~Saphala~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{Makara}{15}{}{Pauṣa}}{\sundata{06:36}{18:07}{08:54}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{14:17\hspace{2ex}}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{22:21\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{15:24\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{14:17\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{00:35(+1)}}}}{\rahuyama{15:14--16:40}{09:29--10:55}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{Makara}{16}{}{Pauṣa}}{\sundata{06:36}{18:07}{08:54}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{10:48\hspace{2ex}}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{19:28\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{11:18\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{10:48\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{20:55\hspace{2ex}}}}}{\rahuyama{12:22--13:48}{08:02--09:29}}{} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{Makara}{17}{}{Pauṣa}}{\sundata{06:36}{18:07}{08:54}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{07:01\hspace{2ex}}}\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{03:08(+1)}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{16:23\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{06:58\hspace{2ex}}}\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{02:33(+1)}}}{\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{07:01\hspace{2ex}}}\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{17:05\hspace{2ex}}}\\\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{03:08(+1)}}}}{\rahuyama{13:48--15:15}{06:36--08:02}}{} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{Makara}{18}{}{Māgha}}{\sundata{06:36}{18:08}{08:54}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{23:24\hspace{2ex}}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{13:19\hspace{2ex}}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{22:14\hspace{2ex}}}}{\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{13:15\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{23:24\hspace{2ex}}}}}{\rahuyama{10:55--12:22}{15:15--16:41}}{} 
+&
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily FEBRUARY 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Makara}{19}{}{Māgha}}{\sundata{06:36}{18:08}{08:54}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{19:58\hspace{2ex}}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{10:25\hspace{2ex}}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{18:10\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{09:36\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{19:58\hspace{2ex}}}\\\mbox{Taitila {\tiny \RIGHTarrow} \textsf{06:19(+1)}}}}{\rahuyama{09:29--10:55}{13:49--15:15}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{2}}{\sunmonth{Makara}{20}{}{Māgha}}{\sundata{06:36}{18:09}{08:54}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{17:00\hspace{2ex}}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{07:55\hspace{2ex}}}\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{06:00(+1)}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{14:28\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{17:00\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{03:41(+1)}}}}{\rahuyama{16:42--18:09}{12:22--13:49}}{} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Makara}{21}{}{Māgha}}{\sundata{06:35}{18:09}{08:54}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{14:40\hspace{2ex}}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{04:51(+1)}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{11:15\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{14:40\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{01:46(+1)}}}}{\rahuyama{08:02--09:29}{10:56--12:22}}{} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Makara}{22}{}{Māgha}}{\sundata{06:35}{18:09}{08:54}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{13:06\hspace{2ex}}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{04:29(+1)}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{08:38\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{13:06\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{00:39(+1)}}}}{\rahuyama{15:16--16:43}{09:29--10:56}}{} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{Makara}{23}{}{Māgha}}{\sundata{06:35}{18:10}{08:54}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{12:24\hspace{2ex}}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{04:58(+1)}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{06:42\hspace{2ex}}}\mbox{Śubha {\tiny \RIGHTarrow} \textsf{05:28(+1)}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{12:24\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{00:22(+1)}}}}{\rahuyama{12:22--13:49}{08:02--09:29}}{Ṣaṣṭhī-vratam} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{Makara}{24}{}{Māgha}}{\sundata{06:35}{18:10}{08:54}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{12:33\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{06:13(+1)}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{04:53(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{12:33\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{00:56(+1)}}}}{\rahuyama{13:49--15:16}{06:35--08:02}}{Ratha-saptamī} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{Makara}{25}{}{Māgha}}{\sundata{06:35}{18:11}{08:54}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{13:30\hspace{2ex}}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{04:49(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{13:30\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{02:13(+1)}}}}{\rahuyama{10:56--12:23}{15:17--16:44}}{} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Makara}{26}{}{Māgha}}{\sundata{06:34}{18:11}{08:54}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{15:07\hspace{2ex}}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{08:12\hspace{2ex}}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{05:11(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{15:07\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{04:06(+1)}}}}{\rahuyama{09:28--10:56}{13:50--15:17}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{9}}{\sunmonth{Makara}{27}{}{Māgha}}{\sundata{06:34}{18:11}{08:53}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{17:14\hspace{2ex}}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{10:41\hspace{2ex}}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{05:51(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{17:14\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{06:23(+1)}}}}{\rahuyama{16:44--18:11}{12:23--13:50}}{} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Makara}{28}{}{Māgha}}{\sundata{06:34}{18:12}{08:53}}{\tnyk{\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{19:39\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{13:30\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{19:39\hspace{2ex}}}}}{\rahuyama{08:01--09:28}{10:55--12:23}}{Sarva~Jayā~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Makara}{29}{}{Māgha}}{\sundata{06:33}{18:12}{08:53}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{22:12\hspace{2ex}}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{16:29\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{06:41\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{08:54\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{22:12\hspace{2ex}}}}}{\rahuyama{15:17--16:45}{09:28--10:55}}{} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{Makara}{30}{\mbox{Makara {\tiny \RIGHTarrow} \textsf{02:08(+1)}}}{Māgha}}{\sundata{06:33}{18:12}{08:53}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{00:44(+1)}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{19:28\hspace{2ex}}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{07:34\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{11:28\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{00:44(+1)}}}}{\rahuyama{12:23--13:50}{08:01--09:28}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{Kumbha}{1}{}{Māgha}}{\sundata{06:33}{18:13}{08:53}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{03:09(+1)}}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{22:21\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{08:24\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{13:57\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{03:09(+1)}}}}{\rahuyama{13:50--15:18}{06:33--08:00}}{} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{Kumbha}{2}{}{Māgha}}{\sundata{06:32}{18:13}{08:53}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{05:23(+1)}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{01:04(+1)}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{09:07\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{16:16\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{05:23(+1)}}}}{\rahuyama{10:55--12:23}{15:18--16:45}}{} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Kumbha}{3}{}{Māgha}}{\sundata{06:32}{18:13}{08:52}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{03:34(+1)}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{09:41\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{18:22\hspace{2ex}}}}}{\rahuyama{09:27--10:55}{13:50--15:18}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{16}}{\sunmonth{Kumbha}{4}{}{Māgha}}{\sundata{06:32}{18:13}{08:52}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{07:21\hspace{2ex}}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{05:48(+1)}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{10:04\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{07:21\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{20:13\hspace{2ex}}}}}{\rahuyama{16:46--18:13}{12:23--13:50}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Kumbha}{5}{}{Māgha}}{\sundata{06:31}{18:14}{08:52}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{09:02\hspace{2ex}}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{10:15\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{09:02\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{21:44\hspace{2ex}}}}}{\rahuyama{07:59--09:27}{10:55--12:22}}{} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Kumbha}{6}{}{Māgha}}{\sundata{06:31}{18:14}{08:51}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{10:23\hspace{2ex}}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{07:42\hspace{2ex}}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{10:10\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{10:23\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{22:54\hspace{2ex}}}}}{\rahuyama{15:18--16:46}{09:27--10:55}}{Saṅkaṭahara-caturthī} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{Kumbha}{7}{}{Māgha}}{\sundata{06:30}{18:14}{08:51}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{11:21\hspace{2ex}}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{09:15\hspace{2ex}}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{09:47\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{11:21\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{23:39\hspace{2ex}}}}}{\rahuyama{12:22--13:50}{07:58--09:26}}{} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{Kumbha}{8}{}{Māgha}}{\sundata{06:30}{18:14}{08:51}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{11:51\hspace{2ex}}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{10:21\hspace{2ex}}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{09:04\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{11:51\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{23:54\hspace{2ex}}}}}{\rahuyama{13:50--15:18}{06:30--07:58}}{} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{Kumbha}{9}{}{Māgha}}{\sundata{06:30}{18:15}{08:51}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{11:50\hspace{2ex}}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{10:57\hspace{2ex}}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{07:58\hspace{2ex}}}\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{06:25(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{11:50\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{23:36\hspace{2ex}}}}}{\rahuyama{10:54--12:22}{15:18--16:47}}{} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Kumbha}{10}{}{Māgha}}{\sundata{06:29}{18:15}{08:50}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{11:13\hspace{2ex}}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{11:00\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{04:21(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{11:13\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{22:41\hspace{2ex}}}}}{\rahuyama{09:26--10:54}{13:50--15:18}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{23}}{\sunmonth{Kumbha}{11}{}{Māgha}}{\sundata{06:29}{18:15}{08:50}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{10:01\hspace{2ex}}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{10:27\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{01:47(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{10:01\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{21:08\hspace{2ex}}}}}{\rahuyama{16:47--18:15}{12:22--13:50}}{} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Kumbha}{12}{}{Māgha}}{\sundata{06:28}{18:15}{08:50}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{08:12\hspace{2ex}}}\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{05:50(+1)}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{09:18\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{22:46\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{08:12\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{19:01\hspace{2ex}}}\\\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{05:50(+1)}}}}{\rahuyama{07:57--09:25}{10:53--12:22}}{} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Kumbha}{13}{}{Māgha}}{\sundata{06:28}{18:16}{08:49}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{02:56(+1)}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{07:36\hspace{2ex}}}\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{05:26(+1)}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{19:21\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{16:23\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{02:56(+1)}}}}{\rahuyama{15:19--16:47}{09:25--10:53}}{Smārtha~Trispṛśa~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{Kumbha}{14}{}{Māgha}}{\sundata{06:27}{18:16}{08:49}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{23:43\hspace{2ex}}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{02:55(+1)}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{15:38\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{13:21\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{23:43\hspace{2ex}}}}}{\rahuyama{12:21--13:50}{07:56--09:24}}{Vaiṣṇava~Trispṛśa~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{Kumbha}{15}{}{Māgha}}{\sundata{06:27}{18:16}{08:48}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{20:18\hspace{2ex}}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{00:14(+1)}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{11:42\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{10:02\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{20:18\hspace{2ex}}}}}{\rahuyama{13:50--15:19}{06:27--07:55}}{Pradoṣa-vratam\diam Mahāśivarātriḥ} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{Kumbha}{16}{}{Māgha}}{\sundata{06:26}{18:16}{08:48}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{16:51\hspace{2ex}}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{21:33\hspace{2ex}}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{07:39\hspace{2ex}}}\mbox{Śiva {\tiny \RIGHTarrow} \textsf{03:40(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{06:34\hspace{2ex}}}\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{16:51\hspace{2ex}}}\\\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{03:09(+1)}}}}{\rahuyama{10:52--12:21}{15:19--16:47}}{} 
+&
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily MARCH 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Kumbha}{17}{}{Māgha}}{\sundata{06:25}{18:16}{08:48}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{13:32\hspace{2ex}}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{19:03\hspace{2ex}}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{23:52\hspace{2ex}}}}{\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{13:32\hspace{2ex}}}\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{23:59\hspace{2ex}}}}}{\rahuyama{09:23--10:52}{13:50--15:19}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{2}}{\sunmonth{Kumbha}{18}{}{Phālguna}}{\sundata{06:25}{18:16}{08:47}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{10:30\hspace{2ex}}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{16:54\hspace{2ex}}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{20:24\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{10:30\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{21:12\hspace{2ex}}}}}{\rahuyama{16:47--18:16}{12:21--13:50}}{} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Kumbha}{19}{}{Phālguna}}{\sundata{06:24}{18:17}{08:47}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{07:56\hspace{2ex}}}\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{06:00(+1)}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{15:16\hspace{2ex}}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{17:22\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{07:56\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{18:58\hspace{2ex}}}\\\mbox{Garaja {\tiny \RIGHTarrow} \textsf{06:00(+1)}}}}{\rahuyama{07:53--09:22}{10:51--12:20}}{} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Kumbha}{20}{}{Phālguna}}{\sundata{06:24}{18:17}{08:46}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{04:50(+1)}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{14:17\hspace{2ex}}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{14:52\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{17:24\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{04:50(+1)}}}}{\rahuyama{15:18--16:48}{09:22--10:51}}{} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{Kumbha}{21}{}{Phālguna}}{\sundata{06:23}{18:17}{08:46}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{04:28(+1)}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{14:03\hspace{2ex}}}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{12:59\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{16:37\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{04:28(+1)}}}}{\rahuyama{12:20--13:49}{07:52--09:22}}{} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{Kumbha}{22}{}{Phālguna}}{\sundata{06:23}{18:17}{08:46}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{04:55(+1)}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{14:38\hspace{2ex}}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{11:44\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{16:39\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{04:55(+1)}}}}{\rahuyama{13:49--15:18}{06:23--07:52}}{Ṣaṣṭhī-vratam} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{Kumbha}{23}{}{Phālguna}}{\sundata{06:22}{18:17}{08:45}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{06:06(+1)}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{15:59\hspace{2ex}}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{11:07\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{17:29\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{06:06(+1)}}}}{\rahuyama{10:50--12:20}{15:18--16:48}}{} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Kumbha}{24}{}{Phālguna}}{\sundata{06:21}{18:17}{08:45}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{18:00\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{11:04\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{19:00\hspace{2ex}}}}}{\rahuyama{09:20--10:50}{13:49--15:18}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{9}}{\sunmonth{Kumbha}{25}{}{Phālguna}}{\sundata{06:21}{18:17}{08:44}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{07:56\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{20:32\hspace{2ex}}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{11:27\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{07:56\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{21:03\hspace{2ex}}}}}{\rahuyama{16:48--18:17}{12:19--13:49}}{} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Kumbha}{26}{}{Phālguna}}{\sundata{06:20}{18:17}{08:44}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{10:12\hspace{2ex}}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{23:23\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{12:09\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{10:12\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{23:26\hspace{2ex}}}}}{\rahuyama{07:50--09:20}{10:49--12:19}}{} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Kumbha}{27}{}{Phālguna}}{\sundata{06:20}{18:18}{08:43}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{12:41\hspace{2ex}}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{02:21(+1)}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{13:01\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{12:41\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{01:57(+1)}}}}{\rahuyama{15:18--16:48}{09:19--10:49}}{} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{Kumbha}{28}{}{Phālguna}}{\sundata{06:19}{18:18}{08:43}}{\tnyk{\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{15:10\hspace{2ex}}}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{05:17(+1)}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{13:53\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{15:10\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{04:23(+1)}}}}{\rahuyama{12:18--13:48}{07:49--09:19}}{Sarva~Amalakī~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{Kumbha}{29}{}{Phālguna}}{\sundata{06:18}{18:18}{08:42}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{17:31\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{14:39\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{17:31\hspace{2ex}}}}}{\rahuyama{13:48--15:18}{06:18--07:48}}{} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{Kumbha}{30}{\mbox{Kumbha {\tiny \RIGHTarrow} \textsf{23:03\hspace{2ex}}}}{Phālguna}}{\sundata{06:18}{18:18}{08:42}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{19:35\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{07:58\hspace{2ex}}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{15:13\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{06:37\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{19:35\hspace{2ex}}}}}{\rahuyama{10:48--12:18}{15:18--16:48}}{Pradoṣa-vratam\diam Kāraḍayān-nombu} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Mīna}{1}{}{Phālguna}}{\sundata{06:17}{18:18}{08:41}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{21:17\hspace{2ex}}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{10:20\hspace{2ex}}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{15:32\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{08:30\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{21:17\hspace{2ex}}}}}{\rahuyama{09:17--10:47}{13:48--15:18}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{16}}{\sunmonth{Mīna}{2}{}{Phālguna}}{\sundata{06:16}{18:18}{08:41}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{22:36\hspace{2ex}}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{12:21\hspace{2ex}}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{15:33\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{10:00\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{22:36\hspace{2ex}}}}}{\rahuyama{16:48--18:18}{12:17--13:47}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Mīna}{3}{}{Phālguna}}{\sundata{06:16}{18:18}{08:40}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{23:29\hspace{2ex}}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{13:58\hspace{2ex}}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{15:15\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{11:06\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{23:29\hspace{2ex}}}}}{\rahuyama{07:46--09:16}{10:47--12:17}}{Phalgunī uttaram} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Mīna}{4}{}{Phālguna}}{\sundata{06:15}{18:18}{08:40}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{23:58\hspace{2ex}}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{15:11\hspace{2ex}}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{14:38\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{11:47\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{23:58\hspace{2ex}}}}}{\rahuyama{15:17--16:48}{09:16--10:46}}{} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{Mīna}{5}{}{Phālguna}}{\sundata{06:14}{18:18}{08:39}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{00:02(+1)}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{16:00\hspace{2ex}}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{13:41\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{12:03\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{00:02(+1)}}}}{\rahuyama{12:16--13:47}{07:45--09:15}}{} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{Mīna}{6}{}{Phālguna}}{\sundata{06:14}{18:18}{08:39}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{23:40\hspace{2ex}}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{16:25\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{12:26\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{11:54\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{23:40\hspace{2ex}}}}}{\rahuyama{13:47--15:17}{06:14--07:44}}{Saṅkaṭahara-caturthī} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{Mīna}{7}{}{Phālguna}}{\sundata{06:13}{18:18}{08:38}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{22:54\hspace{2ex}}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{16:26\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{10:52\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{11:21\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{22:54\hspace{2ex}}}}}{\rahuyama{10:45--12:16}{15:17--16:48}}{} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Mīna}{8}{}{Phālguna}}{\sundata{06:12}{18:18}{08:38}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{21:43\hspace{2ex}}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{16:03\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{08:58\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{10:23\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{21:43\hspace{2ex}}}}}{\rahuyama{09:14--10:45}{13:46--15:17}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{23}}{\sunmonth{Mīna}{9}{}{Phālguna}}{\sundata{06:12}{18:19}{08:37}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{20:09\hspace{2ex}}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{15:16\hspace{2ex}}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{06:45\hspace{2ex}}}\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{04:13(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{09:00\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{20:09\hspace{2ex}}}}}{\rahuyama{16:48--18:19}{12:15--13:46}}{} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Mīna}{10}{}{Phālguna}}{\sundata{06:11}{18:19}{08:37}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{18:12\hspace{2ex}}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{14:07\hspace{2ex}}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{01:22(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{07:15\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{18:12\hspace{2ex}}}\\\mbox{Taitila {\tiny \RIGHTarrow} \textsf{05:08(+1)}}}}{\rahuyama{07:42--09:13}{10:44--12:15}}{} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Mīna}{11}{}{Phālguna}}{\sundata{06:10}{18:19}{08:36}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{15:55\hspace{2ex}}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{12:37\hspace{2ex}}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{22:16\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{15:55\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{02:42(+1)}}}}{\rahuyama{15:17--16:48}{09:12--10:44}}{} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{Mīna}{12}{}{Phālguna}}{\sundata{06:10}{18:19}{08:36}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{13:23\hspace{2ex}}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{10:52\hspace{2ex}}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{19:00\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{13:23\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{00:02(+1)}}}}{\rahuyama{12:14--13:45}{07:41--09:12}}{} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{Mīna}{13}{}{Phālguna}}{\sundata{06:09}{18:19}{08:35}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{10:40\hspace{2ex}}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{08:54\hspace{2ex}}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{15:36\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{10:40\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{21:16\hspace{2ex}}}}}{\rahuyama{13:45--15:16}{06:09--07:40}}{Sarva~Vijayā~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{Mīna}{14}{}{Phālguna}}{\sundata{06:08}{18:19}{08:35}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{07:51\hspace{2ex}}}\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{05:06(+1)}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{06:51\hspace{2ex}}}\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{04:52(+1)}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{12:10\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{07:51\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{18:29\hspace{2ex}}}\\\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{05:06(+1)}}}}{\rahuyama{10:42--12:14}{15:16--16:48}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{Mīna}{15}{}{Phālguna}}{\sundata{06:08}{18:19}{08:34}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{02:32(+1)}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{03:02(+1)}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{08:47\hspace{2ex}}}\mbox{Śukla {\tiny \RIGHTarrow} \textsf{05:33(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{15:49\hspace{2ex}}}\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{02:32(+1)}}}}{\rahuyama{09:11--10:42}{13:45--15:16}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{30}}{\sunmonth{Mīna}{16}{}{Phālguna}}{\sundata{06:07}{18:19}{08:33}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{00:17(+1)}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{01:32(+1)}}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{02:38(+1)}}}{\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{13:23\hspace{2ex}}}\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{00:17(+1)}}}}{\rahuyama{16:47--18:19}{12:13--13:45}}{} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{Mīna}{17}{}{Caitra}}{\sundata{06:06}{18:19}{08:33}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{22:29\hspace{2ex}}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{00:29(+1)}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{00:04(+1)}}}{\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{11:19\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{22:29\hspace{2ex}}}}}{\rahuyama{07:38--09:10}{10:41--12:13}}{Yugādi} 
+&
+{}  &
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily APRIL 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Mīna}{18}{}{Caitra}}{\sundata{06:06}{18:19}{08:32}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{21:14\hspace{2ex}}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{00:00(+1)}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{21:58\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{09:45\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{21:14\hspace{2ex}}}}}{\rahuyama{15:16--16:47}{09:09--10:41}}{} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{Mīna}{19}{}{Caitra}}{\sundata{06:05}{18:19}{08:32}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{20:38\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{00:09(+1)}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{20:23\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{08:48\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{20:38\hspace{2ex}}}}}{\rahuyama{12:12--13:44}{07:37--09:09}}{} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Mīna}{20}{}{Caitra}}{\sundata{06:04}{18:19}{08:31}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{20:43\hspace{2ex}}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{00:59(+1)}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{19:21\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{08:32\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{20:43\hspace{2ex}}}}}{\rahuyama{13:44--15:16}{06:04--07:36}}{} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Mīna}{21}{}{Caitra}}{\sundata{06:04}{18:19}{08:31}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{21:31\hspace{2ex}}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{02:30(+1)}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{18:51\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{08:59\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{21:31\hspace{2ex}}}}}{\rahuyama{10:40--12:12}{15:15--16:47}}{} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{Mīna}{22}{}{Caitra}}{\sundata{06:03}{18:19}{08:30}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{22:57\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{04:36(+1)}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{18:52\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{10:08\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{22:57\hspace{2ex}}}}}{\rahuyama{09:07--10:39}{13:43--15:15}}{Ṣaṣṭhī-vratam} 
+\\ \hline
+\caldata{\textcolor{blue}{6}}{\sunmonth{Mīna}{23}{}{Caitra}}{\sundata{06:03}{18:19}{08:30}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{00:55(+1)}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{19:17\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{11:52\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{00:55(+1)}}}}{\rahuyama{16:47--18:19}{12:11--13:43}}{} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{Mīna}{24}{}{Caitra}}{\sundata{06:02}{18:20}{08:29}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{03:12(+1)}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{07:11\hspace{2ex}}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{20:00\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{14:01\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{03:12(+1)}}}}{\rahuyama{07:34--09:06}{10:39--12:11}}{} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Mīna}{25}{}{Caitra}}{\sundata{06:01}{18:20}{08:29}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{05:38(+1)}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{10:03\hspace{2ex}}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{20:51\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{16:24\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{05:38(+1)}}}}{\rahuyama{15:15--16:47}{09:06--10:38}}{Śrīrāmanavamī} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{Mīna}{26}{}{Caitra}}{\sundata{06:01}{18:20}{08:28}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{12:58\hspace{2ex}}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{21:41\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{18:48\hspace{2ex}}}}}{\rahuyama{12:10--13:43}{07:33--09:05}}{} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Mīna}{27}{}{Caitra}}{\sundata{06:00}{18:20}{08:28}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{07:57\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{15:45\hspace{2ex}}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{22:22\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{07:57\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{20:59\hspace{2ex}}}}}{\rahuyama{13:42--15:15}{06:00--07:32}}{} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Mīna}{28}{}{Caitra}}{\sundata{05:59}{18:20}{08:27}}{\tnyk{\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{09:58\hspace{2ex}}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{18:12\hspace{2ex}}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{22:46\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{09:58\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{22:49\hspace{2ex}}}}}{\rahuyama{10:37--12:10}{15:15--16:47}}{Sarva~Kāmada~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{Mīna}{29}{}{Caitra}}{\sundata{05:59}{18:20}{08:27}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{11:34\hspace{2ex}}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{20:12\hspace{2ex}}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{22:47\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{11:34\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{00:10(+1)}}}}{\rahuyama{09:04--10:37}{13:42--15:15}}{Pradoṣa-vratam} 
+\\ \hline
+\caldata{\textcolor{blue}{13}}{\sunmonth{Mīna}{30}{}{Caitra}}{\sundata{05:58}{18:20}{08:27}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{12:38\hspace{2ex}}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{21:42\hspace{2ex}}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{22:24\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{12:38\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{00:59(+1)}}}}{\rahuyama{16:47--18:20}{12:09--13:42}}{Phalgunī uttaram} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{Meṣa}{1}{\mbox{Mīna {\tiny \RIGHTarrow} \textsf{07:33\hspace{2ex}}}}{Caitra}}{\sundata{05:58}{18:20}{08:26}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{13:10\hspace{2ex}}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{22:39\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{21:35\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{13:10\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{01:14(+1)}}}}{\rahuyama{07:30--09:03}{10:36--12:09}}{Meṣa~saṅkrānti~(Jaya-Saṃvatsaraḥ)} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Meṣa}{2}{}{Caitra}}{\sundata{05:57}{18:20}{08:26}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{13:09\hspace{2ex}}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{23:06\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{20:22\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{13:09\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{00:58(+1)}}}}{\rahuyama{15:14--16:47}{09:03--10:36}}{Citrā~pūrṇimā, gajendra-mokṣaḥ} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{Meṣa}{3}{}{Caitra}}{\sundata{05:56}{18:20}{08:25}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{12:38\hspace{2ex}}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{23:04\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{18:45\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{12:38\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{00:12(+1)}}}}{\rahuyama{12:08--13:41}{07:29--09:02}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Meṣa}{4}{}{Caitra}}{\sundata{05:56}{18:20}{08:25}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{11:40\hspace{2ex}}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{22:37\hspace{2ex}}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{16:48\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{11:40\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{23:02\hspace{2ex}}}}}{\rahuyama{13:41--15:14}{05:56--07:29}}{} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Meṣa}{5}{}{Caitra}}{\sundata{05:55}{18:21}{08:24}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{10:19\hspace{2ex}}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{21:50\hspace{2ex}}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{14:33\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{10:19\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{21:31\hspace{2ex}}}}}{\rahuyama{10:35--12:08}{15:14--16:47}}{Saṅkaṭahara-caturthī} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{Meṣa}{6}{}{Caitra}}{\sundata{05:55}{18:21}{08:24}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{08:40\hspace{2ex}}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{20:47\hspace{2ex}}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{12:05\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{08:40\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{19:44\hspace{2ex}}}}}{\rahuyama{09:01--10:34}{13:41--15:14}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{20}}{\sunmonth{Meṣa}{7}{}{Caitra}}{\sundata{05:54}{18:21}{08:23}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{06:46\hspace{2ex}}}\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{04:41(+1)}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{19:31\hspace{2ex}}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{09:25\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{06:46\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{17:44\hspace{2ex}}}\\\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{04:41(+1)}}}}{\rahuyama{16:47--18:21}{12:07--13:41}}{} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{Meṣa}{8}{}{Caitra}}{\sundata{05:54}{18:21}{08:23}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{02:29(+1)}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{18:07\hspace{2ex}}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{06:36\hspace{2ex}}}\mbox{Siddha {\tiny \RIGHTarrow} \textsf{03:43(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{15:35\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{02:29(+1)}}}}{\rahuyama{07:27--09:00}{10:34--12:07}}{} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Meṣa}{9}{}{Caitra}}{\sundata{05:53}{18:21}{08:23}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{00:13(+1)}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{16:38\hspace{2ex}}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{00:46(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{13:21\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{00:13(+1)}}}}{\rahuyama{15:14--16:48}{09:00--10:34}}{} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{Meṣa}{10}{}{Caitra}}{\sundata{05:52}{18:21}{08:22}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{21:57\hspace{2ex}}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{15:08\hspace{2ex}}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{21:49\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{11:05\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{21:57\hspace{2ex}}}}}{\rahuyama{12:07--13:40}{07:26--09:00}}{} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Meṣa}{11}{}{Caitra}}{\sundata{05:52}{18:21}{08:22}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{19:44\hspace{2ex}}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{13:39\hspace{2ex}}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{18:54\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{08:50\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{19:44\hspace{2ex}}}}}{\rahuyama{13:40--15:14}{05:52--07:26}}{} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Meṣa}{12}{}{Caitra}}{\sundata{05:51}{18:22}{08:21}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{17:39\hspace{2ex}}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{12:16\hspace{2ex}}}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{16:05\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{06:39\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{17:39\hspace{2ex}}}\\\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{04:38(+1)}}}}{\rahuyama{10:33--12:06}{15:14--16:48}}{Sarva~Pāpavimocinī~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{Meṣa}{13}{}{Caitra}}{\sundata{05:51}{18:22}{08:21}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{15:43\hspace{2ex}}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{11:03\hspace{2ex}}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{13:25\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{15:43\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{02:50(+1)}}}}{\rahuyama{08:59--10:32}{13:40--15:14}}{Pradoṣa-vratam} 
+\\ \hline
+\caldata{\textcolor{blue}{27}}{\sunmonth{Meṣa}{14}{}{Caitra}}{\sundata{05:51}{18:22}{08:21}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{14:03\hspace{2ex}}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{10:04\hspace{2ex}}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{10:56\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{14:03\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{01:20(+1)}}}}{\rahuyama{16:48--18:22}{12:06--13:40}}{} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{Meṣa}{15}{}{Caitra}}{\sundata{05:50}{18:22}{08:20}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{12:43\hspace{2ex}}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{09:23\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{08:43\hspace{2ex}}}}{\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{12:43\hspace{2ex}}}\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{00:11(+1)}}}}{\rahuyama{07:24--08:58}{10:32--12:06}}{} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{Meṣa}{16}{}{Caitra}}{\sundata{05:50}{18:22}{08:20}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{11:47\hspace{2ex}}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{09:07\hspace{2ex}}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{06:49\hspace{2ex}}}\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{05:18(+1)}}}{\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{11:47\hspace{2ex}}}\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{23:30\hspace{2ex}}}}}{\rahuyama{15:14--16:48}{08:58--10:32}}{} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{Meṣa}{17}{}{Vaiśākha}}{\sundata{05:49}{18:22}{08:20}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{11:20\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{09:19\hspace{2ex}}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{04:12(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{11:20\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{23:19\hspace{2ex}}}}}{\rahuyama{12:06--13:40}{07:23--08:57}}{} 
+&
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily MAY 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Meṣa}{18}{}{Vaiśākha}}{\sundata{05:49}{18:23}{08:19}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{11:26\hspace{2ex}}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{10:02\hspace{2ex}}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{03:34(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{11:26\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{23:42\hspace{2ex}}}}}{\rahuyama{13:40--15:14}{05:49--07:23}}{} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{Meṣa}{19}{}{Vaiśākha}}{\sundata{05:48}{18:23}{08:19}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{12:06\hspace{2ex}}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{11:20\hspace{2ex}}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{03:22(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{12:06\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{00:39(+1)}}}}{\rahuyama{10:31--12:06}{15:14--16:48}}{Akṣaya tṛtīyā} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Meṣa}{20}{}{Vaiśākha}}{\sundata{05:48}{18:23}{08:19}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{13:21\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{13:10\hspace{2ex}}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{03:35(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{13:21\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{02:09(+1)}}}}{\rahuyama{08:57--10:31}{13:40--15:14}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{4}}{\sunmonth{Meṣa}{21}{}{Vaiśākha}}{\sundata{05:47}{18:23}{08:19}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{15:05\hspace{2ex}}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{15:30\hspace{2ex}}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{04:08(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{15:05\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{04:06(+1)}}}}{\rahuyama{16:49--18:23}{12:05--13:40}}{Śaṅkara-jayantī} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{Meṣa}{22}{}{Vaiśākha}}{\sundata{05:47}{18:23}{08:18}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{17:13\hspace{2ex}}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{18:11\hspace{2ex}}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{04:56(+1)}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{17:13\hspace{2ex}}}}}{\rahuyama{07:22--08:56}{10:31--12:05}}{Ṣaṣṭhī-vratam} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{Meṣa}{23}{}{Vaiśākha}}{\sundata{05:47}{18:24}{08:18}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{19:33\hspace{2ex}}}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{21:04\hspace{2ex}}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{06:21\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{19:33\hspace{2ex}}}}}{\rahuyama{15:14--16:49}{08:56--10:31}}{} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{Meṣa}{24}{}{Vaiśākha}}{\sundata{05:46}{18:24}{08:18}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{21:53\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{23:57\hspace{2ex}}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{05:50\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{08:44\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{21:53\hspace{2ex}}}}}{\rahuyama{12:05--13:40}{07:21--08:56}}{} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Meṣa}{25}{}{Vaiśākha}}{\sundata{05:46}{18:24}{08:18}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{00:01(+1)}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{02:37(+1)}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{06:40\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{10:59\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{00:01(+1)}}}}{\rahuyama{13:40--15:14}{05:46--07:21}}{} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{Meṣa}{26}{}{Vaiśākha}}{\sundata{05:46}{18:24}{08:17}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{01:44(+1)}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{04:53(+1)}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{07:16\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{12:55\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{01:44(+1)}}}}{\rahuyama{10:30--12:05}{15:15--16:49}}{} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Meṣa}{27}{}{Vaiśākha}}{\sundata{05:45}{18:24}{08:17}}{\tnyk{\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{02:52(+1)}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{07:31\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{14:20\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{02:52(+1)}}}}{\rahuyama{08:55--10:30}{13:40--15:15}}{Sarva~Mohinī~Ekādaśī} 
+\\ \hline
+\caldata{\textcolor{blue}{11}}{\sunmonth{Meṣa}{28}{}{Vaiśākha}}{\sundata{05:45}{18:25}{08:17}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{03:20(+1)}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{06:33\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{07:19\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{15:08\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{03:20(+1)}}}}{\rahuyama{16:50--18:25}{12:05--13:40}}{} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{Meṣa}{29}{}{Vaiśākha}}{\sundata{05:45}{18:25}{08:17}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{03:06(+1)}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{07:33\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{06:35\hspace{2ex}}}\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{05:19(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{15:15\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{03:06(+1)}}}}{\rahuyama{07:20--08:55}{10:30--12:05}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{Meṣa}{30}{}{Vaiśākha}}{\sundata{05:44}{18:25}{08:17}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{02:12(+1)}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{07:53\hspace{2ex}}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{03:29(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{14:41\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{02:12(+1)}}}}{\rahuyama{15:15--16:50}{08:55--10:30}}{} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{Meṣa}{31}{\mbox{Meṣa {\tiny \RIGHTarrow} \textsf{04:25(+1)}}}{Vaiśākha}}{\sundata{05:44}{18:25}{08:16}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{00:43(+1)}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{07:35\hspace{2ex}}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{01:12(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{13:30\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{00:43(+1)}}}}{\rahuyama{12:05--13:40}{07:19--08:55}}{Citrā~pūrṇimā, gajendra-mokṣaḥ} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Vṛṣabha}{1}{}{Vaiśākha}}{\sundata{05:44}{18:26}{08:16}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{22:45\hspace{2ex}}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{06:44\hspace{2ex}}}\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{05:26(+1)}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{22:31\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{11:47\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{22:45\hspace{2ex}}}}}{\rahuyama{13:40--15:15}{05:44--07:19}}{} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{Vṛṣabha}{2}{}{Vaiśākha}}{\sundata{05:44}{18:26}{08:16}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{20:25\hspace{2ex}}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{03:47(+1)}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{19:34\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{09:38\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{20:25\hspace{2ex}}}}}{\rahuyama{10:30--12:05}{15:15--16:51}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Vṛṣabha}{3}{}{Vaiśākha}}{\sundata{05:43}{18:26}{08:16}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{17:52\hspace{2ex}}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{01:57(+1)}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{16:25\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{07:11\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{17:52\hspace{2ex}}}\\\mbox{Bava {\tiny \RIGHTarrow} \textsf{04:33(+1)}}}}{\rahuyama{08:54--10:30}{13:40--15:16}}{Saṅkaṭahara-caturthī} 
+\\ \hline
+\caldata{\textcolor{blue}{18}}{\sunmonth{Vṛṣabha}{4}{}{Vaiśākha}}{\sundata{05:43}{18:26}{08:16}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{15:12\hspace{2ex}}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{00:04(+1)}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{13:10\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{15:12\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{01:52(+1)}}}}{\rahuyama{16:51--18:26}{12:05--13:40}}{} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{Vṛṣabha}{5}{}{Vaiśākha}}{\sundata{05:43}{18:27}{08:16}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{12:33\hspace{2ex}}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{22:14\hspace{2ex}}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{09:54\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{12:33\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{23:14\hspace{2ex}}}}}{\rahuyama{07:19--08:54}{10:29--12:05}}{} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{Vṛṣabha}{6}{}{Vaiśākha}}{\sundata{05:43}{18:27}{08:16}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{09:59\hspace{2ex}}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{20:32\hspace{2ex}}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{06:42\hspace{2ex}}}\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{03:40(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{09:59\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{20:46\hspace{2ex}}}}}{\rahuyama{15:16--16:52}{08:54--10:29}}{} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{Vṛṣabha}{7}{}{Vaiśākha}}{\sundata{05:43}{18:27}{08:16}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{07:35\hspace{2ex}}}\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{05:27(+1)}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{19:04\hspace{2ex}}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{00:51(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{07:35\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{18:31\hspace{2ex}}}\\\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{05:27(+1)}}}}{\rahuyama{12:05--13:41}{07:18--08:54}}{} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Vṛṣabha}{8}{}{Vaiśākha}}{\sundata{05:43}{18:28}{08:16}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{03:39(+1)}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{17:53\hspace{2ex}}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{22:15\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{16:33\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{03:39(+1)}}}}{\rahuyama{13:41--15:16}{05:43--07:18}}{} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{Vṛṣabha}{9}{}{Vaiśākha}}{\sundata{05:42}{18:28}{08:16}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{02:09(+1)}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{17:00\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{19:56\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{14:53\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{02:09(+1)}}}}{\rahuyama{10:29--12:05}{15:17--16:52}}{} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Vṛṣabha}{10}{}{Vaiśākha}}{\sundata{05:42}{18:28}{08:15}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{01:01(+1)}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{16:27\hspace{2ex}}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{17:52\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{13:33\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{01:01(+1)}}}}{\rahuyama{08:54--10:30}{13:41--15:17}}{Sarva~Varuthinī~Ekādaśī} 
+\\ \hline
+\caldata{\textcolor{blue}{25}}{\sunmonth{Vṛṣabha}{11}{}{Vaiśākha}}{\sundata{05:42}{18:29}{08:15}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{00:14(+1)}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{16:16\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{16:06\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{12:35\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{00:14(+1)}}}}{\rahuyama{16:53--18:29}{12:05--13:41}}{} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{Vṛṣabha}{12}{}{Vaiśākha}}{\sundata{05:42}{18:29}{08:15}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{23:49\hspace{2ex}}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{16:27\hspace{2ex}}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{14:38\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{11:59\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{23:49\hspace{2ex}}}}}{\rahuyama{07:18--08:54}{10:30--12:05}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{Vṛṣabha}{13}{}{Vaiśākha}}{\sundata{05:42}{18:29}{08:15}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{23:48\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{17:00\hspace{2ex}}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{13:28\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{11:45\hspace{2ex}}}\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{23:48\hspace{2ex}}}}}{\rahuyama{15:17--16:53}{08:54--10:30}}{} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{Vṛṣabha}{14}{}{Vaiśākha}}{\sundata{05:42}{18:29}{08:15}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{00:12(+1)}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{17:58\hspace{2ex}}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{12:37\hspace{2ex}}}}{\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{11:57\hspace{2ex}}}\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{00:12(+1)}}}}{\rahuyama{12:06--13:42}{07:18--08:54}}{} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{Vṛṣabha}{15}{}{Jyaiṣṭha}}{\sundata{05:42}{18:30}{08:15}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{01:02(+1)}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{19:21\hspace{2ex}}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{12:07\hspace{2ex}}}}{\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{12:34\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{01:02(+1)}}}}{\rahuyama{13:42--15:18}{05:42--07:18}}{} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{Vṛṣabha}{16}{}{Jyaiṣṭha}}{\sundata{05:42}{18:30}{08:16}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{02:18(+1)}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{21:10\hspace{2ex}}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{11:57\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{13:38\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{02:18(+1)}}}}{\rahuyama{10:30--12:06}{15:18--16:54}}{} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{Vṛṣabha}{17}{}{Jyaiṣṭha}}{\sundata{05:42}{18:30}{08:16}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{04:00(+1)}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{23:24\hspace{2ex}}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{12:08\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{15:08\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{04:00(+1)}}}}{\rahuyama{08:54--10:30}{13:42--15:18}}{} 
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily JUNE 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+\caldata{\textcolor{blue}{1}}{\sunmonth{Vṛṣabha}{18}{}{Jyaiṣṭha}}{\sundata{05:42}{18:31}{08:16}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{01:59(+1)}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{12:38\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{17:01\hspace{2ex}}}}}{\rahuyama{16:55--18:31}{12:06--13:42}}{} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{Vṛṣabha}{19}{}{Jyaiṣṭha}}{\sundata{05:42}{18:31}{08:16}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{06:04\hspace{2ex}}}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{04:50(+1)}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{13:23\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{06:04\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{19:13\hspace{2ex}}}}}{\rahuyama{07:18--08:54}{10:30--12:06}}{} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Vṛṣabha}{20}{}{Jyaiṣṭha}}{\sundata{05:42}{18:31}{08:16}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{08:23\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{14:18\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{08:23\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{21:36\hspace{2ex}}}}}{\rahuyama{15:19--16:55}{08:54--10:30}}{} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Vṛṣabha}{21}{}{Jyaiṣṭha}}{\sundata{05:42}{18:32}{08:16}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{10:47\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{07:49\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{15:14\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{10:47\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{23:58\hspace{2ex}}}}}{\rahuyama{12:07--13:43}{07:18--08:54}}{Ṣaṣṭhī-vratam} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{Vṛṣabha}{22}{}{Jyaiṣṭha}}{\sundata{05:42}{18:32}{08:16}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{13:04\hspace{2ex}}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{10:41\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{16:04\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{13:04\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{02:07(+1)}}}}{\rahuyama{13:43--15:19}{05:42--07:18}}{} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{Vṛṣabha}{23}{}{Jyaiṣṭha}}{\sundata{05:42}{18:32}{08:16}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{15:00\hspace{2ex}}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{13:15\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{16:37\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{15:00\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{03:50(+1)}}}}{\rahuyama{10:31--12:07}{15:20--16:56}}{} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{Vṛṣabha}{24}{}{Jyaiṣṭha}}{\sundata{05:42}{18:32}{08:16}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{16:25\hspace{2ex}}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{15:19\hspace{2ex}}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{16:45\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{16:25\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{04:56(+1)}}}}{\rahuyama{08:55--10:31}{13:44--15:20}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{8}}{\sunmonth{Vṛṣabha}{25}{}{Jyaiṣṭha}}{\sundata{05:42}{18:33}{08:16}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{17:08\hspace{2ex}}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{16:42\hspace{2ex}}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{16:21\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{17:08\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{05:17(+1)}}}}{\rahuyama{16:56--18:33}{12:07--13:44}}{} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{Vṛṣabha}{26}{}{Jyaiṣṭha}}{\sundata{05:42}{18:33}{08:16}}{\tnyk{\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{17:04\hspace{2ex}}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{17:21\hspace{2ex}}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{15:20\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{17:04\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{04:50(+1)}}}}{\rahuyama{07:19--08:55}{10:31--12:08}}{Sarva~Pāṇḍava nirjala~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Vṛṣabha}{27}{}{Jyaiṣṭha}}{\sundata{05:42}{18:33}{08:17}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{16:13\hspace{2ex}}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{17:13\hspace{2ex}}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{13:42\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{16:13\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{03:34(+1)}}}}{\rahuyama{15:21--16:57}{08:55--10:31}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Vṛṣabha}{28}{}{Jyaiṣṭha}}{\sundata{05:42}{18:34}{08:17}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{14:37\hspace{2ex}}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{16:21\hspace{2ex}}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{11:27\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{14:37\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{01:36(+1)}}}}{\rahuyama{12:08--13:44}{07:19--08:55}}{} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{Vṛṣabha}{29}{}{Jyaiṣṭha}}{\sundata{05:43}{18:34}{08:17}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{12:24\hspace{2ex}}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{14:51\hspace{2ex}}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{08:41\hspace{2ex}}}\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{05:27(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{12:24\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{23:04\hspace{2ex}}}}}{\rahuyama{13:45--15:21}{05:43--07:19}}{} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{Vṛṣabha}{30}{}{Jyaiṣṭha}}{\sundata{05:43}{18:34}{08:17}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{09:39\hspace{2ex}}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{12:51\hspace{2ex}}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{01:51(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{09:39\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{20:06\hspace{2ex}}}}}{\rahuyama{10:32--12:08}{15:21--16:58}}{} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{Vṛṣabha}{31}{}{Jyaiṣṭha}}{\sundata{05:43}{18:34}{08:17}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{06:33\hspace{2ex}}}\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{03:13(+1)}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{10:31\hspace{2ex}}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{22:06\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{06:33\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{16:53\hspace{2ex}}}\\\mbox{Garaja {\tiny \RIGHTarrow} \textsf{03:13(+1)}}}}{\rahuyama{08:56--10:32}{13:45--15:22}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{15}}{\sunmonth{Mithuna}{1}{\mbox{Vṛṣabha {\tiny \RIGHTarrow} \textsf{10:59\hspace{2ex}}}}{Jyaiṣṭha}}{\sundata{05:43}{18:35}{08:17}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{23:53\hspace{2ex}}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{08:01\hspace{2ex}}}\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{05:30(+1)}}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{18:17\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{13:33\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{23:53\hspace{2ex}}}}}{\rahuyama{16:58--18:35}{12:09--13:45}}{} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{Mithuna}{2}{}{Jyaiṣṭha}}{\sundata{05:43}{18:35}{08:18}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{20:41\hspace{2ex}}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{03:10(+1)}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{14:33\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{10:15\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{20:41\hspace{2ex}}}}}{\rahuyama{07:20--08:56}{10:33--12:09}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Mithuna}{3}{}{Jyaiṣṭha}}{\sundata{05:43}{18:35}{08:18}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{17:45\hspace{2ex}}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{01:09(+1)}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{10:59\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{07:08\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{17:45\hspace{2ex}}}\\\mbox{Garaja {\tiny \RIGHTarrow} \textsf{04:21(+1)}}}}{\rahuyama{15:22--16:59}{08:56--10:33}}{} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Mithuna}{4}{}{Jyaiṣṭha}}{\sundata{05:44}{18:35}{08:18}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{15:10\hspace{2ex}}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{23:33\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{07:42\hspace{2ex}}}\mbox{Prīti {\tiny \RIGHTarrow} \textsf{04:47(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{15:10\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{02:02(+1)}}}}{\rahuyama{12:09--13:46}{07:20--08:57}}{} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{Mithuna}{5}{}{Jyaiṣṭha}}{\sundata{05:44}{18:36}{08:18}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{13:04\hspace{2ex}}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{22:27\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{02:19(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{13:04\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{00:11(+1)}}}}{\rahuyama{13:46--15:23}{05:44--07:20}}{} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{Mithuna}{6}{}{Jyaiṣṭha}}{\sundata{05:44}{18:36}{08:18}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{11:28\hspace{2ex}}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{21:51\hspace{2ex}}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{00:16(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{11:28\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{22:52\hspace{2ex}}}}}{\rahuyama{10:33--12:10}{15:23--16:59}}{} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{Mithuna}{7}{}{Jyaiṣṭha}}{\sundata{05:44}{18:36}{08:19}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{10:24\hspace{2ex}}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{21:46\hspace{2ex}}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{22:38\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{10:24\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{22:05\hspace{2ex}}}}}{\rahuyama{08:57--10:34}{13:47--15:23}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{22}}{\sunmonth{Mithuna}{8}{}{Jyaiṣṭha}}{\sundata{05:44}{18:36}{08:19}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{09:51\hspace{2ex}}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{22:11\hspace{2ex}}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{21:24\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{09:51\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{21:47\hspace{2ex}}}}}{\rahuyama{17:00--18:36}{12:10--13:47}}{} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{Mithuna}{9}{}{Jyaiṣṭha}}{\sundata{05:45}{18:36}{08:19}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{09:48\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{23:04\hspace{2ex}}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{20:32\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{09:48\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{21:57\hspace{2ex}}}}}{\rahuyama{07:21--08:58}{10:34--12:11}}{Sarva~Aparā~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Mithuna}{10}{}{Jyaiṣṭha}}{\sundata{05:45}{18:37}{08:19}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{10:11\hspace{2ex}}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{00:21(+1)}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{20:00\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{10:11\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{22:33\hspace{2ex}}}}}{\rahuyama{15:24--17:00}{08:58--10:34}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Mithuna}{11}{}{Jyaiṣṭha}}{\sundata{05:45}{18:37}{08:19}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{10:59\hspace{2ex}}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{02:01(+1)}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{19:47\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{10:59\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{23:31\hspace{2ex}}}}}{\rahuyama{12:11--13:47}{07:22--08:58}}{} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{Mithuna}{12}{}{Jyaiṣṭha}}{\sundata{05:45}{18:37}{08:20}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{12:09\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{04:01(+1)}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{19:50\hspace{2ex}}}}{\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{12:09\hspace{2ex}}}\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{00:51(+1)}}}}{\rahuyama{13:48--15:24}{05:45--07:22}}{} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{Mithuna}{13}{}{Jyaiṣṭha}}{\sundata{05:46}{18:37}{08:20}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{13:40\hspace{2ex}}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{20:10\hspace{2ex}}}}{\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{13:40\hspace{2ex}}}\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{02:31(+1)}}}}{\rahuyama{10:35--12:11}{15:24--17:01}}{} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{Mithuna}{14}{}{Āṣāḍha}}{\sundata{05:46}{18:37}{08:20}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{15:30\hspace{2ex}}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{06:21\hspace{2ex}}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{20:43\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{15:30\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{04:30(+1)}}}}{\rahuyama{08:59--10:35}{13:48--15:24}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{29}}{\sunmonth{Mithuna}{15}{}{Āṣāḍha}}{\sundata{05:46}{18:38}{08:20}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{17:36\hspace{2ex}}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{08:58\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{21:29\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{17:36\hspace{2ex}}}}}{\rahuyama{17:01--18:38}{12:12--13:48}}{} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{Mithuna}{16}{}{Āṣāḍha}}{\sundata{05:46}{18:38}{08:21}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{19:56\hspace{2ex}}}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{11:50\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{22:25\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{06:44\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{19:56\hspace{2ex}}}}}{\rahuyama{07:23--08:59}{10:36--12:12}}{} 
+&
+{}  &
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily JULY 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Mithuna}{17}{}{Āṣāḍha}}{\sundata{05:47}{18:38}{08:21}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{22:23\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{14:50\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{23:25\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{09:09\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{22:23\hspace{2ex}}}}}{\rahuyama{15:25--17:01}{08:59--10:36}}{} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{Mithuna}{18}{}{Āṣāḍha}}{\sundata{05:47}{18:38}{08:21}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{00:48(+1)}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{17:50\hspace{2ex}}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{00:24(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{11:36\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{00:48(+1)}}}}{\rahuyama{12:12--13:49}{07:23--09:00}}{} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Mithuna}{19}{}{Āṣāḍha}}{\sundata{05:47}{18:38}{08:21}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{03:00(+1)}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{20:41\hspace{2ex}}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{01:13(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{13:55\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{03:00(+1)}}}}{\rahuyama{13:49--15:25}{05:47--07:24}}{Ṣaṣṭhī-vratam} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Mithuna}{20}{}{Āṣāḍha}}{\sundata{05:47}{18:38}{08:22}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{04:47(+1)}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{23:11\hspace{2ex}}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{01:43(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{15:55\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{04:47(+1)}}}}{\rahuyama{10:36--12:13}{15:25--17:02}}{} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{Mithuna}{21}{}{Āṣāḍha}}{\sundata{05:48}{18:38}{08:22}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{01:07(+1)}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{01:46(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{17:23\hspace{2ex}}}}}{\rahuyama{09:00--10:37}{13:49--15:26}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{6}}{\sunmonth{Mithuna}{22}{}{Āṣāḍha}}{\sundata{05:48}{18:38}{08:22}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{05:58\hspace{2ex}}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{02:21(+1)}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{01:13(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{05:58\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{18:10\hspace{2ex}}}}}{\rahuyama{17:02--18:38}{12:13--13:49}}{} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{Mithuna}{23}{}{Āṣāḍha}}{\sundata{05:48}{18:38}{08:22}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{06:22\hspace{2ex}}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{02:46(+1)}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{00:01(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{06:22\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{18:09\hspace{2ex}}}}}{\rahuyama{07:25--09:01}{10:37--12:13}}{} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Mithuna}{24}{}{Āṣāḍha}}{\sundata{05:49}{18:38}{08:23}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{05:57\hspace{2ex}}}\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{04:38(+1)}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{02:20(+1)}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{22:08\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{05:57\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{17:17\hspace{2ex}}}\\\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{04:38(+1)}}}}{\rahuyama{15:26--17:02}{09:01--10:37}}{} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{Mithuna}{25}{}{Āṣāḍha}}{\sundata{05:49}{18:38}{08:23}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{02:32(+1)}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{01:06(+1)}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{19:36\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{15:36\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{02:32(+1)}}}}{\rahuyama{12:14--13:50}{07:25--09:01}}{Sarva~Padma/devaśayanī~Ekādaśī\diam Cāturmāsasya ārambhaḥ} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Mithuna}{26}{}{Āṣāḍha}}{\sundata{05:49}{18:38}{08:23}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{23:46\hspace{2ex}}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{23:10\hspace{2ex}}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{16:29\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{13:12\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{23:46\hspace{2ex}}}}}{\rahuyama{13:50--15:26}{05:49--07:25}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Mithuna}{27}{}{Āṣāḍha}}{\sundata{05:49}{18:38}{08:23}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{20:29\hspace{2ex}}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{20:44\hspace{2ex}}}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{12:54\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{10:12\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{20:29\hspace{2ex}}}}}{\rahuyama{10:38--12:14}{15:26--17:02}}{} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{Mithuna}{28}{}{Āṣāḍha}}{\sundata{05:50}{18:38}{08:23}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{16:53\hspace{2ex}}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{17:57\hspace{2ex}}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{08:58\hspace{2ex}}}\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{04:48(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{06:45\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{16:53\hspace{2ex}}}\\\mbox{Bālava {\tiny \RIGHTarrow} \textsf{03:00(+1)}}}}{\rahuyama{09:02--10:38}{13:50--15:26}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{13}}{\sunmonth{Mithuna}{29}{}{Āṣāḍha}}{\sundata{05:50}{18:38}{08:24}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{13:06\hspace{2ex}}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{15:00\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{00:36(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{13:06\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{23:12\hspace{2ex}}}}}{\rahuyama{17:02--18:38}{12:14--13:50}}{} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{Mithuna}{30}{}{Āṣāḍha}}{\sundata{05:50}{18:38}{08:24}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{09:19\hspace{2ex}}}\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{05:42(+1)}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{12:05\hspace{2ex}}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{20:30\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{09:19\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{19:31\hspace{2ex}}}\\\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{05:42(+1)}}}}{\rahuyama{07:26--09:02}{10:38--12:14}}{} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Mithuna}{31}{}{Āṣāḍha}}{\sundata{05:51}{18:38}{08:24}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{02:30(+1)}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{09:22\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{16:39\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{16:06\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{02:30(+1)}}}}{\rahuyama{15:26--17:02}{09:02--10:38}}{Saṅkaṭahara-caturthī} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{Mithuna}{32}{\mbox{Mithuna {\tiny \RIGHTarrow} \textsf{21:49\hspace{2ex}}}}{Āṣāḍha}}{\sundata{05:51}{18:38}{08:24}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{23:47\hspace{2ex}}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{07:01\hspace{2ex}}}\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{05:12(+1)}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{13:08\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{13:06\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{23:47\hspace{2ex}}}}}{\rahuyama{12:14--13:50}{07:27--09:03}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Karkaṭaka}{1}{}{Āṣāḍha}}{\sundata{05:51}{18:38}{08:24}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{21:40\hspace{2ex}}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{04:02(+1)}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{10:04\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{10:38\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{21:40\hspace{2ex}}}}}{\rahuyama{13:50--15:26}{05:51--07:27}}{Dakṣiṇāyana-puṇyakālam} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Karkaṭaka}{2}{}{Āṣāḍha}}{\sundata{05:51}{18:38}{08:25}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{20:12\hspace{2ex}}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{03:32(+1)}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{07:30\hspace{2ex}}}\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{05:31(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{08:48\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{20:12\hspace{2ex}}}}}{\rahuyama{10:39--12:15}{15:26--17:02}}{} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{Karkaṭaka}{3}{}{Āṣāḍha}}{\sundata{05:52}{18:38}{08:25}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{19:25\hspace{2ex}}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{03:43(+1)}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{04:07(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{07:39\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{19:25\hspace{2ex}}}}}{\rahuyama{09:03--10:39}{13:50--15:26}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{20}}{\sunmonth{Karkaṭaka}{4}{}{Āṣāḍha}}{\sundata{05:52}{18:38}{08:25}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{19:17\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{04:31(+1)}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{03:13(+1)}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{07:12\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{19:17\hspace{2ex}}}}}{\rahuyama{17:02--18:38}{12:15--13:50}}{} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{Karkaṭaka}{5}{}{Āṣāḍha}}{\sundata{05:52}{18:37}{08:25}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{19:45\hspace{2ex}}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{05:52(+1)}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{02:45(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{07:24\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{19:45\hspace{2ex}}}}}{\rahuyama{07:28--09:03}{10:39--12:15}}{Āṣāḍha kṛttikā} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Karkaṭaka}{6}{}{Āṣāḍha}}{\sundata{05:52}{18:37}{08:25}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{20:45\hspace{2ex}}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{02:41(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{08:10\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{20:45\hspace{2ex}}}}}{\rahuyama{15:26--17:02}{09:04--10:39}}{Sarva~Yoginī~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{Karkaṭaka}{7}{}{Āṣāḍha}}{\sundata{05:53}{18:37}{08:26}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{22:10\hspace{2ex}}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{07:43\hspace{2ex}}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{02:55(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{09:23\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{22:10\hspace{2ex}}}}}{\rahuyama{12:15--13:50}{07:28--09:04}}{} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Karkaṭaka}{8}{}{Āṣāḍha}}{\sundata{05:53}{18:37}{08:26}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{23:56\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{09:56\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{03:24(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{11:00\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{23:56\hspace{2ex}}}}}{\rahuyama{13:50--15:26}{05:53--07:28}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Karkaṭaka}{9}{}{Āṣāḍha}}{\sundata{05:53}{18:37}{08:26}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{01:57(+1)}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{12:26\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{04:05(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{12:55\hspace{2ex}}}\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{01:57(+1)}}}}{\rahuyama{10:39--12:15}{15:26--17:01}}{} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{Karkaṭaka}{10}{}{Āṣāḍha}}{\sundata{05:53}{18:36}{08:26}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{04:11(+1)}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{15:10\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{04:56(+1)}}}{\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{15:04\hspace{2ex}}}\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{04:11(+1)}}}}{\rahuyama{09:04--10:40}{13:50--15:26}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{27}}{\sunmonth{Karkaṭaka}{11}{}{Śravaṇa~(Adhika)}}{\sundata{05:54}{18:36}{08:26}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{18:04\hspace{2ex}}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{05:53(+1)}}}{\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{17:23\hspace{2ex}}}}}{\rahuyama{17:01--18:36}{12:15--13:50}}{} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{Karkaṭaka}{12}{}{Śravaṇa}}{\sundata{05:54}{18:36}{08:26}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{06:35\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{21:04\hspace{2ex}}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{06:35\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{19:48\hspace{2ex}}}}}{\rahuyama{07:29--09:04}{10:40--12:15}}{} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{Karkaṭaka}{13}{}{Śravaṇa}}{\sundata{05:54}{18:36}{08:26}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{09:02\hspace{2ex}}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{00:05(+1)}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{06:53\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{09:02\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{22:16\hspace{2ex}}}}}{\rahuyama{15:25--17:00}{09:04--10:40}}{} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{Karkaṭaka}{14}{}{Śravaṇa}}{\sundata{05:54}{18:35}{08:27}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{11:28\hspace{2ex}}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{03:01(+1)}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{07:53\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{11:28\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{00:38(+1)}}}}{\rahuyama{12:15--13:50}{07:29--09:05}}{Śrī godā jayantī} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{Karkaṭaka}{15}{}{Śravaṇa}}{\sundata{05:55}{18:35}{08:27}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{13:44\hspace{2ex}}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{05:44(+1)}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{08:46\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{13:44\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{02:48(+1)}}}}{\rahuyama{13:50--15:25}{05:55--07:30}}{} 
+&
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily AUGUST 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Karkaṭaka}{16}{}{Śravaṇa}}{\sundata{05:55}{18:35}{08:27}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{15:42\hspace{2ex}}}}{\mbox{Hasta {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{09:27\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{15:42\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{04:34(+1)}}}}{\rahuyama{10:40--12:15}{15:25--17:00}}{} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{Karkaṭaka}{17}{}{Śravaṇa}}{\sundata{05:55}{18:34}{08:27}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{17:12\hspace{2ex}}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{08:03\hspace{2ex}}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{09:48\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{17:12\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{05:48(+1)}}}}{\rahuyama{09:05--10:40}{13:50--15:24}}{Ṣaṣṭhī-vratam} 
+\\ \hline
+\caldata{\textcolor{blue}{3}}{\sunmonth{Karkaṭaka}{18}{}{Śravaṇa}}{\sundata{05:55}{18:34}{08:27}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{18:04\hspace{2ex}}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{09:47\hspace{2ex}}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{09:41\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{18:04\hspace{2ex}}}}}{\rahuyama{16:59--18:34}{12:15--13:49}}{} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Karkaṭaka}{19}{}{Śravaṇa}}{\sundata{05:55}{18:34}{08:27}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{18:11\hspace{2ex}}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{10:49\hspace{2ex}}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{09:02\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{06:19\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{18:11\hspace{2ex}}}}}{\rahuyama{07:30--09:05}{10:40--12:14}}{} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{Karkaṭaka}{20}{}{Śravaṇa}}{\sundata{05:56}{18:33}{08:27}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{17:28\hspace{2ex}}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{11:05\hspace{2ex}}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{07:45\hspace{2ex}}}\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{05:48(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{06:02\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{17:28\hspace{2ex}}}\\\mbox{Taitila {\tiny \RIGHTarrow} \textsf{04:55(+1)}}}}{\rahuyama{15:24--16:59}{09:05--10:40}}{} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{Karkaṭaka}{21}{}{Śravaṇa}}{\sundata{05:56}{18:33}{08:27}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{15:58\hspace{2ex}}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{10:32\hspace{2ex}}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{03:09(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{15:58\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{02:58(+1)}}}}{\rahuyama{12:14--13:49}{07:30--09:05}}{} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{Karkaṭaka}{22}{}{Śravaṇa}}{\sundata{05:56}{18:32}{08:27}}{\tnyk{\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{13:42\hspace{2ex}}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{09:13\hspace{2ex}}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{23:55\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{13:42\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{00:19(+1)}}}}{\rahuyama{13:49--15:23}{05:56--07:30}}{Sarva~Putrada/pavitropāna~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Karkaṭaka}{23}{}{Śravaṇa}}{\sundata{05:56}{18:32}{08:27}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{10:47\hspace{2ex}}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{07:14\hspace{2ex}}}\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{04:40(+1)}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{20:13\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{10:47\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{21:06\hspace{2ex}}}}}{\rahuyama{10:40--12:14}{15:23--16:58}}{Pradoṣa-vratam\diam Varalakṣmī-vratam} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{Karkaṭaka}{24}{}{Śravaṇa}}{\sundata{05:56}{18:32}{08:27}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{07:23\hspace{2ex}}}\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{03:35(+1)}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{01:43(+1)}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{16:10\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{07:23\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{17:29\hspace{2ex}}}\\\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{03:35(+1)}}}}{\rahuyama{09:05--10:39}{13:48--15:23}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{10}}{\sunmonth{Karkaṭaka}{25}{}{Śravaṇa}}{\sundata{05:56}{18:31}{08:27}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{23:39\hspace{2ex}}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{22:38\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{11:55\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{13:37\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{23:39\hspace{2ex}}}}}{\rahuyama{16:57--18:31}{12:14--13:48}}{Ṛgveda-upākarma\diam Yajurveda-upākarma} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Karkaṭaka}{26}{}{Śravaṇa}}{\sundata{05:56}{18:31}{08:27}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{19:46\hspace{2ex}}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{19:35\hspace{2ex}}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{07:35\hspace{2ex}}}\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{03:19(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{09:42\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{19:46\hspace{2ex}}}\\\mbox{Taitila {\tiny \RIGHTarrow} \textsf{05:51(+1)}}}}{\rahuyama{07:31--09:05}{10:39--12:14}}{Gāyatrī  japam} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{Karkaṭaka}{27}{}{Śravaṇa}}{\sundata{05:57}{18:30}{08:27}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{16:06\hspace{2ex}}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{16:45\hspace{2ex}}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{23:20\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{16:06\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{02:22(+1)}}}}{\rahuyama{15:22--16:56}{09:05--10:39}}{} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{Karkaṭaka}{28}{}{Śravaṇa}}{\sundata{05:57}{18:30}{08:27}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{12:48\hspace{2ex}}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{14:18\hspace{2ex}}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{19:43\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{12:48\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{23:21\hspace{2ex}}}}}{\rahuyama{12:13--13:47}{07:31--09:05}}{MahāSaṅkaṭahara-caturthī} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{Karkaṭaka}{29}{}{Śravaṇa}}{\sundata{05:57}{18:29}{08:27}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{10:02\hspace{2ex}}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{12:23\hspace{2ex}}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{16:34\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{10:02\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{20:56\hspace{2ex}}}}}{\rahuyama{13:47--15:21}{05:57--07:31}}{} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Karkaṭaka}{30}{}{Śravaṇa}}{\sundata{05:57}{18:29}{08:27}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{07:54\hspace{2ex}}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{11:09\hspace{2ex}}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{13:58\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{07:54\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{19:12\hspace{2ex}}}}}{\rahuyama{10:39--12:13}{15:21--16:55}}{} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{Karkaṭaka}{31}{}{Śravaṇa}}{\sundata{05:57}{18:28}{08:27}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{06:31\hspace{2ex}}}\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{05:55(+1)}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{10:39\hspace{2ex}}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{11:58\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{06:31\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{18:13\hspace{2ex}}}\\\mbox{Bava {\tiny \RIGHTarrow} \textsf{05:55(+1)}}}}{\rahuyama{09:05--10:39}{13:47--15:20}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{17}}{\sunmonth{Siṃha}{1}{\mbox{Karkaṭaka {\tiny \RIGHTarrow} \textsf{06:12\hspace{2ex}}}}{Śravaṇa}}{\sundata{05:57}{18:28}{08:27}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{10:55\hspace{2ex}}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{10:35\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{18:01\hspace{2ex}}}}}{\rahuyama{16:54--18:28}{12:12--13:46}}{Śrīkṛṣṇajanmāṣṭamī} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Siṃha}{2}{}{Śravaṇa}}{\sundata{05:57}{18:27}{08:27}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{06:06\hspace{2ex}}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{11:55\hspace{2ex}}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{09:48\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{06:06\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{18:31\hspace{2ex}}}}}{\rahuyama{07:31--09:05}{10:39--12:12}}{} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{Siṃha}{3}{}{Śravaṇa}}{\sundata{05:57}{18:27}{08:27}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{06:58\hspace{2ex}}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{13:33\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{09:33\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{06:58\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{19:40\hspace{2ex}}}}}{\rahuyama{15:19--16:53}{09:05--10:38}}{} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{Siṃha}{4}{}{Śravaṇa}}{\sundata{05:58}{18:26}{08:27}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{08:24\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{15:43\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{09:43\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{08:24\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{21:19\hspace{2ex}}}}}{\rahuyama{12:12--13:45}{07:31--09:05}}{} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{Siṃha}{5}{}{Śravaṇa}}{\sundata{05:58}{18:25}{08:27}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{10:17\hspace{2ex}}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{18:16\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{10:14\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{10:17\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{23:20\hspace{2ex}}}}}{\rahuyama{13:45--15:19}{05:58--07:31}}{Sarva~Kāmika~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Siṃha}{6}{}{Śravaṇa}}{\sundata{05:58}{18:25}{08:27}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{12:27\hspace{2ex}}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{21:04\hspace{2ex}}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{10:59\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{12:27\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{01:37(+1)}}}}{\rahuyama{10:38--12:11}{15:18--16:52}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{Siṃha}{7}{}{Śravaṇa}}{\sundata{05:58}{18:24}{08:27}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{14:49\hspace{2ex}}}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{00:01(+1)}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{11:52\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{14:49\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{04:02(+1)}}}}{\rahuyama{09:04--10:38}{13:44--15:18}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{24}}{\sunmonth{Siṃha}{8}{}{Śravaṇa}}{\sundata{05:58}{18:24}{08:27}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{17:16\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{03:01(+1)}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{12:49\hspace{2ex}}}}{\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{17:16\hspace{2ex}}}}}{\rahuyama{16:50--18:24}{12:11--13:44}}{} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Siṃha}{9}{}{Śravaṇa}}{\sundata{05:58}{18:23}{08:27}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{19:42\hspace{2ex}}}}{\mbox{Maghā {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{13:47\hspace{2ex}}}}{\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{06:29\hspace{2ex}}}\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{19:42\hspace{2ex}}}}}{\rahuyama{07:31--09:04}{10:37--12:11}}{} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{Siṃha}{10}{}{Bhādrapada}}{\sundata{05:58}{18:22}{08:27}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{22:03\hspace{2ex}}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{05:59\hspace{2ex}}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{14:41\hspace{2ex}}}}{\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{08:53\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{22:03\hspace{2ex}}}}}{\rahuyama{15:16--16:49}{09:04--10:37}}{} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{Siṃha}{11}{}{Bhādrapada}}{\sundata{05:58}{18:22}{08:27}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{00:13(+1)}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{08:50\hspace{2ex}}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{15:29\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{11:10\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{00:13(+1)}}}}{\rahuyama{12:10--13:43}{07:31--09:04}}{} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{Siṃha}{12}{}{Bhādrapada}}{\sundata{05:58}{18:21}{08:27}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{02:08(+1)}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{11:28\hspace{2ex}}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{16:05\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{13:13\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{02:08(+1)}}}}{\rahuyama{13:43--15:15}{05:58--07:31}}{} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{Siṃha}{13}{}{Bhādrapada}}{\sundata{05:58}{18:21}{08:27}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{03:41(+1)}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{13:48\hspace{2ex}}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{16:27\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{14:56\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{03:41(+1)}}}}{\rahuyama{10:37--12:09}{15:15--16:48}}{Sāmaveda-upākarma\diam Śrīvināyaka-caturthī} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{Siṃha}{14}{}{Bhādrapada}}{\sundata{05:58}{18:20}{08:27}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{04:45(+1)}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{15:43\hspace{2ex}}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{16:28\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{16:14\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{04:45(+1)}}}}{\rahuyama{09:04--10:36}{13:42--15:15}}{Ṛṣi-pañcamī  vratam} 
+\\ \hline
+\caldata{\textcolor{blue}{31}}{\sunmonth{Siṃha}{15}{}{Bhādrapada}}{\sundata{05:58}{18:19}{08:26}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{05:14(+1)}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{17:08\hspace{2ex}}}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{16:04\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{17:00\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{05:14(+1)}}}}{\rahuyama{16:47--18:19}{12:09--13:41}}{Ṣaṣṭhī-vratam} 
+&
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily SEPTEMBER 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Siṃha}{16}{}{Bhādrapada}}{\sundata{05:58}{18:19}{08:26}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{05:02(+1)}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{17:55\hspace{2ex}}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{15:11\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{17:08\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{05:02(+1)}}}}{\rahuyama{07:31--09:03}{10:36--12:08}}{} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{Siṃha}{17}{}{Bhādrapada}}{\sundata{05:58}{18:18}{08:26}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{04:06(+1)}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{18:02\hspace{2ex}}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{13:45\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{16:35\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{04:06(+1)}}}}{\rahuyama{15:13--16:46}{09:03--10:36}}{} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Siṃha}{18}{}{Bhādrapada}}{\sundata{05:58}{18:17}{08:26}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{02:28(+1)}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{17:26\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{11:45\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{15:19\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{02:28(+1)}}}}{\rahuyama{12:08--13:40}{07:31--09:03}}{} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Siṃha}{19}{}{Bhādrapada}}{\sundata{05:58}{18:17}{08:26}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{00:10(+1)}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{16:11\hspace{2ex}}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{09:12\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{13:22\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{00:10(+1)}}}}{\rahuyama{13:40--15:12}{05:58--07:31}}{} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{Siṃha}{20}{}{Bhādrapada}}{\sundata{05:58}{18:16}{08:26}}{\tnyk{\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{21:19\hspace{2ex}}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{14:19\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{06:09\hspace{2ex}}}\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{02:35(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{10:49\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{21:19\hspace{2ex}}}}}{\rahuyama{10:35--12:07}{15:12--16:44}}{Sarva~Parivartini~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{Siṃha}{21}{}{Bhādrapada}}{\sundata{05:58}{18:15}{08:26}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{18:03\hspace{2ex}}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{11:59\hspace{2ex}}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{22:42\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{07:46\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{18:03\hspace{2ex}}}\\\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{04:19(+1)}}}}{\rahuyama{09:03--10:35}{13:39--15:11}}{Pradoṣa-vratam} 
+\\ \hline
+\caldata{\textcolor{blue}{7}}{\sunmonth{Siṃha}{22}{}{Bhādrapada}}{\sundata{05:58}{18:15}{08:26}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{14:30\hspace{2ex}}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{09:18\hspace{2ex}}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{18:37\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{14:30\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{00:39(+1)}}}}{\rahuyama{16:43--18:15}{12:06--13:38}}{} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Siṃha}{23}{}{Bhādrapada}}{\sundata{05:58}{18:14}{08:25}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{10:48\hspace{2ex}}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{06:25\hspace{2ex}}}\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{03:33(+1)}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{14:29\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{10:48\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{20:58\hspace{2ex}}}}}{\rahuyama{07:30--09:02}{10:34--12:06}}{Ananta-caturdaśī} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{Siṃha}{24}{}{Bhādrapada}}{\sundata{05:58}{18:13}{08:25}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{07:08\hspace{2ex}}}\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{03:41(+1)}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{00:53(+1)}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{10:23\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{07:08\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{17:25\hspace{2ex}}}\\\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{03:41(+1)}}}}{\rahuyama{15:09--16:41}{09:02--10:34}}{Mahālaya-pakṣa ārambhaḥ\diam Umā-maheśvara vratam} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Siṃha}{25}{}{Bhādrapada}}{\sundata{05:58}{18:12}{08:25}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{00:39(+1)}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{22:34\hspace{2ex}}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{06:27\hspace{2ex}}}\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{02:53(+1)}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{14:09\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{00:39(+1)}}}}{\rahuyama{12:05--13:37}{07:30--09:02}}{} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Siṃha}{26}{}{Bhādrapada}}{\sundata{05:58}{18:12}{08:25}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{22:08\hspace{2ex}}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{20:47\hspace{2ex}}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{23:47\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{11:19\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{22:08\hspace{2ex}}}}}{\rahuyama{13:37--15:08}{05:58--07:30}}{} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{Siṃha}{27}{}{Bhādrapada}}{\sundata{05:58}{18:11}{08:25}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{20:15\hspace{2ex}}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{19:37\hspace{2ex}}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{21:13\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{09:03\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{20:15\hspace{2ex}}}}}{\rahuyama{10:33--12:05}{15:08--16:39}}{} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{Siṃha}{28}{}{Bhādrapada}}{\sundata{05:58}{18:10}{08:25}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{19:07\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{19:11\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{19:14\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{07:31\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{19:07\hspace{2ex}}}}}{\rahuyama{09:01--10:33}{13:36--15:07}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{14}}{\sunmonth{Siṃha}{29}{}{Bhādrapada}}{\sundata{05:58}{18:10}{08:25}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{18:45\hspace{2ex}}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{19:31\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{17:52\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{06:45\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{18:45\hspace{2ex}}}}}{\rahuyama{16:38--18:10}{12:04--13:35}}{} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Siṃha}{30}{}{Bhādrapada}}{\sundata{05:58}{18:09}{08:24}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{19:10\hspace{2ex}}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{20:36\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{17:07\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{06:47\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{19:10\hspace{2ex}}}}}{\rahuyama{07:30--09:01}{10:32--12:04}}{} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{Siṃha}{31}{}{Bhādrapada}}{\sundata{05:58}{18:08}{08:24}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{20:18\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{22:22\hspace{2ex}}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{16:55\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{07:35\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{20:18\hspace{2ex}}}}}{\rahuyama{15:06--16:37}{09:01--10:32}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Kanyā}{1}{\mbox{Siṃha {\tiny \RIGHTarrow} \textsf{06:08\hspace{2ex}}}}{Bhādrapada}}{\sundata{05:58}{18:07}{08:24}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{22:00\hspace{2ex}}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{00:42(+1)}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{17:11\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{09:03\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{22:00\hspace{2ex}}}}}{\rahuyama{12:03--13:34}{07:30--09:01}}{} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Kanyā}{2}{}{Bhādrapada}}{\sundata{05:58}{18:07}{08:24}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{00:09(+1)}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{03:25(+1)}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{17:48\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{11:01\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{00:09(+1)}}}}{\rahuyama{13:34--15:05}{05:58--07:29}}{} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{Kanyā}{3}{}{Bhādrapada}}{\sundata{05:58}{18:06}{08:24}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{02:33(+1)}}}{\mbox{Puṣya {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{18:39\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{13:20\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{02:33(+1)}}}}{\rahuyama{10:31--12:02}{15:04--16:35}}{Sarva~Aja~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{Kanyā}{4}{}{Bhādrapada}}{\sundata{05:58}{18:05}{08:24}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{05:03(+1)}}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{06:22\hspace{2ex}}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{19:35\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{15:48\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{05:03(+1)}}}}{\rahuyama{09:00--10:31}{13:33--15:04}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{21}}{\sunmonth{Kanyā}{5}{}{Bhādrapada}}{\sundata{05:58}{18:05}{08:24}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{09:22\hspace{2ex}}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{20:31\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{18:16\hspace{2ex}}}}}{\rahuyama{16:34--18:05}{12:01--13:32}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Kanyā}{6}{}{Bhādrapada}}{\sundata{05:58}{18:04}{08:24}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{07:29\hspace{2ex}}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{12:18\hspace{2ex}}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{21:20\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{07:29\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{20:37\hspace{2ex}}}}}{\rahuyama{07:29--09:00}{10:30--12:01}}{} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{Kanyā}{7}{}{Bhādrapada}}{\sundata{05:58}{18:03}{08:23}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{09:43\hspace{2ex}}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{15:01\hspace{2ex}}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{21:59\hspace{2ex}}}}{\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{09:43\hspace{2ex}}}\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{22:44\hspace{2ex}}}}}{\rahuyama{15:02--16:33}{09:00--10:30}}{} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Kanyā}{8}{}{Bhādrapada}}{\sundata{05:58}{18:02}{08:23}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{11:42\hspace{2ex}}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{17:28\hspace{2ex}}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{22:24\hspace{2ex}}}}{\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{11:42\hspace{2ex}}}\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{00:34(+1)}}}}{\rahuyama{12:00--13:31}{07:29--08:59}}{Mahālaya-amāvasyā} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Kanyā}{9}{}{Āśvina}}{\sundata{05:58}{18:02}{08:23}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{13:20\hspace{2ex}}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{19:36\hspace{2ex}}}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{22:32\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{13:20\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{02:01(+1)}}}}{\rahuyama{13:31--15:01}{05:58--07:29}}{Navarātri-Ārambhaḥ} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{Kanyā}{10}{}{Āśvina}}{\sundata{05:58}{18:01}{08:23}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{14:34\hspace{2ex}}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{21:20\hspace{2ex}}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{22:22\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{14:34\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{03:04(+1)}}}}{\rahuyama{10:29--12:00}{15:00--16:31}}{} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{Kanyā}{11}{}{Āśvina}}{\sundata{05:59}{18:00}{08:23}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{15:24\hspace{2ex}}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{22:38\hspace{2ex}}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{21:50\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{15:24\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{03:40(+1)}}}}{\rahuyama{08:59--10:29}{13:30--15:00}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{28}}{\sunmonth{Kanyā}{12}{}{Āśvina}}{\sundata{05:59}{18:00}{08:23}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{15:45\hspace{2ex}}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{23:29\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{20:57\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{15:45\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{03:47(+1)}}}}{\rahuyama{16:29--18:00}{11:59--13:29}}{} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{Kanyā}{13}{}{Āśvina}}{\sundata{05:59}{17:59}{08:23}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{15:36\hspace{2ex}}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{23:50\hspace{2ex}}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{19:40\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{15:36\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{03:22(+1)}}}}{\rahuyama{07:29--08:59}{10:29--11:59}}{Lalitā pañcamī} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{Kanyā}{14}{}{Āśvina}}{\sundata{05:59}{17:58}{08:23}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{14:56\hspace{2ex}}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{23:40\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{17:58\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{14:56\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{02:26(+1)}}}}{\rahuyama{14:58--16:28}{08:59--10:28}}{Ṣaṣṭhī-vratam} 
+&
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily OCTOBER 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Kanyā}{15}{}{Āśvina}}{\sundata{05:59}{17:58}{08:22}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{13:45\hspace{2ex}}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{22:59\hspace{2ex}}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{15:51\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{13:45\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{00:59(+1)}}}}{\rahuyama{11:58--13:28}{07:28--08:58}}{} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{Kanyā}{16}{}{Āśvina}}{\sundata{05:59}{17:57}{08:22}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{12:04\hspace{2ex}}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{21:49\hspace{2ex}}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{13:20\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{12:04\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{23:03\hspace{2ex}}}}}{\rahuyama{13:28--14:57}{05:59--07:28}}{Durgāṣṭamī} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Kanyā}{17}{}{Āśvina}}{\sundata{05:59}{17:56}{08:22}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{09:56\hspace{2ex}}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{20:13\hspace{2ex}}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{10:27\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{09:56\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{20:40\hspace{2ex}}}}}{\rahuyama{10:28--11:57}{14:57--16:27}}{Mahānavamī/sarasvatī-pūjā} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Kanyā}{18}{}{Āśvina}}{\sundata{05:59}{17:56}{08:22}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{07:24\hspace{2ex}}}\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{04:31(+1)}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{18:16\hspace{2ex}}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{07:15\hspace{2ex}}}\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{03:46(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{07:24\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{17:57\hspace{2ex}}}\\\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{04:31(+1)}}}}{\rahuyama{08:58--10:28}{13:27--14:56}}{Vijayadaśamī} 
+\\ \hline
+\caldata{\textcolor{blue}{5}}{\sunmonth{Kanyā}{19}{}{Āśvina}}{\sundata{05:59}{17:55}{08:22}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{01:27(+1)}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{16:04\hspace{2ex}}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{00:07(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{14:59\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{01:27(+1)}}}}{\rahuyama{16:25--17:55}{11:57--13:26}}{Sarva~Pāśāṅkuśa~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{Kanyā}{20}{}{Āśvina}}{\sundata{05:59}{17:54}{08:22}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{22:19\hspace{2ex}}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{13:43\hspace{2ex}}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{20:24\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{11:53\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{22:19\hspace{2ex}}}}}{\rahuyama{07:28--08:58}{10:27--11:57}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{Kanyā}{21}{}{Āśvina}}{\sundata{05:59}{17:54}{08:22}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{19:15\hspace{2ex}}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{11:23\hspace{2ex}}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{16:44\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{08:45\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{19:15\hspace{2ex}}}\\\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{05:45(+1)}}}}{\rahuyama{14:55--16:24}{08:58--10:27}}{} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Kanyā}{22}{}{Āśvina}}{\sundata{05:59}{17:53}{08:22}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{16:23\hspace{2ex}}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{09:11\hspace{2ex}}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{13:13\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{16:23\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{03:02(+1)}}}}{\rahuyama{11:56--13:25}{07:28--08:57}}{Candra-grahaṇam~\textsf{14:44}{\RIGHTarrow}\textsf{18:04}} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{Kanyā}{23}{}{Āśvina}}{\sundata{05:59}{17:52}{08:22}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{13:52\hspace{2ex}}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{07:16\hspace{2ex}}}\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{05:47(+1)}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{09:57\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{13:52\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{00:45(+1)}}}}{\rahuyama{13:25--14:54}{05:59--07:28}}{} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Kanyā}{24}{}{Āśvina}}{\sundata{05:59}{17:52}{08:22}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{11:49\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{04:54(+1)}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{07:02\hspace{2ex}}}\mbox{Vajra {\tiny \RIGHTarrow} \textsf{04:37(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{11:49\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{23:01\hspace{2ex}}}}}{\rahuyama{10:26--11:55}{14:54--16:23}}{} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Kanyā}{25}{}{Āśvina}}{\sundata{05:59}{17:51}{08:22}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{10:21\hspace{2ex}}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{04:41(+1)}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{02:45(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{10:21\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{21:55\hspace{2ex}}}}}{\rahuyama{08:57--10:26}{13:24--14:53}}{Saṅkaṭahara-caturthī} 
+\\ \hline
+\caldata{\textcolor{blue}{12}}{\sunmonth{Kanyā}{26}{}{Āśvina}}{\sundata{05:59}{17:50}{08:22}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{09:36\hspace{2ex}}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{05:10(+1)}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{01:28(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{09:36\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{21:33\hspace{2ex}}}}}{\rahuyama{16:22--17:50}{11:55--13:24}}{} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{Kanyā}{27}{}{Āśvina}}{\sundata{05:59}{17:50}{08:22}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{09:36\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{00:45(+1)}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{09:36\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{21:55\hspace{2ex}}}}}{\rahuyama{07:28--08:57}{10:26--11:55}}{} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{Kanyā}{28}{}{Āśvina}}{\sundata{06:00}{17:49}{08:21}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{10:21\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{06:24\hspace{2ex}}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{00:35(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{10:21\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{23:01\hspace{2ex}}}}}{\rahuyama{14:52--16:21}{08:57--10:26}}{} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Kanyā}{29}{}{Āśvina}}{\sundata{06:00}{17:49}{08:21}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{11:48\hspace{2ex}}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{08:19\hspace{2ex}}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{00:53(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{11:48\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{00:44(+1)}}}}{\rahuyama{11:54--13:23}{07:28--08:57}}{} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{Kanyā}{30}{}{Āśvina}}{\sundata{06:00}{17:48}{08:21}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{13:47\hspace{2ex}}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{10:47\hspace{2ex}}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{01:32(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{13:47\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{02:55(+1)}}}}{\rahuyama{13:22--14:51}{06:00--07:28}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Kanyā}{31}{\mbox{Kanyā {\tiny \RIGHTarrow} \textsf{18:08\hspace{2ex}}}}{Āśvina}}{\sundata{06:00}{17:48}{08:21}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{16:08\hspace{2ex}}}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{13:36\hspace{2ex}}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{02:24(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{16:08\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{05:23(+1)}}}}{\rahuyama{10:25--11:54}{14:51--16:19}}{} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Tulā}{1}{}{Āśvina}}{\sundata{06:00}{17:47}{08:21}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{18:39\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{16:36\hspace{2ex}}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{03:19(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{18:39\hspace{2ex}}}}}{\rahuyama{08:57--10:25}{13:22--14:50}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{19}}{\sunmonth{Tulā}{2}{}{Āśvina}}{\sundata{06:00}{17:46}{08:21}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{21:06\hspace{2ex}}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{19:32\hspace{2ex}}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{04:09(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{07:54\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{21:06\hspace{2ex}}}}}{\rahuyama{16:18--17:46}{11:53--13:22}}{Sarva~Indirā~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{Tulā}{3}{}{Āśvina}}{\sundata{06:00}{17:46}{08:22}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{23:20\hspace{2ex}}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{22:16\hspace{2ex}}}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{04:45(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{10:16\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{23:20\hspace{2ex}}}}}{\rahuyama{07:29--08:57}{10:25--11:53}}{} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{Tulā}{4}{}{Āśvina}}{\sundata{06:01}{17:45}{08:22}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{01:10(+1)}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{00:39(+1)}}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{05:03(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{12:18\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{01:10(+1)}}}}{\rahuyama{14:49--16:17}{08:57--10:25}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Tulā}{5}{}{Āśvina}}{\sundata{06:01}{17:45}{08:22}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{02:33(+1)}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{02:34(+1)}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{04:59(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{13:54\hspace{2ex}}}\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{02:33(+1)}}}}{\rahuyama{11:53--13:21}{07:29--08:57}}{Dīpāvalī} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{Tulā}{6}{}{Āśvina}}{\sundata{06:01}{17:44}{08:22}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{03:25(+1)}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{04:01(+1)}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{04:32(+1)}}}{\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{15:01\hspace{2ex}}}\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{03:25(+1)}}}}{\rahuyama{13:21--14:49}{06:01--07:29}}{} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Tulā}{7}{}{Kārtika}}{\sundata{06:01}{17:44}{08:22}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{03:46(+1)}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{04:57(+1)}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{03:40(+1)}}}{\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{15:37\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{03:46(+1)}}}}{\rahuyama{10:25--11:53}{14:48--16:16}}{} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Tulā}{8}{}{Kārtika}}{\sundata{06:01}{17:44}{08:22}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{03:38(+1)}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{05:25(+1)}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{02:26(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{15:43\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{03:38(+1)}}}}{\rahuyama{08:57--10:25}{13:20--14:48}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{26}}{\sunmonth{Tulā}{9}{}{Kārtika}}{\sundata{06:02}{17:43}{08:22}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{03:03(+1)}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{05:28(+1)}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{00:50(+1)}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{15:22\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{03:03(+1)}}}}{\rahuyama{16:15--17:43}{11:52--13:20}}{} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{Tulā}{10}{}{Kārtika}}{\sundata{06:02}{17:43}{08:22}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{02:04(+1)}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{05:07(+1)}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{22:56\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{14:35\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{02:04(+1)}}}}{\rahuyama{07:29--08:57}{10:25--11:52}}{} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{Tulā}{11}{}{Kārtika}}{\sundata{06:02}{17:42}{08:22}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{00:45(+1)}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{04:26(+1)}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{20:45\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{13:27\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{00:45(+1)}}}}{\rahuyama{14:47--16:15}{08:57--10:25}}{} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{Tulā}{12}{}{Kārtika}}{\sundata{06:02}{17:42}{08:22}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{23:08\hspace{2ex}}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{03:28(+1)}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{18:20\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{11:59\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{23:08\hspace{2ex}}}}}{\rahuyama{11:52--13:20}{07:30--08:57}}{Skanda~Ṣaṣṭhī-vratam} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{Tulā}{13}{}{Kārtika}}{\sundata{06:03}{17:42}{08:22}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{21:17\hspace{2ex}}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{02:16(+1)}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{15:43\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{10:15\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{21:17\hspace{2ex}}}}}{\rahuyama{13:19--14:47}{06:03--07:30}}{} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{Tulā}{14}{}{Kārtika}}{\sundata{06:03}{17:41}{08:22}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{19:13\hspace{2ex}}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{00:52(+1)}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{12:55\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{08:17\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{19:13\hspace{2ex}}}}}{\rahuyama{10:25--11:52}{14:47--16:14}}{} 
+&
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily NOVEMBER 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Tulā}{15}{}{Kārtika}}{\sundata{06:03}{17:41}{08:23}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{16:59\hspace{2ex}}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{23:19\hspace{2ex}}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{09:58\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{06:08\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{16:59\hspace{2ex}}}\\\mbox{Taitila {\tiny \RIGHTarrow} \textsf{03:50(+1)}}}}{\rahuyama{08:58--10:25}{13:19--14:46}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{2}}{\sunmonth{Tulā}{16}{}{Kārtika}}{\sundata{06:03}{17:40}{08:23}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{14:39\hspace{2ex}}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{21:41\hspace{2ex}}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{06:55\hspace{2ex}}}\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{03:47(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{14:39\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{01:27(+1)}}}}{\rahuyama{16:13--17:40}{11:52--13:19}}{} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Tulā}{17}{}{Kārtika}}{\sundata{06:04}{17:40}{08:23}}{\tnyk{\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{12:16\hspace{2ex}}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{20:01\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{00:40(+1)}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{12:16\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{23:04\hspace{2ex}}}}}{\rahuyama{07:31--08:58}{10:25--11:52}}{Sarva~Uttāna/prabodhinī~Ekādaśī\diam Cāturmāsasya samāpanam} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Tulā}{18}{}{Kārtika}}{\sundata{06:04}{17:40}{08:23}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{09:54\hspace{2ex}}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{18:25\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{21:37\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{09:54\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{20:46\hspace{2ex}}}}}{\rahuyama{14:46--16:13}{08:58--10:25}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{Tulā}{19}{}{Kārtika}}{\sundata{06:04}{17:40}{08:23}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{07:39\hspace{2ex}}}\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{05:36(+1)}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{16:58\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{18:42\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{07:39\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{18:37\hspace{2ex}}}\\\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{05:36(+1)}}}}{\rahuyama{11:52--13:19}{07:31--08:58}}{} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{Tulā}{20}{}{Kārtika}}{\sundata{06:05}{17:39}{08:24}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{03:53(+1)}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{15:46\hspace{2ex}}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{16:00\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{16:44\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{03:53(+1)}}}}{\rahuyama{13:19--14:46}{06:05--07:31}}{} 
+&
+\caldata{\textcolor{blue}{7}}{\sunmonth{Tulā}{21}{}{Kārtika}}{\sundata{06:05}{17:39}{08:24}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{02:36(+1)}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{14:56\hspace{2ex}}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{13:35\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{15:14\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{02:36(+1)}}}}{\rahuyama{10:25--11:52}{14:46--16:12}}{} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Tulā}{22}{}{Kārtika}}{\sundata{06:05}{17:39}{08:24}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{01:51(+1)}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{14:33\hspace{2ex}}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{11:32\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{14:11\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{01:51(+1)}}}}{\rahuyama{08:59--10:25}{13:19--14:45}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{9}}{\sunmonth{Tulā}{23}{}{Kārtika}}{\sundata{06:06}{17:39}{08:24}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{01:43(+1)}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{14:45\hspace{2ex}}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{09:55\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{13:44\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{01:43(+1)}}}}{\rahuyama{16:12--17:39}{11:52--13:19}}{} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Tulā}{24}{}{Kārtika}}{\sundata{06:06}{17:38}{08:25}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{02:14(+1)}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{15:34\hspace{2ex}}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{08:48\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{13:55\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{02:14(+1)}}}}{\rahuyama{07:33--08:59}{10:26--11:52}}{Saṅkaṭahara-caturthī} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Tulā}{25}{}{Kārtika}}{\sundata{06:06}{17:38}{08:25}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{03:26(+1)}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{17:03\hspace{2ex}}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{08:13\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{14:47\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{03:26(+1)}}}}{\rahuyama{14:45--16:12}{08:59--10:26}}{} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{Tulā}{26}{}{Kārtika}}{\sundata{06:07}{17:38}{08:25}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{05:13(+1)}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{19:07\hspace{2ex}}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{08:08\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{16:18\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{05:13(+1)}}}}{\rahuyama{11:52--13:19}{07:33--09:00}}{} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{Tulā}{27}{}{Kārtika}}{\sundata{06:07}{17:38}{08:25}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{21:42\hspace{2ex}}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{08:30\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{18:21\hspace{2ex}}}}}{\rahuyama{13:19--14:45}{06:07--07:34}}{} 
+&
+\caldata{\textcolor{blue}{14}}{\sunmonth{Tulā}{28}{}{Kārtika}}{\sundata{06:08}{17:38}{08:26}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{07:30\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{00:36(+1)}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{09:12\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{07:30\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{20:46\hspace{2ex}}}}}{\rahuyama{10:26--11:53}{14:45--16:12}}{} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Tulā}{29}{}{Kārtika}}{\sundata{06:08}{17:38}{08:26}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{10:02\hspace{2ex}}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{03:37(+1)}}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{10:04\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{10:02\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{23:19\hspace{2ex}}}}}{\rahuyama{09:00--10:27}{13:19--14:45}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{16}}{\sunmonth{Tulā}{30}{\mbox{Tulā {\tiny \RIGHTarrow} \textsf{17:59\hspace{2ex}}}}{Kārtika}}{\sundata{06:08}{17:38}{08:26}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{12:35\hspace{2ex}}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{10:57\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{12:35\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{01:47(+1)}}}}{\rahuyama{16:12--17:38}{11:53--13:19}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Vṛścika}{1}{}{Kārtika}}{\sundata{06:09}{17:38}{08:27}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{14:53\hspace{2ex}}}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{06:30\hspace{2ex}}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{11:40\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{14:53\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{03:55(+1)}}}}{\rahuyama{07:35--09:01}{10:27--11:53}}{} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Vṛścika}{2}{}{Kārtika}}{\sundata{06:09}{17:38}{08:27}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{16:45\hspace{2ex}}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{09:00\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{12:04\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{16:45\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{05:32(+1)}}}}{\rahuyama{14:46--16:12}{09:01--10:27}}{Sarva~Ramā~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{Vṛścika}{3}{}{Kārtika}}{\sundata{06:10}{17:38}{08:27}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{18:02\hspace{2ex}}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{10:58\hspace{2ex}}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{12:02\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{18:02\hspace{2ex}}}}}{\rahuyama{11:54--13:20}{07:36--09:02}}{} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{Vṛścika}{4}{}{Kārtika}}{\sundata{06:10}{17:38}{08:28}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{18:39\hspace{2ex}}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{12:19\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{11:31\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{06:31\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{18:39\hspace{2ex}}}}}{\rahuyama{13:20--14:46}{06:10--07:36}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{21}}{\sunmonth{Vṛścika}{5}{}{Kārtika}}{\sundata{06:11}{17:38}{08:28}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{18:37\hspace{2ex}}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{13:02\hspace{2ex}}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{10:29\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{06:48\hspace{2ex}}}\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{18:37\hspace{2ex}}}}}{\rahuyama{10:28--11:54}{14:46--16:12}}{} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Vṛścika}{6}{}{Kārtika}}{\sundata{06:11}{17:38}{08:28}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{17:57\hspace{2ex}}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{13:07\hspace{2ex}}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{08:58\hspace{2ex}}}}{\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{06:26\hspace{2ex}}}\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{17:57\hspace{2ex}}}\\\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{05:28(+1)}}}}{\rahuyama{09:03--10:29}{13:20--14:46}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{23}}{\sunmonth{Vṛścika}{7}{}{Mārgaśīrṣa}}{\sundata{06:12}{17:38}{08:29}}{\tnyk{\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{16:46\hspace{2ex}}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{12:41\hspace{2ex}}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{06:59\hspace{2ex}}}\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{04:37(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{16:46\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{04:02(+1)}}}}{\rahuyama{16:12--17:38}{11:55--13:20}}{} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Vṛścika}{8}{}{Mārgaśīrṣa}}{\sundata{06:12}{17:38}{08:29}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{15:10\hspace{2ex}}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{11:48\hspace{2ex}}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{01:57(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{15:10\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{02:15(+1)}}}}{\rahuyama{07:38--09:04}{10:29--11:55}}{} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Vṛścika}{9}{}{Mārgaśīrṣa}}{\sundata{06:13}{17:38}{08:30}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{13:15\hspace{2ex}}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{10:37\hspace{2ex}}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{23:06\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{13:15\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{00:13(+1)}}}}{\rahuyama{14:47--16:12}{09:04--10:30}}{} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{Vṛścika}{10}{}{Mārgaśīrṣa}}{\sundata{06:13}{17:38}{08:30}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{11:09\hspace{2ex}}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{09:13\hspace{2ex}}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{20:09\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{11:09\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{22:03\hspace{2ex}}}}}{\rahuyama{11:56--13:21}{07:39--09:04}}{} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{Vṛścika}{11}{}{Mārgaśīrṣa}}{\sundata{06:14}{17:38}{08:31}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{08:58\hspace{2ex}}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{07:44\hspace{2ex}}}\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{06:13(+1)}}}{\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{17:09\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{08:58\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{19:51\hspace{2ex}}}}}{\rahuyama{13:21--14:47}{06:14--07:39}}{} 
+&
+\caldata{\textcolor{blue}{28}}{\sunmonth{Vṛścika}{12}{}{Mārgaśīrṣa}}{\sundata{06:14}{17:38}{08:31}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{06:46\hspace{2ex}}}\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{04:37(+1)}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{04:47(+1)}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{14:11\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{06:46\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{17:42\hspace{2ex}}}\\\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{04:37(+1)}}}}{\rahuyama{10:31--11:56}{14:47--16:13}}{Ṣaṣṭhī-vratam} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{Vṛścika}{13}{}{Mārgaśīrṣa}}{\sundata{06:15}{17:38}{08:31}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{02:36(+1)}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{03:27(+1)}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{11:16\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{15:37\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{02:36(+1)}}}}{\rahuyama{09:06--10:31}{13:22--14:47}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{30}}{\sunmonth{Vṛścika}{14}{}{Mārgaśīrṣa}}{\sundata{06:15}{17:39}{08:32}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{00:43(+1)}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{02:16(+1)}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{08:26\hspace{2ex}}}\mbox{Vajra {\tiny \RIGHTarrow} \textsf{05:43(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{13:39\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{00:43(+1)}}}}{\rahuyama{16:13--17:39}{11:57--13:22}}{} 
+&
+{}  &
+{}  &
+{}  &
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\multicolumn{7}{c}{\Large \bfseries \sffamily DECEMBER 2014}\\[3mm]
+\hline
+\textbf{\textsf{SUN}} & \textbf{\textsf{MON}} & \textbf{\textsf{TUE}} & \textbf{\textsf{WED}} & \textbf{\textsf{THU}} & \textbf{\textsf{FRI}} & \textbf{\textsf{SAT}} \\ \hline
+{}  &
+\caldata{\textcolor{blue}{1}}{\sunmonth{Vṛścika}{15}{}{Mārgaśīrṣa}}{\sundata{06:16}{17:39}{08:32}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{23:00\hspace{2ex}}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{01:14(+1)}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{03:09(+1)}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{11:51\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{23:00\hspace{2ex}}}}}{\rahuyama{07:41--09:07}{10:32--11:57}}{} 
+&
+\caldata{\textcolor{blue}{2}}{\sunmonth{Vṛścika}{16}{}{Mārgaśīrṣa}}{\sundata{06:16}{17:39}{08:33}}{\tnyk{\mbox{Śukla~ekādaśī {\tiny \RIGHTarrow} \textsf{21:28\hspace{2ex}}}}{\mbox{Revatī {\tiny \RIGHTarrow} \textsf{00:23(+1)}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{00:44(+1)}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{10:12\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{21:28\hspace{2ex}}}}}{\rahuyama{14:48--16:14}{09:07--10:32}}{Sarva~Guruvāyupura/Mokṣada~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{3}}{\sunmonth{Vṛścika}{17}{}{Mārgaśīrṣa}}{\sundata{06:17}{17:39}{08:33}}{\tnyk{\mbox{Śukla~dvādaśī {\tiny \RIGHTarrow} \textsf{20:09\hspace{2ex}}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{23:45\hspace{2ex}}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{22:30\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{08:46\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{20:09\hspace{2ex}}}}}{\rahuyama{11:58--13:23}{07:42--09:07}}{} 
+&
+\caldata{\textcolor{blue}{4}}{\sunmonth{Vṛścika}{18}{}{Mārgaśīrṣa}}{\sundata{06:17}{17:39}{08:34}}{\tnyk{\mbox{Śukla~trayodaśī {\tiny \RIGHTarrow} \textsf{19:05\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{23:23\hspace{2ex}}}}{\mbox{Parigha {\tiny \RIGHTarrow} \textsf{20:28\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{07:34\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{19:05\hspace{2ex}}}}}{\rahuyama{13:24--14:49}{06:17--07:43}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{5}}{\sunmonth{Vṛścika}{19}{}{Mārgaśīrṣa}}{\sundata{06:18}{17:40}{08:34}}{\tnyk{\mbox{Śukla~caturdaśī {\tiny \RIGHTarrow} \textsf{18:21\hspace{2ex}}}}{\mbox{Kṛttikā {\tiny \RIGHTarrow} \textsf{23:20\hspace{2ex}}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{18:41\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{06:38\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{18:21\hspace{2ex}}}\\\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{06:04(+1)}}}}{\rahuyama{10:34--11:59}{14:49--16:15}}{} 
+&
+\caldata{\textcolor{blue}{6}}{\sunmonth{Vṛścika}{20}{}{Mārgaśīrṣa}}{\sundata{06:19}{17:40}{08:35}}{\tnyk{\mbox{Paurṇamāsī {\tiny \RIGHTarrow} \textsf{17:59\hspace{2ex}}}}{\mbox{Rohiṇī {\tiny \RIGHTarrow} \textsf{23:40\hspace{2ex}}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{17:12\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{17:59\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{05:55(+1)}}}}{\rahuyama{09:09--10:34}{13:24--14:50}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{7}}{\sunmonth{Vṛścika}{21}{}{Mārgaśīrṣa}}{\sundata{06:19}{17:40}{08:35}}{\tnyk{\mbox{Kṛṣṇa~prathamā {\tiny \RIGHTarrow} \textsf{18:06\hspace{2ex}}}}{\mbox{Mṛgaśīrṣa {\tiny \RIGHTarrow} \textsf{00:28(+1)}}}{\mbox{Sādhya {\tiny \RIGHTarrow} \textsf{16:04\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{18:06\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{06:16(+1)}}}}{\rahuyama{16:15--17:40}{12:00--13:25}}{} 
+&
+\caldata{\textcolor{blue}{8}}{\sunmonth{Vṛścika}{22}{}{Mārgaśīrṣa}}{\sundata{06:20}{17:41}{08:36}}{\tnyk{\mbox{Kṛṣṇa~dvitīyā {\tiny \RIGHTarrow} \textsf{18:43\hspace{2ex}}}}{\mbox{Ārdrā {\tiny \RIGHTarrow} \textsf{01:47(+1)}}}{\mbox{Śubha {\tiny \RIGHTarrow} \textsf{15:20\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{18:43\hspace{2ex}}}}}{\rahuyama{07:45--09:10}{10:35--12:00}}{} 
+&
+\caldata{\textcolor{blue}{9}}{\sunmonth{Vṛścika}{23}{}{Mārgaśīrṣa}}{\sundata{06:20}{17:41}{08:36}}{\tnyk{\mbox{Kṛṣṇa~tṛtīyā {\tiny \RIGHTarrow} \textsf{19:54\hspace{2ex}}}}{\mbox{Punarvasū {\tiny \RIGHTarrow} \textsf{03:38(+1)}}}{\mbox{Śukla {\tiny \RIGHTarrow} \textsf{15:01\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{07:12\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{19:54\hspace{2ex}}}}}{\rahuyama{14:51--16:16}{09:10--10:35}}{Saṅkaṭahara-caturthī} 
+&
+\caldata{\textcolor{blue}{10}}{\sunmonth{Vṛścika}{24}{}{Mārgaśīrṣa}}{\sundata{06:21}{17:41}{08:37}}{\tnyk{\mbox{Kṛṣṇa~caturthī {\tiny \RIGHTarrow} \textsf{21:38\hspace{2ex}}}}{\mbox{Puṣya {\tiny \RIGHTarrow} \textsf{05:59(+1)}}}{\mbox{Brāhma {\tiny \RIGHTarrow} \textsf{15:08\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{08:41\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{21:38\hspace{2ex}}}}}{\rahuyama{12:01--13:26}{07:46--09:11}}{} 
+&
+\caldata{\textcolor{blue}{11}}{\sunmonth{Vṛścika}{25}{}{Mārgaśīrṣa}}{\sundata{06:21}{17:42}{08:37}}{\tnyk{\mbox{Kṛṣṇa~pañcamī {\tiny \RIGHTarrow} \textsf{23:51\hspace{2ex}}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Aindra {\tiny \RIGHTarrow} \textsf{15:37\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{10:41\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{23:51\hspace{2ex}}}}}{\rahuyama{13:27--14:52}{06:21--07:46}}{} 
+&
+\caldata{\textcolor{blue}{12}}{\sunmonth{Vṛścika}{26}{}{Mārgaśīrṣa}}{\sundata{06:22}{17:42}{08:38}}{\tnyk{\mbox{Kṛṣṇa~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{02:23(+1)}}}{\mbox{Āśreṣā {\tiny \RIGHTarrow} \textsf{08:48\hspace{2ex}}}}{\mbox{Vaidhṛti {\tiny \RIGHTarrow} \textsf{16:22\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{13:05\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{02:23(+1)}}}}{\rahuyama{10:37--12:02}{14:52--16:17}}{} 
+&
+\caldata{\textcolor{blue}{13}}{\sunmonth{Vṛścika}{27}{}{Mārgaśīrṣa}}{\sundata{06:22}{17:42}{08:38}}{\tnyk{\mbox{Kṛṣṇa~saptamī {\tiny \RIGHTarrow} \textsf{05:02(+1)}}}{\mbox{Maghā {\tiny \RIGHTarrow} \textsf{11:49\hspace{2ex}}}}{\mbox{Viṣkumbha {\tiny \RIGHTarrow} \textsf{17:17\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{15:42\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{05:02(+1)}}}}{\rahuyama{09:12--10:37}{13:27--14:52}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{14}}{\sunmonth{Vṛścika}{28}{}{Mārgaśīrṣa}}{\sundata{06:23}{17:43}{08:39}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} Ahorātram}}{\mbox{Pūrvaphalgunī {\tiny \RIGHTarrow} \textsf{14:51\hspace{2ex}}}}{\mbox{Prīti {\tiny \RIGHTarrow} \textsf{18:09\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{18:18\hspace{2ex}}}}}{\rahuyama{16:18--17:43}{12:03--13:28}}{} 
+&
+\caldata{\textcolor{blue}{15}}{\sunmonth{Vṛścika}{29}{}{Mārgaśīrṣa}}{\sundata{06:23}{17:43}{08:39}}{\tnyk{\mbox{Kṛṣṇa~aṣṭamī {\tiny \RIGHTarrow} \textsf{07:33\hspace{2ex}}}}{\mbox{Uttaraphalgunī {\tiny \RIGHTarrow} \textsf{17:39\hspace{2ex}}}}{\mbox{Āyuṣmān {\tiny \RIGHTarrow} \textsf{18:49\hspace{2ex}}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{07:33\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{20:38\hspace{2ex}}}}}{\rahuyama{07:48--09:13}{10:38--12:03}}{} 
+&
+\caldata{\textcolor{blue}{16}}{\sunmonth{Dhanuḥ}{1}{\mbox{Vṛścika {\tiny \RIGHTarrow} \textsf{08:40\hspace{2ex}}}}{Mārgaśīrṣa}}{\sundata{06:24}{17:44}{08:40}}{\tnyk{\mbox{Kṛṣṇa~navamī {\tiny \RIGHTarrow} \textsf{09:38\hspace{2ex}}}}{\mbox{Hasta {\tiny \RIGHTarrow} \textsf{19:59\hspace{2ex}}}}{\mbox{Saubhāgya {\tiny \RIGHTarrow} \textsf{19:07\hspace{2ex}}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{09:38\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{22:26\hspace{2ex}}}}}{\rahuyama{14:54--16:19}{09:14--10:39}}{} 
+&
+\caldata{\textcolor{blue}{17}}{\sunmonth{Dhanuḥ}{2}{}{Mārgaśīrṣa}}{\sundata{06:25}{17:44}{08:40}}{\tnyk{\mbox{Kṛṣṇa~daśamī {\tiny \RIGHTarrow} \textsf{11:06\hspace{2ex}}}}{\mbox{Citrā {\tiny \RIGHTarrow} \textsf{21:40\hspace{2ex}}}}{\mbox{Śobhana {\tiny \RIGHTarrow} \textsf{18:54\hspace{2ex}}}}{\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{11:06\hspace{2ex}}}\mbox{Bava {\tiny \RIGHTarrow} \textsf{23:32\hspace{2ex}}}}}{\rahuyama{12:04--13:29}{07:49--09:14}}{} 
+&
+\caldata{\textcolor{blue}{18}}{\sunmonth{Dhanuḥ}{3}{}{Mārgaśīrṣa}}{\sundata{06:25}{17:45}{08:41}}{\tnyk{\mbox{Kṛṣṇa~ekādaśī {\tiny \RIGHTarrow} \textsf{11:48\hspace{2ex}}}}{\mbox{Svāti {\tiny \RIGHTarrow} \textsf{22:35\hspace{2ex}}}}{\mbox{Atigaṇḍa {\tiny \RIGHTarrow} \textsf{18:05\hspace{2ex}}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{11:48\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{23:50\hspace{2ex}}}}}{\rahuyama{13:30--14:55}{06:25--07:50}}{Sarva~Utpanna~Ekādaśī} 
+&
+\caldata{\textcolor{blue}{19}}{\sunmonth{Dhanuḥ}{4}{}{Mārgaśīrṣa}}{\sundata{06:26}{17:45}{08:41}}{\tnyk{\mbox{Kṛṣṇa~dvādaśī {\tiny \RIGHTarrow} \textsf{11:41\hspace{2ex}}}}{\mbox{Viśākhā {\tiny \RIGHTarrow} \textsf{22:42\hspace{2ex}}}}{\mbox{Sukarmā {\tiny \RIGHTarrow} \textsf{16:38\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{11:41\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{23:19\hspace{2ex}}}}}{\rahuyama{10:40--12:05}{14:55--16:20}}{Pradoṣa-vratam} 
+&
+\caldata{\textcolor{blue}{20}}{\sunmonth{Dhanuḥ}{5}{}{Mārgaśīrṣa}}{\sundata{06:26}{17:46}{08:42}}{\tnyk{\mbox{Kṛṣṇa~trayodaśī {\tiny \RIGHTarrow} \textsf{10:48\hspace{2ex}}}}{\mbox{Anūrādhā {\tiny \RIGHTarrow} \textsf{22:06\hspace{2ex}}}}{\mbox{Dhṛti {\tiny \RIGHTarrow} \textsf{14:35\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{10:48\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{22:03\hspace{2ex}}}}}{\rahuyama{09:16--10:41}{13:31--14:56}}{} 
+\\ \hline
+\caldata{\textcolor{blue}{21}}{\sunmonth{Dhanuḥ}{6}{}{Mārgaśīrṣa}}{\sundata{06:27}{17:46}{08:43}}{\tnyk{\mbox{Kṛṣṇa~caturdaśī {\tiny \RIGHTarrow} \textsf{09:14\hspace{2ex}}}}{\mbox{Jyeṣṭhā {\tiny \RIGHTarrow} \textsf{20:52\hspace{2ex}}}}{\mbox{Śūla {\tiny \RIGHTarrow} \textsf{12:01\hspace{2ex}}}}{\mbox{Śakuni {\tiny \RIGHTarrow} \textsf{09:14\hspace{2ex}}}\mbox{Catuṣpāda {\tiny \RIGHTarrow} \textsf{20:09\hspace{2ex}}}}}{\rahuyama{16:21--17:46}{12:06--13:31}}{} 
+&
+\caldata{\textcolor{blue}{22}}{\sunmonth{Dhanuḥ}{7}{}{Mārgaśīrṣa}}{\sundata{06:27}{17:47}{08:43}}{\tnyk{\mbox{Amāvāsyā {\tiny \RIGHTarrow} \textsf{07:05\hspace{2ex}}}\mbox{Śukla~prathamā {\tiny \RIGHTarrow} \textsf{04:29(+1)}}}{\mbox{Mūlā {\tiny \RIGHTarrow} \textsf{19:10\hspace{2ex}}}}{\mbox{Gaṇḍa {\tiny \RIGHTarrow} \textsf{09:01\hspace{2ex}}}\mbox{Vṛddhi {\tiny \RIGHTarrow} \textsf{05:40(+1)}}}{\mbox{Nāgava {\tiny \RIGHTarrow} \textsf{07:05\hspace{2ex}}}\mbox{Kiṃstughna {\tiny \RIGHTarrow} \textsf{17:47\hspace{2ex}}}\\\mbox{Bava {\tiny \RIGHTarrow} \textsf{04:29(+1)}}}}{\rahuyama{07:52--09:17}{10:42--12:07}}{Śrī hanūmat jayantī} 
+&
+\caldata{\textcolor{blue}{23}}{\sunmonth{Dhanuḥ}{8}{}{Pauṣa}}{\sundata{06:28}{17:47}{08:44}}{\tnyk{\mbox{Śukla~dvitīyā {\tiny \RIGHTarrow} \textsf{01:40(+1)}}}{\mbox{Pūrvāṣāḍhā {\tiny \RIGHTarrow} \textsf{17:10\hspace{2ex}}}}{\mbox{Dhruva {\tiny \RIGHTarrow} \textsf{02:07(+1)}}}{\mbox{Bālava {\tiny \RIGHTarrow} \textsf{15:05\hspace{2ex}}}\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{01:40(+1)}}}}{\rahuyama{14:57--16:22}{09:17--10:42}}{} 
+&
+\caldata{\textcolor{blue}{24}}{\sunmonth{Dhanuḥ}{9}{}{Pauṣa}}{\sundata{06:28}{17:48}{08:44}}{\tnyk{\mbox{Śukla~tṛtīyā {\tiny \RIGHTarrow} \textsf{22:46\hspace{2ex}}}}{\mbox{Uttarāṣāḍhā {\tiny \RIGHTarrow} \textsf{15:01\hspace{2ex}}}}{\mbox{Vyāghāta {\tiny \RIGHTarrow} \textsf{22:32\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{12:14\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{22:46\hspace{2ex}}}}}{\rahuyama{12:08--13:33}{07:53--09:18}}{} 
+&
+\caldata{\textcolor{blue}{25}}{\sunmonth{Dhanuḥ}{10}{}{Pauṣa}}{\sundata{06:29}{17:48}{08:44}}{\tnyk{\mbox{Śukla~caturthī {\tiny \RIGHTarrow} \textsf{19:57\hspace{2ex}}}}{\mbox{Śravaṇa {\tiny \RIGHTarrow} \textsf{12:51\hspace{2ex}}}}{\mbox{Harṣaṇa {\tiny \RIGHTarrow} \textsf{18:59\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{09:20\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{19:57\hspace{2ex}}}}}{\rahuyama{13:33--14:58}{06:29--07:54}}{} 
+&
+\caldata{\textcolor{blue}{26}}{\sunmonth{Dhanuḥ}{11}{}{Pauṣa}}{\sundata{06:29}{17:49}{08:45}}{\tnyk{\mbox{Śukla~pañcamī {\tiny \RIGHTarrow} \textsf{17:18\hspace{2ex}}}}{\mbox{Śraviṣṭhā {\tiny \RIGHTarrow} \textsf{10:50\hspace{2ex}}}}{\mbox{Vajra {\tiny \RIGHTarrow} \textsf{15:35\hspace{2ex}}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{06:34\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{17:18\hspace{2ex}}}\\\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{04:03(+1)}}}}{\rahuyama{10:44--12:09}{14:59--16:24}}{} 
+&
+\caldata{\textcolor{blue}{27}}{\sunmonth{Dhanuḥ}{12}{}{Pauṣa}}{\sundata{06:29}{17:49}{08:45}}{\tnyk{\mbox{Śukla~ṣaṣṭhī {\tiny \RIGHTarrow} \textsf{14:57\hspace{2ex}}}}{\mbox{Śatabhiṣak {\tiny \RIGHTarrow} \textsf{09:05\hspace{2ex}}}}{\mbox{Siddhi {\tiny \RIGHTarrow} \textsf{12:24\hspace{2ex}}}}{\mbox{Taitila {\tiny \RIGHTarrow} \textsf{14:57\hspace{2ex}}}\mbox{Garaja {\tiny \RIGHTarrow} \textsf{01:52(+1)}}}}{\rahuyama{09:19--10:44}{13:34--14:59}}{Ṣaṣṭhī-vratam} 
+\\ \hline
+\caldata{\textcolor{blue}{28}}{\sunmonth{Dhanuḥ}{13}{}{Pauṣa}}{\sundata{06:30}{17:50}{08:46}}{\tnyk{\mbox{Śukla~saptamī {\tiny \RIGHTarrow} \textsf{12:55\hspace{2ex}}}}{\mbox{Pūrvaproṣṭhapadā {\tiny \RIGHTarrow} \textsf{07:38\hspace{2ex}}}}{\mbox{Vyatīpāta {\tiny \RIGHTarrow} \textsf{09:29\hspace{2ex}}}}{\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{12:55\hspace{2ex}}}\mbox{Viṣṭi {\tiny \RIGHTarrow} \textsf{00:03(+1)}}}}{\rahuyama{16:25--17:50}{12:10--13:35}}{} 
+&
+\caldata{\textcolor{blue}{29}}{\sunmonth{Dhanuḥ}{14}{}{Pauṣa}}{\sundata{06:30}{17:50}{08:46}}{\tnyk{\mbox{Śukla~aṣṭamī {\tiny \RIGHTarrow} \textsf{11:17\hspace{2ex}}}}{\mbox{Uttaraproṣṭhapadā {\tiny \RIGHTarrow} \textsf{06:35\hspace{2ex}}}\mbox{Revatī {\tiny \RIGHTarrow} \textsf{05:55(+1)}}}{\mbox{Vārīyana {\tiny \RIGHTarrow} \textsf{06:53\hspace{2ex}}}\mbox{Parigha {\tiny \RIGHTarrow} \textsf{04:36(+1)}}}{\mbox{Bava {\tiny \RIGHTarrow} \textsf{11:17\hspace{2ex}}}\mbox{Bālava {\tiny \RIGHTarrow} \textsf{22:38\hspace{2ex}}}}}{\rahuyama{07:55--09:20}{10:45--12:10}}{} 
+&
+\caldata{\textcolor{blue}{30}}{\sunmonth{Dhanuḥ}{15}{}{Pauṣa}}{\sundata{06:31}{17:51}{08:47}}{\tnyk{\mbox{Śukla~navamī {\tiny \RIGHTarrow} \textsf{10:02\hspace{2ex}}}}{\mbox{Aśvinī {\tiny \RIGHTarrow} \textsf{05:38(+1)}}}{\mbox{Śiva {\tiny \RIGHTarrow} \textsf{02:37(+1)}}}{\mbox{Kaulava {\tiny \RIGHTarrow} \textsf{10:02\hspace{2ex}}}\mbox{Taitila {\tiny \RIGHTarrow} \textsf{21:35\hspace{2ex}}}}}{\rahuyama{15:01--16:26}{09:21--10:46}}{} 
+&
+\caldata{\textcolor{blue}{31}}{\sunmonth{Dhanuḥ}{16}{}{Pauṣa}}{\sundata{06:31}{17:51}{08:47}}{\tnyk{\mbox{Śukla~daśamī {\tiny \RIGHTarrow} \textsf{09:11\hspace{2ex}}}}{\mbox{Apabharaṇī {\tiny \RIGHTarrow} \textsf{05:42(+1)}}}{\mbox{Siddha {\tiny \RIGHTarrow} \textsf{00:56(+1)}}}{\mbox{Garaja {\tiny \RIGHTarrow} \textsf{09:11\hspace{2ex}}}\mbox{Vaṇija {\tiny \RIGHTarrow} \textsf{20:55\hspace{2ex}}}}}{\rahuyama{12:11--13:36}{07:56--09:21}}{} 
+&
+{}  &
+{}  &
+\\ \hline
+\end{tabular}
+
+
+
+\end{center}
+\end{document}
