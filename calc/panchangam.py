@@ -881,7 +881,8 @@ class panchangam:
     print '\hrule'
 
     print '\\newpage'
-    print '\\centerline {\\LARGE {{%s}}}\\mbox{}\\\\[2cm]' % list_of_festivals[self.script]
+    #print '\\centerline{\\LARGE {{%s}}}\\mbox{}\\\\[2cm]' % list_of_festivals[self.script]
+    print '\\centerline{\\LARGE {{%s}}}' % list_of_festivals[self.script]
     print '\\begin{center}'
     print '\\begin{minipage}[t]{0.3\\linewidth}'
     print '\\begin{center}'
