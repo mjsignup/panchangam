@@ -71,6 +71,7 @@ tripurotsava = {}
 maha_kartiki = {}
 dattatreya_jayanti = {}
 bhishmashtami = {}
+bahula_panchami = {}
 bhishma_dvadashi = {}
 holika_purnima = {}
 
@@ -161,6 +162,7 @@ tripurotsava['deva']='त्रिपुरोत्सवः'
 maha_kartiki['deva']='महा-कार्तिकी'
 dattatreya_jayanti['deva']='दत्तात्रेय~जयन्ती'
 bhishmashtami['deva']='भीष्माष्टमी'
+bahula_panchami['deva']='बहुल~पञ्चमी/त्यागराज आराधना'
 bhishma_dvadashi['deva']='भीष्म-द्वादशी'
 holika_purnima['deva']='होलिका~पूर्णिमा'
 
@@ -826,6 +828,7 @@ tripurotsava['iast']='Tripurotsavaḥ'
 maha_kartiki['iast']='Mahā-kārtikī'
 dattatreya_jayanti['iast']='Dattātreya~jayantī'
 bhishmashtami['iast']='Bhīṣmāṣṭamī'
+bahula_panchami['iast']='Bahula~pañcamī/Tyāgarāja ārādhanā'
 bhishma_dvadashi['iast']='Bhīṣma-dvādaśī'
 holika_purnima['iast']='Holikā~pūrṇimā'
 

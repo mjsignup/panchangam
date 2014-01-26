@@ -661,6 +661,7 @@ class panchangam:
                tripurotsava[self.script]:['lunar_month', 8,'tithi',     15, 0,'pradosha','purvaviddha'],
                maha_kartiki[self.script]:['lunar_month', 8,'nakshatram', 3, 0,'pradosha','purvaviddha'],
               bhishmashtami[self.script]:['lunar_month',11,'tithi',      8, 0,'madhyahna','purvaviddha'],
+            bahula_panchami[self.script]:['lunar_month',10,'tithi',     20, 0,'sunrise','purvaviddha'],
            bhishma_dvadashi[self.script]:['lunar_month',11,'tithi',     12, 0,'sunrise','purvaviddha'],
              holika_purnima[self.script]:['lunar_month',12,'tithi',     15, 0,'pradosha','purvaviddha'],
       uma_maheshvara_vratam[self.script]:['lunar_month', 6,'tithi'     ,15, 0,'sunrise','purvaviddha']}
