@@ -69,6 +69,7 @@ tripurotsava['iast']='Tripurotsavaḥ'
 maha_kartiki['iast']='Mahā-kārtikī'
 dattatreya_jayanti['iast']='Dattātreya~jayantī'
 bhishmashtami['iast']='Bhīṣmāṣṭamī'
+bahula_panchami['iast']='Bahula~pañcamī/Tyāgarāja ārādhanā'
 bhishma_dvadashi['iast']='Bhīṣma-dvādaśī'
 holika_purnima['iast']='Holikā~pūrṇimā'
 

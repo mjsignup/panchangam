@@ -71,6 +71,7 @@ tripurotsava = {}
 maha_kartiki = {}
 dattatreya_jayanti = {}
 bhishmashtami = {}
+bahula_panchami = {}
 bhishma_dvadashi = {}
 holika_purnima = {}
 
