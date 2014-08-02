@@ -292,7 +292,7 @@ class  divas:
     [y,m,dt,t] = swisseph.revjul(jd)
     local_time = pytz.timezone(tz).localize(datetime(y, m, dt, 6, 0, 0))
     #checking @ 6am local - can we do any better?
-    tz_off=datetime.utcoffset(local_time).seconds/3600.0 
+    tz_off=(datetime.utcoffset(local_time).days*86400+datetime.utcoffset(local_time).seconds)/3600.0 
     #compute offset from UTC
 
 
@@ -387,12 +387,12 @@ class panchangam:
     
       local_time = pytz.timezone(self.city.timezone).localize(datetime(y, m, dt, 6, 0, 0))
       #checking @ 6am local - can we do any better?
-      tz_off=datetime.utcoffset(local_time).seconds/3600.0 
+      tz_off=(datetime.utcoffset(local_time).days*86400+datetime.utcoffset(local_time).seconds)/3600.0 
       #compute offset from UTC
   
       self.jd_sunrise[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
         lon=self.city.longitude,lat=self.city.latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
-      self.jd_sunset[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.SUN,
+      self.jd_sunset[d+1]=swisseph.rise_trans(jd_start=self.jd_sunrise[d+1],body=swisseph.SUN,
         lon=self.city.longitude,lat=self.city.latitude,rsmi= swisseph.CALC_SET|swisseph.BIT_DISC_CENTER)[1][0]
       self.jd_moonrise[d+1]=swisseph.rise_trans(jd_start=jd+1,body=swisseph.MOON,
         lon=self.city.longitude,lat=self.city.latitude,rsmi=swisseph.CALC_RISE|swisseph.BIT_DISC_CENTER)[1][0]
@@ -414,7 +414,8 @@ class panchangam:
   
       t_sunrise=(self.jd_sunrise[d]-jd)*24.0+tz_off
       t_sunset=(self.jd_sunset[d]-jd)*24.0+tz_off
-  
+      #print '%',jd,self.jd_sunrise[d],self.jd_sunset[d],tz_off
+  	
     
       #Solar month calculations
       if month_start_after_sunset==1:
@@ -771,7 +772,7 @@ class panchangam:
       [y,m,dt,t] = swisseph.revjul(next_eclipse_sol[1][0])
       local_time = pytz.timezone(self.city.timezone).localize(datetime(y, m, dt, 6, 0, 0))
       #checking @ 6am local - can we do any better?
-      tz_off=datetime.utcoffset(local_time).seconds/3600.0 
+      tz_off=(datetime.utcoffset(local_time).days*86400+datetime.utcoffset(local_time).seconds)/3600.0 
       #compute offset from UTC
       jd=next_eclipse_sol[1][0]+(tz_off/24.0)
       jd_eclipse_solar_start=next_eclipse_sol[1][1]+(tz_off/24.0)
@@ -796,6 +797,8 @@ class panchangam:
           eclipse_solar_end+=24
         sunrise_eclipse_day = swisseph.revjul(self.jd_sunrise[fday])[3]
         sunset_eclipse_day = swisseph.revjul(self.jd_sunset[fday])[3]
+        jd_sunrise_eclipse_day = self.jd_sunrise[fday]
+        jd_sunset_eclipse_day = self.jd_sunset[fday]
         if jd_eclipse_solar_start<jd_sunrise_eclipse_day:
           eclipse_solar_start=sunrise_eclipse_day
         if jd_eclipse_solar_end>jd_sunset_eclipse_day:
@@ -814,7 +817,7 @@ class panchangam:
       [y,m,dt,t] = swisseph.revjul(next_eclipse_lun[1][0])
       local_time = pytz.timezone(self.city.timezone).localize(datetime(y, m, dt, 6, 0, 0))
       #checking @ 6am local - can we do any better? This is crucial, since DST changes before 6 am
-      tz_off=datetime.utcoffset(local_time).seconds/3600.0 
+      tz_off=(datetime.utcoffset(local_time).days*86400+datetime.utcoffset(local_time).seconds)/3600.0 
       #compute offset from UTC
       jd=next_eclipse_lun[1][0]+(tz_off/24.0)
       jd_eclipse_lunar_start=next_eclipse_lun[1][2]+(tz_off/24.0)
