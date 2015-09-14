@@ -1,0 +1,1 @@
+This project uses planetary positions to calculate important aspects of a day, such as tithi (moon phase), nakshatram (asterism), karanam, yogam etc, and also the occurrence of various Hindu festivals.
